@@ -1,0 +1,12 @@
+@dc:description "A description bundle for closed-world reasoning about the birds prov"
+description bundle <http://example.com/project/bundle#> as ^bundle {
+
+    uses <http://purl.org/dc/elements/1.1/> as dc
+    
+    // The description bundle "uses" the vocabulary bundle world closure axioms
+    uses <http://example.com/project/prov-bundle#>
+
+    // The description bundle "includes" the Loxia Scotia description 
+    includes <http://example.com/project/LoxiaScotia#>
+    
+}
