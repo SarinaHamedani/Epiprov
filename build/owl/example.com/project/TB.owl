@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.com/project/TB#"
+     xml:base="http://example.com/project/TB"
+     xmlns:TB="http://example.com/project/TB#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:oml="http://opencaesar.io/oml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:prov="http://example.com/project/prov#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://example.com/project/TB">
+        <owl:imports rdf:resource="http://example.com/project/prov"/>
+        <oml:namespace rdf:resource="http://example.com/project/TB#"/>
+        <oml:prefix>TB</oml:prefix>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Description"/>
+        <rdfs:seeAlso>https://www.w3.org/TR/2013/REC-prov-o-20130430/#narrative-example-simple-1</rdfs:seeAlso>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://example.com/project/prov#actedOnBehalfOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.com/project/prov#actedOnBehalfOf"/>
+    
+
+
+    <!-- http://example.com/project/prov#generated -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.com/project/prov#generated"/>
+    
+
+
+    <!-- http://example.com/project/prov#wasAssociatedWith -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.com/project/prov#wasAssociatedWith"/>
+    
+
+
+    <!-- http://example.com/project/prov#wasAttributedTo -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.com/project/prov#wasAttributedTo"/>
+    
+
+
+    <!-- http://example.com/project/prov#wasDerivedFrom -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.com/project/prov#wasDerivedFrom"/>
+    
+
+
+    <!-- http://example.com/project/prov#wasGeneratedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.com/project/prov#wasGeneratedBy"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://example.com/project/prov#endedAtTime -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.com/project/prov#endedAtTime"/>
+    
+
+
+    <!-- http://example.com/project/prov#startedAtTime -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.com/project/prov#startedAtTime"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://example.com/project/TB#Christopher_Dye -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/TB#Christopher_Dye">
+        <rdf:type rdf:resource="http://example.com/project/prov#Person"/>
+        <prov:actedOnBehalfOf rdf:resource="http://example.com/project/TB#Office_of_Health_Organization"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/TB#IDM_HIV -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/TB#IDM_HIV">
+        <rdf:type rdf:resource="http://example.com/project/prov#Entity"/>
+        <prov:wasDerivedFrom rdf:resource="http://example.com/project/TB#TB_dataset_model"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/TB#Katherine_Floyd -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/TB#Katherine_Floyd">
+        <rdf:type rdf:resource="http://example.com/project/prov#Person"/>
+        <prov:actedOnBehalfOf rdf:resource="http://example.com/project/TB#Stop_TB_Department"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/TB#Mario_Raviglione -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/TB#Mario_Raviglione">
+        <rdf:type rdf:resource="http://example.com/project/prov#Person"/>
+        <prov:actedOnBehalfOf rdf:resource="http://example.com/project/TB#Stop_TB_Department"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/TB#Office_of_Health_Organization -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/TB#Office_of_Health_Organization">
+        <rdf:type rdf:resource="http://example.com/project/prov#Organization"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/TB#Philip_Glaziou -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/TB#Philip_Glaziou">
+        <rdf:type rdf:resource="http://example.com/project/prov#Person"/>
+        <prov:actedOnBehalfOf rdf:resource="http://example.com/project/TB#Stop_TB_Department"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/TB#Stop_TB_Department -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/TB#Stop_TB_Department">
+        <rdf:type rdf:resource="http://example.com/project/prov#Organization"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/TB#TB_dataset_model -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/TB#TB_dataset_model">
+        <rdf:type rdf:resource="http://example.com/project/prov#Entity"/>
+        <prov:wasAttributedTo rdf:resource="http://example.com/project/TB#Christopher_Dye"/>
+        <prov:wasAttributedTo rdf:resource="http://example.com/project/TB#Katherine_Floyd"/>
+        <prov:wasAttributedTo rdf:resource="http://example.com/project/TB#Mario_Raviglione"/>
+        <prov:wasAttributedTo rdf:resource="http://example.com/project/TB#Philip_Glaziou"/>
+        <prov:wasGeneratedBy rdf:resource="http://example.com/project/TB#compilationActivity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/TB#WHO -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/TB#WHO">
+        <rdf:type rdf:resource="http://example.com/project/prov#Organization"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/TB#compilationActivity -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/TB#compilationActivity">
+        <rdf:type rdf:resource="http://example.com/project/prov#Activity"/>
+        <prov:generated rdf:resource="http://example.com/project/TB#TB_dataset_model"/>
+        <prov:wasAssociatedWith rdf:resource="http://example.com/project/TB#Christopher_Dye"/>
+        <prov:wasAssociatedWith rdf:resource="http://example.com/project/TB#Katherine_Floyd"/>
+        <prov:wasAssociatedWith rdf:resource="http://example.com/project/TB#Mario_Raviglione"/>
+        <prov:wasAssociatedWith rdf:resource="http://example.com/project/TB#Philip_Glaziou"/>
+        <prov:endedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-07-15T02:02:02Z</prov:endedAtTime>
+        <prov:startedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-07-15T01:01:01Z</prov:startedAtTime>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.5.0.2023-01-14T12:41:38Z) https://github.com/owlcs/owlapi/ -->
+
+

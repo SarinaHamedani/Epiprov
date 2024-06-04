@@ -1,0 +1,52 @@
+@rdfs:seeAlso "https://www.w3.org/TR/2013/REC-prov-o-20130430/#narrative-example-simple-1"
+description <http://example.com/project/TB#> as TB {
+	uses <http://www.w3.org/2001/XMLSchema#> as xsd
+
+	uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+
+	uses <http://example.com/project/prov#> as prov
+	
+	instance IDM_HIV : prov:Entity [
+		prov:wasDerivedFrom TB_dataset_model
+	]
+	
+	instance TB_dataset_model : prov:Entity [
+		prov:wasGeneratedBy compilationActivity
+		prov:wasAttributedTo Christopher_Dye
+		prov:wasAttributedTo Philip_Glaziou
+		prov:wasAttributedTo Katherine_Floyd
+		prov:wasAttributedTo Mario_Raviglione
+	]
+	
+	instance compilationActivity : prov:Activity [
+		prov:startedAtTime "2011-07-15T01:01:01Z"^^xsd:dateTime
+		prov:endedAtTime "2011-07-15T02:02:02Z"^^xsd:dateTime
+		prov:wasAssociatedWith Christopher_Dye
+		prov:wasAssociatedWith Philip_Glaziou
+		prov:wasAssociatedWith Katherine_Floyd
+		prov:wasAssociatedWith Mario_Raviglione
+		prov:generated TB_dataset_model
+	]
+
+	instance Christopher_Dye : prov:Person [
+		prov:actedOnBehalfOf Office_of_Health_Organization
+	]
+	
+	instance Philip_Glaziou : prov:Person [
+		prov:actedOnBehalfOf Stop_TB_Department
+	]
+	
+	instance Katherine_Floyd : prov:Person [
+		prov:actedOnBehalfOf Stop_TB_Department
+	]
+	
+	instance Mario_Raviglione : prov:Person [
+		prov:actedOnBehalfOf Stop_TB_Department
+	]
+	
+	instance Office_of_Health_Organization : prov:Organization
+	
+	instance Stop_TB_Department : prov:Organization
+	
+	instance WHO : prov:Organization
+}

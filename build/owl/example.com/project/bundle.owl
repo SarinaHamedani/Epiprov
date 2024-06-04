@@ -10,7 +10,9 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:bundle="http://example.com/project/bundle#">
     <owl:Ontology rdf:about="http://example.com/project/bundle">
+        <owl:imports rdf:resource="http://example.com/project/HIV"/>
         <owl:imports rdf:resource="http://example.com/project/LoxiaScotia"/>
+        <owl:imports rdf:resource="http://example.com/project/TB"/>
         <owl:imports rdf:resource="http://example.com/project/prov-bundle"/>
         <owl:imports rdf:resource="http://purl.org/dc/elements/1.1"/>
         <oml:namespace rdf:resource="http://example.com/project/bundle#"/>

@@ -9,4 +9,10 @@ description bundle <http://example.com/project/bundle#> as ^bundle {
     // The description bundle "includes" the Loxia Scotia description 
     includes <http://example.com/project/LoxiaScotia#>
     
+    // The description bundle "includes" the HIV description 
+    includes <http://example.com/project/HIV#>
+    
+    // The description bundle "includes" the TB description 
+    includes <http://example.com/project/TB#>
+    
 }

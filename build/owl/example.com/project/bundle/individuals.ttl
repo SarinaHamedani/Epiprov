@@ -49,6 +49,24 @@
                 <http://example.com/project/LoxiaScotia#aggregationActivity> ;
         owl:sameAs  <http://example.com/project/LoxiaScotia#climateData> .
 
+<http://example.com/project/HIV#Tara_D_Mangal>
+        rdf:type    <http://example.com/project/prov#Person> , <http://example.com/project/prov#ActivityOrAgentOrEntityOrInstantaneousEvent> , owl:Thing , <http://example.com/project/prov#Agent> , <http://example.com/project/prov#ActivityOrAgentOrEntity> ;
+        <http://example.com/project/prov#actedOnBehalfOf>
+                <http://example.com/project/HIV#UNAIDS_Working_Group> ;
+        <http://example.com/project/prov#agentInfluenced>
+                <http://example.com/project/HIV#seroconverter_cohorts> , <http://example.com/project/HIV#IDM_HIV> , <http://example.com/project/HIV#estimated_annual_transition_rates_males> , <http://example.com/project/HIV#compilationActivity> , <http://example.com/project/HIV#initial_seroconversion_probabilities> , <http://example.com/project/HIV#multinomial_linear_regression> ;
+        <http://example.com/project/prov#contributed>
+                <http://example.com/project/HIV#seroconverter_cohorts> , <http://example.com/project/HIV#IDM_HIV> , <http://example.com/project/HIV#initial_seroconversion_probabilities> , <http://example.com/project/HIV#estimated_annual_transition_rates_males> ;
+        <http://example.com/project/prov#influenced>
+                <http://example.com/project/HIV#estimated_annual_transition_rates_males> , <http://example.com/project/HIV#multinomial_linear_regression> , <http://example.com/project/HIV#compilationActivity> , <http://example.com/project/HIV#IDM_HIV> , <http://example.com/project/HIV#initial_seroconversion_probabilities> , <http://example.com/project/HIV#seroconverter_cohorts> ;
+        <http://example.com/project/prov#wasAssociateFor>
+                <http://example.com/project/HIV#multinomial_linear_regression> , <http://example.com/project/HIV#compilationActivity> ;
+        <http://example.com/project/prov#wasInfluencedBy>
+                <http://example.com/project/HIV#UNAIDS_Working_Group> ;
+        <http://example.com/project/prov#wasInfluencedByAgent>
+                <http://example.com/project/HIV#UNAIDS_Working_Group> ;
+        owl:sameAs  <http://example.com/project/HIV#Tara_D_Mangal> .
+
 <http://opencaesar.io/oml#hasSource>
         rdf:type  owl:ObjectProperty .
 
@@ -60,6 +78,28 @@
 
 <http://example.com/project/prov#qualifiedInvalidationOf>
         rdf:type  owl:ObjectProperty .
+
+<http://example.com/project/HIV#estimated_annual_transition_rates_males>
+        rdf:type    <http://example.com/project/prov#ActivityOrAgentOrEntity> , <http://example.com/project/prov#Entity> , <http://example.com/project/prov#ActivityOrAgentOrEntityOrInstantaneousEvent> , owl:Thing ;
+        <http://example.com/project/prov#entityInfluenced>
+                <http://example.com/project/HIV#seroconverter_cohorts> ;
+        <http://example.com/project/prov#influenced>
+                <http://example.com/project/HIV#compilationActivity> ;
+        <http://example.com/project/prov#wasAttributedTo>
+                <http://example.com/project/HIV#Tara_D_Mangal> ;
+        <http://example.com/project/prov#wasDerivedFrom>
+                <http://example.com/project/HIV#seroconverter_cohorts> ;
+        <http://example.com/project/prov#wasGeneratedBy>
+                <http://example.com/project/HIV#multinomial_linear_regression> ;
+        <http://example.com/project/prov#wasInfluencedBy>
+                <http://example.com/project/HIV#multinomial_linear_regression> , <http://example.com/project/HIV#seroconverter_cohorts> , <http://example.com/project/HIV#Tara_D_Mangal> ;
+        <http://example.com/project/prov#wasInfluencedByActivity>
+                <http://example.com/project/HIV#multinomial_linear_regression> ;
+        <http://example.com/project/prov#wasInfluencedByAgent>
+                <http://example.com/project/HIV#Tara_D_Mangal> ;
+        <http://example.com/project/prov#wasUsedBy>
+                <http://example.com/project/HIV#compilationActivity> ;
+        owl:sameAs  <http://example.com/project/HIV#estimated_annual_transition_rates_males> .
 
 <http://example.com/project/prov#generated>
         rdf:type  owl:InverseFunctionalProperty , owl:ObjectProperty .
@@ -157,6 +197,28 @@ owl:topDataProperty  rdf:type  owl:DatatypeProperty .
                 <http://example.com/project/LoxiaScotia#cleaningActivity> ;
         owl:sameAs  <http://example.com/project/LoxiaScotia#gbif_response> .
 
+<http://example.com/project/HIV#compilationActivity>
+        rdf:type    <http://example.com/project/prov#Activity> , owl:Thing , <http://example.com/project/prov#ActivityOrAgentOrEntityOrInstantaneousEvent> , <http://example.com/project/prov#ActivityOrAgentOrEntity> ;
+        <http://example.com/project/prov#activityInfluenced>
+                <http://example.com/project/HIV#IDM_HIV> ;
+        <http://example.com/project/prov#endedAtTime>
+                "2011-07-15T02:02:02Z"^^xsd:dateTime ;
+        <http://example.com/project/prov#generated>
+                <http://example.com/project/HIV#IDM_HIV> ;
+        <http://example.com/project/prov#influenced>
+                <http://example.com/project/HIV#IDM_HIV> ;
+        <http://example.com/project/prov#startedAtTime>
+                "2011-07-15T01:01:01Z"^^xsd:dateTime ;
+        <http://example.com/project/prov#used>
+                <http://example.com/project/HIV#estimated_annual_transition_rates_males> , <http://example.com/project/HIV#initial_seroconversion_probabilities> ;
+        <http://example.com/project/prov#wasAssociatedWith>
+                <http://example.com/project/HIV#Tara_D_Mangal> ;
+        <http://example.com/project/prov#wasInfluencedBy>
+                <http://example.com/project/HIV#Tara_D_Mangal> , <http://example.com/project/HIV#estimated_annual_transition_rates_males> , <http://example.com/project/HIV#initial_seroconversion_probabilities> ;
+        <http://example.com/project/prov#wasInfluencedByAgent>
+                <http://example.com/project/HIV#Tara_D_Mangal> ;
+        owl:sameAs  <http://example.com/project/HIV#compilationActivity> .
+
 <http://example.com/project/prov#HadRole>
         rdf:type  owl:Class .
 
@@ -202,6 +264,34 @@ owl:topDataProperty  rdf:type  owl:DatatypeProperty .
         <http://example.com/project/prov#wasInfluencedByAgent>
                 <http://example.com/project/LoxiaScotia#Sarina> ;
         owl:sameAs  <http://example.com/project/LoxiaScotia#predictionActivity> .
+
+<http://example.com/project/TB#Mario_Raviglione>
+        rdf:type    <http://example.com/project/prov#ActivityOrAgentOrEntity> , owl:Thing , <http://example.com/project/prov#Agent> , <http://example.com/project/prov#ActivityOrAgentOrEntityOrInstantaneousEvent> , <http://example.com/project/prov#Person> ;
+        <http://example.com/project/prov#actedOnBehalfOf>
+                <http://example.com/project/TB#Stop_TB_Department> ;
+        <http://example.com/project/prov#agentInfluenced>
+                <http://example.com/project/TB#TB_dataset_model> , <http://example.com/project/TB#compilationActivity> ;
+        <http://example.com/project/prov#contributed>
+                <http://example.com/project/TB#TB_dataset_model> ;
+        <http://example.com/project/prov#influenced>
+                <http://example.com/project/TB#compilationActivity> , <http://example.com/project/TB#TB_dataset_model> ;
+        <http://example.com/project/prov#wasAssociateFor>
+                <http://example.com/project/TB#compilationActivity> ;
+        <http://example.com/project/prov#wasInfluencedBy>
+                <http://example.com/project/TB#Stop_TB_Department> ;
+        <http://example.com/project/prov#wasInfluencedByAgent>
+                <http://example.com/project/TB#Stop_TB_Department> ;
+        owl:sameAs  <http://example.com/project/TB#Mario_Raviglione> .
+
+<http://example.com/project/TB#Stop_TB_Department>
+        rdf:type    <http://example.com/project/prov#Organization> , <http://example.com/project/prov#ActivityOrAgentOrEntityOrInstantaneousEvent> , <http://example.com/project/prov#ActivityOrAgentOrEntity> , <http://example.com/project/prov#Agent> , owl:Thing ;
+        <http://example.com/project/prov#agentInfluenced>
+                <http://example.com/project/TB#Philip_Glaziou> , <http://example.com/project/TB#Mario_Raviglione> , <http://example.com/project/TB#Katherine_Floyd> ;
+        <http://example.com/project/prov#hadDelegate>
+                <http://example.com/project/TB#Katherine_Floyd> , <http://example.com/project/TB#Philip_Glaziou> , <http://example.com/project/TB#Mario_Raviglione> ;
+        <http://example.com/project/prov#influenced>
+                <http://example.com/project/TB#Mario_Raviglione> , <http://example.com/project/TB#Philip_Glaziou> , <http://example.com/project/TB#Katherine_Floyd> ;
+        owl:sameAs  <http://example.com/project/TB#Stop_TB_Department> .
 
 owl:topObjectProperty
         rdf:type  owl:SymmetricProperty , owl:TransitiveProperty , owl:ObjectProperty .
@@ -343,6 +433,42 @@ owl:topObjectProperty
 <http://example.com/project/prov#Communication>
         rdf:type  owl:Class .
 
+<http://example.com/project/HIV#initial_seroconversion_probabilities>
+        rdf:type    <http://example.com/project/prov#ActivityOrAgentOrEntity> , owl:Thing , <http://example.com/project/prov#Entity> , <http://example.com/project/prov#ActivityOrAgentOrEntityOrInstantaneousEvent> ;
+        <http://example.com/project/prov#entityInfluenced>
+                <http://example.com/project/HIV#seroconverter_cohorts> ;
+        <http://example.com/project/prov#influenced>
+                <http://example.com/project/HIV#compilationActivity> ;
+        <http://example.com/project/prov#wasAttributedTo>
+                <http://example.com/project/HIV#Tara_D_Mangal> ;
+        <http://example.com/project/prov#wasDerivedFrom>
+                <http://example.com/project/HIV#seroconverter_cohorts> ;
+        <http://example.com/project/prov#wasInfluencedBy>
+                <http://example.com/project/HIV#seroconverter_cohorts> , <http://example.com/project/HIV#Tara_D_Mangal> ;
+        <http://example.com/project/prov#wasInfluencedByAgent>
+                <http://example.com/project/HIV#Tara_D_Mangal> ;
+        <http://example.com/project/prov#wasUsedBy>
+                <http://example.com/project/HIV#compilationActivity> ;
+        owl:sameAs  <http://example.com/project/HIV#initial_seroconversion_probabilities> .
+
+<http://example.com/project/TB#Christopher_Dye>
+        rdf:type    <http://example.com/project/prov#Agent> , <http://example.com/project/prov#ActivityOrAgentOrEntity> , <http://example.com/project/prov#Person> , owl:Thing , <http://example.com/project/prov#ActivityOrAgentOrEntityOrInstantaneousEvent> ;
+        <http://example.com/project/prov#actedOnBehalfOf>
+                <http://example.com/project/TB#Office_of_Health_Organization> ;
+        <http://example.com/project/prov#agentInfluenced>
+                <http://example.com/project/TB#compilationActivity> , <http://example.com/project/TB#TB_dataset_model> ;
+        <http://example.com/project/prov#contributed>
+                <http://example.com/project/TB#TB_dataset_model> ;
+        <http://example.com/project/prov#influenced>
+                <http://example.com/project/TB#TB_dataset_model> , <http://example.com/project/TB#compilationActivity> ;
+        <http://example.com/project/prov#wasAssociateFor>
+                <http://example.com/project/TB#compilationActivity> ;
+        <http://example.com/project/prov#wasInfluencedBy>
+                <http://example.com/project/TB#Office_of_Health_Organization> ;
+        <http://example.com/project/prov#wasInfluencedByAgent>
+                <http://example.com/project/TB#Office_of_Health_Organization> ;
+        owl:sameAs  <http://example.com/project/TB#Christopher_Dye> .
+
 <http://example.com/project/prov#EmptyCollection>
         rdf:type  owl:Class .
 
@@ -373,6 +499,26 @@ owl:topObjectProperty
         <http://example.com/project/prov#wasUsedBy>
                 <http://example.com/project/LoxiaScotia#spatialPixelDataFrameActivity> , <http://example.com/project/LoxiaScotia#predictionActivity> ;
         owl:sameAs  <http://example.com/project/LoxiaScotia#climate_df> .
+
+<http://example.com/project/TB#compilationActivity>
+        rdf:type    <http://example.com/project/prov#ActivityOrAgentOrEntityOrInstantaneousEvent> , <http://example.com/project/prov#ActivityOrAgentOrEntity> , owl:Thing , <http://example.com/project/prov#Activity> ;
+        <http://example.com/project/prov#activityInfluenced>
+                <http://example.com/project/TB#TB_dataset_model> ;
+        <http://example.com/project/prov#endedAtTime>
+                "2011-07-15T02:02:02Z"^^xsd:dateTime ;
+        <http://example.com/project/prov#generated>
+                <http://example.com/project/TB#TB_dataset_model> ;
+        <http://example.com/project/prov#influenced>
+                <http://example.com/project/TB#TB_dataset_model> ;
+        <http://example.com/project/prov#startedAtTime>
+                "2011-07-15T01:01:01Z"^^xsd:dateTime ;
+        <http://example.com/project/prov#wasAssociatedWith>
+                <http://example.com/project/TB#Katherine_Floyd> , <http://example.com/project/TB#Mario_Raviglione> , <http://example.com/project/TB#Philip_Glaziou> , <http://example.com/project/TB#Christopher_Dye> ;
+        <http://example.com/project/prov#wasInfluencedBy>
+                <http://example.com/project/TB#Christopher_Dye> , <http://example.com/project/TB#Mario_Raviglione> , <http://example.com/project/TB#Philip_Glaziou> , <http://example.com/project/TB#Katherine_Floyd> ;
+        <http://example.com/project/prov#wasInfluencedByAgent>
+                <http://example.com/project/TB#Philip_Glaziou> , <http://example.com/project/TB#Christopher_Dye> , <http://example.com/project/TB#Katherine_Floyd> , <http://example.com/project/TB#Mario_Raviglione> ;
+        owl:sameAs  <http://example.com/project/TB#compilationActivity> .
 
 <http://example.com/project/LoxiaScotia#aggregatedByLocation>
         rdf:type    <http://example.com/project/prov#ActivityOrAgentOrEntityOrInstantaneousEvent> , <http://example.com/project/prov#Entity> , <http://example.com/project/prov#ActivityOrAgentOrEntity> , owl:Thing ;
@@ -415,6 +561,28 @@ owl:topObjectProperty
 
 <http://example.com/project/prov#Entity>
         rdf:type  owl:Class .
+
+<http://example.com/project/HIV#multinomial_linear_regression>
+        rdf:type    <http://example.com/project/prov#Activity> , <http://example.com/project/prov#ActivityOrAgentOrEntity> , <http://example.com/project/prov#ActivityOrAgentOrEntityOrInstantaneousEvent> , owl:Thing ;
+        <http://example.com/project/prov#activityInfluenced>
+                <http://example.com/project/HIV#estimated_annual_transition_rates_males> ;
+        <http://example.com/project/prov#endedAtTime>
+                "2011-07-14T02:02:02Z"^^xsd:dateTime ;
+        <http://example.com/project/prov#generated>
+                <http://example.com/project/HIV#estimated_annual_transition_rates_males> ;
+        <http://example.com/project/prov#influenced>
+                <http://example.com/project/HIV#estimated_annual_transition_rates_males> ;
+        <http://example.com/project/prov#startedAtTime>
+                "2011-07-14T01:01:01Z"^^xsd:dateTime ;
+        <http://example.com/project/prov#used>
+                <http://example.com/project/HIV#seroconverter_cohorts> ;
+        <http://example.com/project/prov#wasAssociatedWith>
+                <http://example.com/project/HIV#Tara_D_Mangal> ;
+        <http://example.com/project/prov#wasInfluencedBy>
+                <http://example.com/project/HIV#Tara_D_Mangal> , <http://example.com/project/HIV#seroconverter_cohorts> ;
+        <http://example.com/project/prov#wasInfluencedByAgent>
+                <http://example.com/project/HIV#Tara_D_Mangal> ;
+        owl:sameAs  <http://example.com/project/HIV#multinomial_linear_regression> .
 
 <http://example.com/project/prov#hadPrimarySource>
         rdf:type  owl:ObjectProperty .
@@ -468,11 +636,39 @@ owl:topObjectProperty
 <http://example.com/project/prov#qualifiedInfluence>
         rdf:type  owl:ObjectProperty .
 
+<http://example.com/project/TB#Philip_Glaziou>
+        rdf:type    <http://example.com/project/prov#Agent> , <http://example.com/project/prov#ActivityOrAgentOrEntityOrInstantaneousEvent> , <http://example.com/project/prov#Person> , owl:Thing , <http://example.com/project/prov#ActivityOrAgentOrEntity> ;
+        <http://example.com/project/prov#actedOnBehalfOf>
+                <http://example.com/project/TB#Stop_TB_Department> ;
+        <http://example.com/project/prov#agentInfluenced>
+                <http://example.com/project/TB#TB_dataset_model> , <http://example.com/project/TB#compilationActivity> ;
+        <http://example.com/project/prov#contributed>
+                <http://example.com/project/TB#TB_dataset_model> ;
+        <http://example.com/project/prov#influenced>
+                <http://example.com/project/TB#TB_dataset_model> , <http://example.com/project/TB#compilationActivity> ;
+        <http://example.com/project/prov#wasAssociateFor>
+                <http://example.com/project/TB#compilationActivity> ;
+        <http://example.com/project/prov#wasInfluencedBy>
+                <http://example.com/project/TB#Stop_TB_Department> ;
+        <http://example.com/project/prov#wasInfluencedByAgent>
+                <http://example.com/project/TB#Stop_TB_Department> ;
+        owl:sameAs  <http://example.com/project/TB#Philip_Glaziou> .
+
 <http://example.com/project/prov#qualifiedInvalidation>
         rdf:type  owl:ObjectProperty .
 
 <http://example.com/project/prov#Delegation>
         rdf:type  owl:Class .
+
+<http://example.com/project/HIV#UNAIDS_Working_Group>
+        rdf:type    <http://example.com/project/prov#ActivityOrAgentOrEntity> , <http://example.com/project/prov#Organization> , <http://example.com/project/prov#ActivityOrAgentOrEntityOrInstantaneousEvent> , <http://example.com/project/prov#Agent> , owl:Thing ;
+        <http://example.com/project/prov#agentInfluenced>
+                <http://example.com/project/HIV#Tara_D_Mangal> ;
+        <http://example.com/project/prov#hadDelegate>
+                <http://example.com/project/HIV#Tara_D_Mangal> ;
+        <http://example.com/project/prov#influenced>
+                <http://example.com/project/HIV#Tara_D_Mangal> ;
+        owl:sameAs  <http://example.com/project/HIV#UNAIDS_Working_Group> .
 
 <http://example.com/project/LoxiaScotia#aggregationActivity>
         rdf:type    <http://example.com/project/prov#ActivityOrAgentOrEntity> , <http://example.com/project/prov#ActivityOrAgentOrEntityOrInstantaneousEvent> , owl:Thing , <http://example.com/project/prov#Activity> ;
@@ -496,6 +692,24 @@ owl:topObjectProperty
                 <http://example.com/project/LoxiaScotia#Sarina> ;
         owl:sameAs  <http://example.com/project/LoxiaScotia#aggregationActivity> .
 
+<http://example.com/project/TB#Katherine_Floyd>
+        rdf:type    <http://example.com/project/prov#Agent> , <http://example.com/project/prov#ActivityOrAgentOrEntityOrInstantaneousEvent> , <http://example.com/project/prov#Person> , <http://example.com/project/prov#ActivityOrAgentOrEntity> , owl:Thing ;
+        <http://example.com/project/prov#actedOnBehalfOf>
+                <http://example.com/project/TB#Stop_TB_Department> ;
+        <http://example.com/project/prov#agentInfluenced>
+                <http://example.com/project/TB#compilationActivity> , <http://example.com/project/TB#TB_dataset_model> ;
+        <http://example.com/project/prov#contributed>
+                <http://example.com/project/TB#TB_dataset_model> ;
+        <http://example.com/project/prov#influenced>
+                <http://example.com/project/TB#TB_dataset_model> , <http://example.com/project/TB#compilationActivity> ;
+        <http://example.com/project/prov#wasAssociateFor>
+                <http://example.com/project/TB#compilationActivity> ;
+        <http://example.com/project/prov#wasInfluencedBy>
+                <http://example.com/project/TB#Stop_TB_Department> ;
+        <http://example.com/project/prov#wasInfluencedByAgent>
+                <http://example.com/project/TB#Stop_TB_Department> ;
+        owl:sameAs  <http://example.com/project/TB#Katherine_Floyd> .
+
 <http://example.com/project/prov#hadActivity>
         rdf:type  owl:ObjectProperty .
 
@@ -511,6 +725,24 @@ owl:topObjectProperty
         <http://example.com/project/prov#influenced>
                 <http://example.com/project/LoxiaScotia#nationalRegionsList> ;
         owl:sameAs  <http://example.com/project/LoxiaScotia#civil_action_group> .
+
+<http://example.com/project/HIV#seroconverter_cohorts>
+        rdf:type    owl:Thing , <http://example.com/project/prov#ActivityOrAgentOrEntityOrInstantaneousEvent> , <http://example.com/project/prov#ActivityOrAgentOrEntity> , <http://example.com/project/prov#Entity> ;
+        <http://example.com/project/prov#hadDerivation>
+                <http://example.com/project/HIV#initial_seroconversion_probabilities> , <http://example.com/project/HIV#estimated_annual_transition_rates_males> ;
+        <http://example.com/project/prov#influenced>
+                <http://example.com/project/HIV#multinomial_linear_regression> , <http://example.com/project/HIV#initial_seroconversion_probabilities> , <http://example.com/project/HIV#estimated_annual_transition_rates_males> ;
+        <http://example.com/project/prov#wasAttributedTo>
+                <http://example.com/project/HIV#Tara_D_Mangal> ;
+        <http://example.com/project/prov#wasInfluencedBy>
+                <http://example.com/project/HIV#Tara_D_Mangal> ;
+        <http://example.com/project/prov#wasInfluencedByAgent>
+                <http://example.com/project/HIV#Tara_D_Mangal> ;
+        <http://example.com/project/prov#wasInfluencedByEntity>
+                <http://example.com/project/HIV#estimated_annual_transition_rates_males> , <http://example.com/project/HIV#initial_seroconversion_probabilities> ;
+        <http://example.com/project/prov#wasUsedBy>
+                <http://example.com/project/HIV#multinomial_linear_regression> ;
+        owl:sameAs  <http://example.com/project/HIV#seroconverter_cohorts> .
 
 <http://example.com/project/prov#QualifiedInfluence>
         rdf:type  owl:Class .
@@ -536,6 +768,26 @@ owl:topObjectProperty
                 <http://example.com/project/LoxiaScotia#createModelDataActivity> ;
         owl:sameAs  <http://example.com/project/LoxiaScotia#pseudo_absence_data> .
 
+<http://example.com/project/TB#TB_dataset_model>
+        rdf:type    owl:Thing , <http://example.com/project/prov#ActivityOrAgentOrEntity> , <http://example.com/project/prov#Entity> , <http://example.com/project/prov#ActivityOrAgentOrEntityOrInstantaneousEvent> ;
+        <http://example.com/project/prov#hadDerivation>
+                <http://example.com/project/TB#IDM_HIV> ;
+        <http://example.com/project/prov#influenced>
+                <http://example.com/project/TB#IDM_HIV> ;
+        <http://example.com/project/prov#wasAttributedTo>
+                <http://example.com/project/TB#Christopher_Dye> , <http://example.com/project/TB#Mario_Raviglione> , <http://example.com/project/TB#Katherine_Floyd> , <http://example.com/project/TB#Philip_Glaziou> ;
+        <http://example.com/project/prov#wasGeneratedBy>
+                <http://example.com/project/TB#compilationActivity> ;
+        <http://example.com/project/prov#wasInfluencedBy>
+                <http://example.com/project/TB#Mario_Raviglione> , <http://example.com/project/TB#Katherine_Floyd> , <http://example.com/project/TB#compilationActivity> , <http://example.com/project/TB#Christopher_Dye> , <http://example.com/project/TB#Philip_Glaziou> ;
+        <http://example.com/project/prov#wasInfluencedByActivity>
+                <http://example.com/project/TB#compilationActivity> ;
+        <http://example.com/project/prov#wasInfluencedByAgent>
+                <http://example.com/project/TB#Christopher_Dye> , <http://example.com/project/TB#Philip_Glaziou> , <http://example.com/project/TB#Mario_Raviglione> , <http://example.com/project/TB#Katherine_Floyd> ;
+        <http://example.com/project/prov#wasInfluencedByEntity>
+                <http://example.com/project/TB#IDM_HIV> ;
+        owl:sameAs  <http://example.com/project/TB#TB_dataset_model> .
+
 <http://example.com/project/prov#InfluenceOrDelegationOrDerivationOrEndOrStart>
         rdf:type  owl:Class .
 
@@ -553,6 +805,10 @@ owl:topObjectProperty
 
 <http://example.com/project/prov#qualifiedDelegationOf>
         rdf:type  owl:ObjectProperty .
+
+<http://example.com/project/TB#WHO>
+        rdf:type    <http://example.com/project/prov#ActivityOrAgentOrEntity> , <http://example.com/project/prov#Organization> , <http://example.com/project/prov#ActivityOrAgentOrEntityOrInstantaneousEvent> , <http://example.com/project/prov#Agent> , owl:Thing ;
+        owl:sameAs  <http://example.com/project/TB#WHO> .
 
 <http://example.com/project/prov#HadActivity>
         rdf:type  owl:Class .
@@ -661,6 +917,16 @@ owl:topObjectProperty
 <http://example.com/project/prov#hasGeneration>
         rdf:type  owl:ObjectProperty .
 
+<http://example.com/project/TB#Office_of_Health_Organization>
+        rdf:type    <http://example.com/project/prov#ActivityOrAgentOrEntity> , <http://example.com/project/prov#Organization> , <http://example.com/project/prov#ActivityOrAgentOrEntityOrInstantaneousEvent> , <http://example.com/project/prov#Agent> , owl:Thing ;
+        <http://example.com/project/prov#agentInfluenced>
+                <http://example.com/project/TB#Christopher_Dye> ;
+        <http://example.com/project/prov#hadDelegate>
+                <http://example.com/project/TB#Christopher_Dye> ;
+        <http://example.com/project/prov#influenced>
+                <http://example.com/project/TB#Christopher_Dye> ;
+        owl:sameAs  <http://example.com/project/TB#Office_of_Health_Organization> .
+
 <http://example.com/project/prov#invalidated>
         rdf:type  owl:InverseFunctionalProperty , owl:ObjectProperty .
 
@@ -686,6 +952,16 @@ owl:Thing  rdf:type  owl:Class .
 
 <http://example.com/project/prov#invalidatedAtTime>
         rdf:type  owl:DatatypeProperty .
+
+<http://example.com/project/TB#IDM_HIV>
+        rdf:type    <http://example.com/project/prov#ActivityOrAgentOrEntity> , <http://example.com/project/prov#ActivityOrAgentOrEntityOrInstantaneousEvent> , <http://example.com/project/prov#Entity> , owl:Thing ;
+        <http://example.com/project/prov#entityInfluenced>
+                <http://example.com/project/TB#TB_dataset_model> ;
+        <http://example.com/project/prov#wasDerivedFrom>
+                <http://example.com/project/TB#TB_dataset_model> ;
+        <http://example.com/project/prov#wasInfluencedBy>
+                <http://example.com/project/TB#TB_dataset_model> ;
+        owl:sameAs  <http://example.com/project/TB#IDM_HIV> .
 
 <http://example.com/project/prov#hadDelegate>
         rdf:type  owl:ObjectProperty .
@@ -946,6 +1222,20 @@ owl:Thing  rdf:type  owl:Class .
 <http://example.com/project/prov#activityOfInfluence>
         rdf:type  owl:ObjectProperty .
 
+<http://example.com/project/HIV#IDM_HIV>
+        rdf:type    <http://example.com/project/prov#ActivityOrAgentOrEntityOrInstantaneousEvent> , <http://example.com/project/prov#ActivityOrAgentOrEntity> , owl:Thing , <http://example.com/project/prov#Entity> ;
+        <http://example.com/project/prov#wasAttributedTo>
+                <http://example.com/project/HIV#Tara_D_Mangal> ;
+        <http://example.com/project/prov#wasGeneratedBy>
+                <http://example.com/project/HIV#compilationActivity> ;
+        <http://example.com/project/prov#wasInfluencedBy>
+                <http://example.com/project/HIV#compilationActivity> , <http://example.com/project/HIV#Tara_D_Mangal> ;
+        <http://example.com/project/prov#wasInfluencedByActivity>
+                <http://example.com/project/HIV#compilationActivity> ;
+        <http://example.com/project/prov#wasInfluencedByAgent>
+                <http://example.com/project/HIV#Tara_D_Mangal> ;
+        owl:sameAs  <http://example.com/project/HIV#IDM_HIV> .
+
 owl:Nothing  rdf:type  owl:Class .
 
 <http://example.com/project/prov#qualifiedRevision>
@@ -961,7 +1251,7 @@ owl:Nothing  rdf:type  owl:Class .
         rdf:type         owl:Ontology ;
         rdfs:comment     "Generated by Owl Reason 2.8.1" ;
         owl:imports      <http://example.com/project/bundle> ;
-        owl:versionInfo  "1716692104" .
+        owl:versionInfo  "1717367595" .
 
 <http://example.com/project/prov#qualifiedGeneration>
         rdf:type  owl:ObjectProperty .
