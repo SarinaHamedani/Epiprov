@@ -1,0 +1,171 @@
+document
+  prefix prov <http://www.w3.org/ns/prov#>
+  prefix ex <http://www.example.org#>
+  prefix dcterms <http://purl.org/dc/terms/>
+  prefix foaf <http://xmlns.com/foaf/0.1/>
+
+
+  entity(ex:SAIUGR)
+
+  activity(ex:compile)
+
+  wasGeneratedBy(ex:SAIUGR, ex:compile,  2012-03-02T10:30:00)
+  wasAssociatedWith(ex:compile, ex:SAIUGR_AUTHORS, -)
+
+  wasDerivedFrom(ex:theta, ex:Reference_36)
+  wasDerivedFrom(ex:omega, ex:Reference_37)
+  wasDerivedFrom(ex:zetaI, ex:Reference_38)
+  wasDerivedFrom(ex:zetaI, ex:Reference_39)
+  wasDerivedFrom(ex:zetaG, ex:Reference_40)
+  wasDerivedFrom(ex:beta, ex:SAIUGR)
+  wasDerivedFrom(ex:etaI, ex:SAIUGR)
+  wasDerivedFrom(ex:etaU, ex:SAIUGR)
+  wasDerivedFrom(ex:gammaI, ex:SAIUGR)
+  wasDerivedFrom(ex:gammaU, ex:SAIUGR)
+  wasDerivedFrom(ex:gammaG, ex:Reference_5)
+  wasDerivedFrom(ex:mu, ex:Reference_41)
+  wasDerivedFrom(ex:muI, ex:Reference_12)
+  wasDerivedFrom(ex:muG, ex:Reference_12)
+  wasDerivedFrom(ex:muU, ex:Reference_12)
+  wasDerivedFrom(ex:SAIUGR, ex:theta)
+  wasDerivedFrom(ex:SAIUGR, ex:omega)
+  wasDerivedFrom(ex:SAIUGR, ex:zetaI)
+  wasDerivedFrom(ex:SAIUGR, ex:zetaA)
+  wasDerivedFrom(ex:SAIUGR, ex:zetaG)
+  wasDerivedFrom(ex:SAIUGR, ex:mu)
+  wasDerivedFrom(ex:SAIUGR, ex:muU)
+  wasDerivedFrom(ex:SAIUGR, ex:muI)
+  wasDerivedFrom(ex:SAIUGR, ex:muG)
+  wasDerivedFrom(ex:SAIUGR, ex:gammaG)
+  wasDerivedFrom(ex:Reference_36, ex:Estimates_of_severity)
+  wasDerivedFrom(ex:Estimates_of_severity, ex:Repatriation_Flights)
+  wasDerivedFrom(ex:Estimates_of_severity, ex:Diamond_Princess_Cruise_Ship)
+  wasDerivedFrom(ex:Estimates_of_severity, ex:Covid_Cases_Jan)
+  wasDerivedFrom(ex:Reference_37, ex:Human_Mobility)
+  wasDerivedFrom(ex:Reference_12, ex:Covid_Cases_April)
+  wasDerivedFrom(ex:Reference_41, ex:Open_Government_Data)
+  wasDerivedFrom(ex:Open_Government_Data, ex:OGD)
+
+  entity(ex:Estimates_of_severity, [foaf:state="preprint"])
+  entity(ex:Repatriation_Flights, [prov:type='prov:Dataset'])
+  entity(ex:Diamond_Princess_Cruise_Ship, [prov:type='prov:Dataset'])
+
+  entity(ex:Covid_Cases, [prov:type='prov:Dataset'])
+  entity(ex:Covid_Cases_Jan, [prov:type='prov:Dataset'])
+
+  entity(ex:Open_Government_Data, [prov:type='prov:Dataset'])
+
+  entity(ex:Human_Mobility, [prov:type='prov:Dataset'])
+
+  entity(ex:Covid_Cases_April, [prov:type='prov:Dataset'])
+
+  entity(ex:theta)
+  entity(ex:Reference_36)
+
+  entity(ex:omega)
+  entity(ex:Reference_37)
+
+  entity(ex:zetaA)
+  entity(ex:Reference_38)
+
+  entity(ex:zetaI)
+  entity(ex:Reference_39)
+
+  entity(ex:zetaG)
+  entity(ex:Reference_40)
+
+  entity(ex:beta)
+  entity(ex:etaI)
+  entity(ex:etaU)
+  entity(ex:gammaI)
+  entity(ex:gammaU)
+
+  entity(ex:gammaG)
+  entity(ex:Reference_5)
+
+  entity(ex:muI)
+  entity(ex:muU)
+  entity(ex:muG)
+  entity(ex:Reference_12)
+
+  entity(ex:mu)
+  entity(ex:Reference_41)
+
+  agent(ex:SAIUGR_AUTHORS,
+        [prov:type='prov:Person', foaf:givenName="Ambalarajan, V., Mallela, A.R., Sivakumar, V. et al"])
+
+  agent(ex:AUTHORS_36,
+        [prov:type='prov:Organization',
+         foaf:name="Imperial College COVID-19 Response Team"])
+
+  agent(ex:AUTHORS_37,
+        [prov:type='prov:Person',
+         foaf:name="LI, Ruiyun, PEI, Sen, CHEN, Bin, et al."])
+
+  agent(ex:AUTHORS_38,
+        [prov:type='prov:Person',
+         foaf:name="Gumel, Abba B., et al."])
+
+  agent(ex:AUTHORS_39,
+        [prov:type='prov:Person',
+         foaf:name="Nadim, S. S., Ghosh, I., & Chattopadhyay, J."])
+        
+  agent(ex:AUTHORS_40,
+        [prov:type='prov:Person',
+         foaf:name="Biswas, Sudhanshu Kumar, et al."])
+        
+  agent(ex:AUTHORS_5,
+        [prov:type='prov:Person',
+         foaf:name="Mohammed-Awel, Jemal, and Abba B. Gumel."])
+        
+  agent(ex:AUTHORS_12,
+        [prov:type='prov:Person',
+         foaf:name="Bajiya, V. P., Bugalia, S., & Tripathi, J. P."])
+  
+  agent(ex:AUTHORS_41,
+        [prov:type='prov:Person',
+         foaf:name="Khajanchi, S., Sarkar, K., & Mondal, J."])
+  
+  agent(ex:SEVERITY_AUTHORS,
+        [prov:type='prov:Person',
+         foaf:name="Verity, et al."])
+
+  agent(ex:REPATRIATION_FLIGHT_TEAM,
+        [prov:type='prov:Organization',
+         foaf:name="Novel Coronavirus Pneumonia Emergency Response Epidemiology Team"])
+
+  agent(ex:CRUISE_SHIP_AUTHORS,
+        [prov:type='prov:Organization',
+         foaf:name="Ministry of Health, Labour and Welfare"])
+
+  agent(ex:WHO,
+        [prov:type='prov:Organization',
+         foaf:name="World Health Organization"])
+
+  agent(ex:TENCENT,
+        [prov:type='prov:Organization',
+         foaf:name="Tencent"])
+
+  agent(ex:OGD,
+        [prov:type='prov:Organization',
+         foaf:name="Open Government Data Platform India"])
+
+  specializationOf(ex:Covid_Cases_Jan, ex:Covid_Cases)    
+  specializationOf(ex:Covid_Cases_April, ex:Covid_Cases)
+  
+  wasAttributedTo(ex:Reference_36, ex:AUTHORS_36)
+  wasAttributedTo(ex:Reference_37, ex:AUTHORS_37)
+  wasAttributedTo(ex:Reference_38, ex:AUTHORS_38)
+  wasAttributedTo(ex:Reference_39, ex:AUTHORS_39)
+  wasAttributedTo(ex:Reference_40, ex:AUTHORS_40)
+  wasAttributedTo(ex:Reference_5, ex:AUTHORS_5)
+  wasAttributedTo(ex:Reference_12, ex:AUTHORS_12)
+  wasAttributedTo(ex:Reference_41, ex:AUTHORS_41)
+  wasAttributedTo(ex:SAIUGR, ex:SAIUGR_AUTHORS)
+  wasAttributedTo(ex:Estimates_of_severity, ex:SEVERITY_AUTHORS)
+  wasAttributedTo(ex:Repatriation_Flights, ex:REPATRIATION_FLIGHT_TEAM)
+  wasAttributedTo(ex:Diamond_Princess_Cruise_Ship, ex:CRUISE_SHIP_AUTHORS)
+  wasAttributedTo(ex:Covid_Cases, ex:WHO)
+  wasAttributedTo(ex:Human_Mobility, ex:TENCENT)
+
+endDocument

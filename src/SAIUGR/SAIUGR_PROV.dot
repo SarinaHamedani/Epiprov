@@ -1,0 +1,345 @@
+digraph "PROV" { size="16,12"; rankdir="BT"; 
+"http://www.example.org#compile" [fillcolor="#9FB1FC",color="#0000FF",shape="polygon",sides="4",style="filled",label="compile",URL="http://www.example.org#compile"]
+"http://www.example.org#SAIUGR" [fillcolor="#FFFC87",color="#808080",style="filled",label="SAIUGR",URL="http://www.example.org#SAIUGR"]
+"http://www.example.org#Estimates_of_severity" [fillcolor="#FFFC87",color="#808080",style="filled",label="Estimates_of_severity",URL="http://www.example.org#Estimates_of_severity"]
+"-attrs0" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">state:</TD>
+	    <TD align="left">preprint</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs0" -> "http://www.example.org#Estimates_of_severity" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#Repatriation_Flights" [fillcolor="#FFFC87",color="#808080",style="filled",label="Repatriation_Flights",URL="http://www.example.org#Repatriation_Flights"]
+"-attrs1" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">prov:Dataset</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs1" -> "http://www.example.org#Repatriation_Flights" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#Diamond_Princess_Cruise_Ship" [fillcolor="#FFFC87",color="#808080",style="filled",label="Diamond_Princess_Cruise_Ship",URL="http://www.example.org#Diamond_Princess_Cruise_Ship"]
+"-attrs2" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">prov:Dataset</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs2" -> "http://www.example.org#Diamond_Princess_Cruise_Ship" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#Covid_Cases" [fillcolor="#FFFC87",color="#808080",style="filled",label="Covid_Cases",URL="http://www.example.org#Covid_Cases"]
+"-attrs3" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">prov:Dataset</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs3" -> "http://www.example.org#Covid_Cases" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#Covid_Cases_Jan" [fillcolor="#FFFC87",color="#808080",style="filled",label="Covid_Cases_Jan",URL="http://www.example.org#Covid_Cases_Jan"]
+"-attrs4" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">prov:Dataset</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs4" -> "http://www.example.org#Covid_Cases_Jan" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#Open_Government_Data" [fillcolor="#FFFC87",color="#808080",style="filled",label="Open_Government_Data",URL="http://www.example.org#Open_Government_Data"]
+"-attrs5" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">prov:Dataset</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs5" -> "http://www.example.org#Open_Government_Data" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#Human_Mobility" [fillcolor="#FFFC87",color="#808080",style="filled",label="Human_Mobility",URL="http://www.example.org#Human_Mobility"]
+"-attrs6" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">prov:Dataset</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs6" -> "http://www.example.org#Human_Mobility" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#Covid_Cases_April" [fillcolor="#FFFC87",color="#808080",style="filled",label="Covid_Cases_April",URL="http://www.example.org#Covid_Cases_April"]
+"-attrs7" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">prov:Dataset</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs7" -> "http://www.example.org#Covid_Cases_April" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#theta" [fillcolor="#FFFC87",color="#808080",style="filled",label="theta",URL="http://www.example.org#theta"]
+"http://www.example.org#Reference_36" [fillcolor="#FFFC87",color="#808080",style="filled",label="Reference_36",URL="http://www.example.org#Reference_36"]
+"http://www.example.org#omega" [fillcolor="#FFFC87",color="#808080",style="filled",label="omega",URL="http://www.example.org#omega"]
+"http://www.example.org#Reference_37" [fillcolor="#FFFC87",color="#808080",style="filled",label="Reference_37",URL="http://www.example.org#Reference_37"]
+"http://www.example.org#zetaA" [fillcolor="#FFFC87",color="#808080",style="filled",label="zetaA",URL="http://www.example.org#zetaA"]
+"http://www.example.org#Reference_38" [fillcolor="#FFFC87",color="#808080",style="filled",label="Reference_38",URL="http://www.example.org#Reference_38"]
+"http://www.example.org#zetaI" [fillcolor="#FFFC87",color="#808080",style="filled",label="zetaI",URL="http://www.example.org#zetaI"]
+"http://www.example.org#Reference_39" [fillcolor="#FFFC87",color="#808080",style="filled",label="Reference_39",URL="http://www.example.org#Reference_39"]
+"http://www.example.org#zetaG" [fillcolor="#FFFC87",color="#808080",style="filled",label="zetaG",URL="http://www.example.org#zetaG"]
+"http://www.example.org#Reference_40" [fillcolor="#FFFC87",color="#808080",style="filled",label="Reference_40",URL="http://www.example.org#Reference_40"]
+"http://www.example.org#beta" [fillcolor="#FFFC87",color="#808080",style="filled",label="beta",URL="http://www.example.org#beta"]
+"http://www.example.org#etaI" [fillcolor="#FFFC87",color="#808080",style="filled",label="etaI",URL="http://www.example.org#etaI"]
+"http://www.example.org#etaU" [fillcolor="#FFFC87",color="#808080",style="filled",label="etaU",URL="http://www.example.org#etaU"]
+"http://www.example.org#gammaI" [fillcolor="#FFFC87",color="#808080",style="filled",label="gammaI",URL="http://www.example.org#gammaI"]
+"http://www.example.org#gammaU" [fillcolor="#FFFC87",color="#808080",style="filled",label="gammaU",URL="http://www.example.org#gammaU"]
+"http://www.example.org#gammaG" [fillcolor="#FFFC87",color="#808080",style="filled",label="gammaG",URL="http://www.example.org#gammaG"]
+"http://www.example.org#Reference_5" [fillcolor="#FFFC87",color="#808080",style="filled",label="Reference_5",URL="http://www.example.org#Reference_5"]
+"http://www.example.org#muI" [fillcolor="#FFFC87",color="#808080",style="filled",label="muI",URL="http://www.example.org#muI"]
+"http://www.example.org#muU" [fillcolor="#FFFC87",color="#808080",style="filled",label="muU",URL="http://www.example.org#muU"]
+"http://www.example.org#muG" [fillcolor="#FFFC87",color="#808080",style="filled",label="muG",URL="http://www.example.org#muG"]
+"http://www.example.org#Reference_12" [fillcolor="#FFFC87",color="#808080",style="filled",label="Reference_12",URL="http://www.example.org#Reference_12"]
+"http://www.example.org#mu" [fillcolor="#FFFC87",color="#808080",style="filled",label="mu",URL="http://www.example.org#mu"]
+"http://www.example.org#Reference_41" [fillcolor="#FFFC87",color="#808080",style="filled",label="Reference_41",URL="http://www.example.org#Reference_41"]
+"http://www.example.org#SAIUGR_AUTHORS" [fillcolor="#FDB266",shape="house",style="filled",label="SAIUGR_AUTHORS",URL="http://www.example.org#SAIUGR_AUTHORS"]
+"-attrs8" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">prov:Person</TD>
+	</TR>
+	<TR>
+	    <TD align="left">givenName:</TD>
+	    <TD align="left">Ambalarajan, V., Mallela, A.R., Sivakumar, V. et al</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs8" -> "http://www.example.org#SAIUGR_AUTHORS" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#AUTHORS_36" [fillcolor="#FDB266",shape="house",style="filled",label="AUTHORS_36",URL="http://www.example.org#AUTHORS_36"]
+"-attrs9" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">prov:Organization</TD>
+	</TR>
+	<TR>
+	    <TD align="left">name:</TD>
+	    <TD align="left">Imperial College COVID-19 Response Team</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs9" -> "http://www.example.org#AUTHORS_36" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#AUTHORS_37" [fillcolor="#FDB266",shape="house",style="filled",label="AUTHORS_37",URL="http://www.example.org#AUTHORS_37"]
+"-attrs10" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">prov:Person</TD>
+	</TR>
+	<TR>
+	    <TD align="left">name:</TD>
+	    <TD align="left">LI, Ruiyun, PEI, Sen, CHEN, Bin, et al.</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs10" -> "http://www.example.org#AUTHORS_37" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#AUTHORS_38" [fillcolor="#FDB266",shape="house",style="filled",label="AUTHORS_38",URL="http://www.example.org#AUTHORS_38"]
+"-attrs11" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">prov:Person</TD>
+	</TR>
+	<TR>
+	    <TD align="left">name:</TD>
+	    <TD align="left">Gumel, Abba B., et al.</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs11" -> "http://www.example.org#AUTHORS_38" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#AUTHORS_39" [fillcolor="#FDB266",shape="house",style="filled",label="AUTHORS_39",URL="http://www.example.org#AUTHORS_39"]
+"-attrs12" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">prov:Person</TD>
+	</TR>
+	<TR>
+	    <TD align="left">name:</TD>
+	    <TD align="left">Nadim, S. S., Ghosh, I., &amp; Chattopadhyay, J.</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs12" -> "http://www.example.org#AUTHORS_39" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#AUTHORS_40" [fillcolor="#FDB266",shape="house",style="filled",label="AUTHORS_40",URL="http://www.example.org#AUTHORS_40"]
+"-attrs13" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">prov:Person</TD>
+	</TR>
+	<TR>
+	    <TD align="left">name:</TD>
+	    <TD align="left">Biswas, Sudhanshu Kumar, et al.</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs13" -> "http://www.example.org#AUTHORS_40" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#AUTHORS_5" [fillcolor="#FDB266",shape="house",style="filled",label="AUTHORS_5",URL="http://www.example.org#AUTHORS_5"]
+"-attrs14" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">prov:Person</TD>
+	</TR>
+	<TR>
+	    <TD align="left">name:</TD>
+	    <TD align="left">Mohammed-Awel, Jemal, and Abba B. Gumel.</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs14" -> "http://www.example.org#AUTHORS_5" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#AUTHORS_12" [fillcolor="#FDB266",shape="house",style="filled",label="AUTHORS_12",URL="http://www.example.org#AUTHORS_12"]
+"-attrs15" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">prov:Person</TD>
+	</TR>
+	<TR>
+	    <TD align="left">name:</TD>
+	    <TD align="left">Bajiya, V. P., Bugalia, S., &amp; Tripathi, J. P.</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs15" -> "http://www.example.org#AUTHORS_12" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#AUTHORS_41" [fillcolor="#FDB266",shape="house",style="filled",label="AUTHORS_41",URL="http://www.example.org#AUTHORS_41"]
+"-attrs16" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">prov:Person</TD>
+	</TR>
+	<TR>
+	    <TD align="left">name:</TD>
+	    <TD align="left">Khajanchi, S., Sarkar, K., &amp; Mondal, J.</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs16" -> "http://www.example.org#AUTHORS_41" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#SEVERITY_AUTHORS" [fillcolor="#FDB266",shape="house",style="filled",label="SEVERITY_AUTHORS",URL="http://www.example.org#SEVERITY_AUTHORS"]
+"-attrs17" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">prov:Person</TD>
+	</TR>
+	<TR>
+	    <TD align="left">name:</TD>
+	    <TD align="left">Verity, et al.</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs17" -> "http://www.example.org#SEVERITY_AUTHORS" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#REPATRIATION_FLIGHT_TEAM" [fillcolor="#FDB266",shape="house",style="filled",label="REPATRIATION_FLIGHT_TEAM",URL="http://www.example.org#REPATRIATION_FLIGHT_TEAM"]
+"-attrs18" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">prov:Organization</TD>
+	</TR>
+	<TR>
+	    <TD align="left">name:</TD>
+	    <TD align="left">Novel Coronavirus Pneumonia Emergency Response Epidemiology Team</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs18" -> "http://www.example.org#REPATRIATION_FLIGHT_TEAM" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#CRUISE_SHIP_AUTHORS" [fillcolor="#FDB266",shape="house",style="filled",label="CRUISE_SHIP_AUTHORS",URL="http://www.example.org#CRUISE_SHIP_AUTHORS"]
+"-attrs19" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">prov:Organization</TD>
+	</TR>
+	<TR>
+	    <TD align="left">name:</TD>
+	    <TD align="left">Ministry of Health, Labour and Welfare</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs19" -> "http://www.example.org#CRUISE_SHIP_AUTHORS" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#WHO" [fillcolor="#FDB266",shape="house",style="filled",label="WHO",URL="http://www.example.org#WHO"]
+"-attrs20" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">prov:Organization</TD>
+	</TR>
+	<TR>
+	    <TD align="left">name:</TD>
+	    <TD align="left">World Health Organization</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs20" -> "http://www.example.org#WHO" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#TENCENT" [fillcolor="#FDB266",shape="house",style="filled",label="TENCENT",URL="http://www.example.org#TENCENT"]
+"-attrs21" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">prov:Organization</TD>
+	</TR>
+	<TR>
+	    <TD align="left">name:</TD>
+	    <TD align="left">Tencent</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs21" -> "http://www.example.org#TENCENT" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#OGD" [fillcolor="#FDB266",shape="house",style="filled",label="OGD",URL="http://www.example.org#OGD"]
+"-attrs22" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">prov:Organization</TD>
+	</TR>
+	<TR>
+	    <TD align="left">name:</TD>
+	    <TD align="left">Open Government Data Platform India</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs22" -> "http://www.example.org#OGD" [color="gray",style="dashed",arrowhead="none"]
+"http://www.example.org#SAIUGR" -> "http://www.example.org#compile" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="gen"]
+"http://www.example.org#compile" -> "http://www.example.org#SAIUGR_AUTHORS" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="assoc"]
+"http://www.example.org#theta" -> "http://www.example.org#Reference_36" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#omega" -> "http://www.example.org#Reference_37" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#zetaI" -> "http://www.example.org#Reference_38" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#zetaI" -> "http://www.example.org#Reference_39" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#zetaG" -> "http://www.example.org#Reference_40" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#beta" -> "http://www.example.org#SAIUGR" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#etaI" -> "http://www.example.org#SAIUGR" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#etaU" -> "http://www.example.org#SAIUGR" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#gammaI" -> "http://www.example.org#SAIUGR" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#gammaU" -> "http://www.example.org#SAIUGR" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#gammaG" -> "http://www.example.org#Reference_5" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#mu" -> "http://www.example.org#Reference_41" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#muI" -> "http://www.example.org#Reference_12" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#muG" -> "http://www.example.org#Reference_12" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#muU" -> "http://www.example.org#Reference_12" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#SAIUGR" -> "http://www.example.org#theta" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#SAIUGR" -> "http://www.example.org#omega" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#SAIUGR" -> "http://www.example.org#zetaI" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#SAIUGR" -> "http://www.example.org#zetaA" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#SAIUGR" -> "http://www.example.org#zetaG" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#SAIUGR" -> "http://www.example.org#mu" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#SAIUGR" -> "http://www.example.org#muU" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#SAIUGR" -> "http://www.example.org#muI" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#SAIUGR" -> "http://www.example.org#muG" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#SAIUGR" -> "http://www.example.org#gammaG" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#Reference_36" -> "http://www.example.org#Estimates_of_severity" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#Estimates_of_severity" -> "http://www.example.org#Repatriation_Flights" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#Estimates_of_severity" -> "http://www.example.org#Diamond_Princess_Cruise_Ship" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#Estimates_of_severity" -> "http://www.example.org#Covid_Cases_Jan" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#Reference_37" -> "http://www.example.org#Human_Mobility" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#Reference_12" -> "http://www.example.org#Covid_Cases_April" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#Reference_41" -> "http://www.example.org#Open_Government_Data" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#Open_Government_Data" -> "http://www.example.org#OGD" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://www.example.org#Covid_Cases_Jan" -> "http://www.example.org#Covid_Cases" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="spe"]
+"http://www.example.org#Covid_Cases_April" -> "http://www.example.org#Covid_Cases" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="spe"]
+"http://www.example.org#Reference_36" -> "http://www.example.org#AUTHORS_36" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="att"]
+"http://www.example.org#Reference_37" -> "http://www.example.org#AUTHORS_37" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="att"]
+"http://www.example.org#Reference_38" -> "http://www.example.org#AUTHORS_38" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="att"]
+"http://www.example.org#Reference_39" -> "http://www.example.org#AUTHORS_39" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="att"]
+"http://www.example.org#Reference_40" -> "http://www.example.org#AUTHORS_40" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="att"]
+"http://www.example.org#Reference_5" -> "http://www.example.org#AUTHORS_5" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="att"]
+"http://www.example.org#Reference_12" -> "http://www.example.org#AUTHORS_12" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="att"]
+"http://www.example.org#Reference_41" -> "http://www.example.org#AUTHORS_41" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="att"]
+"http://www.example.org#SAIUGR" -> "http://www.example.org#SAIUGR_AUTHORS" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="att"]
+"http://www.example.org#Estimates_of_severity" -> "http://www.example.org#SEVERITY_AUTHORS" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="att"]
+"http://www.example.org#Repatriation_Flights" -> "http://www.example.org#REPATRIATION_FLIGHT_TEAM" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="att"]
+"http://www.example.org#Diamond_Princess_Cruise_Ship" -> "http://www.example.org#CRUISE_SHIP_AUTHORS" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="att"]
+"http://www.example.org#Covid_Cases" -> "http://www.example.org#WHO" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="att"]
+"http://www.example.org#Human_Mobility" -> "http://www.example.org#TENCENT" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="att"]
+}

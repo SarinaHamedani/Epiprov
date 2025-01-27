@@ -1,0 +1,14 @@
+(import (rnrs) (emodl cmslib))
+
+(start-model "Isolation_Relative_Risk_Model")
+
+; Define parameters
+(param isolation_rr 0.1)              ; Relative risk for transmission in isolation
+
+; Define compartments with initial populations
+(species Imi 0)     ; Isolated Mild
+
+; Observables
+(observe Isolated_Mild Imi)
+
+(end-model)

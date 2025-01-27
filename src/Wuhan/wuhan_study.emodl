@@ -1,0 +1,22 @@
+(import (rnrs) (emodl cmslib))
+
+(start-model "COVID-19_Wuhan_Study_Model")
+
+; Define parameters
+(param R0 2.3)                        ; Basic reproduction number
+(param transmission_rate (/ (* R0 (/ 1.0 mild_infectious_period)) 1000)) ; Transmission rate per contact per day
+
+; Define compartments with initial populations
+(species S 999000)  ; Susceptible
+(species Im 0)      ; Mildly Infectious
+
+; Define transitions
+(reaction exposure
+  (S) (E)
+  (* transmission_rate S Im))
+
+; Observables
+(observe Susceptible S)
+(observe Mildly_Infectious Im)
+
+(end-model)

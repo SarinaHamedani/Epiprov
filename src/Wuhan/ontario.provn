@@ -1,0 +1,57 @@
+document
+  prefix prov <http://www.w3.org/ns/prov#>
+  prefix ex <http://www.example.org#>
+  prefix dcterms <http://purl.org/dc/terms/>
+  prefix foaf <http://xmlns.com/foaf/0.1/>
+
+  entity(ex:Wuhan_Study)
+  entity(ex:Ontario_Model_Study)
+  entity(ex:R0)
+  entity(ex:hospital_stay_nonICU)
+  entity(ex:prob_severe_infection)
+  entity(ex:prob_death_ICU)
+  entity(ex:prob_ICU_admission)
+  entity(ex:ICU_stay)
+  entity(ex:postICU_stay)
+
+  entity(ex:Hospitalized_Patients_Study)
+  entity(ex:POLYMOD_Study)
+  entity(ex:Canadian_Community_Health_Survey)
+  entity(ex:Critically_Ill_Patients_Study)
+
+  entity(ex:Zhongnan_Hospital_Patient_Data, [prov:type="prov:Dataset", dcterms:description="Hospital records of 138 patients"])
+  entity(ex:Jin_Yin_tan_Data, [prov:type="prov:Dataset"])
+
+  agent(ex:Wuhan_Authors, [foaf:name="Li, Q., Guan, X., Wu, P., et al."])
+  agent(ex:Ontario_Authors, [foaf:name="Authors of Ontario Model Study"])
+  agent(ex:Hospital_Records_Authors, [foaf:name="Dawei Wang, Bo Hu, Chang Hu, Fangfang Zhu, et al."])
+  agent(ex:POLYMOD_Authors, [foaf:name="Mossong, Joël, et al."])
+  agent(ex:Critically_Ill_Patients_Authors, [foaf:name="Yang, Xiaobo, et al."])
+
+  wasDerivedFrom(ex:R0, ex:Wuhan_Study)
+  wasDerivedFrom(ex:Ontario_Model_Study, ex:R0)
+  wasDerivedFrom(ex:Ontario_Model_Study, ex:hospital_stay_nonICU)
+  wasDerivedFrom(ex:Ontario_Model_Study, ex:prob_severe_infection)
+  wasDerivedFrom(ex:Ontario_Model_Study, ex:prob_ICU_admission)
+  wasDerivedFrom(ex:Ontario_Model_Study, ex:ICU_stay)
+  wasDerivedFrom(ex:Ontario_Model_Study, ex:postICU_stay)
+  wasDerivedFrom(ex:Ontario_Model_Study, ex:prob_death_ICU)
+  wasDerivedFrom(ex:hospital_stay_nonICU, ex:Hospitalized_Patients_Study)
+  wasDerivedFrom(ex:prob_severe_infection, ex:Hospitalized_Patients_Study)
+  wasDerivedFrom(ex:prob_ICU_admission, ex:Hospitalized_Patients_Study)
+  wasDerivedFrom(ex:ICU_stay, ex:Critically_Ill_Patients_Study)
+  wasDerivedFrom(ex:postICU_stay, ex:Critically_Ill_Patients_Study)
+  wasDerivedFrom(ex:Critically_Ill_Patients_Study, ex:Jin_Yin_tan_Data)
+  wasDerivedFrom(ex:Hospitalized_Patients_Study, ex:Zhongnan_Hospital_Patient_Data)
+  wasDerivedFrom(ex:prob_severe_infection, ex:POLYMOD_Study)
+  wasDerivedFrom(ex:prob_severe_infection, ex:Canadian_Community_Health_Survey)
+  wasDerivedFrom(ex:prob_death_ICU, ex:POLYMOD_Study)
+  wasDerivedFrom(ex:prob_death_ICU, ex:Canadian_Community_Health_Survey)
+  wasDerivedFrom(ex:prob_death_ICU, ex:Critically_Ill_Patients_Study)
+
+  wasAttributedTo(ex:Wuhan_Study, ex:Wuhan_Authors)
+  wasAttributedTo(ex:Ontario_Model_Study, ex:Ontario_Authors)
+  wasAttributedTo(ex:Hospitalized_Patients_Study, ex:Hospital_Records_Authors)
+  wasAttributedTo(ex:POLYMOD_Study, ex:POLYMOD_Authors)
+  wasAttributedTo(ex:Critically_Ill_Patients_Study, ex:Critically_Ill_Patients_Authors)
+endDocument

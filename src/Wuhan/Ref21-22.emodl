@@ -1,0 +1,41 @@
+(import (rnrs) (emodl cmslib))
+
+(start-model "COVID-19_Hospitalized_Patients_Model")
+
+; Define parameters
+(param hospital_stay_nonICU 10.0)     ; Hospital stay duration for non-ICU cases in days
+(param ICU_stay 21.0)                 ; ICU stay duration in days
+(param postICU_stay 21.0)             ; Post-ICU hospital stay duration in days
+(param prob_hospital_admission 0.15)  ; Probability of hospital admission for severe cases
+(param prob_ICU_admission 0.26)       ; Probability of ICU admission for hospitalized cases
+
+; Define compartments with initial populations
+(species Hn 0)      ; Hospitalized Non-ICU
+(species Hi 0)      ; Hospitalized ICU
+(species R 0)       ; Recovered
+(species D 0)       ; Dead
+
+; Define transitions
+(reaction progression_hospital_to_ICU
+  (Hn) (Hi)
+  (* prob_ICU_admission (/ Hn hospital_stay_nonICU)))
+
+(reaction progression_hospital_to_recovered
+  (Hn) (R)
+  (* (- 1 prob_ICU_admission) (/ Hn hospital_stay_nonICU)))
+
+(reaction progression_ICU_to_death
+  (Hi) (D)
+  (* prob_death_ICU (/ Hi ICU_stay)))
+
+(reaction progression_ICU_to_recovered
+  (Hi) (R)
+  (* (- 1 prob_death_ICU) (/ Hi ICU_stay)))
+
+; Observables
+(observe Hospitalized_NonICU Hn)
+(observe Hospitalized_ICU Hi)
+(observe Recovered R)
+(observe Dead D)
+
+(end-model)
