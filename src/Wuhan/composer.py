@@ -47,13 +47,9 @@ def combine_emodl_fragments(fragment_paths: List[str], output_file: str):
 
 
 if __name__ == "__main__":
-    # List of fragment file paths
-    fragment_files = ["output_clusters/cluster_1.emodl", "output_clusters/cluster_2.emodl", "output_clusters/cluster_3.emodl", "output_clusters/cluster_4.emodl", "output_clusters/cluster_5.emodl"]  # Replace with your fragment file paths
-
-    # Path for the combined output file
+    fragment_files = ["output_clusters/cluster_1.emodl", "output_clusters/cluster_2.emodl", "output_clusters/cluster_3.emodl", "output_clusters/cluster_4.emodl", "output_clusters/cluster_5.emodl"]
     output_file_path = "combined_model.emodl"
 
-    # Combine fragments into a single EMODL file
     combine_emodl_fragments(fragment_files, output_file_path)
 
     print(f"Combined model written to {output_file_path}")

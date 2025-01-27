@@ -46,33 +46,28 @@ def split_emodl(file_path: str, cluster_file: str, output_dir: str):
     cluster_content = {key: "" for key in clusters.keys()}
 
     for cluster_name, keywords in clusters.items():
-        # Extract relevant params
         cluster_params = extract_related_lines(params, keywords)
 
-        # Extract relevant reactions
         cluster_reactions = extract_related_lines(reactions, keywords)
 
-        # Extract relevant species from reactions
         reaction_species = get_species_in_reactions(cluster_reactions)
         cluster_species = [line for line in species if any(spec in line for spec in reaction_species)]
 
-        # Extract relevant observes
         cluster_observes = [line for line in observes if any(spec in line for spec in reaction_species)]
 
-        # Combine content for this cluster
         cluster_content[cluster_name] = "\n".join(
             cluster_params + cluster_species + cluster_reactions + cluster_observes
         )
 
     # Write separate files for each cluster
     for cluster_name, content in cluster_content.items():
-        if content.strip():  # Avoid writing empty files
+        if content.strip():
             write_emodl(cluster_name, content, output_dir)
 
 if __name__ == "__main__":
-    input_file = "ontario.emodl"  # Replace with the path to your .emodl file
-    cluster_file = "clusters.json"  # Replace with the path to your clusters file
-    output_directory = "output_clusters"  # Directory to save the split .emodl files
+    input_file = "ontario.emodl"
+    cluster_file = "clusters.json"
+    output_directory = "output_clusters"
 
     split_emodl(input_file, cluster_file, output_directory)
     print(f"Clusters written to {output_directory}")
