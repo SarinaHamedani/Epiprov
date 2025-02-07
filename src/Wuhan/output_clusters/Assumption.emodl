@@ -1,15 +1,12 @@
 (import (rnrs) (emodl cmslib))
 
-(start-model "cluster_3")
+(start-model "Assumption")
 
 (param rho 0.7)  # Proportion of cases detected and isolated [assumption]
-(param kappa 0.1)  # Reduction in transmission for isolated cases [assumption]
-(param time_quarantine 14)  # Duration of quarantine for exposed cases (days) [assumption]
-(param quarantine_efficiency 0.3)  # Reduction in transmission due to quarantine [assumption]
 (species E 10)         # Exposed
-(species Q 0)          # Quarantined
 (species I_mild_quarantined 0)  # Mild cases, quarantined
 (species I_severe_quarantined 0)  # Severe cases, quarantined
+(species Q 0)          # Quarantined
 (reaction quarantine E -> Q (rho * sigma * E))
 (observe total_infectious I_presymptomatic + I_presymptomatic_isolated + I_mild + I_severe + I_mild_quarantined + I_severe_quarantined)
 

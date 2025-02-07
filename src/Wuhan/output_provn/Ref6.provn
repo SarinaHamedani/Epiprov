@@ -1,0 +1,23 @@
+document
+
+prefix epi <http://www.cs.rpi.edu/~hendler/>
+prefix provbook <http://www.provbook.org>
+
+entity(provbook:Ref6, [prov:type = "prov:Collection", prov:label = "Ref6"])
+agent(provbook:GEODES_Epimodel, [prov:label = "GEODES Epimodel" %% xsd:string])
+activity(provbook:Slicing)
+used(provbook:Slicing, provbook:Ontario_Model_Study, 2025-02-07T11:00:00)
+wasGeneratedBy(provbook:Ref6, provbook:Slicing, -)
+wasAssociatedWith(provbook:Slicing, provbook:GEODES_Epimodel, -)
+hadMember(provbook:Ref6, provbook:beta)
+entity(provbook:beta,[prov:value = "Basic reproduction number (R0)" %% xsd:string])
+hadMember(provbook:Ontario_Model_Study,provbook:beta)
+entity(provbook:Ontario_Model_Study,[prov:type = 'prov:Collection', prov:value = "A little provenance goes a long way" %% xsd:string])
+wasAttributedTo(provbook:Ontario_Model_Study, provbook:Ontario_Model_Authors)
+agent(provbook:Ontario_Model_Authors, [prov:label = "Tuite, A. R., Fisman, D. N., & Greer, A. L." %% xsd:string])
+wasDerivedFrom(provbook:beta, provbook:Wuhan_Study)
+entity(provbook:Wuhan_Study)
+wasAttributedTo(provbook:Wuhan_Study, provbook:Wuhan_Authors)
+agent(provbook:Wuhan_Authors,[prov:label = "Li Q., Guan X., Wu P., et al." %% xsd:string])
+
+endDocument

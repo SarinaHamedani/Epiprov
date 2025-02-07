@@ -1,0 +1,34 @@
+(import (rnrs) (emodl cmslib))
+
+(start-model "Ref21")
+
+(param hosp_stay_preICU 3)  # Average length of stay in hospital before ICU (days) [ref 21]
+(param hospital_mortality 0.15)  # Mortality rate in hospital [ref 21]
+(param sigma 0.4)  # Rate of progression from exposed to infectious (1/latent period) [ref 18-20]
+(param theta 0.2)  # Rate of ICU admission for hospitalized cases [ref 21]
+(species D 0)          # Dead
+(species E 10)         # Exposed
+(species H_admitted 0) # Admitted to hospital
+(species H_postICU 0)  # Hospitalized, post-ICU
+(species H_preICU 0)   # Hospitalized, pre-ICU
+(species ICU 0)        # ICU cases
+(species I_mild_quarantined 0)  # Mild cases, quarantined
+(species I_presymptomatic 0)  # Infectious, presymptomatic
+(species I_presymptomatic_isolated 0)  # Infectious, presymptomatic, isolated
+(species I_severe_quarantined 0)  # Severe cases, quarantined
+(species Q 0)          # Quarantined
+(species R 0)          # Recovered
+(species S 13999990)   # Susceptible
+(reaction death_hospital H_preICU -> D (hospital_mortality * H_preICU))
+(reaction death_hospital_admitted H_admitted -> D (hospital_mortality * H_admitted))
+(reaction hospital_admission H_preICU -> H_admitted ((1 - theta) * gamma_severe * H_preICU))
+(reaction icu_admission H_preICU -> ICU (theta * H_preICU))
+(reaction latent_to_presymptomatic E -> I_presymptomatic (sigma * E))
+(reaction quarantine E -> Q (rho * sigma * E))
+(reaction recovery_preICU H_preICU -> R ((1 - theta) * gamma_severe * H_preICU))
+(observe total_deaths D)
+(observe total_hospitalized H_preICU + ICU + H_postICU + H_admitted)
+(observe total_infectious I_presymptomatic + I_presymptomatic_isolated + I_mild + I_severe + I_mild_quarantined + I_severe_quarantined)
+(observe total_recovered R)
+
+(end-model)

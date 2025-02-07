@@ -2,8 +2,6 @@ document
 prefix epi <http://www.cs.rpi.edu/~hendler/>
 prefix provbook <http://www.provbook.org>
 entity(provbook:Ontario_Model_Study,[prov:type = 'prov:Collection', prov:value = "A little provenance goes a long way" %% xsd:string])
-agent(provbook:Ontario_Model_Authors, [prov:label = "Tuite, A. R., Fisman, D. N., & Greer, A. L." %% xsd:string])
-wasAttributedTo(provbook:Ontario_Model_Study, provbook:Ontario_Model_Authors)
 entity(provbook:beta,[prov:value = "Basic reproduction number (R0)" %% xsd:string])
 entity(provbook:sigma,[prov:value = "Rate of progression from exposed to infectious" %% xsd:string])
 entity(provbook:gamma_mild,[prov:value = "Recovery rate for mild cases" %% xsd:string])

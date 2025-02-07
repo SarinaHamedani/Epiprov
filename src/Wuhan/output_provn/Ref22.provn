@@ -1,0 +1,41 @@
+document
+
+prefix epi <http://www.cs.rpi.edu/~hendler/>
+prefix provbook <http://www.provbook.org>
+
+entity(provbook:Ref22, [prov:type = "prov:Collection", prov:label = "Ref22"])
+agent(provbook:GEODES_Epimodel, [prov:label = "GEODES Epimodel" %% xsd:string])
+activity(provbook:Slicing)
+used(provbook:Slicing, provbook:Ontario_Model_Study, 2025-02-07T11:00:00)
+wasGeneratedBy(provbook:Ref22, provbook:Slicing, -)
+wasAssociatedWith(provbook:Slicing, provbook:GEODES_Epimodel, -)
+hadMember(provbook:Ref22, provbook:kappa)
+hadMember(provbook:Ref22, provbook:hosp_stay_postICU)
+hadMember(provbook:Ref22, provbook:icu_stay)
+entity(provbook:kappa,[prov:value = "Mortality rate for ICU cases" %% xsd:string])
+hadMember(provbook:Ontario_Model_Study,provbook:kappa)
+entity(provbook:Ontario_Model_Study,[prov:type = 'prov:Collection', prov:value = "A little provenance goes a long way" %% xsd:string])
+wasAttributedTo(provbook:Ontario_Model_Study, provbook:Ontario_Model_Authors)
+agent(provbook:Ontario_Model_Authors, [prov:label = "Tuite, A. R., Fisman, D. N., & Greer, A. L." %% xsd:string])
+wasDerivedFrom(provbook:kappa, provbook:POLYMOD_Study)
+wasDerivedFrom(provbook:kappa, provbook:Canadian_Community_Health_Survey)
+wasDerivedFrom(provbook:kappa, provbook:Critically_Ill_Patients_Study)
+entity(provbook:hosp_stay_postICU,[prov:value = "Average length of stay in hospital after ICU" %% xsd:string])
+hadMember(provbook:Ontario_Model_Study,provbook:hosp_stay_postICU)
+entity(provbook:icu_stay,[prov:value = "Average length of stay in ICU" %% xsd:string])
+hadMember(provbook:Ontario_Model_Study,provbook:icu_stay)
+wasDerivedFrom(provbook:icu_stay, provbook:Critically_Ill_Patients_Study)
+entity(provbook:POLYMOD_Study)
+wasAttributedTo(provbook:POLYMOD_Study, provbook:POLYMOD_Authors)
+wasDerivedFrom(provbook:sigma, provbook:POLYMOD_Study)
+entity(provbook:Canadian_Community_Health_Survey)
+wasDerivedFrom(provbook:sigma, provbook:Canadian_Community_Health_Survey)
+entity(provbook:Critically_Ill_Patients_Study)
+wasAttributedTo(provbook:Critically_Ill_Patients_Study, provbook:Critically_Ill_Patients_Authors)
+wasDerivedFrom(provbook:Hosp_Stay_PostICU, provbook:Critically_Ill_Patients_Study)
+wasDerivedFrom(provbook:Critically_Ill_Patients_Study, provbook:Jin_Yin_Tan_Data)
+agent(provbook:POLYMOD_Authors,[prov:label = "Mossong, Joel, et al." %% xsd:string])
+agent(provbook:Critically_Ill_Patients_Authors,[prov:label = "Yang, Xiaobo, et al." %% xsd:string])
+entity(provbook:Jin_Yin_Tan_Data,[prov:value = "Dataset" %% xsd:string])
+
+endDocument

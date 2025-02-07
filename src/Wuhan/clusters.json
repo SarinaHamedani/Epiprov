@@ -1,17 +1,20 @@
 {
-    "cluster_1": [
-        "sigma", "latent_period", "presymptomatic_period", "infectious_period_mild", "infectious_period_severe", "gamma_mild", "gamma_severe"
+    "Ref18-20": [
+        "latent_period", "presymptomatic_period", "infectious_period_mild", "infectious_period_severe", "gamma_mild", "gamma_severe"
     ],
-    "cluster_2": [
+    "Ref6": [
         "beta"
     ],
-    "cluster_3": [
-        "time_quarantine", "rho", "kappa", "quarantine_efficiency"
+    "Assumption": [
+        "rho", "quarantine_efficiency"
     ],
-    "cluster_4": [
-        "delta", "hosp_stay_preICU", "hospital_mortality", "theta"
+    "Ref21": [
+        "sigma", "hosp_stay_preICU", "theta", "hospital_mortality"
     ],
-    "cluster_5": [
-        "mu_icu", "hosp_stay_postICU", "icu_stay"
+    "Ref22": [
+        "kappa", "hosp_stay_postICU", "icu_stay"
+    ],
+    "Unknown": [
+        "delta"
     ]
 }

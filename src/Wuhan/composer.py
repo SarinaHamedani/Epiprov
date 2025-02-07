@@ -46,8 +46,12 @@ def combine_emodl_fragments(fragment_paths: List[str], output_file: str):
     write_emodl(output_file, combined_content)
 
 
+def get_emodl_files(directory):
+    return [os.path.join(directory, f) for f in os.listdir(directory) if f.endswith(".emodl")]
+
 if __name__ == "__main__":
-    fragment_files = ["output_clusters/cluster_1.emodl", "output_clusters/cluster_2.emodl", "output_clusters/cluster_3.emodl", "output_clusters/cluster_4.emodl", "output_clusters/cluster_5.emodl"]
+    input_directory = "output_clusters"
+    fragment_files = get_emodl_files(input_directory)
     output_file_path = "combined_model.emodl"
 
     combine_emodl_fragments(fragment_files, output_file_path)
