@@ -2,7 +2,7 @@ import os
 import re
 import json
 from typing import Dict, List, Set
-from prov.model import ProvDocument, ProvEntity, ProvRelation
+import argparse
 
 def read_emodl(file_path: str) -> str:
     with open(file_path, 'r') as file:
@@ -30,6 +30,7 @@ def write_provn(cluster_name: str, lines: List[str], output_dir: str, parameters
     header = "document\n\nprefix epi <http://www.cs.rpi.edu/~hendler/>\nprefix provbook <http://www.provbook.org>\n\n"
     footer = "\nendDocument"
     original_collection = find_collection_name(lines)
+    
         
     with open(output_path, 'w') as file:
         file.write(header)
@@ -145,6 +146,13 @@ def extract_related_lines_provn(provn_lines: List[str], entity_names: Set[str]) 
                         entity1, entity2 = attribution_match.groups()
                         queue.append(entity2)
                     
+                    specialization_match = re.search(r'specializationOf\([^,]+,\s*[^:]+:([^,\)]+)\)', line)
+
+                    if specialization_match:
+                        entity = specialization_match.group(1)
+                        if entity not in seen:
+                            queue.append(entity)
+                    
                     had_member_matches = re.findall(r'\bhadMember\([^:]+:([^,\)]+)', line)
                     for member in had_member_matches:
                         stripped_member = strip_namespace(member)
@@ -157,7 +165,8 @@ def extract_related_lines_provn(provn_lines: List[str], entity_names: Set[str]) 
                         
                     matches = re.findall(r'\bentity\([^:]+:([^,\[\)]+)', line) + \
                               re.findall(r'\bagent\(([^,\)]+)', line) + \
-                              re.findall(r'\bactivity\(([^,\)]+)', line)
+                              re.findall(r'\bactivity\(([^,\)]+)', line) + \
+                              re.findall(r'\bspecializationOf\(([^,\)]+)', line)
                                     
                     for match in matches:
                         if isinstance(match, tuple):
@@ -186,11 +195,21 @@ def split_provn(file_path: str, cluster_file: str, output_dir: str):
             print(f"Cluster '{cluster_name}' written to {output_dir}")
     
 if __name__ == "__main__":
-    input_emodl_file = "SAIUGR_Model.emodl"
-    input_provn_file = "SAIUGR.provn"
-    cluster_file = "clusters.json"
-    output_directory_emodl = "output_clusters"
-    output_directory_provn = "output_provn"
+    parser = argparse.ArgumentParser(description="Decompose EMODL and PROV-N files into clusters.")
+    parser.add_argument("--emodl_file", required=True, help="Path to the input EMODL file")
+    parser.add_argument("--provn_file", required=True, help="Path to the input PROV-N file")
+    parser.add_argument("--cluster_file", required=True, help="Path to the cluster definition JSON file")
+    args = parser.parse_args()
+
+    input_emodl_file = args.emodl_file
+    input_provn_file = args.provn_file
+    cluster_file = args.cluster_file
+    base_directory = os.path.dirname(input_emodl_file)
+
+    output_directory_emodl = os.path.join(base_directory, "output_clusters")
+    output_directory_provn = os.path.join(base_directory, "output_provn")
+    os.makedirs(output_directory_emodl, exist_ok=True)
+    os.makedirs(output_directory_provn, exist_ok=True)
 
     split_emodl(input_emodl_file, cluster_file, output_directory_emodl)
     split_provn(input_provn_file, cluster_file, output_directory_provn)

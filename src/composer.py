@@ -1,5 +1,6 @@
 import os
 import re
+import argparse
 from typing import List
 
 def read_file(file_path: str) -> str:
@@ -100,9 +101,15 @@ def combine_provn_fragments(fragment_paths: List[str], output_file: str):
     write_file(output_file, combined_content)
 
 if __name__ == "__main__":
-    input_emodl_directory = "output_clusters"
-    input_provn_directory = "output_provn"
-    output_directory = "combined_output"
+    parser = argparse.ArgumentParser(description="Combine EMODL and PROV-N fragments.")
+    parser.add_argument("--emodl_dir", required=True, help="Path to the directory containing EMODL fragments")
+    parser.add_argument("--provn_dir", required=True, help="Path to the directory containing PROV-N fragments")
+    args = parser.parse_args()
+
+    input_emodl_directory = args.emodl_dir
+    input_provn_directory = args.provn_dir
+
+    output_directory = os.path.join(os.path.dirname(input_emodl_directory), "combined_output")
     os.makedirs(output_directory, exist_ok=True)
 
     fragment_emodl_files = get_emodl_files(input_emodl_directory)

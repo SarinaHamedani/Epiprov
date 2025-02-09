@@ -34,5 +34,11 @@ specializationOf(provbook:Covid_Cases_Jan, provbook:Covid_Cases)
 agent(provbook:SEVERITY_AUTHORS, [prov:type='prov:Person', prov:name="Verity, et al."])
 agent(provbook:REPATRIATION_FLIGHT_TEAM, [prov:type='prov:Organization', prov:name="Novel Coronavirus Pneumonia Emergency Response Epidemiology Team"])
 agent(provbook:CRUISE_SHIP_AUTHORS, [prov:type='prov:Organization', prov:name="Ministry of Health, Labour and Welfare"])
+entity(provbook:Covid_Cases, [prov:type='prov:Dataset'])
+specializationOf(provbook:Covid_Cases_April, provbook:Covid_Cases)
+wasAttributedTo(provbook:Covid_Cases, provbook:WHO)
+wasDerivedFrom(provbook:Reference_12, provbook:Covid_Cases_April)
+entity(provbook:Covid_Cases_April, [prov:type='prov:Dataset'])
+agent(provbook:WHO, [prov:type='prov:Organization', prov:name="World Health Organization"])
 
 endDocument

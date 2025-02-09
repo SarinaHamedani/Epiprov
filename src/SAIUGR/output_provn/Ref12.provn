@@ -30,5 +30,11 @@ wasAttributedTo(provbook:Reference_12, provbook:AUTHORS_12)
 entity(provbook:Covid_Cases_April, [prov:type='prov:Dataset'])
 specializationOf(provbook:Covid_Cases_April, provbook:Covid_Cases)
 agent(provbook:AUTHORS_12, [prov:type='prov:Person', prov:name="Bajiya, V. P., Bugalia, S., & Tripathi, J. P."])
+entity(provbook:Covid_Cases, [prov:type='prov:Dataset'])
+specializationOf(provbook:Covid_Cases_Jan, provbook:Covid_Cases)
+wasAttributedTo(provbook:Covid_Cases, provbook:WHO)
+wasDerivedFrom(provbook:Estimates_of_severity, provbook:Covid_Cases_Jan)
+entity(provbook:Covid_Cases_Jan, [prov:type='prov:Dataset'])
+agent(provbook:WHO, [prov:type='prov:Organization', prov:name="World Health Organization"])
 
 endDocument
