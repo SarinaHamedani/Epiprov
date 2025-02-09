@@ -1,0 +1,18 @@
+(import (rnrs) (emodl cmslib))
+
+(start-model "Ref12")
+
+(param muI 0.01)       ; Mortality rate for reported symptomatic individuals
+(param muU 0.01)       ; Mortality rate for unreported symptomatic individuals
+(param muG 0.01)       ; Mortality rate for isolated individuals
+(species I 3)      ; Reported symptomatic infected individuals
+(species U 2)      ; Unreported symptomatic infected individuals
+(species G 0)      ; Isolated infected individuals
+(reaction death_reported (I) () (* muI I))
+(reaction death_unreported (U) () (* muU U))
+(reaction death_isolated (G) () (* muG G))
+(observe Reported_Symptomatic I)
+(observe Unreported_Symptomatic U)
+(observe Isolated G)
+
+(end-model)

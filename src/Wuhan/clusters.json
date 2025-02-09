@@ -9,7 +9,7 @@
         "rho", "quarantine_efficiency"
     ],
     "Ref21": [
-        "sigma", "hosp_stay_preICU", "theta", "hospital_mortality"
+        "sigma", "hosp_stay_preICU", "theta"
     ],
     "Ref22": [
         "kappa", "hosp_stay_postICU", "icu_stay"

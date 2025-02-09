@@ -1,0 +1,14 @@
+(import (rnrs) (emodl cmslib))
+
+(start-model "Ref5")
+
+(param gammaG 0.1)     ; Recovery rate for isolated individuals
+(species I 3)      ; Reported symptomatic infected individuals
+(species G 0)      ; Isolated infected individuals
+(species R 0)      ; Recovered individuals
+(reaction recovery_isolated (G R) (R R) (* gammaG G))
+(observe Reported_Symptomatic I)
+(observe Isolated G)
+(observe Recovered R)
+
+(end-model)

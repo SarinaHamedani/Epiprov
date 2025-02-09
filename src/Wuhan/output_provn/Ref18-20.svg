@@ -159,13 +159,13 @@
 <!-- &#45;attrs0 -->
 <g id="node3" class="node">
 <title>&#45;attrs0</title>
-<polygon fill="none" stroke="gray" points="1172.25,-36.5 1067.75,-36.5 1067.75,0 1178.25,0 1178.25,-30.5 1172.25,-36.5"/>
-<polyline fill="none" stroke="gray" points="1172.25,-36.5 1172.25,-30.5"/>
-<polyline fill="none" stroke="gray" points="1178.25,-30.5 1172.25,-30.5"/>
-<text text-anchor="start" x="1077.75" y="-21" font-family="Times,serif" font-size="10.00">type:</text>
-<text text-anchor="start" x="1103" y="-21" font-family="Times,serif" font-size="10.00">prov:Collection</text>
-<text text-anchor="start" x="1077.75" y="-7.75" font-family="Times,serif" font-size="10.00">label:</text>
-<text text-anchor="start" x="1103" y="-7.75" font-family="Times,serif" font-size="10.00">Ref18&#45;20</text>
+<polygon fill="none" stroke="gray" points="1179,-36.5 1061,-36.5 1061,0 1185,0 1185,-30.5 1179,-36.5"/>
+<polyline fill="none" stroke="gray" points="1179,-36.5 1179,-30.5"/>
+<polyline fill="none" stroke="gray" points="1185,-30.5 1179,-30.5"/>
+<text text-anchor="start" x="1071" y="-21" font-family="Times,serif" font-size="10.00">type:</text>
+<text text-anchor="start" x="1096.25" y="-21" font-family="Times,serif" font-size="10.00">prov:Collection</text>
+<text text-anchor="start" x="1071" y="-7.75" font-family="Times,serif" font-size="10.00">label:</text>
+<text text-anchor="start" x="1096.25" y="-7.75" font-family="Times,serif" font-size="10.00">Fragment Ref18&#45;20</text>
 </g>
 <!-- &#45;attrs0&#45;&gt;http://www.provbook.orgRef18&#45;20 -->
 <g id="edge1" class="edge">

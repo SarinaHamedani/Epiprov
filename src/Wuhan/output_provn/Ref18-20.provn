@@ -3,7 +3,7 @@ document
 prefix epi <http://www.cs.rpi.edu/~hendler/>
 prefix provbook <http://www.provbook.org>
 
-entity(provbook:Ref18-20, [prov:type = "prov:Collection", prov:label = "Ref18-20"])
+entity(provbook:Ref18-20, [prov:type = "prov:Collection", prov:label = "Fragment Ref18-20"])
 agent(provbook:GEODES_Epimodel, [prov:label = "GEODES Epimodel" %% xsd:string])
 activity(provbook:Slicing)
 used(provbook:Slicing, provbook:Ontario_Model_Study, 2025-02-07T11:00:00)

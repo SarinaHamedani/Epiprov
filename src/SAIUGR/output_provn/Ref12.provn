@@ -1,0 +1,34 @@
+document
+
+prefix epi <http://www.cs.rpi.edu/~hendler/>
+prefix provbook <http://www.provbook.org>
+
+entity(provbook:Ref12, [prov:type = "prov:Collection", prov:label = "Fragment Ref12"])
+agent(provbook:GEODES_Epimodel, [prov:label = "GEODES Epimodel" %% xsd:string])
+activity(provbook:Slicing)
+used(provbook:Slicing, provbook:SAIUGR, 2025-02-07T11:00:00)
+wasGeneratedBy(provbook:Ref12, provbook:Slicing, -)
+wasAssociatedWith(provbook:Slicing, provbook:GEODES_Epimodel, -)
+hadMember(provbook:Ref12, provbook:muI)
+hadMember(provbook:Ref12, provbook:muU)
+hadMember(provbook:Ref12, provbook:muG)
+hadMember(provbook:SAIUGR,provbook:muI)
+entity(provbook:SAIUGR, [prov:type = 'prov:Collection', prov:value = "A little provenance goes a long way" %% xsd:string])
+wasAttributedTo(provbook:SAIUGR, provbook:SAIUGR_AUTHORS)
+agent(provbook:SAIUGR_AUTHORS, [prov:type='prov:Person', prov:givenName="Ambalarajan, V., Mallela, A.R., Sivakumar, V. et al"])
+wasDerivedFrom(provbook:muI, provbook:Reference_12)
+entity(provbook:muI)
+hadMember(provbook:SAIUGR,provbook:muU)
+wasDerivedFrom(provbook:muU, provbook:Reference_12)
+entity(provbook:muU)
+hadMember(provbook:SAIUGR,provbook:muG)
+wasDerivedFrom(provbook:muG, provbook:Reference_12)
+entity(provbook:muG)
+wasDerivedFrom(provbook:Reference_12, provbook:Covid_Cases_April)
+entity(provbook:Reference_12)
+wasAttributedTo(provbook:Reference_12, provbook:AUTHORS_12)
+entity(provbook:Covid_Cases_April, [prov:type='prov:Dataset'])
+specializationOf(provbook:Covid_Cases_April, provbook:Covid_Cases)
+agent(provbook:AUTHORS_12, [prov:type='prov:Person', prov:name="Bajiya, V. P., Bugalia, S., & Tripathi, J. P."])
+
+endDocument

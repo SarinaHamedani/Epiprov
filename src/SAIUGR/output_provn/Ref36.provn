@@ -1,0 +1,38 @@
+document
+
+prefix epi <http://www.cs.rpi.edu/~hendler/>
+prefix provbook <http://www.provbook.org>
+
+entity(provbook:Ref36, [prov:type = "prov:Collection", prov:label = "Fragment Ref36"])
+agent(provbook:GEODES_Epimodel, [prov:label = "GEODES Epimodel" %% xsd:string])
+activity(provbook:Slicing)
+used(provbook:Slicing, provbook:SAIUGR, 2025-02-07T11:00:00)
+wasGeneratedBy(provbook:Ref36, provbook:Slicing, -)
+wasAssociatedWith(provbook:Slicing, provbook:GEODES_Epimodel, -)
+hadMember(provbook:Ref36, provbook:theta)
+hadMember(provbook:SAIUGR,provbook:theta)
+entity(provbook:SAIUGR, [prov:type = 'prov:Collection', prov:value = "A little provenance goes a long way" %% xsd:string])
+wasAttributedTo(provbook:SAIUGR, provbook:SAIUGR_AUTHORS)
+agent(provbook:SAIUGR_AUTHORS, [prov:type='prov:Person', prov:givenName="Ambalarajan, V., Mallela, A.R., Sivakumar, V. et al"])
+wasDerivedFrom(provbook:theta, provbook:Reference_36)
+entity(provbook:theta)
+wasDerivedFrom(provbook:Reference_36, provbook:Estimates_of_severity)
+entity(provbook:Reference_36)
+wasAttributedTo(provbook:Reference_36, provbook:AUTHORS_36)
+wasDerivedFrom(provbook:Estimates_of_severity, provbook:Repatriation_Flights)
+wasDerivedFrom(provbook:Estimates_of_severity, provbook:Diamond_Princess_Cruise_Ship)
+wasDerivedFrom(provbook:Estimates_of_severity, provbook:Covid_Cases_Jan)
+entity(provbook:Estimates_of_severity, [prov:state="preprint"])
+wasAttributedTo(provbook:Estimates_of_severity, provbook:SEVERITY_AUTHORS)
+agent(provbook:AUTHORS_36, [prov:type='prov:Organization', prov:name="Imperial College COVID-19 Response Team"])
+entity(provbook:Repatriation_Flights, [prov:type='prov:Dataset'])
+wasAttributedTo(provbook:Repatriation_Flights, provbook:REPATRIATION_FLIGHT_TEAM)
+entity(provbook:Diamond_Princess_Cruise_Ship, [prov:type='prov:Dataset'])
+wasAttributedTo(provbook:Diamond_Princess_Cruise_Ship, provbook:CRUISE_SHIP_AUTHORS)
+entity(provbook:Covid_Cases_Jan, [prov:type='prov:Dataset'])
+specializationOf(provbook:Covid_Cases_Jan, provbook:Covid_Cases)
+agent(provbook:SEVERITY_AUTHORS, [prov:type='prov:Person', prov:name="Verity, et al."])
+agent(provbook:REPATRIATION_FLIGHT_TEAM, [prov:type='prov:Organization', prov:name="Novel Coronavirus Pneumonia Emergency Response Epidemiology Team"])
+agent(provbook:CRUISE_SHIP_AUTHORS, [prov:type='prov:Organization', prov:name="Ministry of Health, Labour and Welfare"])
+
+endDocument

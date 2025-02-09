@@ -186,8 +186,8 @@ def split_provn(file_path: str, cluster_file: str, output_dir: str):
             print(f"Cluster '{cluster_name}' written to {output_dir}")
     
 if __name__ == "__main__":
-    input_emodl_file = "ontario.emodl"
-    input_provn_file = "ontario.provn"
+    input_emodl_file = "SAIUGR_Model.emodl"
+    input_provn_file = "SAIUGR.provn"
     cluster_file = "clusters.json"
     output_directory_emodl = "output_clusters"
     output_directory_provn = "output_provn"

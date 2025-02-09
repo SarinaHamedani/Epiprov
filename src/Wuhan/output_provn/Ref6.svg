@@ -90,7 +90,7 @@
 <text text-anchor="start" x="73.84" y="-21" font-family="Times,serif" font-size="10.00">type:</text>
 <text text-anchor="start" x="99.09" y="-21" font-family="Times,serif" font-size="10.00">prov:Collection</text>
 <text text-anchor="start" x="73.84" y="-7.75" font-family="Times,serif" font-size="10.00">label:</text>
-<text text-anchor="start" x="99.09" y="-7.75" font-family="Times,serif" font-size="10.00">Ref6</text>
+<text text-anchor="start" x="99.09" y="-7.75" font-family="Times,serif" font-size="10.00">Fragment Ref6</text>
 </g>
 <!-- &#45;attrs0&#45;&gt;http://www.provbook.orgRef6 -->
 <g id="edge1" class="edge">

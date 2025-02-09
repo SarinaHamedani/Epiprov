@@ -3,7 +3,7 @@ document
 prefix epi <http://www.cs.rpi.edu/~hendler/>
 prefix provbook <http://www.provbook.org>
 
-entity(provbook:Ref21, [prov:type = "prov:Collection", prov:label = "Ref21"])
+entity(provbook:Ref21, [prov:type = "prov:Collection", prov:label = "Fragment Ref21"])
 agent(provbook:GEODES_Epimodel, [prov:label = "GEODES Epimodel" %% xsd:string])
 activity(provbook:Slicing)
 used(provbook:Slicing, provbook:Ontario_Model_Study, 2025-02-07T11:00:00)
@@ -12,7 +12,6 @@ wasAssociatedWith(provbook:Slicing, provbook:GEODES_Epimodel, -)
 hadMember(provbook:Ref21, provbook:sigma)
 hadMember(provbook:Ref21, provbook:hosp_stay_preICU)
 hadMember(provbook:Ref21, provbook:theta)
-hadMember(provbook:Ref21, provbook:hospital_mortality)
 entity(provbook:sigma,[prov:value = "Rate of progression from exposed to infectious" %% xsd:string])
 hadMember(provbook:Ontario_Model_Study,provbook:sigma)
 entity(provbook:Ontario_Model_Study,[prov:type = 'prov:Collection', prov:value = "A little provenance goes a long way" %% xsd:string])

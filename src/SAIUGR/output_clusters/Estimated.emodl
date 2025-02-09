@@ -1,0 +1,31 @@
+(import (rnrs) (emodl cmslib))
+
+(start-model "Estimated")
+
+(param beta 0.3)       ; Transmission rate
+(param zetaI 0.7)      ; Adjustment parameter for reported symptomatic individuals
+(param etaI 0.05)      ; Isolation rate for reported symptomatic individuals
+(param etaU 0.02)      ; Isolation rate for unreported symptomatic individuals
+(param gammaI 0.1)     ; Recovery rate for reported symptomatic individuals
+(param gammaU 0.1)     ; Recovery rate for unreported symptomatic individuals
+(species S 9990)   ; Susceptible individuals
+(species A 5)      ; Asymptomatic infected individuals
+(species I 3)      ; Reported symptomatic infected individuals
+(species U 2)      ; Unreported symptomatic infected individuals
+(species G 0)      ; Isolated infected individuals
+(species R 0)      ; Recovered individuals
+(reaction exposure_SA (S A) (A A) (* beta zetaA S (/ A N)))
+(reaction exposure_SI (S I) (A I) (* beta zetaI S (/ I N)))
+(reaction exposure_SG (S G) (A G) (* beta zetaG S (/ G N)))
+(reaction isolation_reported (I G) (G G) (* etaI I))
+(reaction isolation_unreported (U G) (G G) (* etaU U))
+(reaction recovery_reported (I R) (R R) (* gammaI I))
+(reaction recovery_unreported (U R) (R R) (* gammaU U))
+(observe Susceptible S)
+(observe Asymptomatic A)
+(observe Reported_Symptomatic I)
+(observe Unreported_Symptomatic U)
+(observe Isolated G)
+(observe Recovered R)
+
+(end-model)

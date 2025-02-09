@@ -88,6 +88,6 @@ wasDerivedFrom(provbook:kappa, provbook:POLYMOD_Study)
 wasDerivedFrom(provbook:kappa, provbook:Canadian_Community_Health_Survey)
 wasDerivedFrom(provbook:kappa, provbook:Critically_Ill_Patients_Study)
 wasDerivedFrom(provbook:icu_stay, provbook:Critically_Ill_Patients_Study)
-wasDerivedFrom(provbook:Hosp_Stay_PostICU, provbook:Critically_Ill_Patients_Study)
+wasDerivedFrom(provbook:hosp_stay_postICU, provbook:Critically_Ill_Patients_Study)
 wasDerivedFrom(provbook:Critically_Ill_Patients_Study, provbook:Jin_Yin_Tan_Data)
 endDocument

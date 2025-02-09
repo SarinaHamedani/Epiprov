@@ -1,0 +1,27 @@
+document
+
+prefix epi <http://www.cs.rpi.edu/~hendler/>
+prefix provbook <http://www.provbook.org>
+
+entity(provbook:Ref41, [prov:type = "prov:Collection", prov:label = "Fragment Ref41"])
+agent(provbook:GEODES_Epimodel, [prov:label = "GEODES Epimodel" %% xsd:string])
+activity(provbook:Slicing)
+used(provbook:Slicing, provbook:SAIUGR, 2025-02-07T11:00:00)
+wasGeneratedBy(provbook:Ref41, provbook:Slicing, -)
+wasAssociatedWith(provbook:Slicing, provbook:GEODES_Epimodel, -)
+hadMember(provbook:Ref41, provbook:mu)
+hadMember(provbook:SAIUGR,provbook:mu)
+entity(provbook:SAIUGR, [prov:type = 'prov:Collection', prov:value = "A little provenance goes a long way" %% xsd:string])
+wasAttributedTo(provbook:SAIUGR, provbook:SAIUGR_AUTHORS)
+agent(provbook:SAIUGR_AUTHORS, [prov:type='prov:Person', prov:givenName="Ambalarajan, V., Mallela, A.R., Sivakumar, V. et al"])
+wasDerivedFrom(provbook:mu, provbook:Reference_41)
+entity(provbook:mu)
+wasDerivedFrom(provbook:Reference_41, provbook:Open_Government_Data)
+entity(provbook:Reference_41)
+wasAttributedTo(provbook:Reference_41, provbook:AUTHORS_41)
+wasDerivedFrom(provbook:Open_Government_Data, provbook:OGD)
+entity(provbook:Open_Government_Data, [prov:type='prov:Dataset'])
+agent(provbook:AUTHORS_41, [prov:type='prov:Person', prov:name="Khajanchi, S., Sarkar, K., & Mondal, J."])
+agent(provbook:OGD, [prov:type='prov:Organization', prov:name="Open Government Data Platform India"])
+
+endDocument

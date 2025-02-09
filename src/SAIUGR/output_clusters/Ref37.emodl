@@ -1,0 +1,14 @@
+(import (rnrs) (emodl cmslib))
+
+(start-model "Ref37")
+
+(param omega 0.1)      ; Rate of progression from asymptomatic to symptomatic
+(species A 5)      ; Asymptomatic infected individuals
+(species I 3)      ; Reported symptomatic infected individuals
+(species G 0)      ; Isolated infected individuals
+(reaction asymptomatic_to_symptomatic (A) (I) (* omega A))
+(observe Asymptomatic A)
+(observe Reported_Symptomatic I)
+(observe Isolated G)
+
+(end-model)

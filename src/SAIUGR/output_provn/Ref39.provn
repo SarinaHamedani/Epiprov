@@ -1,0 +1,23 @@
+document
+
+prefix epi <http://www.cs.rpi.edu/~hendler/>
+prefix provbook <http://www.provbook.org>
+
+entity(provbook:Ref39, [prov:type = "prov:Collection", prov:label = "Fragment Ref39"])
+agent(provbook:GEODES_Epimodel, [prov:label = "GEODES Epimodel" %% xsd:string])
+activity(provbook:Slicing)
+used(provbook:Slicing, provbook:SAIUGR, 2025-02-07T11:00:00)
+wasGeneratedBy(provbook:Ref39, provbook:Slicing, -)
+wasAssociatedWith(provbook:Slicing, provbook:GEODES_Epimodel, -)
+hadMember(provbook:Ref39, provbook:zetaI)
+hadMember(provbook:SAIUGR,provbook:zetaI)
+entity(provbook:SAIUGR, [prov:type = 'prov:Collection', prov:value = "A little provenance goes a long way" %% xsd:string])
+wasAttributedTo(provbook:SAIUGR, provbook:SAIUGR_AUTHORS)
+agent(provbook:SAIUGR_AUTHORS, [prov:type='prov:Person', prov:givenName="Ambalarajan, V., Mallela, A.R., Sivakumar, V. et al"])
+wasDerivedFrom(provbook:zetaI, provbook:Reference_39)
+entity(provbook:zetaI)
+entity(provbook:Reference_39)
+wasAttributedTo(provbook:Reference_39, provbook:AUTHORS_39)
+agent(provbook:AUTHORS_39, [prov:type='prov:Person', prov:name="Nadim, S. S., Ghosh, I., & Chattopadhyay, J."])
+
+endDocument
