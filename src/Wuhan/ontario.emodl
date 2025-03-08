@@ -1,68 +1,68 @@
-(import (rnrs) (emodl cmslib))
+(import ( rnrs) ( emodl cmslib) )
 
-(start-model "Combined_Model")
+(start-model "Ontario_Model.emodl")
 
-(species D 0)          # Dead
-(species E 10)         # Exposed
-(species H_admitted 0) # Admitted to hospital
-(species H_postICU 0)  # Hospitalized, post-ICU
-(species H_preICU 0)   # Hospitalized, pre-ICU
-(species ICU 0)        # ICU cases
-(species I_mild 0)     # Infectious, mild
-(species I_mild_quarantined 0)  # Mild cases, quarantined
-(species I_presymptomatic 0)  # Infectious, presymptomatic
-(species I_presymptomatic_isolated 0)  # Infectious, presymptomatic, isolated
-(species I_severe 0)   # Infectious, severe
-(species I_severe_quarantined 0)  # Severe cases, quarantined
-(species Q 0)          # Quarantined
-(species R 0)          # Recovered
-(species S 13999990)   # Susceptible
+(species D 0)         ; Dead
+(species E 10)         ; Exposed 
+(species H_admitted 0) ; Admitted to hospital
+(species H_postICU 0)  ; Hospitalized, post-ICU
+(species H_preICU 0)   ; Hospitalized, pre-ICU
+(species ICU 0)        ; ICU cases
+(species I_mild 0)     ; Infectious, mild
+(species I_mild_quarantined 0)  ; Mild cases, quarantined
+(species I_presymptomatic 0)  ; Infectious, presymptomatic
+(species I_presymptomatic_isolated 0)  ; Infectious, presymptomatic, isolated
+(species I_severe 0)   ; Infectious, severe
+(species I_severe_quarantined 0)  ; Severe cases, quarantined
+(species Q 0)          ; Quarantined
+(species R 0)          ; Recovered
+(species S 13999990)   ; Susceptible
 
-(param beta 2.3)   # Basic reproduction number (R0) [ref 6]
-(param delta 0.1)  # Rate of hospitalization for severe cases [ref 21]
-(param gamma_mild 0.167)  # Recovery rate for mild cases (1/infectious period, mild to moderate) [ref 18-20]
-(param gamma_severe 0.167)  # Recovery rate for severe cases (1/infectious period, severe) [ref 18-20]
-(param hosp_stay_postICU 21)  # Average length of stay in hospital after ICU (days) [ref 22]
-(param hosp_stay_preICU 3)  # Average length of stay in hospital before ICU (days) [ref 21]
-(param hospital_mortality 0.15)  # Mortality rate in hospital [ref 21]
-(param icu_stay 21)  # Average length of stay in ICU (days) [ref 22]
-(param infectious_period_mild 6)  # Duration of infectious period, mild to moderate cases (days) [ref 18-20]
-(param infectious_period_severe 6)  # Duration of infectious period, severe cases (days) [ref 18-20]
-(param kappa 0.26)  # Mortality rate for ICU cases [ref 22]
-(param latent_period 2.5)  # Duration of latent period (days) [ref 18-20]
-(param presymptomatic_period 1)  # Duration of presymptomatic infectious period (days) [ref 18-20]
-(param rho 0.7)  # Proportion of cases detected and isolated [assumption]
-(param sigma 0.4)  # Rate of progression from exposed to infectious (1/latent period) [ref 18-20]
-(param theta 0.2)  # Rate of ICU admission for hospitalized cases [ref 21]
+(param beta 2.3)   ; Basic reproduction number (R0) [ref 6]
+(param delta 0.1)  ; Rate of hospitalization for severe cases [ref 21]
+(param gamma_mild 0.167)  ; Recovery rate for mild cases (1/infectious period, mild to moderate) [ref 18-20]
+(param gamma_severe 0.167)  ; Recovery rate for severe cases (1/infectious period, severe) [ref 18-20]
+(param hosp_stay_postICU 21)  ; Average length of stay in hospital after ICU (days) [ref 22]
+(param hosp_stay_preICU 3)  ; Average length of stay in hospital before ICU (days) [ref 21]
+(param hospital_mortality 0.15)  ; Mortality rate in hospital [ref 21]
+(param icu_stay 21)  ; Average length of stay in ICU (days) [ref 22]
+(param infectious_period_mild 6)  ; Duration of infectious period, mild to moderate cases (days) [ref 18-20]
+(param infectious_period_severe 6)  ; Duration of infectious period, severe cases (days) [ref 18-20]
+(param kappa 0.26)  ; Mortality rate for ICU cases [ref 22]
+(param latent_period 2.5)  ; Duration of latent period (days) [ref 18-20]
+(param presymptomatic_period 1)  ; Duration of presymptomatic infectious period (days) [ref 18-20]
+(param rho 0.7)  ; Proportion of cases detected and isolated [assumption]
+(param sigma 0.4)  ; Rate of progression from exposed to infectious (1/latent period) [ref 18-20]
+(param theta 0.2)  ; Rate of ICU admission for hospitalized cases [ref 21]
 
-(reaction death_hospital H_preICU -> D (hospital_mortality * H_preICU))
-(reaction death_hospital_admitted H_admitted -> D (hospital_mortality * H_admitted))
-(reaction death_icu ICU -> D (kappa * ICU))
-(reaction hospital_admission H_preICU -> H_admitted ((1 - theta) * gamma_severe * H_preICU))
-(reaction hospitalization_quarantined I_severe_quarantined -> H_preICU (delta * I_severe_quarantined))
-(reaction hospitalization_severe I_severe -> H_preICU (delta * I_severe))
-(reaction icu_admission H_preICU -> ICU (theta * H_preICU))
-(reaction infection S -> E (beta * S * (I_presymptomatic + I_presymptomatic_isolated + I_mild + I_severe + I_mild_quarantined + I_severe_quarantined) / population_size))
-(reaction isolated_presymptomatic_to_mild I_presymptomatic_isolated -> I_mild_quarantined (gamma_mild * I_presymptomatic_isolated))
-(reaction isolated_presymptomatic_to_severe I_presymptomatic_isolated -> I_severe_quarantined (gamma_severe * I_presymptomatic_isolated))
-(reaction latent_to_presymptomatic E -> I_presymptomatic (sigma * E))
-(reaction presymptomatic_to_mild I_presymptomatic -> I_mild (gamma_mild * I_presymptomatic))
-(reaction presymptomatic_to_severe I_presymptomatic -> I_severe (gamma_severe * I_presymptomatic))
-(reaction quarantine E -> Q (rho * sigma * E))
-(reaction quarantine_to_mild Q -> I_mild_quarantined (gamma_mild * Q))
-(reaction quarantine_to_severe Q -> I_severe_quarantined (gamma_severe * Q))
-(reaction recovery_hospital H_admitted -> R (gamma_severe * H_admitted))
-(reaction recovery_icu ICU -> H_postICU ((1 - kappa) * gamma_severe * ICU))
-(reaction recovery_mild I_mild -> R (gamma_mild * I_mild))
-(reaction recovery_mild_quarantined I_mild_quarantined -> R (gamma_mild * I_mild_quarantined))
-(reaction recovery_postICU H_postICU -> R (gamma_severe * H_postICU))
-(reaction recovery_preICU H_preICU -> R ((1 - theta) * gamma_severe * H_preICU))
-(reaction recovery_severe I_severe -> R (gamma_severe * I_severe))
-(reaction recovery_severe_quarantined I_severe_quarantined -> R (gamma_severe * I_severe_quarantined))
+(reaction death_hospital (H_preICU) (D) (* hospital_mortality H_preICU)) 
+(reaction death_hospital_admitted (H_admitted) (D) (* hospital_mortality H_admitted))
+(reaction death_icu (ICU) (D) (* kappa ICU))
+(reaction hospital_admission (H_preICU) (H_admitted) (* (- 1 theta) H_preICU))
+(reaction hospitalization_quarantined (I_severe_quarantined) (H_preICU) (* delta I_severe_quarantined))
+(reaction hospitalization_severe (I_severe) (H_preICU) (* delta I_severe))
+(reaction icu_admission (H_preICU) (ICU) (* theta H_preICU))
+(reaction infection (S) (E) (* (* beta S) (/ (+ I_presymptomatic (+ I_presymptomatic_isolated (+ I_mild (+ I_severe (+ I_mild_quarantined I_severe_quarantined))))) population_size)))
+(reaction isolated_presymptomatic_to_mild (I_presymptomatic_isolated) (I_mild_quarantined) (* gamma_mild I_presymptomatic_isolated))
+(reaction isolated_presymptomatic_to_severe (I_presymptomatic_isolated) (I_severe_quarantined) (* gamma_severe I_presymptomatic_isolated))
+(reaction latent_to_presymptomatic (E) (I_presymptomatic) (* sigma E))
+(reaction presymptomatic_to_mild (I_presymptomatic) (I_mild) (* gamma_mild I_presymptomatic))
+(reaction presymptomatic_to_severe (I_presymptomatic) (I_severe) (* gamma_severe I_presymptomatic))
+(reaction quarantine (E) (Q) (* rho (* sigma E)))
+(reaction quarantine_to_mild (Q) (I_mild_quarantined) (* gamma_mild Q))
+(reaction quarantine_to_severe (Q) (I_severe_quarantined) (* gamma_severe Q))
+(reaction recovery_hospital (H_admitted) (R) (* gamma_severe H_admitted))
+(reaction recovery_icu (ICU) (H_postICU) (* (- 1 kappa) (* gamma_severe ICU)))
+(reaction recovery_mild (I_mild) (R) (* gamma_mild I_mild))
+(reaction recovery_mild_quarantined (I_mild_quarantined) (R) (* gamma_mild I_mild_quarantined))
+(reaction recovery_postICU (H_postICU) (R) (* gamma_severe H_postICU))
+(reaction recovery_preICU (H_preICU) (R) (* (- 1 theta) (* gamma_severe H_preICU)))
+(reaction recovery_severe (I_severe) (R) (* gamma_severe I_severe))
+(reaction recovery_severe_quarantined (I_severe_quarantined) (R) (* gamma_severe I_severe_quarantined))
 
 (observe total_deaths D)
-(observe total_hospitalized H_preICU + ICU + H_postICU + H_admitted)
-(observe total_infectious I_presymptomatic + I_presymptomatic_isolated + I_mild + I_severe + I_mild_quarantined + I_severe_quarantined)
+(observe total_hospitalized (+ (+ H_preICU ICU) (+ H_postICU H_admitted)))
+(observe total_infectious (+ I_presymptomatic (+ I_presymptomatic_isolated (+ I_mild (+ I_severe (+ I_mild_quarantined I_severe_quarantined))))))
 (observe total_recovered R)
 
 (end-model)
