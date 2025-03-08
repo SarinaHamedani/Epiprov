@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.w3.ns.prov.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: org.w3.ns.prov.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.w3.ns.prov.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.w3.ns.prov,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: org.w3.ns.prov.ide.contentassist.antlr.internal,
+ org.w3.ns.prov.ide.contentassist.antlr

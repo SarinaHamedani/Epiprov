@@ -1,0 +1,9 @@
+grammar org.idm.cms.emodl.Emodl with org.eclipse.xtext.common.Terminals
+
+generate emodl "http://www.idm.org/cms/emodl/Emodl"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';

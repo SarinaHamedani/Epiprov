@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.w3.ns.prov.ui
+Bundle-ManifestVersion: 2
+Bundle-Name: org.w3.ns.prov.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.w3.ns.prov.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.w3.ns.prov,
+ org.w3.ns.prov.ide,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.14.300",
+ org.eclipse.ui.ide;bundle-version="3.18.500",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: org.w3.ns.prov.ui.internal,
+ org.w3.ns.prov.ui.quickfix,
+ org.w3.ns.prov.ui.contentassist
+Bundle-Activator: org.w3.ns.prov.ui.internal.ProvActivator

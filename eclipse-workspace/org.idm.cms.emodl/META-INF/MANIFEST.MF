@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.idm.cms.emodl
+Bundle-ManifestVersion: 2
+Bundle-Name: org.idm.cms.emodl
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.idm.cms.emodl; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.37.0",
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: org.idm.cms.emodl.emodl.impl,
+ org.idm.cms.emodl,
+ org.idm.cms.emodl.services,
+ org.idm.cms.emodl.emodl.util,
+ org.idm.cms.emodl.generator,
+ org.idm.cms.emodl.scoping,
+ org.idm.cms.emodl.serializer,
+ org.idm.cms.emodl.parser.antlr,
+ org.idm.cms.emodl.emodl,
+ org.idm.cms.emodl.parser.antlr.internal,
+ org.idm.cms.emodl.validation
+Import-Package: org.apache.log4j

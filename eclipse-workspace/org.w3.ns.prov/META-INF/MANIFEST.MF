@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.w3.ns.prov
+Bundle-ManifestVersion: 2
+Bundle-Name: org.w3.ns.prov
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.w3.ns.prov; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.37.0",
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: org.w3.ns.prov.services,
+ org.w3.ns.prov.validation,
+ org.w3.ns.prov,
+ org.w3.ns.prov.provN.util,
+ org.w3.ns.prov.serializer,
+ org.w3.ns.prov.parser.antlr.internal,
+ org.w3.ns.prov.scoping,
+ org.w3.ns.prov.parser.antlr,
+ org.w3.ns.prov.provN.impl,
+ org.w3.ns.prov.provN,
+ org.w3.ns.prov.generator
+Import-Package: org.apache.log4j
