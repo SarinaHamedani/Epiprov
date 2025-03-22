@@ -73,10 +73,10 @@ public class EmodlSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
-      case EmodlPackage.MODEL:
+      case EmodlPackage.EMODEL:
       {
-        Model model = (Model)theEObject;
-        T result = caseModel(model);
+        EModel eModel = (EModel)theEObject;
+        T result = caseEModel(eModel);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -98,6 +98,13 @@ public class EmodlSwitch<T> extends Switch<T>
       {
         StartModel startModel = (StartModel)theEObject;
         T result = caseStartModel(startModel);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EmodlPackage.END_MODEL:
+      {
+        EndModel endModel = (EndModel)theEObject;
+        T result = caseEndModel(endModel);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -214,17 +221,17 @@ public class EmodlSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Model</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>EModel</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Model</em>'.
+   * @return the result of interpreting the object as an instance of '<em>EModel</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseModel(Model object)
+  public T caseEModel(EModel object)
   {
     return null;
   }
@@ -273,6 +280,22 @@ public class EmodlSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStartModel(StartModel object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>End Model</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>End Model</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEndModel(EndModel object)
   {
     return null;
   }

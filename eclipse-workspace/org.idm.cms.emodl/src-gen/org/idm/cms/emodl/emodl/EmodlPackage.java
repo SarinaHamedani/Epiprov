@@ -58,14 +58,14 @@ public interface EmodlPackage extends EPackage
   EmodlPackage eINSTANCE = org.idm.cms.emodl.emodl.impl.EmodlPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link org.idm.cms.emodl.emodl.impl.ModelImpl <em>Model</em>}' class.
+   * The meta object id for the '{@link org.idm.cms.emodl.emodl.impl.EModelImpl <em>EModel</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.idm.cms.emodl.emodl.impl.ModelImpl
-   * @see org.idm.cms.emodl.emodl.impl.EmodlPackageImpl#getModel()
+   * @see org.idm.cms.emodl.emodl.impl.EModelImpl
+   * @see org.idm.cms.emodl.emodl.impl.EmodlPackageImpl#getEModel()
    * @generated
    */
-  int MODEL = 0;
+  int EMODEL = 0;
 
   /**
    * The feature id for the '<em><b>Imports</b></em>' containment reference list.
@@ -74,7 +74,7 @@ public interface EmodlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__IMPORTS = 0;
+  int EMODEL__IMPORTS = 0;
 
   /**
    * The feature id for the '<em><b>Start Model</b></em>' containment reference.
@@ -83,7 +83,7 @@ public interface EmodlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__START_MODEL = 1;
+  int EMODEL__START_MODEL = 1;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -92,25 +92,25 @@ public interface EmodlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__ELEMENTS = 2;
+  int EMODEL__ELEMENTS = 2;
 
   /**
-   * The feature id for the '<em><b>End Model</b></em>' attribute.
+   * The feature id for the '<em><b>End Model</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__END_MODEL = 3;
+  int EMODEL__END_MODEL = 3;
 
   /**
-   * The number of structural features of the '<em>Model</em>' class.
+   * The number of structural features of the '<em>EModel</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 4;
+  int EMODEL_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link org.idm.cms.emodl.emodl.impl.ImportImpl <em>Import</em>}' class.
@@ -197,6 +197,34 @@ public interface EmodlPackage extends EPackage
   int START_MODEL_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.idm.cms.emodl.emodl.impl.EndModelImpl <em>End Model</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.idm.cms.emodl.emodl.impl.EndModelImpl
+   * @see org.idm.cms.emodl.emodl.impl.EmodlPackageImpl#getEndModel()
+   * @generated
+   */
+  int END_MODEL = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int END_MODEL__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>End Model</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int END_MODEL_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.idm.cms.emodl.emodl.impl.ElementImpl <em>Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -204,7 +232,7 @@ public interface EmodlPackage extends EPackage
    * @see org.idm.cms.emodl.emodl.impl.EmodlPackageImpl#getElement()
    * @generated
    */
-  int ELEMENT = 4;
+  int ELEMENT = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -232,7 +260,7 @@ public interface EmodlPackage extends EPackage
    * @see org.idm.cms.emodl.emodl.impl.EmodlPackageImpl#getSpecies()
    * @generated
    */
-  int SPECIES = 5;
+  int SPECIES = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -269,7 +297,7 @@ public interface EmodlPackage extends EPackage
    * @see org.idm.cms.emodl.emodl.impl.EmodlPackageImpl#getParameter()
    * @generated
    */
-  int PARAMETER = 6;
+  int PARAMETER = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -306,7 +334,7 @@ public interface EmodlPackage extends EPackage
    * @see org.idm.cms.emodl.emodl.impl.EmodlPackageImpl#getFunction()
    * @generated
    */
-  int FUNCTION = 7;
+  int FUNCTION = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -343,7 +371,7 @@ public interface EmodlPackage extends EPackage
    * @see org.idm.cms.emodl.emodl.impl.EmodlPackageImpl#getObservable()
    * @generated
    */
-  int OBSERVABLE = 8;
+  int OBSERVABLE = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -380,7 +408,7 @@ public interface EmodlPackage extends EPackage
    * @see org.idm.cms.emodl.emodl.impl.EmodlPackageImpl#getReaction()
    * @generated
    */
-  int REACTION = 9;
+  int REACTION = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -435,7 +463,7 @@ public interface EmodlPackage extends EPackage
    * @see org.idm.cms.emodl.emodl.impl.EmodlPackageImpl#getStateEvent()
    * @generated
    */
-  int STATE_EVENT = 10;
+  int STATE_EVENT = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -481,7 +509,7 @@ public interface EmodlPackage extends EPackage
    * @see org.idm.cms.emodl.emodl.impl.EmodlPackageImpl#getTimeEvent()
    * @generated
    */
-  int TIME_EVENT = 11;
+  int TIME_EVENT = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -536,7 +564,7 @@ public interface EmodlPackage extends EPackage
    * @see org.idm.cms.emodl.emodl.impl.EmodlPackageImpl#getLocale()
    * @generated
    */
-  int LOCALE = 12;
+  int LOCALE = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -564,7 +592,7 @@ public interface EmodlPackage extends EPackage
    * @see org.idm.cms.emodl.emodl.impl.EmodlPackageImpl#getSetLocale()
    * @generated
    */
-  int SET_LOCALE = 13;
+  int SET_LOCALE = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -592,7 +620,7 @@ public interface EmodlPackage extends EPackage
    * @see org.idm.cms.emodl.emodl.impl.EmodlPackageImpl#getJson()
    * @generated
    */
-  int JSON = 14;
+  int JSON = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -629,7 +657,7 @@ public interface EmodlPackage extends EPackage
    * @see org.idm.cms.emodl.emodl.impl.EmodlPackageImpl#getVariableValuePairs()
    * @generated
    */
-  int VARIABLE_VALUE_PAIRS = 15;
+  int VARIABLE_VALUE_PAIRS = 16;
 
   /**
    * The feature id for the '<em><b>Variable Value Pairs</b></em>' containment reference list.
@@ -657,7 +685,7 @@ public interface EmodlPackage extends EPackage
    * @see org.idm.cms.emodl.emodl.impl.EmodlPackageImpl#getVariableValuePair()
    * @generated
    */
-  int VARIABLE_VALUE_PAIR = 16;
+  int VARIABLE_VALUE_PAIR = 17;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' attribute.
@@ -694,7 +722,7 @@ public interface EmodlPackage extends EPackage
    * @see org.idm.cms.emodl.emodl.impl.EmodlPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 17;
+  int EXPRESSION = 18;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -752,58 +780,58 @@ public interface EmodlPackage extends EPackage
 
 
   /**
-   * Returns the meta object for class '{@link org.idm.cms.emodl.emodl.Model <em>Model</em>}'.
+   * Returns the meta object for class '{@link org.idm.cms.emodl.emodl.EModel <em>EModel</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Model</em>'.
-   * @see org.idm.cms.emodl.emodl.Model
+   * @return the meta object for class '<em>EModel</em>'.
+   * @see org.idm.cms.emodl.emodl.EModel
    * @generated
    */
-  EClass getModel();
+  EClass getEModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.idm.cms.emodl.emodl.Model#getImports <em>Imports</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.idm.cms.emodl.emodl.EModel#getImports <em>Imports</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Imports</em>'.
-   * @see org.idm.cms.emodl.emodl.Model#getImports()
-   * @see #getModel()
+   * @see org.idm.cms.emodl.emodl.EModel#getImports()
+   * @see #getEModel()
    * @generated
    */
-  EReference getModel_Imports();
+  EReference getEModel_Imports();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.idm.cms.emodl.emodl.Model#getStartModel <em>Start Model</em>}'.
+   * Returns the meta object for the containment reference '{@link org.idm.cms.emodl.emodl.EModel#getStartModel <em>Start Model</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Start Model</em>'.
-   * @see org.idm.cms.emodl.emodl.Model#getStartModel()
-   * @see #getModel()
+   * @see org.idm.cms.emodl.emodl.EModel#getStartModel()
+   * @see #getEModel()
    * @generated
    */
-  EReference getModel_StartModel();
+  EReference getEModel_StartModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.idm.cms.emodl.emodl.Model#getElements <em>Elements</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.idm.cms.emodl.emodl.EModel#getElements <em>Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Elements</em>'.
-   * @see org.idm.cms.emodl.emodl.Model#getElements()
-   * @see #getModel()
+   * @see org.idm.cms.emodl.emodl.EModel#getElements()
+   * @see #getEModel()
    * @generated
    */
-  EReference getModel_Elements();
+  EReference getEModel_Elements();
 
   /**
-   * Returns the meta object for the attribute '{@link org.idm.cms.emodl.emodl.Model#getEndModel <em>End Model</em>}'.
+   * Returns the meta object for the containment reference '{@link org.idm.cms.emodl.emodl.EModel#getEndModel <em>End Model</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>End Model</em>'.
-   * @see org.idm.cms.emodl.emodl.Model#getEndModel()
-   * @see #getModel()
+   * @return the meta object for the containment reference '<em>End Model</em>'.
+   * @see org.idm.cms.emodl.emodl.EModel#getEndModel()
+   * @see #getEModel()
    * @generated
    */
-  EAttribute getModel_EndModel();
+  EReference getEModel_EndModel();
 
   /**
    * Returns the meta object for class '{@link org.idm.cms.emodl.emodl.Import <em>Import</em>}'.
@@ -867,6 +895,27 @@ public interface EmodlPackage extends EPackage
    * @generated
    */
   EAttribute getStartModel_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.idm.cms.emodl.emodl.EndModel <em>End Model</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>End Model</em>'.
+   * @see org.idm.cms.emodl.emodl.EndModel
+   * @generated
+   */
+  EClass getEndModel();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.idm.cms.emodl.emodl.EndModel#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.idm.cms.emodl.emodl.EndModel#getName()
+   * @see #getEndModel()
+   * @generated
+   */
+  EAttribute getEndModel_Name();
 
   /**
    * Returns the meta object for class '{@link org.idm.cms.emodl.emodl.Element <em>Element</em>}'.
@@ -1274,14 +1323,14 @@ public interface EmodlPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link org.idm.cms.emodl.emodl.impl.ModelImpl <em>Model</em>}' class.
+     * The meta object literal for the '{@link org.idm.cms.emodl.emodl.impl.EModelImpl <em>EModel</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.idm.cms.emodl.emodl.impl.ModelImpl
-     * @see org.idm.cms.emodl.emodl.impl.EmodlPackageImpl#getModel()
+     * @see org.idm.cms.emodl.emodl.impl.EModelImpl
+     * @see org.idm.cms.emodl.emodl.impl.EmodlPackageImpl#getEModel()
      * @generated
      */
-    EClass MODEL = eINSTANCE.getModel();
+    EClass EMODEL = eINSTANCE.getEModel();
 
     /**
      * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
@@ -1289,7 +1338,7 @@ public interface EmodlPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__IMPORTS = eINSTANCE.getModel_Imports();
+    EReference EMODEL__IMPORTS = eINSTANCE.getEModel_Imports();
 
     /**
      * The meta object literal for the '<em><b>Start Model</b></em>' containment reference feature.
@@ -1297,7 +1346,7 @@ public interface EmodlPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__START_MODEL = eINSTANCE.getModel_StartModel();
+    EReference EMODEL__START_MODEL = eINSTANCE.getEModel_StartModel();
 
     /**
      * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
@@ -1305,15 +1354,15 @@ public interface EmodlPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__ELEMENTS = eINSTANCE.getModel_Elements();
+    EReference EMODEL__ELEMENTS = eINSTANCE.getEModel_Elements();
 
     /**
-     * The meta object literal for the '<em><b>End Model</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>End Model</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute MODEL__END_MODEL = eINSTANCE.getModel_EndModel();
+    EReference EMODEL__END_MODEL = eINSTANCE.getEModel_EndModel();
 
     /**
      * The meta object literal for the '{@link org.idm.cms.emodl.emodl.impl.ImportImpl <em>Import</em>}' class.
@@ -1368,6 +1417,24 @@ public interface EmodlPackage extends EPackage
      * @generated
      */
     EAttribute START_MODEL__NAME = eINSTANCE.getStartModel_Name();
+
+    /**
+     * The meta object literal for the '{@link org.idm.cms.emodl.emodl.impl.EndModelImpl <em>End Model</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.idm.cms.emodl.emodl.impl.EndModelImpl
+     * @see org.idm.cms.emodl.emodl.impl.EmodlPackageImpl#getEndModel()
+     * @generated
+     */
+    EClass END_MODEL = eINSTANCE.getEndModel();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute END_MODEL__NAME = eINSTANCE.getEndModel_Name();
 
     /**
      * The meta object literal for the '{@link org.idm.cms.emodl.emodl.impl.ElementImpl <em>Element</em>}' class.

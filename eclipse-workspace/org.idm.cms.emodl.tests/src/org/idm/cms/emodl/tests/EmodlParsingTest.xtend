@@ -7,16 +7,16 @@ import com.google.inject.Inject
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.extensions.InjectionExtension
 import org.eclipse.xtext.testing.util.ParseHelper
-import org.idm.cms.emodl.emodl.Model
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.^extension.ExtendWith
+import org.idm.cms.emodl.emodl.EModel
 
 @ExtendWith(InjectionExtension)
 @InjectWith(EmodlInjectorProvider)
 class EmodlParsingTest {
 	@Inject
-	ParseHelper<Model> parseHelper
+	ParseHelper<EModel> parseHelper
 	
 	@Test
 	def void loadModel() {

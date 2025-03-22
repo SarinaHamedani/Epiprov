@@ -71,7 +71,7 @@ public class ProvNParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup_0(), "rule__QualifiedName__Group_0__0");
 			builder.put(grammarAccess.getDateTimeAccess().getGroup(), "rule__DateTime__Group__0");
-			builder.put(grammarAccess.getDocumentAccess().getNameAssignment_1(), "rule__Document__NameAssignment_1");
+			builder.put(grammarAccess.getDocumentAccess().getCompartmentalModelAssignment_1(), "rule__Document__CompartmentalModelAssignment_1");
 			builder.put(grammarAccess.getModelAccess().getNamespacesAssignment_1(), "rule__Model__NamespacesAssignment_1");
 			builder.put(grammarAccess.getModelAccess().getStatementsAssignment_2(), "rule__Model__StatementsAssignment_2");
 			builder.put(grammarAccess.getNamespaceAccess().getNameAssignment_2(), "rule__Namespace__NameAssignment_2");

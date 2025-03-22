@@ -1,0 +1,122 @@
+Agent Expert1
+Agent Expert2
+
+UncertainElement beta { 
+    beliefs {
+        Belief Expert1_beta (Expert1, (0.06, 0.0, 0.94, 2.3)),
+        Belief Expert2_beta (Expert2, (0.87, 0.1, 0.03, 2.3))
+    }
+} 
+
+UncertainElement sigma {
+    beliefs {
+        Belief Expert1_sigma (Expert1, (0.98, 0.0, 0.02, 0.4)),
+        Belief Expert2_sigma (Expert2, (0.21, 0.47, 0.32, 0.4))
+    }
+}
+
+UncertainElement gamma_mild {
+    beliefs {
+        Belief Expert1_gamma_mild (Expert1, (0.2, 0.08, 0.72, 0.167)),
+        Belief Expert2_gamma_mild (Expert2, (0.9, 0.03, 0.07, 0.167))
+    }
+}
+
+UncertainElement gamma_severe {
+    beliefs {
+        Belief Expert1_gamma_severe (Expert1, (0.96, 0.02, 0.02, 0.167)),
+        Belief Expert2_gamma_severe (Expert2, (0.34, 0.43, 0.23, 0.167))
+    }
+}
+
+UncertainElement delta {
+    beliefs {
+        Belief Expert1_delta (Expert1, (0.44, 0.25, 0.31, 0.1)),
+        Belief Expert2_delta (Expert2, (0.11, 0.87, 0.02, 0.1))
+    }
+}
+
+UncertainElement theta {
+    beliefs {
+        Belief Expert1_theta (Expert1, (0.93, 0.06, 0.01, 0.2)),
+        Belief Expert2_theta (Expert2, (0.29, 0.21, 0.5, 0.2))
+    }
+}
+
+UncertainElement rho {
+    beliefs {
+        Belief Expert1_rho (Expert1, (0.28, 0.35, 0.37, 0.7)),
+        Belief Expert2_rho (Expert2, (0.71, 0.28, 0.01, 0.7))
+    }
+}
+
+UncertainElement kappa {
+    beliefs {
+        Belief Expert1_kappa (Expert1, (0.45, 0.31, 0.24, 0.26)),
+        Belief Expert2_kappa (Expert2, (0.87, 0.1, 0.03, 0.26))
+    }
+}
+
+UncertainElement time_quarantine {
+    beliefs {
+        Belief Expert1_time_quarantine (Expert1, (0.74, 0.03, 0.23, 14.0)),
+        Belief Expert2_time_quarantine (Expert2, (0.05, 0.65, 0.3, 14.0))
+    }
+}
+
+UncertainElement hosp_stay_preICU {
+    beliefs {
+        Belief Expert1_hosp_stay_preICU (Expert1, (0.77, 0.05, 0.18, 3.0)),
+        Belief Expert2_hosp_stay_preICU (Expert2, (0.38, 0.23, 0.39, 3.0))
+    }
+}
+
+UncertainElement hosp_stay_postICU {
+    beliefs {
+        Belief Expert1_hosp_stay_postICU (Expert1, (0.78, 0.01, 0.21, 21.0)),
+        Belief Expert2_hosp_stay_postICU (Expert2, (0.17, 0.25, 0.58, 21.0))
+    }
+}
+
+UncertainElement icu_stay {
+    beliefs {
+        Belief Expert1_icu_stay (Expert1, (0.49, 0.51, 0.0, 21.0)),
+        Belief Expert2_icu_stay (Expert2, (0.35, 0.11, 0.54, 21.0))
+    }
+}
+
+UncertainElement latent_period {
+    beliefs {
+        Belief Expert1_latent_period (Expert1, (0.49, 0.09, 0.42, 2.5)),
+        Belief Expert2_latent_period (Expert2, (0.42, 0.21, 0.37, 2.5))
+    }
+}
+
+UncertainElement presymptomatic_period {
+    beliefs {
+        Belief Expert1_presymptomatic_period (Expert1, (0.64, 0.18, 0.18, 1.0)),
+        Belief Expert2_presymptomatic_period (Expert2, (0.64, 0.11, 0.25, 1.0))
+    }
+}
+
+UncertainElement infectious_period_mild {
+    beliefs {
+        Belief Expert1_infectious_period_mild (Expert1, (0.83, 0.06, 0.11, 6.0)),
+        Belief Expert2_infectious_period_mild (Expert2, (0.37, 0.24, 0.39, 6.0))
+    }
+}
+
+
+UncertainElement quarantine_efficiency {
+    beliefs {
+        Belief Expert1_quarantine_efficiency (Expert1, (0.32, 0.02, 0.66, 0.6)),
+        Belief Expert2_quarantine_efficiency (Expert2, (0.36, 0.27, 0.37, 0.6))
+    }
+}
+
+UncertainElement population_size {
+    beliefs {
+        Belief Expert1_population_size (Expert1, (0.56, 0.39, 0.05, 14000.0)),
+        Belief Expert2_population_size (Expert2, (0.1, 0.52, 0.38, 14000.0))
+    }
+}

@@ -228,7 +228,7 @@ public class ProvNPackageImpl extends EPackageImpl implements ProvNPackage
    * @generated
    */
   @Override
-  public EReference getDocument_Name()
+  public EReference getDocument_CompartmentalModel()
   {
     return (EReference)documentEClass.getEStructuralFeatures().get(0);
   }
@@ -881,7 +881,7 @@ public class ProvNPackageImpl extends EPackageImpl implements ProvNPackage
 
     // Create classes and their features
     documentEClass = createEClass(DOCUMENT);
-    createEReference(documentEClass, DOCUMENT__NAME);
+    createEReference(documentEClass, DOCUMENT__COMPARTMENTAL_MODEL);
 
     modelEClass = createEClass(MODEL);
     createEReference(modelEClass, MODEL__NAMESPACES);
@@ -997,7 +997,7 @@ public class ProvNPackageImpl extends EPackageImpl implements ProvNPackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(documentEClass, Document.class, "Document", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDocument_Name(), this.getModel(), null, "name", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDocument_CompartmentalModel(), this.getModel(), null, "compartmentalModel", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModel_Namespaces(), this.getNamespace(), null, "namespaces", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

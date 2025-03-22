@@ -83,17 +83,17 @@ ruleDocument returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getDocumentAccess().getNameModelParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getDocumentAccess().getCompartmentalModelModelParserRuleCall_1_0());
 				}
-				lv_name_1_0=ruleModel
+				lv_compartmentalModel_1_0=ruleModel
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getDocumentRule());
 					}
 					set(
 						$current,
-						"name",
-						lv_name_1_0,
+						"compartmentalModel",
+						lv_compartmentalModel_1_0,
 						"org.w3.ns.prov.ProvN.Model");
 					afterParserOrEnumRuleCall();
 				}

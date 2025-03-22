@@ -24,5 +24,6 @@ Export-Package: org.w3.ns.prov.services,
  org.w3.ns.prov.parser.antlr,
  org.w3.ns.prov.provN.impl,
  org.w3.ns.prov.provN,
- org.w3.ns.prov.generator
+ org.w3.ns.prov.generator,
+ org.w3.ns.prov.formatting2
 Import-Package: org.apache.log4j

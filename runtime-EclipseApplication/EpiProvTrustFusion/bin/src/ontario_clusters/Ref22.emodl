@@ -1,0 +1,19 @@
+(import ( rnrs) ( emodl cmslib))
+
+(start-model "Ref22")
+
+(param hosp_stay_postICU 21)  ; Average length of stay in hospital after ICU (days) [ref 22]
+(param icu_stay 21)  ; Average length of stay in ICU (days) [ref 22]
+(param kappa 0.26)  ; Mortality rate for ICU cases [ref 22]
+(species D 0)         ; Dead
+(species E 10)         ; Exposed 
+(species H_postICU 0)  ; Hospitalized, post-ICU
+(species H_preICU 0)   ; Hospitalized, pre-ICU
+(species ICU 0)        ; ICU cases
+(species S 13999990)   ; Susceptible
+(reaction death_icu (ICU) (D) (* kappa ICU))
+(reaction recovery_icu (ICU) (H_postICU) (* (- 1 kappa) (* gamma_severe ICU)))
+(observe total_deaths D)
+(observe total_hospitalized (+ (+ H_preICU ICU) (+ H_postICU H_admitted)))
+
+(end-model)

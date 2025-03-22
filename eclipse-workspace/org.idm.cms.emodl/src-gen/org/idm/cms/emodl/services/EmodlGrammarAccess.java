@@ -24,8 +24,8 @@ import org.eclipse.xtext.service.GrammarProvider;
 @Singleton
 public class EmodlGrammarAccess extends AbstractElementFinder.AbstractGrammarElementFinder {
 	
-	public class ModelElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.idm.cms.emodl.Emodl.Model");
+	public class EModelElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.idm.cms.emodl.Emodl.EModel");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cImportsAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cImportsImportParserRuleCall_0_0 = (RuleCall)cImportsAssignment_0.eContents().get(0);
@@ -36,17 +36,17 @@ public class EmodlGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Assignment cEndModelAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cEndModelEndModelParserRuleCall_3_0 = (RuleCall)cEndModelAssignment_3.eContents().get(0);
 		
-		//Model:
+		//EModel:
 		//    imports+=Import*
-		//    (startModel=StartModel)?
+		//    startModel=StartModel
 		//    elements+=Element*
-		//    (endModel=EndModel)?;
+		//    endModel=EndModel;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//imports+=Import*
-		//(startModel=StartModel)?
+		//startModel=StartModel
 		//elements+=Element*
-		//(endModel=EndModel)?
+		//endModel=EndModel
 		public Group getGroup() { return cGroup; }
 		
 		//imports+=Import*
@@ -55,7 +55,7 @@ public class EmodlGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//Import
 		public RuleCall getImportsImportParserRuleCall_0_0() { return cImportsImportParserRuleCall_0_0; }
 		
-		//(startModel=StartModel)?
+		//startModel=StartModel
 		public Assignment getStartModelAssignment_1() { return cStartModelAssignment_1; }
 		
 		//StartModel
@@ -67,7 +67,7 @@ public class EmodlGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//Element
 		public RuleCall getElementsElementParserRuleCall_2_0() { return cElementsElementParserRuleCall_2_0; }
 		
-		//(endModel=EndModel)?
+		//endModel=EndModel
 		public Assignment getEndModelAssignment_3() { return cEndModelAssignment_3; }
 		
 		//EndModel
@@ -164,14 +164,30 @@ public class EmodlGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	public class EndModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.idm.cms.emodl.Emodl.EndModel");
-		private final Keyword cEndModelKeyword = (Keyword)rule.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cEndModelAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cEndModelKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
 		//EndModel:
-		//    '(end-model)';
+		//    {EndModel} '(end-model)' name=ID?;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//{EndModel} '(end-model)' name=ID?
+		public Group getGroup() { return cGroup; }
+		
+		//{EndModel}
+		public Action getEndModelAction_0() { return cEndModelAction_0; }
+		
 		//'(end-model)'
-		public Keyword getEndModelKeyword() { return cEndModelKeyword; }
+		public Keyword getEndModelKeyword_1() { return cEndModelKeyword_1; }
+		
+		//name=ID?
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 	}
 	public class ElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.idm.cms.emodl.Emodl.Element");
@@ -850,7 +866,7 @@ public class EmodlGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	
-	private final ModelElements pModel;
+	private final EModelElements pEModel;
 	private final ImportElements pImport;
 	private final ImportGroupElements pImportGroup;
 	private final StartModelElements pStartModel;
@@ -884,7 +900,7 @@ public class EmodlGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 			TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
-		this.pModel = new ModelElements();
+		this.pEModel = new EModelElements();
 		this.pImport = new ImportElements();
 		this.pImportGroup = new ImportGroupElements();
 		this.pStartModel = new StartModelElements();
@@ -937,17 +953,17 @@ public class EmodlGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 
 	
-	//Model:
+	//EModel:
 	//    imports+=Import*
-	//    (startModel=StartModel)?
+	//    startModel=StartModel
 	//    elements+=Element*
-	//    (endModel=EndModel)?;
-	public ModelElements getModelAccess() {
-		return pModel;
+	//    endModel=EndModel;
+	public EModelElements getEModelAccess() {
+		return pEModel;
 	}
 	
-	public ParserRule getModelRule() {
-		return getModelAccess().getRule();
+	public ParserRule getEModelRule() {
+		return getEModelAccess().getRule();
 	}
 	
 	//Import:
@@ -981,7 +997,7 @@ public class EmodlGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//EndModel:
-	//    '(end-model)';
+	//    {EndModel} '(end-model)' name=ID?;
 	public EndModelElements getEndModelAccess() {
 		return pEndModel;
 	}

@@ -1,0 +1,20 @@
+{
+    "Ref18-20": [
+        "latent_period", "presymptomatic_period", "infectious_period_mild", "infectious_period_severe", "gamma_mild", "gamma_severe"
+    ],
+    "Ref6": [
+        "beta"
+    ],
+    "Assumption": [
+        "rho", "quarantine_efficiency"
+    ],
+    "Ref21": [
+        "sigma", "hosp_stay_preICU", "theta"
+    ],
+    "Ref22": [
+        "kappa", "hosp_stay_postICU", "icu_stay"
+    ],
+    "Unknown": [
+        "delta"
+    ]
+}

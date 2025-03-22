@@ -24,7 +24,7 @@ import org.w3.ns.prov.provN.ProvNPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.w3.ns.prov.provN.impl.DocumentImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.w3.ns.prov.provN.impl.DocumentImpl#getCompartmentalModel <em>Compartmental Model</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,14 +32,14 @@ import org.w3.ns.prov.provN.ProvNPackage;
 public class DocumentImpl extends MinimalEObjectImpl.Container implements Document
 {
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
+   * The cached value of the '{@link #getCompartmentalModel() <em>Compartmental Model</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getCompartmentalModel()
    * @generated
    * @ordered
    */
-  protected Model name;
+  protected Model compartmentalModel;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,9 +68,9 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
    * @generated
    */
   @Override
-  public Model getName()
+  public Model getCompartmentalModel()
   {
-    return name;
+    return compartmentalModel;
   }
 
   /**
@@ -78,13 +78,13 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetName(Model newName, NotificationChain msgs)
+  public NotificationChain basicSetCompartmentalModel(Model newCompartmentalModel, NotificationChain msgs)
   {
-    Model oldName = name;
-    name = newName;
+    Model oldCompartmentalModel = compartmentalModel;
+    compartmentalModel = newCompartmentalModel;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProvNPackage.DOCUMENT__NAME, oldName, newName);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProvNPackage.DOCUMENT__COMPARTMENTAL_MODEL, oldCompartmentalModel, newCompartmentalModel);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -96,20 +96,20 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
    * @generated
    */
   @Override
-  public void setName(Model newName)
+  public void setCompartmentalModel(Model newCompartmentalModel)
   {
-    if (newName != name)
+    if (newCompartmentalModel != compartmentalModel)
     {
       NotificationChain msgs = null;
-      if (name != null)
-        msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ProvNPackage.DOCUMENT__NAME, null, msgs);
-      if (newName != null)
-        msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ProvNPackage.DOCUMENT__NAME, null, msgs);
-      msgs = basicSetName(newName, msgs);
+      if (compartmentalModel != null)
+        msgs = ((InternalEObject)compartmentalModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ProvNPackage.DOCUMENT__COMPARTMENTAL_MODEL, null, msgs);
+      if (newCompartmentalModel != null)
+        msgs = ((InternalEObject)newCompartmentalModel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ProvNPackage.DOCUMENT__COMPARTMENTAL_MODEL, null, msgs);
+      msgs = basicSetCompartmentalModel(newCompartmentalModel, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ProvNPackage.DOCUMENT__NAME, newName, newName));
+      eNotify(new ENotificationImpl(this, Notification.SET, ProvNPackage.DOCUMENT__COMPARTMENTAL_MODEL, newCompartmentalModel, newCompartmentalModel));
   }
 
   /**
@@ -122,8 +122,8 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
   {
     switch (featureID)
     {
-      case ProvNPackage.DOCUMENT__NAME:
-        return basicSetName(null, msgs);
+      case ProvNPackage.DOCUMENT__COMPARTMENTAL_MODEL:
+        return basicSetCompartmentalModel(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -138,8 +138,8 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
   {
     switch (featureID)
     {
-      case ProvNPackage.DOCUMENT__NAME:
-        return getName();
+      case ProvNPackage.DOCUMENT__COMPARTMENTAL_MODEL:
+        return getCompartmentalModel();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -154,8 +154,8 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
   {
     switch (featureID)
     {
-      case ProvNPackage.DOCUMENT__NAME:
-        setName((Model)newValue);
+      case ProvNPackage.DOCUMENT__COMPARTMENTAL_MODEL:
+        setCompartmentalModel((Model)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,8 +171,8 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
   {
     switch (featureID)
     {
-      case ProvNPackage.DOCUMENT__NAME:
-        setName((Model)null);
+      case ProvNPackage.DOCUMENT__COMPARTMENTAL_MODEL:
+        setCompartmentalModel((Model)null);
         return;
     }
     super.eUnset(featureID);
@@ -188,8 +188,8 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
   {
     switch (featureID)
     {
-      case ProvNPackage.DOCUMENT__NAME:
-        return name != null;
+      case ProvNPackage.DOCUMENT__COMPARTMENTAL_MODEL:
+        return compartmentalModel != null;
     }
     return super.eIsSet(featureID);
   }

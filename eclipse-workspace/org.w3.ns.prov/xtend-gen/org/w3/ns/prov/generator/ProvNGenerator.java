@@ -39,7 +39,7 @@ public class ProvNGenerator extends AbstractGenerator {
     sb.newLine();
     sb.newLine();
     final Random rand = new Random();
-    EList<Statement> _statements = doc.getName().getStatements();
+    EList<Statement> _statements = doc.getCompartmentalModel().getStatements();
     for (final Statement stmt : _statements) {
       if ((stmt instanceof Entity)) {
         final Entity entity = ((Entity) stmt);

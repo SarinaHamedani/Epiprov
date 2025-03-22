@@ -68,13 +68,13 @@ public interface ProvNPackage extends EPackage
   int DOCUMENT = 0;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' containment reference.
+   * The feature id for the '<em><b>Compartmental Model</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DOCUMENT__NAME = 0;
+  int DOCUMENT__COMPARTMENTAL_MODEL = 0;
 
   /**
    * The number of structural features of the '<em>Document</em>' class.
@@ -751,15 +751,15 @@ public interface ProvNPackage extends EPackage
   EClass getDocument();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.w3.ns.prov.provN.Document#getName <em>Name</em>}'.
+   * Returns the meta object for the containment reference '{@link org.w3.ns.prov.provN.Document#getCompartmentalModel <em>Compartmental Model</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Name</em>'.
-   * @see org.w3.ns.prov.provN.Document#getName()
+   * @return the meta object for the containment reference '<em>Compartmental Model</em>'.
+   * @see org.w3.ns.prov.provN.Document#getCompartmentalModel()
    * @see #getDocument()
    * @generated
    */
-  EReference getDocument_Name();
+  EReference getDocument_CompartmentalModel();
 
   /**
    * Returns the meta object for class '{@link org.w3.ns.prov.provN.Model <em>Model</em>}'.
@@ -1396,12 +1396,12 @@ public interface ProvNPackage extends EPackage
     EClass DOCUMENT = eINSTANCE.getDocument();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Compartmental Model</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DOCUMENT__NAME = eINSTANCE.getDocument_Name();
+    EReference DOCUMENT__COMPARTMENTAL_MODEL = eINSTANCE.getDocument_CompartmentalModel();
 
     /**
      * The meta object literal for the '{@link org.w3.ns.prov.provN.impl.ModelImpl <em>Model</em>}' class.

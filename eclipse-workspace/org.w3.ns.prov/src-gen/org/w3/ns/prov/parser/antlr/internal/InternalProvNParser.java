@@ -131,40 +131,40 @@ public class InternalProvNParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDocument"
-    // InternalProvN.g:71:1: ruleDocument returns [EObject current=null] : (otherlv_0= 'document' ( (lv_name_1_0= ruleModel ) ) otherlv_2= 'endDocument' ) ;
+    // InternalProvN.g:71:1: ruleDocument returns [EObject current=null] : (otherlv_0= 'document' ( (lv_compartmentalModel_1_0= ruleModel ) ) otherlv_2= 'endDocument' ) ;
     public final EObject ruleDocument() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_2=null;
-        EObject lv_name_1_0 = null;
+        EObject lv_compartmentalModel_1_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalProvN.g:77:2: ( (otherlv_0= 'document' ( (lv_name_1_0= ruleModel ) ) otherlv_2= 'endDocument' ) )
-            // InternalProvN.g:78:2: (otherlv_0= 'document' ( (lv_name_1_0= ruleModel ) ) otherlv_2= 'endDocument' )
+            // InternalProvN.g:77:2: ( (otherlv_0= 'document' ( (lv_compartmentalModel_1_0= ruleModel ) ) otherlv_2= 'endDocument' ) )
+            // InternalProvN.g:78:2: (otherlv_0= 'document' ( (lv_compartmentalModel_1_0= ruleModel ) ) otherlv_2= 'endDocument' )
             {
-            // InternalProvN.g:78:2: (otherlv_0= 'document' ( (lv_name_1_0= ruleModel ) ) otherlv_2= 'endDocument' )
-            // InternalProvN.g:79:3: otherlv_0= 'document' ( (lv_name_1_0= ruleModel ) ) otherlv_2= 'endDocument'
+            // InternalProvN.g:78:2: (otherlv_0= 'document' ( (lv_compartmentalModel_1_0= ruleModel ) ) otherlv_2= 'endDocument' )
+            // InternalProvN.g:79:3: otherlv_0= 'document' ( (lv_compartmentalModel_1_0= ruleModel ) ) otherlv_2= 'endDocument'
             {
             otherlv_0=(Token)match(input,12,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getDocumentAccess().getDocumentKeyword_0());
             		
-            // InternalProvN.g:83:3: ( (lv_name_1_0= ruleModel ) )
-            // InternalProvN.g:84:4: (lv_name_1_0= ruleModel )
+            // InternalProvN.g:83:3: ( (lv_compartmentalModel_1_0= ruleModel ) )
+            // InternalProvN.g:84:4: (lv_compartmentalModel_1_0= ruleModel )
             {
-            // InternalProvN.g:84:4: (lv_name_1_0= ruleModel )
-            // InternalProvN.g:85:5: lv_name_1_0= ruleModel
+            // InternalProvN.g:84:4: (lv_compartmentalModel_1_0= ruleModel )
+            // InternalProvN.g:85:5: lv_compartmentalModel_1_0= ruleModel
             {
 
-            					newCompositeNode(grammarAccess.getDocumentAccess().getNameModelParserRuleCall_1_0());
+            					newCompositeNode(grammarAccess.getDocumentAccess().getCompartmentalModelModelParserRuleCall_1_0());
             				
             pushFollow(FOLLOW_4);
-            lv_name_1_0=ruleModel();
+            lv_compartmentalModel_1_0=ruleModel();
 
             state._fsp--;
 
@@ -174,8 +174,8 @@ public class InternalProvNParser extends AbstractInternalAntlrParser {
             					}
             					set(
             						current,
-            						"name",
-            						lv_name_1_0,
+            						"compartmentalModel",
+            						lv_compartmentalModel_1_0,
             						"org.w3.ns.prov.ProvN.Model");
             					afterParserOrEnumRuleCall();
             				

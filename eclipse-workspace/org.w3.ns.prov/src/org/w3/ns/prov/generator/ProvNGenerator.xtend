@@ -32,7 +32,7 @@ class ProvNGenerator extends AbstractGenerator {
         sb.newLine
 
         val rand = new Random()
-		for (stmt : doc.name.statements) {
+		for (stmt : doc.compartmentalModel.statements) {
 			if (stmt instanceof Entity) {
 				val entity = stmt as Entity
 				val valueAttr = IterableExtensions.head(entity.attributes.filter[ a | a.label == "prov:value" ])

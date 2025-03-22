@@ -76,9 +76,9 @@ public class EmodlAdapterFactory extends AdapterFactoryImpl
     new EmodlSwitch<Adapter>()
     {
       @Override
-      public Adapter caseModel(Model object)
+      public Adapter caseEModel(EModel object)
       {
-        return createModelAdapter();
+        return createEModelAdapter();
       }
       @Override
       public Adapter caseImport(Import object)
@@ -94,6 +94,11 @@ public class EmodlAdapterFactory extends AdapterFactoryImpl
       public Adapter caseStartModel(StartModel object)
       {
         return createStartModelAdapter();
+      }
+      @Override
+      public Adapter caseEndModel(EndModel object)
+      {
+        return createEndModelAdapter();
       }
       @Override
       public Adapter caseElement(Element object)
@@ -188,16 +193,16 @@ public class EmodlAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link org.idm.cms.emodl.emodl.Model <em>Model</em>}'.
+   * Creates a new adapter for an object of class '{@link org.idm.cms.emodl.emodl.EModel <em>EModel</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.idm.cms.emodl.emodl.Model
+   * @see org.idm.cms.emodl.emodl.EModel
    * @generated
    */
-  public Adapter createModelAdapter()
+  public Adapter createEModelAdapter()
   {
     return null;
   }
@@ -243,6 +248,21 @@ public class EmodlAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStartModelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.idm.cms.emodl.emodl.EndModel <em>End Model</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.idm.cms.emodl.emodl.EndModel
+   * @generated
+   */
+  public Adapter createEndModelAdapter()
   {
     return null;
   }

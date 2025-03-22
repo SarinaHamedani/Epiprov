@@ -24,5 +24,6 @@ Export-Package: org.idm.cms.emodl.emodl.impl,
  org.idm.cms.emodl.parser.antlr,
  org.idm.cms.emodl.emodl,
  org.idm.cms.emodl.parser.antlr.internal,
- org.idm.cms.emodl.validation
+ org.idm.cms.emodl.validation,
+ org.idm.cms.emodl.formatting2
 Import-Package: org.apache.log4j

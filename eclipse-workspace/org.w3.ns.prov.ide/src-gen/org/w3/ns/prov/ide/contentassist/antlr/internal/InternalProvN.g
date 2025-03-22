@@ -597,9 +597,9 @@ rule__Document__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getDocumentAccess().getNameAssignment_1()); }
-	(rule__Document__NameAssignment_1)
-	{ after(grammarAccess.getDocumentAccess().getNameAssignment_1()); }
+	{ before(grammarAccess.getDocumentAccess().getCompartmentalModelAssignment_1()); }
+	(rule__Document__CompartmentalModelAssignment_1)
+	{ after(grammarAccess.getDocumentAccess().getCompartmentalModelAssignment_1()); }
 )
 ;
 finally {
@@ -4926,15 +4926,15 @@ finally {
 }
 
 
-rule__Document__NameAssignment_1
+rule__Document__CompartmentalModelAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getDocumentAccess().getNameModelParserRuleCall_1_0()); }
+		{ before(grammarAccess.getDocumentAccess().getCompartmentalModelModelParserRuleCall_1_0()); }
 		ruleModel
-		{ after(grammarAccess.getDocumentAccess().getNameModelParserRuleCall_1_0()); }
+		{ after(grammarAccess.getDocumentAccess().getCompartmentalModelModelParserRuleCall_1_0()); }
 	)
 ;
 finally {

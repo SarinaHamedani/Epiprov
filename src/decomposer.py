@@ -27,7 +27,7 @@ def find_collection_name(lines: List[str]):
 def write_provn(cluster_name: str, lines: List[str], output_dir: str, parameters):
     os.makedirs(output_dir, exist_ok=True)
     output_path = os.path.join(output_dir, f"{cluster_name}.provn")
-    header = "document\n\nprefix epi <http://www.cs.rpi.edu/~hendler/>\nprefix provbook <http://www.provbook.org>\n\n"
+    header = "document\n\nprefix epi <http://www.cs.rpi.edu/~hendler/>\nprefix prov <http://www.prov.org>\n\n"
     footer = "\nendDocument"
     original_collection = find_collection_name(lines)
     
@@ -35,14 +35,14 @@ def write_provn(cluster_name: str, lines: List[str], output_dir: str, parameters
     with open(output_path, 'w') as file:
         file.write(header)
         
-        file.write(f'entity(provbook:{cluster_name}, [prov:type = "prov:Collection", prov:label = "Fragment {cluster_name}"])\n')
-        file.write('agent(provbook:GEODES_Epimodel, [prov:label = "GEODES Epimodel" %% xsd:string])\n')
-        file.write('activity(provbook:Slicing)\n')
-        file.write(f'used(provbook:Slicing, provbook:{original_collection}, 2025-02-07T11:00:00)\n')
-        file.write(f'wasGeneratedBy(provbook:{cluster_name}, provbook:Slicing, -)\n')
-        file.write(f'wasAssociatedWith(provbook:Slicing, provbook:GEODES_Epimodel, -)\n')
+        file.write(f'entity(prov:{cluster_name}, [prov:type = "prov:Collection", prov:label = "Fragment {cluster_name}"])\n')
+        file.write('agent(prov:GEODES_Epimodel, [prov:label = "GEODES Epimodel" %% xsd:string])\n')
+        file.write('activity(prov:Slicing)\n')
+        file.write(f'used(prov:Slicing, prov:{original_collection}, 2025-02-07T11:00:00)\n')
+        file.write(f'wasGeneratedBy(prov:{cluster_name}, prov:Slicing, -)\n')
+        file.write(f'wasAssociatedWith(prov:Slicing, prov:GEODES_Epimodel, -)\n')
         for param in parameters:
-            file.write(f'hadMember(provbook:{cluster_name}, provbook:{param})\n')
+            file.write(f'hadMember(prov:{cluster_name}, prov:{param})\n')
     
         file.writelines(lines)
         file.write(footer)

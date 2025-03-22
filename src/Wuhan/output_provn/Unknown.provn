@@ -1,19 +1,9 @@
 document
 
 prefix epi <http://www.cs.rpi.edu/~hendler/>
-prefix provbook <http://www.provbook.org>
+prefix prov <http://www.prov.org>
 
-entity(provbook:Unknown, [prov:type = "prov:Collection", prov:label = "Fragment Unknown"])
-agent(provbook:GEODES_Epimodel, [prov:label = "GEODES Epimodel" %% xsd:string])
-activity(provbook:Slicing)
-used(provbook:Slicing, provbook:Ontario_Model_Study, 2025-02-07T11:00:00)
-wasGeneratedBy(provbook:Unknown, provbook:Slicing, -)
-wasAssociatedWith(provbook:Slicing, provbook:GEODES_Epimodel, -)
-hadMember(provbook:Unknown, provbook:delta)
-entity(provbook:delta,[prov:value = "Rate of hospitalization for severe cases" %% xsd:string])
-hadMember(provbook:Ontario_Model_Study,provbook:delta)
-entity(provbook:Ontario_Model_Study,[prov:type = 'prov:Collection', prov:value = "A little provenance goes a long way" %% xsd:string])
-wasAttributedTo(provbook:Ontario_Model_Study, provbook:Ontario_Model_Authors)
-agent(provbook:Ontario_Model_Authors, [prov:label = "Tuite, A. R., Fisman, D. N., & Greer, A. L." %% xsd:string])
+entity(prov:delta,[prov:value = "0.1", prov:description = "Rate of hospitalization for severe cases"])
+hadMember(prov:Ontario_Model_Study,prov:delta)
 
 endDocument

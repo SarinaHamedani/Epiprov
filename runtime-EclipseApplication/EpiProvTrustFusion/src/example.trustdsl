@@ -1,0 +1,20 @@
+
+Agent Ada
+Agent Bob
+Agent Cam
+
+UncertainElement Temperature {
+    beliefs {
+        Belief Temp_Ada (Ada, (0.164, 0.662, 0.174, 0.579)),
+        Belief Temp_Bob (Bob, (0.171, 0.286, 0.543, 0.579)),
+        Belief Temp_Cam (Cam, (0.541, 0.408, 0.051, 0.579))
+    }
+}
+
+UncertainElement ACSystem {
+    beliefs {
+        Belief ac_Ada (Ada, (0.7, 0.2, 0.1, 0.5)),
+        Belief ac_Bob (Bob, (0.6, 0.3, 0.1, 0.5)),
+        Belief ac_Cam (Cam, (0.5, 0.4, 0.1, 0.5))
+    }
+}

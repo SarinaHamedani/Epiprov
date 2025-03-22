@@ -65,10 +65,11 @@ public class EmodlFactoryImpl extends EFactoryImpl implements EmodlFactory
   {
     switch (eClass.getClassifierID())
     {
-      case EmodlPackage.MODEL: return createModel();
+      case EmodlPackage.EMODEL: return createEModel();
       case EmodlPackage.IMPORT: return createImport();
       case EmodlPackage.IMPORT_GROUP: return createImportGroup();
       case EmodlPackage.START_MODEL: return createStartModel();
+      case EmodlPackage.END_MODEL: return createEndModel();
       case EmodlPackage.ELEMENT: return createElement();
       case EmodlPackage.SPECIES: return createSpecies();
       case EmodlPackage.PARAMETER: return createParameter();
@@ -94,10 +95,10 @@ public class EmodlFactoryImpl extends EFactoryImpl implements EmodlFactory
    * @generated
    */
   @Override
-  public Model createModel()
+  public EModel createEModel()
   {
-    ModelImpl model = new ModelImpl();
-    return model;
+    EModelImpl eModel = new EModelImpl();
+    return eModel;
   }
 
   /**
@@ -134,6 +135,18 @@ public class EmodlFactoryImpl extends EFactoryImpl implements EmodlFactory
   {
     StartModelImpl startModel = new StartModelImpl();
     return startModel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EndModel createEndModel()
+  {
+    EndModelImpl endModel = new EndModelImpl();
+    return endModel;
   }
 
   /**

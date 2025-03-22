@@ -43,7 +43,7 @@ import org.idm.cms.emodl.services.EmodlGrammarAccess;
 
     @Override
     protected String getFirstRuleName() {
-    	return "Model";
+    	return "EModel";
    	}
 
    	@Override
@@ -60,15 +60,15 @@ import org.idm.cms.emodl.services.EmodlGrammarAccess;
     }
 }
 
-// Entry rule entryRuleModel
-entryRuleModel returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getModelRule()); }
-	iv_ruleModel=ruleModel
-	{ $current=$iv_ruleModel.current; }
+// Entry rule entryRuleEModel
+entryRuleEModel returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEModelRule()); }
+	iv_ruleEModel=ruleEModel
+	{ $current=$iv_ruleEModel.current; }
 	EOF;
 
-// Rule Model
-ruleModel returns [EObject current=null]
+// Rule EModel
+ruleEModel returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -79,12 +79,12 @@ ruleModel returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getModelAccess().getImportsImportParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getEModelAccess().getImportsImportParserRuleCall_0_0());
 				}
 				lv_imports_0_0=ruleImport
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getModelRule());
+						$current = createModelElementForParent(grammarAccess.getEModelRule());
 					}
 					add(
 						$current,
@@ -98,12 +98,12 @@ ruleModel returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getModelAccess().getStartModelStartModelParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getEModelAccess().getStartModelStartModelParserRuleCall_1_0());
 				}
 				lv_startModel_1_0=ruleStartModel
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getModelRule());
+						$current = createModelElementForParent(grammarAccess.getEModelRule());
 					}
 					set(
 						$current,
@@ -113,16 +113,16 @@ ruleModel returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)?
+		)
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getModelAccess().getElementsElementParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getEModelAccess().getElementsElementParserRuleCall_2_0());
 				}
 				lv_elements_2_0=ruleElement
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getModelRule());
+						$current = createModelElementForParent(grammarAccess.getEModelRule());
 					}
 					add(
 						$current,
@@ -136,12 +136,12 @@ ruleModel returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getModelAccess().getEndModelEndModelParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getEModelAccess().getEndModelEndModelParserRuleCall_3_0());
 				}
 				lv_endModel_3_0=ruleEndModel
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getModelRule());
+						$current = createModelElementForParent(grammarAccess.getEModelRule());
 					}
 					set(
 						$current,
@@ -151,7 +151,7 @@ ruleModel returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)?
+		)
 	)
 ;
 
@@ -303,25 +303,51 @@ ruleStartModel returns [EObject current=null]
 ;
 
 // Entry rule entryRuleEndModel
-entryRuleEndModel returns [String current=null]:
+entryRuleEndModel returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getEndModelRule()); }
 	iv_ruleEndModel=ruleEndModel
-	{ $current=$iv_ruleEndModel.current.getText(); }
+	{ $current=$iv_ruleEndModel.current; }
 	EOF;
 
 // Rule EndModel
-ruleEndModel returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleEndModel returns [EObject current=null]
 @init {
 	enterRule();
 }
 @after {
 	leaveRule();
 }:
-	kw='(end-model)'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getEndModelAccess().getEndModelKeyword());
-	}
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getEndModelAccess().getEndModelAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='(end-model)'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getEndModelAccess().getEndModelKeyword_1());
+		}
+		(
+			(
+				lv_name_2_0=RULE_ID
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getEndModelAccess().getNameIDTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEndModelRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)?
+	)
 ;
 
 // Entry rule entryRuleElement

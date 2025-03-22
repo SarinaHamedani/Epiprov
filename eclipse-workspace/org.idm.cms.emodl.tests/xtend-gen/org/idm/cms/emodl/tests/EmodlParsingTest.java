@@ -12,7 +12,7 @@ import org.eclipse.xtext.testing.extensions.InjectionExtension;
 import org.eclipse.xtext.testing.util.ParseHelper;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.idm.cms.emodl.emodl.Model;
+import org.idm.cms.emodl.emodl.EModel;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -22,7 +22,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 @SuppressWarnings("all")
 public class EmodlParsingTest {
   @Inject
-  private ParseHelper<Model> parseHelper;
+  private ParseHelper<EModel> parseHelper;
 
   @Test
   public void loadModel() {
@@ -30,7 +30,7 @@ public class EmodlParsingTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("Hello Xtext!");
       _builder.newLine();
-      final Model result = this.parseHelper.parse(_builder);
+      final EModel result = this.parseHelper.parse(_builder);
       Assertions.assertNotNull(result);
       final EList<Resource.Diagnostic> errors = result.eResource().getErrors();
       boolean _isEmpty = errors.isEmpty();

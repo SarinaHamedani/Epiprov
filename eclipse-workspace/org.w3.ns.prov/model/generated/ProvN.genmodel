@@ -7,7 +7,7 @@
   <genPackages prefix="ProvN" basePackage="org.w3.ns.prov" disposableProviderFactory="true"
       fileExtensions="provn" ecorePackage="ProvN.ecore#/">
     <genClasses ecoreClass="ProvN.ecore#//Document">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProvN.ecore#//Document/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProvN.ecore#//Document/compartmentalModel"/>
     </genClasses>
     <genClasses ecoreClass="ProvN.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProvN.ecore#//Model/namespaces"/>

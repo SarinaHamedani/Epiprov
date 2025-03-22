@@ -3,9 +3,15 @@
  */
 package org.idm.cms.emodl;
 
+import org.eclipse.xtext.formatting2.IFormatter2;
+import org.idm.cms.emodl.formatting2.EmodlFormatter;
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 public class EmodlRuntimeModule extends AbstractEmodlRuntimeModule {
+	@Override
+    public Class<? extends IFormatter2> bindIFormatter2() {
+        return EmodlFormatter.class;
+    }
 }

@@ -28,29 +28,29 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.w3.ns.prov.ProvN.Document");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cDocumentKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameModelParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cCompartmentalModelAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cCompartmentalModelModelParserRuleCall_1_0 = (RuleCall)cCompartmentalModelAssignment_1.eContents().get(0);
 		private final Keyword cEndDocumentKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//Document:
 		//    'document'
-		//    name=Model
+		//    compartmentalModel=Model
 		//    'endDocument';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'document'
-		//name=Model
+		//compartmentalModel=Model
 		//'endDocument'
 		public Group getGroup() { return cGroup; }
 		
 		//'document'
 		public Keyword getDocumentKeyword_0() { return cDocumentKeyword_0; }
 		
-		//name=Model
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//compartmentalModel=Model
+		public Assignment getCompartmentalModelAssignment_1() { return cCompartmentalModelAssignment_1; }
 		
 		//Model
-		public RuleCall getNameModelParserRuleCall_1_0() { return cNameModelParserRuleCall_1_0; }
+		public RuleCall getCompartmentalModelModelParserRuleCall_1_0() { return cCompartmentalModelModelParserRuleCall_1_0; }
 		
 		//'endDocument'
 		public Keyword getEndDocumentKeyword_2() { return cEndDocumentKeyword_2; }
@@ -1240,7 +1240,7 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	//Document:
 	//    'document'
-	//    name=Model
+	//    compartmentalModel=Model
 	//    'endDocument';
 	public DocumentElements getDocumentAccess() {
 		return pDocument;

@@ -27,7 +27,7 @@ public class EmodlParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Model";
+		return "EModel";
 	}
 
 	public EmodlGrammarAccess getGrammarAccess() {

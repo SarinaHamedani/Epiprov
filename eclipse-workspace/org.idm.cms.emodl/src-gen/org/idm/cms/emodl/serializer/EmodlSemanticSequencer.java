@@ -14,14 +14,15 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import org.idm.cms.emodl.emodl.EModel;
 import org.idm.cms.emodl.emodl.EmodlPackage;
+import org.idm.cms.emodl.emodl.EndModel;
 import org.idm.cms.emodl.emodl.Expression;
 import org.idm.cms.emodl.emodl.Function;
 import org.idm.cms.emodl.emodl.Import;
 import org.idm.cms.emodl.emodl.ImportGroup;
 import org.idm.cms.emodl.emodl.Json;
 import org.idm.cms.emodl.emodl.Locale;
-import org.idm.cms.emodl.emodl.Model;
 import org.idm.cms.emodl.emodl.Observable;
 import org.idm.cms.emodl.emodl.Reaction;
 import org.idm.cms.emodl.emodl.SetLocale;
@@ -47,6 +48,12 @@ public class EmodlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == EmodlPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case EmodlPackage.EMODEL:
+				sequence_EModel(context, (EModel) semanticObject); 
+				return; 
+			case EmodlPackage.END_MODEL:
+				sequence_EndModel(context, (EndModel) semanticObject); 
+				return; 
 			case EmodlPackage.EXPRESSION:
 				if (rule == grammarAccess.getBinaryOperationRule()) {
 					sequence_BinaryOperation(context, (Expression) semanticObject); 
@@ -71,9 +78,6 @@ public class EmodlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case EmodlPackage.LOCALE:
 				sequence_Locale(context, (Locale) semanticObject); 
-				return; 
-			case EmodlPackage.MODEL:
-				sequence_Model(context, (Model) semanticObject); 
 				return; 
 			case EmodlPackage.OBSERVABLE:
 				sequence_Observable(context, (Observable) semanticObject); 
@@ -133,6 +137,34 @@ public class EmodlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		feeder.accept(grammarAccess.getBinaryOperationAccess().getLeftExpressionParserRuleCall_2_0(), semanticObject.getLeft());
 		feeder.accept(grammarAccess.getBinaryOperationAccess().getRightExpressionParserRuleCall_3_0(), semanticObject.getRight());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     EModel returns EModel
+	 *
+	 * Constraint:
+	 *     (imports+=Import* startModel=StartModel elements+=Element* endModel=EndModel)
+	 * </pre>
+	 */
+	protected void sequence_EModel(ISerializationContext context, EModel semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     EndModel returns EndModel
+	 *
+	 * Constraint:
+	 *     name=ID?
+	 * </pre>
+	 */
+	protected void sequence_EndModel(ISerializationContext context, EndModel semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -244,25 +276,6 @@ public class EmodlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getLocaleAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Model returns Model
-	 *
-	 * Constraint:
-	 *     (
-	 *         (imports+=Import+ ((startModel=StartModel endModel=EndModel) | endModel=EndModel)) | 
-	 *         (((imports+=Import+ startModel=StartModel) | startModel=StartModel)? elements+=Element+ endModel=EndModel) | 
-	 *         (startModel=StartModel endModel=EndModel) | 
-	 *         endModel=EndModel
-	 *     )?
-	 * </pre>
-	 */
-	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

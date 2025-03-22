@@ -1829,31 +1829,31 @@ public class InternalProvNParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Document__Group__1__Impl"
-    // InternalProvN.g:594:1: rule__Document__Group__1__Impl : ( ( rule__Document__NameAssignment_1 ) ) ;
+    // InternalProvN.g:594:1: rule__Document__Group__1__Impl : ( ( rule__Document__CompartmentalModelAssignment_1 ) ) ;
     public final void rule__Document__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalProvN.g:598:1: ( ( ( rule__Document__NameAssignment_1 ) ) )
-            // InternalProvN.g:599:1: ( ( rule__Document__NameAssignment_1 ) )
+            // InternalProvN.g:598:1: ( ( ( rule__Document__CompartmentalModelAssignment_1 ) ) )
+            // InternalProvN.g:599:1: ( ( rule__Document__CompartmentalModelAssignment_1 ) )
             {
-            // InternalProvN.g:599:1: ( ( rule__Document__NameAssignment_1 ) )
-            // InternalProvN.g:600:2: ( rule__Document__NameAssignment_1 )
+            // InternalProvN.g:599:1: ( ( rule__Document__CompartmentalModelAssignment_1 ) )
+            // InternalProvN.g:600:2: ( rule__Document__CompartmentalModelAssignment_1 )
             {
-             before(grammarAccess.getDocumentAccess().getNameAssignment_1()); 
-            // InternalProvN.g:601:2: ( rule__Document__NameAssignment_1 )
-            // InternalProvN.g:601:3: rule__Document__NameAssignment_1
+             before(grammarAccess.getDocumentAccess().getCompartmentalModelAssignment_1()); 
+            // InternalProvN.g:601:2: ( rule__Document__CompartmentalModelAssignment_1 )
+            // InternalProvN.g:601:3: rule__Document__CompartmentalModelAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__Document__NameAssignment_1();
+            rule__Document__CompartmentalModelAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getDocumentAccess().getNameAssignment_1()); 
+             after(grammarAccess.getDocumentAccess().getCompartmentalModelAssignment_1()); 
 
             }
 
@@ -14770,9 +14770,9 @@ public class InternalProvNParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__DateTime__Group__11__Impl"
 
 
-    // $ANTLR start "rule__Document__NameAssignment_1"
-    // InternalProvN.g:4929:1: rule__Document__NameAssignment_1 : ( ruleModel ) ;
-    public final void rule__Document__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Document__CompartmentalModelAssignment_1"
+    // InternalProvN.g:4929:1: rule__Document__CompartmentalModelAssignment_1 : ( ruleModel ) ;
+    public final void rule__Document__CompartmentalModelAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -14783,13 +14783,13 @@ public class InternalProvNParser extends AbstractInternalContentAssistParser {
             // InternalProvN.g:4934:2: ( ruleModel )
             // InternalProvN.g:4935:3: ruleModel
             {
-             before(grammarAccess.getDocumentAccess().getNameModelParserRuleCall_1_0()); 
+             before(grammarAccess.getDocumentAccess().getCompartmentalModelModelParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
             ruleModel();
 
             state._fsp--;
 
-             after(grammarAccess.getDocumentAccess().getNameModelParserRuleCall_1_0()); 
+             after(grammarAccess.getDocumentAccess().getCompartmentalModelModelParserRuleCall_1_0()); 
 
             }
 
@@ -14808,7 +14808,7 @@ public class InternalProvNParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Document__NameAssignment_1"
+    // $ANTLR end "rule__Document__CompartmentalModelAssignment_1"
 
 
     // $ANTLR start "rule__Model__NamespacesAssignment_1"

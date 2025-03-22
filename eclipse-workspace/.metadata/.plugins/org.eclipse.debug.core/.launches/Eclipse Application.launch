@@ -13,5 +13,6 @@
     <booleanAttribute key="pde.generated.config" value="true"/>
     <stringAttribute key="pde.version" value="3.3"/>
     <stringAttribute key="product" value="org.eclipse.epp.package.modeling.product"/>
+    <stringAttribute key="timestamp" value="1742353314363"/>
     <booleanAttribute key="useProduct" value="true"/>
 </launchConfiguration>

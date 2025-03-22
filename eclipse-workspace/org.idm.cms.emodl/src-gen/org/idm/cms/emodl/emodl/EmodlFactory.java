@@ -24,13 +24,13 @@ public interface EmodlFactory extends EFactory
   EmodlFactory eINSTANCE = org.idm.cms.emodl.emodl.impl.EmodlFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Model</em>'.
+   * Returns a new object of class '<em>EModel</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Model</em>'.
+   * @return a new object of class '<em>EModel</em>'.
    * @generated
    */
-  Model createModel();
+  EModel createEModel();
 
   /**
    * Returns a new object of class '<em>Import</em>'.
@@ -58,6 +58,15 @@ public interface EmodlFactory extends EFactory
    * @generated
    */
   StartModel createStartModel();
+
+  /**
+   * Returns a new object of class '<em>End Model</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>End Model</em>'.
+   * @generated
+   */
+  EndModel createEndModel();
 
   /**
    * Returns a new object of class '<em>Element</em>'.

@@ -2,12 +2,8 @@
 
 (start-model "Assumption")
 
-(param rho 0.7)  # Proportion of cases detected and isolated [assumption]
-(species E 10)         # Exposed
-(species I_mild_quarantined 0)  # Mild cases, quarantined
-(species I_severe_quarantined 0)  # Severe cases, quarantined
-(species Q 0)          # Quarantined
-(reaction quarantine E -> Q (rho * sigma * E))
-(observe total_infectious I_presymptomatic + I_presymptomatic_isolated + I_mild + I_severe + I_mild_quarantined + I_severe_quarantined)
+(param rho 0.7)  ; Proportion of cases detected and isolated [assumption]
+(reaction quarantine (E) (Q) (* rho (* sigma E)))
+
 
 (end-model)

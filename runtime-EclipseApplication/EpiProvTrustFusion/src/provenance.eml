@@ -1,0 +1,154 @@
+// Merge the top-level Document container
+rule MergeDocuments
+merge l : Left!Document
+with r : Right!Document
+into t : Target!Document {
+    t.compartmentalModel = new Target!Model();
+    
+//    for (namespace in l.compartmentalModel.namespaces) {
+//        if (not t.compartmentalModel.namespaces.exists(n | n.compartmentalModel == namespace.name)) {
+//            t.compartmentalModel.namespaces.add(namespace);
+//        }
+//    }
+//    for (namespace in r.compartmentalModel.namespaces) {
+//        if (not t.compartmentalModel.namespaces.exists(n | n.compartmentalModel == namespace.name)) {
+//            t.name.namespaces.add(namespace);
+//        }
+//    }
+
+    t.compartmentalModel.statements.addAll(l.compartmentalModel.statements);
+    
+    
+    for (statement in r.compartmentalModel.statements.collect(s | s)) {
+        if (not t.compartmentalModel.statements.exists(s | s.equals(statement))) {
+            t.compartmentalModel.statements.add(statement);
+        }
+    }
+    
+    
+    var resource = t.eResource;
+    resource.getContents().clear();
+    resource.getContents().add(t);
+    System.out.println("Post-processing complete: resource contents updated.");
+
+    System.out.println("Merged Document with " + t.compartmentalModel.namespaces.size() + " namespaces and " + t.compartmentalModel.statements.size() + " statements.");
+}
+
+
+// Merge Namespaces ensuring unique namespaces
+rule MergeNamespaces
+merge l : Left!Namespace
+with r : Right!Namespace
+into t : Target!Namespace {
+    t.name = l.name;
+    t.uri = l.uri;
+}
+
+// Merge Entities ensuring attributes are combined
+//rule MergeEntities
+//merge l : Left!Entity
+//with r : Right!Entity
+//into t : Target!Entity {
+//    t.name = l.name;
+//    t.attributes.addAll(l.attributes);
+//    t.attributes.addAll(r.attributes);
+//}
+//
+//// Merge Activities ensuring attributes and times are preserved
+//rule MergeActivities
+//merge l : Left!Activity
+//with r : Right!Activity
+//into t : Target!Activity {
+//    t.name = l.name;
+//    t.startTime = l.startTime.isDefined() ? l.startTime : r.startTime;
+//    t.endTime = l.endTime.isDefined() ? l.endTime : r.endTime;
+//    t.attributes.addAll(l.attributes);
+//    t.attributes.addAll(r.attributes);
+//}
+//
+//// Merge Agents ensuring attributes are combined
+//rule MergeAgents
+//merge l : Left!Agent
+//with r : Right!Agent
+//into t : Target!Agent {
+//    t.name = l.name;
+//    t.attributes.addAll(l.attributes);
+//    t.attributes.addAll(r.attributes);
+//}
+//
+//// Merge WasDerivedFrom ensuring attributes are combined
+//rule MergeWasDerivedFrom
+//merge l : Left!WasDerivedFrom
+//with r : Right!WasDerivedFrom
+//into t : Target!WasDerivedFrom {
+//    t.generatedEntity = l.generatedEntity;
+//    t.usedEntity = l.usedEntity;
+//    t.time = l.time.isDefined() ? l.time : r.time;
+//    t.attributes.addAll(l.attributes);
+//    t.attributes.addAll(r.attributes);
+//}
+//
+//// Merge WasGeneratedBy ensuring attributes are combined
+//rule MergeWasGeneratedBy
+//merge l : Left!WasGeneratedBy
+//with r : Right!WasGeneratedBy
+//into t : Target!WasGeneratedBy {
+//    t.entity = l.entity;
+//    t.activity = l.activity;
+//    t.time = l.time.isDefined() ? l.time : r.time;
+//    t.attributes.addAll(l.attributes);
+//    t.attributes.addAll(r.attributes);
+//}
+//
+//// Merge Used relationships ensuring attributes are combined
+//rule MergeUsed
+//merge l : Left!Used
+//with r : Right!Used
+//into t : Target!Used {
+//    t.activity = l.activity;
+//    t.entity = l.entity;
+//    t.time = l.time.isDefined() ? l.time : r.time;
+//    t.attributes.addAll(l.attributes);
+//    t.attributes.addAll(r.attributes);
+//}
+//
+//// Merge WasAssociatedWith ensuring attributes are combined
+//rule MergeWasAssociatedWith
+//merge l : Left!WasAssociatedWith
+//with r : Right!WasAssociatedWith
+//into t : Target!WasAssociatedWith {
+//    t.activity = l.activity;
+//    t.agent = l.agent;
+//    t.plan = l.plan.isDefined() ? l.plan : r.plan;
+//    t.attributes.addAll(l.attributes);
+//    t.attributes.addAll(r.attributes);
+//}
+//
+//// Merge WasAttributedTo ensuring attributes are combined
+//rule MergeWasAttributedTo
+//merge l : Left!WasAttributedTo
+//with r : Right!WasAttributedTo
+//into t : Target!WasAttributedTo {
+//    t.entity = l.entity;
+//    t.agent = l.agent;
+//    t.attributes.addAll(l.attributes);
+//    t.attributes.addAll(r.attributes);
+//}
+//
+//// Merge HadMember ensuring attributes are combined
+//rule MergeHadMember
+//merge l : Left!HadMember
+//with r : Right!HadMember
+//into t : Target!HadMember {
+//    t.collection = l.collection;
+//    t.member = l.member;
+//}
+//
+//// Merge Attributes ensuring no duplicates
+//rule MergeAttributes
+//merge l : Left!Attribute
+//with r : Right!Attribute
+//into t : Target!Attribute {
+//    t.label = l.label;
+//    t.value = l.value.equals(r.value) ? l.value : l.value + " / " + r.value;
+//}

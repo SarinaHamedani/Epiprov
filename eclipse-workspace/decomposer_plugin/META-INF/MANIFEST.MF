@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Decomposer_plugin
+Bundle-SymbolicName: decomposer_plugin;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: decomposer_plugin.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.swt
+Bundle-RequiredExecutionEnvironment: JavaSE-23
+Automatic-Module-Name: decomposer.plugin
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .,
+ lib/jackson-annotations-2.18.3.jar,
+ lib/jackson-core-2.18.3.jar,
+ lib/jackson-databind-2.18.3.jar

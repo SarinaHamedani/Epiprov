@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.w3.ns.prov.provN.Document#getName <em>Name</em>}</li>
+ *   <li>{@link org.w3.ns.prov.provN.Document#getCompartmentalModel <em>Compartmental Model</em>}</li>
  * </ul>
  *
  * @see org.w3.ns.prov.provN.ProvNPackage#getDocument()
@@ -24,25 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface Document extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' containment reference.
+   * Returns the value of the '<em><b>Compartmental Model</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' containment reference.
-   * @see #setName(Model)
-   * @see org.w3.ns.prov.provN.ProvNPackage#getDocument_Name()
+   * @return the value of the '<em>Compartmental Model</em>' containment reference.
+   * @see #setCompartmentalModel(Model)
+   * @see org.w3.ns.prov.provN.ProvNPackage#getDocument_CompartmentalModel()
    * @model containment="true"
    * @generated
    */
-  Model getName();
+  Model getCompartmentalModel();
 
   /**
-   * Sets the value of the '{@link org.w3.ns.prov.provN.Document#getName <em>Name</em>}' containment reference.
+   * Sets the value of the '{@link org.w3.ns.prov.provN.Document#getCompartmentalModel <em>Compartmental Model</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' containment reference.
-   * @see #getName()
+   * @param value the new value of the '<em>Compartmental Model</em>' containment reference.
+   * @see #getCompartmentalModel()
    * @generated
    */
-  void setName(Model value);
+  void setCompartmentalModel(Model value);
 
 } // Document

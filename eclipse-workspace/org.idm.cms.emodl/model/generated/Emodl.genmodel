@@ -6,11 +6,11 @@
     copyrightFields="false" runtimeVersion="2.29">
   <genPackages prefix="Emodl" basePackage="org.idm.cms.emodl" disposableProviderFactory="true"
       fileExtensions="emodl" ecorePackage="Emodl.ecore#/">
-    <genClasses ecoreClass="Emodl.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Emodl.ecore#//Model/imports"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Emodl.ecore#//Model/startModel"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Emodl.ecore#//Model/elements"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Emodl.ecore#//Model/endModel"/>
+    <genClasses ecoreClass="Emodl.ecore#//EModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Emodl.ecore#//EModel/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Emodl.ecore#//EModel/startModel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Emodl.ecore#//EModel/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Emodl.ecore#//EModel/endModel"/>
     </genClasses>
     <genClasses ecoreClass="Emodl.ecore#//Import">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Emodl.ecore#//Import/groups"/>
@@ -20,6 +20,9 @@
     </genClasses>
     <genClasses ecoreClass="Emodl.ecore#//StartModel">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Emodl.ecore#//StartModel/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Emodl.ecore#//EndModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Emodl.ecore#//EndModel/name"/>
     </genClasses>
     <genClasses ecoreClass="Emodl.ecore#//Element">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Emodl.ecore#//Element/name"/>

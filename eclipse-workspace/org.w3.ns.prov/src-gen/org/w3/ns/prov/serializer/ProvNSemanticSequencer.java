@@ -193,16 +193,16 @@ public class ProvNSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Document returns Document
 	 *
 	 * Constraint:
-	 *     name=Model
+	 *     compartmentalModel=Model
 	 * </pre>
 	 */
 	protected void sequence_Document(ISerializationContext context, Document semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ProvNPackage.Literals.DOCUMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProvNPackage.Literals.DOCUMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, ProvNPackage.Literals.DOCUMENT__COMPARTMENTAL_MODEL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProvNPackage.Literals.DOCUMENT__COMPARTMENTAL_MODEL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDocumentAccess().getNameModelParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDocumentAccess().getCompartmentalModelModelParserRuleCall_1_0(), semanticObject.getCompartmentalModel());
 		feeder.finish();
 	}
 	

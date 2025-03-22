@@ -10,16 +10,17 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.idm.cms.emodl.emodl.EModel;
 import org.idm.cms.emodl.emodl.Element;
 import org.idm.cms.emodl.emodl.EmodlFactory;
 import org.idm.cms.emodl.emodl.EmodlPackage;
+import org.idm.cms.emodl.emodl.EndModel;
 import org.idm.cms.emodl.emodl.Expression;
 import org.idm.cms.emodl.emodl.Function;
 import org.idm.cms.emodl.emodl.Import;
 import org.idm.cms.emodl.emodl.ImportGroup;
 import org.idm.cms.emodl.emodl.Json;
 import org.idm.cms.emodl.emodl.Locale;
-import org.idm.cms.emodl.emodl.Model;
 import org.idm.cms.emodl.emodl.Observable;
 import org.idm.cms.emodl.emodl.Parameter;
 import org.idm.cms.emodl.emodl.Reaction;
@@ -44,7 +45,7 @@ public class EmodlPackageImpl extends EPackageImpl implements EmodlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass modelEClass = null;
+  private EClass eModelEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,6 +67,13 @@ public class EmodlPackageImpl extends EPackageImpl implements EmodlPackage
    * @generated
    */
   private EClass startModelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass endModelEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -233,9 +241,9 @@ public class EmodlPackageImpl extends EPackageImpl implements EmodlPackage
    * @generated
    */
   @Override
-  public EClass getModel()
+  public EClass getEModel()
   {
-    return modelEClass;
+    return eModelEClass;
   }
 
   /**
@@ -244,9 +252,9 @@ public class EmodlPackageImpl extends EPackageImpl implements EmodlPackage
    * @generated
    */
   @Override
-  public EReference getModel_Imports()
+  public EReference getEModel_Imports()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(0);
+    return (EReference)eModelEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -255,9 +263,9 @@ public class EmodlPackageImpl extends EPackageImpl implements EmodlPackage
    * @generated
    */
   @Override
-  public EReference getModel_StartModel()
+  public EReference getEModel_StartModel()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(1);
+    return (EReference)eModelEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -266,9 +274,9 @@ public class EmodlPackageImpl extends EPackageImpl implements EmodlPackage
    * @generated
    */
   @Override
-  public EReference getModel_Elements()
+  public EReference getEModel_Elements()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(2);
+    return (EReference)eModelEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -277,9 +285,9 @@ public class EmodlPackageImpl extends EPackageImpl implements EmodlPackage
    * @generated
    */
   @Override
-  public EAttribute getModel_EndModel()
+  public EReference getEModel_EndModel()
   {
-    return (EAttribute)modelEClass.getEStructuralFeatures().get(3);
+    return (EReference)eModelEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -346,6 +354,28 @@ public class EmodlPackageImpl extends EPackageImpl implements EmodlPackage
   public EAttribute getStartModel_Name()
   {
     return (EAttribute)startModelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEndModel()
+  {
+    return endModelEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getEndModel_Name()
+  {
+    return (EAttribute)endModelEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -775,11 +805,11 @@ public class EmodlPackageImpl extends EPackageImpl implements EmodlPackage
     isCreated = true;
 
     // Create classes and their features
-    modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__IMPORTS);
-    createEReference(modelEClass, MODEL__START_MODEL);
-    createEReference(modelEClass, MODEL__ELEMENTS);
-    createEAttribute(modelEClass, MODEL__END_MODEL);
+    eModelEClass = createEClass(EMODEL);
+    createEReference(eModelEClass, EMODEL__IMPORTS);
+    createEReference(eModelEClass, EMODEL__START_MODEL);
+    createEReference(eModelEClass, EMODEL__ELEMENTS);
+    createEReference(eModelEClass, EMODEL__END_MODEL);
 
     importEClass = createEClass(IMPORT);
     createEReference(importEClass, IMPORT__GROUPS);
@@ -789,6 +819,9 @@ public class EmodlPackageImpl extends EPackageImpl implements EmodlPackage
 
     startModelEClass = createEClass(START_MODEL);
     createEAttribute(startModelEClass, START_MODEL__NAME);
+
+    endModelEClass = createEClass(END_MODEL);
+    createEAttribute(endModelEClass, END_MODEL__NAME);
 
     elementEClass = createEClass(ELEMENT);
     createEAttribute(elementEClass, ELEMENT__NAME);
@@ -882,11 +915,11 @@ public class EmodlPackageImpl extends EPackageImpl implements EmodlPackage
     jsonEClass.getESuperTypes().add(this.getElement());
 
     // Initialize classes and features; add operations and parameters
-    initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Imports(), this.getImport(), null, "imports", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_StartModel(), this.getStartModel(), null, "startModel", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Elements(), this.getElement(), null, "elements", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getModel_EndModel(), ecorePackage.getEString(), "endModel", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(eModelEClass, EModel.class, "EModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEModel_Imports(), this.getImport(), null, "imports", null, 0, -1, EModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEModel_StartModel(), this.getStartModel(), null, "startModel", null, 0, 1, EModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEModel_Elements(), this.getElement(), null, "elements", null, 0, -1, EModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEModel_EndModel(), this.getEndModel(), null, "endModel", null, 0, 1, EModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getImport_Groups(), this.getImportGroup(), null, "groups", null, 0, -1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -896,6 +929,9 @@ public class EmodlPackageImpl extends EPackageImpl implements EmodlPackage
 
     initEClass(startModelEClass, StartModel.class, "StartModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStartModel_Name(), ecorePackage.getEString(), "name", null, 0, 1, StartModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(endModelEClass, EndModel.class, "EndModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEndModel_Name(), ecorePackage.getEString(), "name", null, 0, 1, EndModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementEClass, Element.class, "Element", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
