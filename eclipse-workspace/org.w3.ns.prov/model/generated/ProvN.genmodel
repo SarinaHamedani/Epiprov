@@ -36,19 +36,19 @@
     <genClasses ecoreClass="ProvN.ecore#//WasDerivedFrom">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ProvN.ecore#//WasDerivedFrom/generatedEntity"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ProvN.ecore#//WasDerivedFrom/usedEntity"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProvN.ecore#//WasDerivedFrom/time"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ProvN.ecore#//WasDerivedFrom/time"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProvN.ecore#//WasDerivedFrom/attributes"/>
     </genClasses>
     <genClasses ecoreClass="ProvN.ecore#//WasGeneratedBy">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ProvN.ecore#//WasGeneratedBy/entity"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ProvN.ecore#//WasGeneratedBy/activity"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProvN.ecore#//WasGeneratedBy/time"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ProvN.ecore#//WasGeneratedBy/time"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProvN.ecore#//WasGeneratedBy/attributes"/>
     </genClasses>
     <genClasses ecoreClass="ProvN.ecore#//Used">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ProvN.ecore#//Used/activity"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ProvN.ecore#//Used/entity"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProvN.ecore#//Used/time"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ProvN.ecore#//Used/time"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProvN.ecore#//Used/attributes"/>
     </genClasses>
     <genClasses ecoreClass="ProvN.ecore#//WasAssociatedWith">

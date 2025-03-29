@@ -1,0 +1,10 @@
+document
+
+prefix epi <http://www.cs.rpi.edu/~hendler/>
+prefix prov <http://www.prov.org>
+
+entity(prov:beta,[prov:value = "2.3", prov:description = "Basic reproduction number (R0)"])
+hadMember(prov:Ontario_Model_Study,prov:beta)
+wasDerivedFrom(prov:beta, prov:Wuhan_Study)
+
+endDocument

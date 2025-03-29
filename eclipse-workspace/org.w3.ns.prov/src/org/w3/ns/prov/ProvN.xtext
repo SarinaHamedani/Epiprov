@@ -34,13 +34,13 @@ Relation:
     WasDerivedFrom | WasGeneratedBy | Used | WasAssociatedWith | WasAttributedTo | HadMember;
 
 WasDerivedFrom:
-    'wasDerivedFrom' '(' generatedEntity=[Entity|QualifiedName] ',' usedEntity=[Entity|QualifiedName] (',' time=DateTime)? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
+    'wasDerivedFrom' '(' generatedEntity=[Entity|QualifiedName] ',' usedEntity=[Entity|QualifiedName] (',' time=[DateTime|'-'])? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
 
 WasGeneratedBy:
-    'wasGeneratedBy' '(' entity=[Entity|QualifiedName] ',' activity=[Activity|QualifiedName] (',' time=DateTime)? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
+    'wasGeneratedBy' '(' entity=[Entity|QualifiedName] ',' activity=[Activity|QualifiedName] (',' time=[DateTime|'-'])? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
 
 Used:
-    'used' '(' activity=[Activity|QualifiedName] ',' entity=[Entity|QualifiedName] (',' time=DateTime)? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
+    'used' '(' activity=[Activity|QualifiedName] ',' entity=[Entity|QualifiedName] (',' time=[DateTime|'-'])? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
 
 WasAssociatedWith:
     'wasAssociatedWith' '(' activity=[Activity|QualifiedName] ',' agent=[Agent|QualifiedName] (',' plan=[Entity])? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';

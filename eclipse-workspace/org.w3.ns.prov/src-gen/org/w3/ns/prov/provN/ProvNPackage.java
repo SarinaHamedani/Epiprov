@@ -355,7 +355,7 @@ public interface ProvNPackage extends EPackage
   int WAS_DERIVED_FROM__USED_ENTITY = RELATION_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Time</b></em>' containment reference.
+   * The feature id for the '<em><b>Time</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -410,7 +410,7 @@ public interface ProvNPackage extends EPackage
   int WAS_GENERATED_BY__ACTIVITY = RELATION_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Time</b></em>' containment reference.
+   * The feature id for the '<em><b>Time</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -465,7 +465,7 @@ public interface ProvNPackage extends EPackage
   int USED__ENTITY = RELATION_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Time</b></em>' containment reference.
+   * The feature id for the '<em><b>Time</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -996,10 +996,10 @@ public interface ProvNPackage extends EPackage
   EReference getWasDerivedFrom_UsedEntity();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.w3.ns.prov.provN.WasDerivedFrom#getTime <em>Time</em>}'.
+   * Returns the meta object for the reference '{@link org.w3.ns.prov.provN.WasDerivedFrom#getTime <em>Time</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Time</em>'.
+   * @return the meta object for the reference '<em>Time</em>'.
    * @see org.w3.ns.prov.provN.WasDerivedFrom#getTime()
    * @see #getWasDerivedFrom()
    * @generated
@@ -1050,10 +1050,10 @@ public interface ProvNPackage extends EPackage
   EReference getWasGeneratedBy_Activity();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.w3.ns.prov.provN.WasGeneratedBy#getTime <em>Time</em>}'.
+   * Returns the meta object for the reference '{@link org.w3.ns.prov.provN.WasGeneratedBy#getTime <em>Time</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Time</em>'.
+   * @return the meta object for the reference '<em>Time</em>'.
    * @see org.w3.ns.prov.provN.WasGeneratedBy#getTime()
    * @see #getWasGeneratedBy()
    * @generated
@@ -1104,10 +1104,10 @@ public interface ProvNPackage extends EPackage
   EReference getUsed_Entity();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.w3.ns.prov.provN.Used#getTime <em>Time</em>}'.
+   * Returns the meta object for the reference '{@link org.w3.ns.prov.provN.Used#getTime <em>Time</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Time</em>'.
+   * @return the meta object for the reference '<em>Time</em>'.
    * @see org.w3.ns.prov.provN.Used#getTime()
    * @see #getUsed()
    * @generated
@@ -1596,7 +1596,7 @@ public interface ProvNPackage extends EPackage
     EReference WAS_DERIVED_FROM__USED_ENTITY = eINSTANCE.getWasDerivedFrom_UsedEntity();
 
     /**
-     * The meta object literal for the '<em><b>Time</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Time</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1638,7 +1638,7 @@ public interface ProvNPackage extends EPackage
     EReference WAS_GENERATED_BY__ACTIVITY = eINSTANCE.getWasGeneratedBy_Activity();
 
     /**
-     * The meta object literal for the '<em><b>Time</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Time</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1680,7 +1680,7 @@ public interface ProvNPackage extends EPackage
     EReference USED__ENTITY = eINSTANCE.getUsed_Entity();
 
     /**
-     * The meta object literal for the '<em><b>Time</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Time</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

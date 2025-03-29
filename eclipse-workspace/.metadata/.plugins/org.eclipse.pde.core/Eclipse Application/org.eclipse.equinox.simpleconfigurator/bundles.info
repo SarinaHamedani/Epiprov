@@ -1268,6 +1268,8 @@ org.xtext.geodes.trustdsl.ui.tests,1.0.0.qualifier,file:/Users/sarina/Documents/
 org.yaml.snakeyaml,2.3.0,file:/Users/sarina/.p2/pool/plugins/org.yaml.snakeyaml_2.3.0.jar,4,false
 slf4j.api,2.0.17,file:/Users/sarina/.p2/pool/plugins/slf4j.api_2.0.17.jar,4,false
 slf4j.simple,2.0.16,file:/Users/sarina/.p2/pool/plugins/slf4j.simple_2.0.16.jar,4,false
+trust_assignment_plugin,1.0.0.qualifier,file:/Users/sarina/Documents/Epiprov/eclipse-workspace/trust_assignment_plugin/,4,false
+trust_fusion_plugin,1.0.0.qualifier,file:/Users/sarina/Documents/Epiprov/eclipse-workspace/trust_fusion_plugin/,4,false
 wrapped.net.sourceforge.plantuml.plantuml-epl,1.2023.11,file:/Users/sarina/.p2/pool/plugins/wrapped.net.sourceforge.plantuml.plantuml-epl_1.2023.11.jar,4,false
 wrapped.org.apache.poi.poi,4.1.2,file:/Users/sarina/.p2/pool/plugins/wrapped.org.apache.poi.poi_4.1.2.jar,4,false
 wrapped.org.apache.poi.poi-ooxml,4.1.2,file:/Users/sarina/.p2/pool/plugins/wrapped.org.apache.poi.poi-ooxml_4.1.2.jar,4,false

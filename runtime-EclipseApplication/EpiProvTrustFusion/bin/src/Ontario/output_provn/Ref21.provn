@@ -1,0 +1,17 @@
+document
+
+prefix epi <http://www.cs.rpi.edu/~hendler/>
+prefix prov <http://www.prov.org>
+
+entity(prov:sigma,[prov:value = "0.4", prov:description = "Rate of progression from exposed to infectious"])
+entity(prov:theta,[prov:value = "0.2", prov:description = "Rate of ICU admission"])
+entity(prov:hosp_stay_preICU,[prov:value = "3", prov:description = "Average length of stay in hospital before ICU"])
+hadMember(prov:Ontario_Model_Study,prov:sigma)
+hadMember(prov:Ontario_Model_Study,prov:hosp_stay_preICU)
+wasDerivedFrom(prov:hosp_stay_preICU, prov:Hospitalized_Patients_Study)
+wasDerivedFrom(prov:theta, prov:Hospitalized_Patients_Study)
+wasDerivedFrom(prov:sigma, prov:Hospitalized_Patients_Study)
+wasDerivedFrom(prov:sigma, prov:POLYMOD_Study)
+wasDerivedFrom(prov:sigma, prov:Canadian_Community_Health_Survey)
+
+endDocument

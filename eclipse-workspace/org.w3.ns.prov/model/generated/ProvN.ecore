@@ -39,24 +39,21 @@
   <eClassifiers xsi:type="ecore:EClass" name="WasDerivedFrom" eSuperTypes="#//Relation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="generatedEntity" eType="#//Entity"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="usedEntity" eType="#//Entity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="time" eType="#//DateTime"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="time" eType="#//DateTime"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="#//Attribute" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WasGeneratedBy" eSuperTypes="#//Relation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="activity" eType="#//Activity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="time" eType="#//DateTime"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="time" eType="#//DateTime"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="#//Attribute" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Used" eSuperTypes="#//Relation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="activity" eType="#//Activity"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="time" eType="#//DateTime"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="time" eType="#//DateTime"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="#//Attribute" containment="true"/>
   </eClassifiers>

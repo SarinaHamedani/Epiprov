@@ -1,0 +1,204 @@
+UncertainElementFusion beta_Fusion {
+    beliefs {
+        Belief Expert1_beta (Expert1, (0.06, 0.0, 0.94, 2.3)),
+        Belief Expert2_beta (Expert2, (0.87, 0.1, 0.03, 2.3))
+    }
+    aleatoryCumulativeBF = (0.87, 0.1, 0.03, 2.3)
+    averageingBF = (0.845, 0.097, 0.058, 2.3)
+    beliefConstraintFusion = (0.877, 0.095, 0.028, 2.3)
+    epistemicCumulativeBF = (0.0, 0.592, 0.408, 2.3)
+    weightedBF = (0.868, 0.1, 0.032, 2.3)
+}
+
+UncertainElementFusion sigma_Fusion {
+    beliefs {
+        Belief Expert1_sigma (Expert1, (0.98, 0.0, 0.02, 0.4)),
+        Belief Expert2_sigma (Expert2, (0.21, 0.47, 0.32, 0.4))
+    }
+    aleatoryCumulativeBF = (0.953, 0.028, 0.019, 0.4)
+    averageingBF = (0.935, 0.028, 0.038, 0.4)
+    beliefConstraintFusion = (0.971, 0.017, 0.012, 0.4)
+    epistemicCumulativeBF = (0.934, 0.0, 0.066, 0.4)
+    weightedBF = (0.948, 0.02, 0.032, 0.4)
+}
+
+UncertainElementFusion gamma_mild_Fusion {
+    beliefs {
+        Belief Expert1_gamma_mild (Expert1, (0.2, 0.08, 0.72, 0.167)),
+        Belief Expert2_gamma_mild (Expert2, (0.9, 0.03, 0.07, 0.167))
+    }
+    aleatoryCumulativeBF = (0.895, 0.037, 0.068, 0.167)
+    averageingBF = (0.838, 0.034, 0.128, 0.167)
+    beliefConstraintFusion = (0.913, 0.032, 0.055, 0.167)
+    epistemicCumulativeBF = (0.888, 0.0, 0.112, 0.167)
+    weightedBF = (0.88, 0.031, 0.088, 0.167)
+}
+
+UncertainElementFusion gamma_severe_Fusion {
+    beliefs {
+        Belief Expert1_gamma_severe (Expert1, (0.96, 0.02, 0.02, 0.167)),
+        Belief Expert2_gamma_severe (Expert2, (0.34, 0.43, 0.23, 0.167))
+    }
+    aleatoryCumulativeBF = (0.927, 0.054, 0.019, 0.167)
+    averageingBF = (0.91, 0.053, 0.037, 0.167)
+    beliefConstraintFusion = (0.955, 0.038, 0.008, 0.167)
+    epistemicCumulativeBF = (0.917, 0.0, 0.083, 0.167)
+    weightedBF = (0.92, 0.046, 0.033, 0.167)
+}
+
+UncertainElementFusion delta_Fusion {
+    beliefs {
+        Belief Expert1_delta (Expert1, (0.44, 0.25, 0.31, 0.1)),
+        Belief Expert2_delta (Expert2, (0.11, 0.87, 0.02, 0.1))
+    }
+    aleatoryCumulativeBF = (0.132, 0.848, 0.019, 0.1)
+    averageingBF = (0.13, 0.832, 0.038, 0.1)
+    beliefConstraintFusion = (0.155, 0.835, 0.011, 0.1)
+    epistemicCumulativeBF = (0.038, 0.0, 0.962, 0.1)
+    weightedBF = (0.124, 0.843, 0.033, 0.1)
+}
+
+UncertainElementFusion theta_Fusion {
+    beliefs {
+        Belief Expert1_theta (Expert1, (0.93, 0.06, 0.01, 0.2)),
+        Belief Expert2_theta (Expert2, (0.29, 0.21, 0.5, 0.2))
+    }
+    aleatoryCumulativeBF = (0.927, 0.064, 0.01, 0.2)
+    averageingBF = (0.917, 0.063, 0.02, 0.2)
+    beliefConstraintFusion = (0.937, 0.057, 0.006, 0.2)
+    epistemicCumulativeBF = (0.911, 0.0, 0.089, 0.2)
+    weightedBF = (0.924, 0.061, 0.015, 0.2)
+}
+
+UncertainElementFusion rho_Fusion {
+    beliefs {
+        Belief Expert1_rho (Expert1, (0.28, 0.35, 0.37, 0.7)),
+        Belief Expert2_rho (Expert2, (0.71, 0.28, 0.01, 0.7))
+    }
+    aleatoryCumulativeBF = (0.706, 0.285, 0.01, 0.7)
+    averageingBF = (0.699, 0.282, 0.019, 0.7)
+    beliefConstraintFusion = (0.69, 0.305, 0.005, 0.7)
+    epistemicCumulativeBF = (0.041, 0.0, 0.959, 0.7)
+    weightedBF = (0.703, 0.281, 0.016, 0.7)
+}
+
+UncertainElementFusion kappa_Fusion {
+    beliefs {
+        Belief Expert1_kappa (Expert1, (0.45, 0.31, 0.24, 0.26)),
+        Belief Expert2_kappa (Expert2, (0.87, 0.1, 0.03, 0.26))
+    }
+    aleatoryCumulativeBF = (0.846, 0.127, 0.027, 0.26)
+    averageingBF = (0.823, 0.123, 0.053, 0.26)
+    beliefConstraintFusion = (0.896, 0.094, 0.011, 0.26)
+    epistemicCumulativeBF = (0.801, 0.0, 0.199, 0.26)
+    weightedBF = (0.833, 0.119, 0.049, 0.26)
+}
+
+UncertainElementFusion time_quarantine_Fusion {
+    beliefs {
+        Belief Expert1_time_quarantine (Expert1, (0.74, 0.03, 0.23, 14.0)),
+        Belief Expert2_time_quarantine (Expert2, (0.05, 0.65, 0.3, 14.0))
+    }
+    aleatoryCumulativeBF = (0.507, 0.344, 0.15, 14.0)
+    averageingBF = (0.441, 0.299, 0.26, 14.0)
+    beliefConstraintFusion = (0.523, 0.344, 0.133, 14.0)
+    epistemicCumulativeBF = (0.0, 0.814, 0.186, 14.0)
+    weightedBF = (0.457, 0.285, 0.259, 14.0)
+}
+
+UncertainElementFusion hosp_stay_preICU_Fusion {
+    beliefs {
+        Belief Expert1_hosp_stay_preICU (Expert1, (0.77, 0.05, 0.18, 3.0)),
+        Belief Expert2_hosp_stay_preICU (Expert2, (0.38, 0.23, 0.39, 3.0))
+    }
+    aleatoryCumulativeBF = (0.738, 0.122, 0.14, 3.0)
+    averageingBF = (0.647, 0.107, 0.246, 3.0)
+    beliefConstraintFusion = (0.823, 0.09, 0.087, 3.0)
+    epistemicCumulativeBF = (0.0, 0.614, 0.386, 3.0)
+    weightedBF = (0.67, 0.096, 0.234, 3.0)
+}
+
+UncertainElementFusion hosp_stay_postICU_Fusion {
+    beliefs {
+        Belief Expert1_hosp_stay_postICU (Expert1, (0.78, 0.01, 0.21, 21.0)),
+        Belief Expert2_hosp_stay_postICU (Expert2, (0.17, 0.25, 0.58, 21.0))
+    }
+    aleatoryCumulativeBF = (0.73, 0.087, 0.182, 21.0)
+    averageingBF = (0.618, 0.074, 0.308, 21.0)
+    beliefConstraintFusion = (0.773, 0.076, 0.152, 21.0)
+    epistemicCumulativeBF = (0.0, 0.783, 0.217, 21.0)
+    weightedBF = (0.682, 0.049, 0.27, 21.0)
+}
+
+UncertainElementFusion icu_stay_Fusion {
+    beliefs {
+        Belief Expert1_icu_stay (Expert1, (0.49, 0.51, 0.0, 21.0)),
+        Belief Expert2_icu_stay (Expert2, (0.35, 0.11, 0.54, 21.0))
+    }
+    aleatoryCumulativeBF = (0.49, 0.51, 0.0, 21.0)
+    averageingBF = (0.49, 0.51, 0.0, 21.0)
+    beliefConstraintFusion = (0.568, 0.432, 0.0, 21.0)
+    epistemicCumulativeBF = (0.0, 0.977, 0.023, 21.0)
+    weightedBF = (0.49, 0.51, 0.0, 21.0)
+}
+
+UncertainElementFusion latent_period_Fusion {
+    beliefs {
+        Belief Expert1_latent_period (Expert1, (0.49, 0.09, 0.42, 2.5)),
+        Belief Expert2_latent_period (Expert2, (0.42, 0.21, 0.37, 2.5))
+    }
+    aleatoryCumulativeBF = (0.564, 0.191, 0.245, 2.5)
+    averageingBF = (0.453, 0.154, 0.393, 2.5)
+    beliefConstraintFusion = (0.656, 0.163, 0.181, 2.5)
+    epistemicCumulativeBF = (0.0, 0.53, 0.47, 2.5)
+    weightedBF = (0.451, 0.156, 0.392, 2.5)
+}
+
+UncertainElementFusion presymptomatic_period_Fusion {
+    beliefs {
+        Belief Expert1_presymptomatic_period (Expert1, (0.64, 0.18, 0.18, 1.0)),
+        Belief Expert2_presymptomatic_period (Expert2, (0.64, 0.11, 0.25, 1.0))
+    }
+    aleatoryCumulativeBF = (0.715, 0.168, 0.117, 1.0)
+    averageingBF = (0.64, 0.151, 0.209, 1.0)
+    beliefConstraintFusion = (0.841, 0.104, 0.055, 1.0)
+    epistemicCumulativeBF = (0.0, 0.168, 0.832, 1.0)
+    weightedBF = (0.64, 0.152, 0.208, 1.0)
+}
+
+UncertainElementFusion infectious_period_mild_Fusion {
+    beliefs {
+        Belief Expert1_infectious_period_mild (Expert1, (0.83, 0.06, 0.11, 6.0)),
+        Belief Expert2_infectious_period_mild (Expert2, (0.37, 0.24, 0.39, 6.0))
+    }
+    aleatoryCumulativeBF = (0.797, 0.109, 0.094, 6.0)
+    averageingBF = (0.729, 0.1, 0.172, 6.0)
+    beliefConstraintFusion = (0.862, 0.082, 0.055, 6.0)
+    epistemicCumulativeBF = (0.0, 0.773, 0.227, 6.0)
+    weightedBF = (0.755, 0.089, 0.155, 6.0)
+}
+
+UncertainElementFusion quarantine_efficiency_Fusion {
+    beliefs {
+        Belief Expert1_quarantine_efficiency (Expert1, (0.32, 0.02, 0.66, 0.6)),
+        Belief Expert2_quarantine_efficiency (Expert2, (0.36, 0.27, 0.37, 0.6))
+    }
+    aleatoryCumulativeBF = (0.453, 0.236, 0.311, 0.6)
+    averageingBF = (0.346, 0.18, 0.474, 0.6)
+    beliefConstraintFusion = (0.52, 0.211, 0.269, 0.6)
+    epistemicCumulativeBF = (0.099, 0.0, 0.901, 0.6)
+    weightedBF = (0.351, 0.212, 0.437, 0.6)
+}
+
+UncertainElementFusion population_size_Fusion {
+    beliefs {
+        Belief Expert1_population_size (Expert1, (0.56, 0.39, 0.05, 14000.0)),
+        Belief Expert2_population_size (Expert2, (0.1, 0.52, 0.38, 14000.0))
+    }
+    aleatoryCumulativeBF = (0.53, 0.424, 0.046, 14000.0)
+    averageingBF = (0.507, 0.405, 0.088, 14000.0)
+    beliefConstraintFusion = (0.409, 0.563, 0.028, 14000.0)
+    epistemicCumulativeBF = (0.0, 0.954, 0.046, 14000.0)
+    weightedBF = (0.524, 0.4, 0.076, 14000.0)
+}
+

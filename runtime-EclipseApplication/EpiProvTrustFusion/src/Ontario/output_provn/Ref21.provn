@@ -1,0 +1,31 @@
+document
+
+prefix epi <http://www.cs.rpi.edu/~hendler/>
+prefix prov <http://www.prov.org>
+
+entity(prov:sigma,[prov:value = "0.4", prov:description = "Rate of progression from exposed to infectious"])
+hadMember(prov:Ontario_Model_Study,prov:sigma)
+entity(prov:Ontario_Model_Study,[prov:type = 'prov:Collection', prov:value = "", prov:description = "A little provenance goes a long way"])
+wasAttributedTo(prov:Ontario_Model_Study, prov:Ontario_Model_Authors)
+agent(prov:Ontario_Model_Authors, [prov:label = "Tuite, A. R., Fisman, D. N., & Greer, A. L."])
+wasDerivedFrom(prov:sigma, prov:Hospitalized_Patients_Study)
+wasDerivedFrom(prov:sigma, prov:POLYMOD_Study)
+wasDerivedFrom(prov:sigma, prov:Canadian_Community_Health_Survey)
+entity(prov:hosp_stay_preICU,[prov:value = "3", prov:description = "Average length of stay in hospital before ICU"])
+hadMember(prov:Ontario_Model_Study,prov:hosp_stay_preICU)
+wasDerivedFrom(prov:hosp_stay_preICU, prov:Hospitalized_Patients_Study)
+entity(prov:theta,[prov:value = "0.2", prov:description = "Rate of ICU admission"])
+wasDerivedFrom(prov:theta, prov:Hospitalized_Patients_Study)
+entity(prov:Hospitalized_Patients_Study)
+wasAttributedTo(prov:Hospitalized_Patients_Study, prov:Hospitalized_Patients_Authors)
+wasDerivedFrom(prov:Hospitalized_Patients_Study, prov:Zhongnan_Hospital_Patient_Data)
+entity(prov:POLYMOD_Study)
+wasAttributedTo(prov:POLYMOD_Study, prov:POLYMOD_Authors)
+wasDerivedFrom(prov:kappa, prov:POLYMOD_Study)
+entity(prov:Canadian_Community_Health_Survey)
+wasDerivedFrom(prov:kappa, prov:Canadian_Community_Health_Survey)
+agent(prov:Hospitalized_Patients_Authors,[prov:label = "Dawei Wang, Bo Hu, Chnagu Hu, Fangfang Zhu, et al."])
+entity(prov:Zhongnan_Hospital_Patient_Data,[prov:value = "", prov:description = "Hospital records of 138 patients"])
+agent(prov:POLYMOD_Authors,[prov:label = "Mossong, Joel, et al."])
+
+endDocument

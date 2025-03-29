@@ -1,0 +1,16 @@
+document
+
+prefix epi <http://www.cs.rpi.edu/~hendler/>
+prefix prov <http://www.prov.org>
+
+entity(prov:beta,[prov:value = "2.3", prov:description = "Basic reproduction number (R0)"])
+hadMember(prov:Ontario_Model_Study,prov:beta)
+entity(prov:Ontario_Model_Study,[prov:type = 'prov:Collection', prov:value = "", prov:description = "A little provenance goes a long way"])
+wasAttributedTo(prov:Ontario_Model_Study, prov:Ontario_Model_Authors)
+agent(prov:Ontario_Model_Authors, [prov:label = "Tuite, A. R., Fisman, D. N., & Greer, A. L."])
+wasDerivedFrom(prov:beta, prov:Wuhan_Study)
+entity(prov:Wuhan_Study)
+wasAttributedTo(prov:Wuhan_Study, prov:Wuhan_Authors)
+agent(prov:Wuhan_Authors,[prov:label = "Li Q., Guan X., Wu P., et al."])
+
+endDocument

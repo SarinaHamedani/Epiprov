@@ -5210,9 +5210,13 @@ rule__WasDerivedFrom__TimeAssignment_5_1
 	}
 :
 	(
-		{ before(grammarAccess.getWasDerivedFromAccess().getTimeDateTimeParserRuleCall_5_1_0()); }
-		ruleDateTime
-		{ after(grammarAccess.getWasDerivedFromAccess().getTimeDateTimeParserRuleCall_5_1_0()); }
+		{ before(grammarAccess.getWasDerivedFromAccess().getTimeDateTimeCrossReference_5_1_0()); }
+		(
+			{ before(grammarAccess.getWasDerivedFromAccess().getTimeDateTimeHyphenMinusKeyword_5_1_0_1()); }
+			'-'
+			{ after(grammarAccess.getWasDerivedFromAccess().getTimeDateTimeHyphenMinusKeyword_5_1_0_1()); }
+		)
+		{ after(grammarAccess.getWasDerivedFromAccess().getTimeDateTimeCrossReference_5_1_0()); }
 	)
 ;
 finally {
@@ -5293,9 +5297,13 @@ rule__WasGeneratedBy__TimeAssignment_5_1
 	}
 :
 	(
-		{ before(grammarAccess.getWasGeneratedByAccess().getTimeDateTimeParserRuleCall_5_1_0()); }
-		ruleDateTime
-		{ after(grammarAccess.getWasGeneratedByAccess().getTimeDateTimeParserRuleCall_5_1_0()); }
+		{ before(grammarAccess.getWasGeneratedByAccess().getTimeDateTimeCrossReference_5_1_0()); }
+		(
+			{ before(grammarAccess.getWasGeneratedByAccess().getTimeDateTimeHyphenMinusKeyword_5_1_0_1()); }
+			'-'
+			{ after(grammarAccess.getWasGeneratedByAccess().getTimeDateTimeHyphenMinusKeyword_5_1_0_1()); }
+		)
+		{ after(grammarAccess.getWasGeneratedByAccess().getTimeDateTimeCrossReference_5_1_0()); }
 	)
 ;
 finally {
@@ -5376,9 +5384,13 @@ rule__Used__TimeAssignment_5_1
 	}
 :
 	(
-		{ before(grammarAccess.getUsedAccess().getTimeDateTimeParserRuleCall_5_1_0()); }
-		ruleDateTime
-		{ after(grammarAccess.getUsedAccess().getTimeDateTimeParserRuleCall_5_1_0()); }
+		{ before(grammarAccess.getUsedAccess().getTimeDateTimeCrossReference_5_1_0()); }
+		(
+			{ before(grammarAccess.getUsedAccess().getTimeDateTimeHyphenMinusKeyword_5_1_0_1()); }
+			'-'
+			{ after(grammarAccess.getUsedAccess().getTimeDateTimeHyphenMinusKeyword_5_1_0_1()); }
+		)
+		{ after(grammarAccess.getUsedAccess().getTimeDateTimeCrossReference_5_1_0()); }
 	)
 ;
 finally {

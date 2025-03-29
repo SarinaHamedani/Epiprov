@@ -825,19 +825,13 @@ ruleWasDerivedFrom returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getWasDerivedFromAccess().getTimeDateTimeParserRuleCall_5_1_0());
-					}
-					lv_time_6_0=ruleDateTime
-					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getWasDerivedFromRule());
+							$current = createModelElement(grammarAccess.getWasDerivedFromRule());
 						}
-						set(
-							$current,
-							"time",
-							lv_time_6_0,
-							"org.w3.ns.prov.ProvN.DateTime");
-						afterParserOrEnumRuleCall();
+					}
+					otherlv_6='-'
+					{
+						newLeafNode(otherlv_6, grammarAccess.getWasDerivedFromAccess().getTimeDateTimeCrossReference_5_1_0());
 					}
 				)
 			)
@@ -975,19 +969,13 @@ ruleWasGeneratedBy returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getWasGeneratedByAccess().getTimeDateTimeParserRuleCall_5_1_0());
-					}
-					lv_time_6_0=ruleDateTime
-					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getWasGeneratedByRule());
+							$current = createModelElement(grammarAccess.getWasGeneratedByRule());
 						}
-						set(
-							$current,
-							"time",
-							lv_time_6_0,
-							"org.w3.ns.prov.ProvN.DateTime");
-						afterParserOrEnumRuleCall();
+					}
+					otherlv_6='-'
+					{
+						newLeafNode(otherlv_6, grammarAccess.getWasGeneratedByAccess().getTimeDateTimeCrossReference_5_1_0());
 					}
 				)
 			)
@@ -1125,19 +1113,13 @@ ruleUsed returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUsedAccess().getTimeDateTimeParserRuleCall_5_1_0());
-					}
-					lv_time_6_0=ruleDateTime
-					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getUsedRule());
+							$current = createModelElement(grammarAccess.getUsedRule());
 						}
-						set(
-							$current,
-							"time",
-							lv_time_6_0,
-							"org.w3.ns.prov.ProvN.DateTime");
-						afterParserOrEnumRuleCall();
+					}
+					otherlv_6='-'
+					{
+						newLeafNode(otherlv_6, grammarAccess.getUsedAccess().getTimeDateTimeCrossReference_5_1_0());
 					}
 				)
 			)

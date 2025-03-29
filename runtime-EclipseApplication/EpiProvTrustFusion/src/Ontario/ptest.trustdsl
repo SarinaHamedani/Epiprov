@@ -1,0 +1,24 @@
+Agent Teacher
+Agent Student
+
+UncertainElement icu_stay {
+    beliefs {
+        Belief Student_icu_stay (Student, (0.0, 0.8, 0.2, 1.0))
+
+        , Belief Teacher_icu_stay (Teacher, (0.0, 1.0, 0.0, 1.0))
+    }
+}
+
+UncertainElement beta {
+    beliefs {
+        Belief Student_beta (Student, (1.0, 0.0, 0.0, 2.3))
+
+        , Belief Teacher_beta (Teacher, (0.78, 0.12, 0.1, 2.3))
+    }
+}
+
+UncertainElement kappa {
+    beliefs {
+        Belief Teacher_kappa (Teacher, (0.3, 0.7, 0.0, 0.26))
+    }
+}

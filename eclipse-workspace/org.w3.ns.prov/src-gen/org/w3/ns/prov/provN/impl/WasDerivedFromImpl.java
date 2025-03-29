@@ -63,7 +63,7 @@ public class WasDerivedFromImpl extends RelationImpl implements WasDerivedFrom
   protected Entity usedEntity;
 
   /**
-   * The cached value of the '{@link #getTime() <em>Time</em>}' containment reference.
+   * The cached value of the '{@link #getTime() <em>Time</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTime()
@@ -201,6 +201,16 @@ public class WasDerivedFromImpl extends RelationImpl implements WasDerivedFrom
   @Override
   public DateTime getTime()
   {
+    if (time != null && time.eIsProxy())
+    {
+      InternalEObject oldTime = (InternalEObject)time;
+      time = (DateTime)eResolveProxy(oldTime);
+      if (time != oldTime)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProvNPackage.WAS_DERIVED_FROM__TIME, oldTime, time));
+      }
+    }
     return time;
   }
 
@@ -209,16 +219,9 @@ public class WasDerivedFromImpl extends RelationImpl implements WasDerivedFrom
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetTime(DateTime newTime, NotificationChain msgs)
+  public DateTime basicGetTime()
   {
-    DateTime oldTime = time;
-    time = newTime;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProvNPackage.WAS_DERIVED_FROM__TIME, oldTime, newTime);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+    return time;
   }
 
   /**
@@ -229,18 +232,10 @@ public class WasDerivedFromImpl extends RelationImpl implements WasDerivedFrom
   @Override
   public void setTime(DateTime newTime)
   {
-    if (newTime != time)
-    {
-      NotificationChain msgs = null;
-      if (time != null)
-        msgs = ((InternalEObject)time).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ProvNPackage.WAS_DERIVED_FROM__TIME, null, msgs);
-      if (newTime != null)
-        msgs = ((InternalEObject)newTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ProvNPackage.WAS_DERIVED_FROM__TIME, null, msgs);
-      msgs = basicSetTime(newTime, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ProvNPackage.WAS_DERIVED_FROM__TIME, newTime, newTime));
+    DateTime oldTime = time;
+    time = newTime;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ProvNPackage.WAS_DERIVED_FROM__TIME, oldTime, time));
   }
 
   /**
@@ -268,8 +263,6 @@ public class WasDerivedFromImpl extends RelationImpl implements WasDerivedFrom
   {
     switch (featureID)
     {
-      case ProvNPackage.WAS_DERIVED_FROM__TIME:
-        return basicSetTime(null, msgs);
       case ProvNPackage.WAS_DERIVED_FROM__ATTRIBUTES:
         return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
     }
@@ -293,7 +286,8 @@ public class WasDerivedFromImpl extends RelationImpl implements WasDerivedFrom
         if (resolve) return getUsedEntity();
         return basicGetUsedEntity();
       case ProvNPackage.WAS_DERIVED_FROM__TIME:
-        return getTime();
+        if (resolve) return getTime();
+        return basicGetTime();
       case ProvNPackage.WAS_DERIVED_FROM__ATTRIBUTES:
         return getAttributes();
     }

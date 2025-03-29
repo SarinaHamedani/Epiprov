@@ -1,0 +1,9 @@
+document
+
+prefix epi <http://www.cs.rpi.edu/~hendler/>
+prefix prov <http://www.prov.org>
+
+entity(prov:delta,[prov:value = "0.1", prov:description = "Rate of hospitalization for severe cases"])
+hadMember(prov:Ontario_Model_Study,prov:delta)
+
+endDocument

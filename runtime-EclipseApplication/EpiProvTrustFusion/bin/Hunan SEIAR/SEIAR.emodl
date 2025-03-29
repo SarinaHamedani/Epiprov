@@ -1,0 +1,60 @@
+(import ( rnrs) ( emodl cmslib))
+
+(start-model "Age_Specific_SEIAR")
+
+(species S_i 1000)
+(species E_i 0)
+(species I_i 0)
+(species A_i 0)
+(species R_i 0)
+
+(species S_j 1000)
+(species E_j 0)
+(species I_j 0)
+(species A_j 0)
+(species R_j 0)
+
+(param beta_ii 0.000000001) ; transmission within group i
+(param beta_ji 0.000000001) ; transmission from group j to i
+(param beta_jj 0.000000001) ; within j
+(param beta_ij 0.000000001) ; from i to j
+(param kappa 1.0) ; relative transmissibility of A compared to I
+(param p 0.2015) ; proportion asymptomatic
+(param omega 0.1429) ; rate from exposed to infectious
+(param gamma 0.2) ; recovery rate for symptomatic
+(param gamma_p 0.2) ; recovery rate for asymptomatic
+(param f 0.003552) ; fatality rate
+
+; Infection dynamics for age group i
+(reaction infect_i (S_i) (E_i)
+  (* S_i (+ (* beta_ii (+ I_i (* kappa A_i))) (* beta_ji (+ I_j (* kappa A_j))))))
+
+(reaction exposed_to_Ii (E_i) (I_i)
+  (* (- 1 p) (* omega E_i)))
+
+(reaction exposed_to_Ai (E_i) (A_i)
+  (* p (* omega E_i)))
+
+(reaction recover_Ii (I_i) (R_i)
+  (* gamma I_i))
+
+(reaction recover_Ai (A_i) (R_i)
+  (* gamma_p A_i))
+
+; Infection dynamics for age group j
+(reaction infect_j (S_j) (E_j)
+  (* S_j (+ (* beta_jj (+ I_j (* kappa A_j))) (* beta_ij (+ I_i (* kappa A_i))))))
+
+(reaction exposed_to_Ij (E_j) (I_j)
+  (* (- 1 p) (* omega E_j)))
+
+(reaction exposed_to_Aj (E_j) (A_j)
+  (* p (* omega E_j)))
+
+(reaction recover_Ij (I_j) (R_j)
+  (* gamma I_j))
+
+(reaction recover_Aj (A_j) (R_j)
+  (* gamma_p A_j))
+
+(end-model)

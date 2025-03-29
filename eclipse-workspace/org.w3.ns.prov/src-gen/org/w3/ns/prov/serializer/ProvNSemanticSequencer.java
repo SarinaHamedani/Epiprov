@@ -292,7 +292,7 @@ public class ProvNSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Used returns Used
 	 *
 	 * Constraint:
-	 *     (activity=[Activity|QualifiedName] entity=[Entity|QualifiedName] time=DateTime? (attributes+=Attribute attributes+=Attribute*)?)
+	 *     (activity=[Activity|QualifiedName] entity=[Entity|QualifiedName] time=[DateTime|'-']? (attributes+=Attribute attributes+=Attribute*)?)
 	 * </pre>
 	 */
 	protected void sequence_Used(ISerializationContext context, Used semanticObject) {
@@ -340,7 +340,7 @@ public class ProvNSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     WasDerivedFrom returns WasDerivedFrom
 	 *
 	 * Constraint:
-	 *     (generatedEntity=[Entity|QualifiedName] usedEntity=[Entity|QualifiedName] time=DateTime? (attributes+=Attribute attributes+=Attribute*)?)
+	 *     (generatedEntity=[Entity|QualifiedName] usedEntity=[Entity|QualifiedName] time=[DateTime|'-']? (attributes+=Attribute attributes+=Attribute*)?)
 	 * </pre>
 	 */
 	protected void sequence_WasDerivedFrom(ISerializationContext context, WasDerivedFrom semanticObject) {
@@ -356,7 +356,7 @@ public class ProvNSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     WasGeneratedBy returns WasGeneratedBy
 	 *
 	 * Constraint:
-	 *     (entity=[Entity|QualifiedName] activity=[Activity|QualifiedName] time=DateTime? (attributes+=Attribute attributes+=Attribute*)?)
+	 *     (entity=[Entity|QualifiedName] activity=[Activity|QualifiedName] time=[DateTime|'-']? (attributes+=Attribute attributes+=Attribute*)?)
 	 * </pre>
 	 */
 	protected void sequence_WasGeneratedBy(ISerializationContext context, WasGeneratedBy semanticObject) {

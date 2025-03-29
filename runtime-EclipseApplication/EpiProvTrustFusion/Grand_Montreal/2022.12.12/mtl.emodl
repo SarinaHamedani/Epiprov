@@ -1,0 +1,81 @@
+(import ( rnrs) ( emodl cmslib))
+
+(start-model "SEIR_Model")
+
+(species S 1000)   ; Susceptible
+(species E 0)      ; Exposed
+(species Ip 0)     ; Pre-symptomatic Infectious
+(species Is 0)     ; Symptomatic Infectious
+(species Ia 0)     ; Asymptomatic Infectious
+(species H 0)      ; Hospitalized
+(species R 0)      ; Recovered
+(species D 0)      ; Deceased
+
+(param beta 0.3)   ; Effective contact rate
+(param sigma 0.2)  ; Rate from E to Ip
+(param gamma 0.1)  ; Recovery rate
+(param delta 0.05) ; Hospitalization rate
+(param mu 0.01)    ; Mortality rate
+(param epsilon 0.8); Vaccine effectiveness
+(param omega 0.02) ; Waning immunity rate
+(param phi 0.6)    ; Probability of symptomatic infection
+
+(reaction exposure
+  (S)
+  (E)
+  (* 
+     (* beta S)
+     (/
+       (+ Ip (+ Is Ia))
+       (+ S (+ E (+ Ip (+ Is (+ Ia R)))))
+     )
+  )
+)
+
+
+(reaction progression
+  (E)
+  (Ip)
+  (* sigma E))
+
+(reaction symptomatic_infection
+  (Ip)
+  (Is)
+  (* phi Ip))
+
+(reaction asymptomatic_infection
+  (Ip)
+  (Ia)
+  (* (- 1 phi) Ip))
+
+(reaction recovery_symptomatic
+  (Is)
+  (R)
+  (* gamma Is))
+
+(reaction recovery_asymptomatic
+  (Ia)
+  (R)
+  (* gamma Ia))
+
+(reaction hospitalization
+  (Is)
+  (H)
+  (* delta Is))
+
+(reaction death
+  (H)
+  (D)
+  (* mu H))
+
+(reaction recovery_hospitalized
+  (H)
+  (R)
+  (* (- gamma mu) H))
+
+(reaction waning_immunity
+  (R)
+  (S)
+  (* omega R))
+
+(end-model)

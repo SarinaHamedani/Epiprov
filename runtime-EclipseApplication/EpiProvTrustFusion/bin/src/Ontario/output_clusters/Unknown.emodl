@@ -1,0 +1,10 @@
+(import (rnrs) (emodl cmslib))
+
+(start-model "Unknown")
+
+(param delta 0.1)  ; Rate of hospitalization for severe cases [ref 21]
+(reaction hospitalization_quarantined (I_severe_quarantined) (H_preICU) (* delta I_severe_quarantined))
+(reaction hospitalization_severe (I_severe) (H_preICU) (* delta I_severe))
+
+
+(end-model)

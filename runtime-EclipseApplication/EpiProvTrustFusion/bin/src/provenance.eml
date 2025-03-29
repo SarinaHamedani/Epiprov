@@ -5,7 +5,15 @@ with r : Right!Document
 into t : Target!Document {
     t.compartmentalModel = new Target!Model();
     
-//    for (namespace in l.compartmentalModel.namespaces) {
+    t.compartmentalModel.statements.addAll(l.compartmentalModel.statements);
+    
+    for (statement in r.compartmentalModel.statements.collect(s | s)) {
+        if (not t.compartmentalModel.statements.exists(s | s.equals(statement))) {
+            t.compartmentalModel.statements.add(statement);
+        }
+    }
+    
+    //    for (namespace in l.compartmentalModel.namespaces) {
 //        if (not t.compartmentalModel.namespaces.exists(n | n.compartmentalModel == namespace.name)) {
 //            t.compartmentalModel.namespaces.add(namespace);
 //        }
@@ -15,24 +23,25 @@ into t : Target!Document {
 //            t.name.namespaces.add(namespace);
 //        }
 //    }
-
-    t.compartmentalModel.statements.addAll(l.compartmentalModel.statements);
     
+    // Add additional lines for valid .provn output according to the grammar
+    t.compartmentalModel.statements.add("entity(provbook:combined_model, [prov:type = \"prov:Entity\", prov:label = \"Combined Model\"])");
+    t.compartmentalModel.statements.add("activity(provbook:Merge)");
+    t.compartmentalModel.statements.add("agent(provbook:GEODES_Epimodel)");
+    t.compartmentalModel.statements.add("wasGeneratedBy(provbook:combined_model, provbook:Merge, -)");
+    t.compartmentalModel.statements.add("wasAssociatedWith(provbook:Merge, provbook:GEODES_Epimodel, -)");
     
-    for (statement in r.compartmentalModel.statements.collect(s | s)) {
-        if (not t.compartmentalModel.statements.exists(s | s.equals(statement))) {
-            t.compartmentalModel.statements.add(statement);
-        }
+    for (fragment in fragment_names) {
+        t.compartmentalModel.statements.add("used(provbook:Merge, provbook:" + fragment + ", -)");
     }
-    
     
     var resource = t.eResource;
     resource.getContents().clear();
     resource.getContents().add(t);
     System.out.println("Post-processing complete: resource contents updated.");
-
     System.out.println("Merged Document with " + t.compartmentalModel.namespaces.size() + " namespaces and " + t.compartmentalModel.statements.size() + " statements.");
 }
+
 
 
 // Merge Namespaces ensuring unique namespaces

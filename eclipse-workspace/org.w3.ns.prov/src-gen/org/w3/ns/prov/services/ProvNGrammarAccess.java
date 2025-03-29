@@ -461,7 +461,8 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Assignment cTimeAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cTimeDateTimeParserRuleCall_5_1_0 = (RuleCall)cTimeAssignment_5_1.eContents().get(0);
+		private final CrossReference cTimeDateTimeCrossReference_5_1_0 = (CrossReference)cTimeAssignment_5_1.eContents().get(0);
+		private final Keyword cTimeDateTimeHyphenMinusKeyword_5_1_0_1 = (Keyword)cTimeDateTimeCrossReference_5_1_0.eContents().get(1);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
@@ -475,10 +476,10 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//WasDerivedFrom:
-		//    'wasDerivedFrom' '(' generatedEntity=[Entity|QualifiedName] ',' usedEntity=[Entity|QualifiedName] (',' time=DateTime)? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
+		//    'wasDerivedFrom' '(' generatedEntity=[Entity|QualifiedName] ',' usedEntity=[Entity|QualifiedName] (',' time=[DateTime|'-'])? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'wasDerivedFrom' '(' generatedEntity=[Entity|QualifiedName] ',' usedEntity=[Entity|QualifiedName] (',' time=DateTime)? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')'
+		//'wasDerivedFrom' '(' generatedEntity=[Entity|QualifiedName] ',' usedEntity=[Entity|QualifiedName] (',' time=[DateTime|'-'])? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'wasDerivedFrom'
@@ -508,17 +509,20 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//QualifiedName
 		public RuleCall getUsedEntityEntityQualifiedNameParserRuleCall_4_0_1() { return cUsedEntityEntityQualifiedNameParserRuleCall_4_0_1; }
 		
-		//(',' time=DateTime)?
+		//(',' time=[DateTime|'-'])?
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//','
 		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
 		
-		//time=DateTime
+		//time=[DateTime|'-']
 		public Assignment getTimeAssignment_5_1() { return cTimeAssignment_5_1; }
 		
-		//DateTime
-		public RuleCall getTimeDateTimeParserRuleCall_5_1_0() { return cTimeDateTimeParserRuleCall_5_1_0; }
+		//[DateTime|'-']
+		public CrossReference getTimeDateTimeCrossReference_5_1_0() { return cTimeDateTimeCrossReference_5_1_0; }
+		
+		//'-'
+		public Keyword getTimeDateTimeHyphenMinusKeyword_5_1_0_1() { return cTimeDateTimeHyphenMinusKeyword_5_1_0_1; }
 		
 		//(',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')?
 		public Group getGroup_6() { return cGroup_6; }
@@ -568,7 +572,8 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Assignment cTimeAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cTimeDateTimeParserRuleCall_5_1_0 = (RuleCall)cTimeAssignment_5_1.eContents().get(0);
+		private final CrossReference cTimeDateTimeCrossReference_5_1_0 = (CrossReference)cTimeAssignment_5_1.eContents().get(0);
+		private final Keyword cTimeDateTimeHyphenMinusKeyword_5_1_0_1 = (Keyword)cTimeDateTimeCrossReference_5_1_0.eContents().get(1);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
@@ -582,10 +587,10 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//WasGeneratedBy:
-		//    'wasGeneratedBy' '(' entity=[Entity|QualifiedName] ',' activity=[Activity|QualifiedName] (',' time=DateTime)? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
+		//    'wasGeneratedBy' '(' entity=[Entity|QualifiedName] ',' activity=[Activity|QualifiedName] (',' time=[DateTime|'-'])? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'wasGeneratedBy' '(' entity=[Entity|QualifiedName] ',' activity=[Activity|QualifiedName] (',' time=DateTime)? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')'
+		//'wasGeneratedBy' '(' entity=[Entity|QualifiedName] ',' activity=[Activity|QualifiedName] (',' time=[DateTime|'-'])? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'wasGeneratedBy'
@@ -615,17 +620,20 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//QualifiedName
 		public RuleCall getActivityActivityQualifiedNameParserRuleCall_4_0_1() { return cActivityActivityQualifiedNameParserRuleCall_4_0_1; }
 		
-		//(',' time=DateTime)?
+		//(',' time=[DateTime|'-'])?
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//','
 		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
 		
-		//time=DateTime
+		//time=[DateTime|'-']
 		public Assignment getTimeAssignment_5_1() { return cTimeAssignment_5_1; }
 		
-		//DateTime
-		public RuleCall getTimeDateTimeParserRuleCall_5_1_0() { return cTimeDateTimeParserRuleCall_5_1_0; }
+		//[DateTime|'-']
+		public CrossReference getTimeDateTimeCrossReference_5_1_0() { return cTimeDateTimeCrossReference_5_1_0; }
+		
+		//'-'
+		public Keyword getTimeDateTimeHyphenMinusKeyword_5_1_0_1() { return cTimeDateTimeHyphenMinusKeyword_5_1_0_1; }
 		
 		//(',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')?
 		public Group getGroup_6() { return cGroup_6; }
@@ -675,7 +683,8 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Assignment cTimeAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cTimeDateTimeParserRuleCall_5_1_0 = (RuleCall)cTimeAssignment_5_1.eContents().get(0);
+		private final CrossReference cTimeDateTimeCrossReference_5_1_0 = (CrossReference)cTimeAssignment_5_1.eContents().get(0);
+		private final Keyword cTimeDateTimeHyphenMinusKeyword_5_1_0_1 = (Keyword)cTimeDateTimeCrossReference_5_1_0.eContents().get(1);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
@@ -689,10 +698,10 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Used:
-		//    'used' '(' activity=[Activity|QualifiedName] ',' entity=[Entity|QualifiedName] (',' time=DateTime)? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
+		//    'used' '(' activity=[Activity|QualifiedName] ',' entity=[Entity|QualifiedName] (',' time=[DateTime|'-'])? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'used' '(' activity=[Activity|QualifiedName] ',' entity=[Entity|QualifiedName] (',' time=DateTime)? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')'
+		//'used' '(' activity=[Activity|QualifiedName] ',' entity=[Entity|QualifiedName] (',' time=[DateTime|'-'])? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'used'
@@ -722,17 +731,20 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//QualifiedName
 		public RuleCall getEntityEntityQualifiedNameParserRuleCall_4_0_1() { return cEntityEntityQualifiedNameParserRuleCall_4_0_1; }
 		
-		//(',' time=DateTime)?
+		//(',' time=[DateTime|'-'])?
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//','
 		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
 		
-		//time=DateTime
+		//time=[DateTime|'-']
 		public Assignment getTimeAssignment_5_1() { return cTimeAssignment_5_1; }
 		
-		//DateTime
-		public RuleCall getTimeDateTimeParserRuleCall_5_1_0() { return cTimeDateTimeParserRuleCall_5_1_0; }
+		//[DateTime|'-']
+		public CrossReference getTimeDateTimeCrossReference_5_1_0() { return cTimeDateTimeCrossReference_5_1_0; }
+		
+		//'-'
+		public Keyword getTimeDateTimeHyphenMinusKeyword_5_1_0_1() { return cTimeDateTimeHyphenMinusKeyword_5_1_0_1; }
 		
 		//(',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')?
 		public Group getGroup_6() { return cGroup_6; }
@@ -1324,7 +1336,7 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//WasDerivedFrom:
-	//    'wasDerivedFrom' '(' generatedEntity=[Entity|QualifiedName] ',' usedEntity=[Entity|QualifiedName] (',' time=DateTime)? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
+	//    'wasDerivedFrom' '(' generatedEntity=[Entity|QualifiedName] ',' usedEntity=[Entity|QualifiedName] (',' time=[DateTime|'-'])? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
 	public WasDerivedFromElements getWasDerivedFromAccess() {
 		return pWasDerivedFrom;
 	}
@@ -1334,7 +1346,7 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//WasGeneratedBy:
-	//    'wasGeneratedBy' '(' entity=[Entity|QualifiedName] ',' activity=[Activity|QualifiedName] (',' time=DateTime)? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
+	//    'wasGeneratedBy' '(' entity=[Entity|QualifiedName] ',' activity=[Activity|QualifiedName] (',' time=[DateTime|'-'])? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
 	public WasGeneratedByElements getWasGeneratedByAccess() {
 		return pWasGeneratedBy;
 	}
@@ -1344,7 +1356,7 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//Used:
-	//    'used' '(' activity=[Activity|QualifiedName] ',' entity=[Entity|QualifiedName] (',' time=DateTime)? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
+	//    'used' '(' activity=[Activity|QualifiedName] ',' entity=[Entity|QualifiedName] (',' time=[DateTime|'-'])? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
 	public UsedElements getUsedAccess() {
 		return pUsed;
 	}

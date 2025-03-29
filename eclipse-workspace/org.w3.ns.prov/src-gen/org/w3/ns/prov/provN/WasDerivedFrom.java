@@ -71,22 +71,22 @@ public interface WasDerivedFrom extends Relation
   void setUsedEntity(Entity value);
 
   /**
-   * Returns the value of the '<em><b>Time</b></em>' containment reference.
+   * Returns the value of the '<em><b>Time</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Time</em>' containment reference.
+   * @return the value of the '<em>Time</em>' reference.
    * @see #setTime(DateTime)
    * @see org.w3.ns.prov.provN.ProvNPackage#getWasDerivedFrom_Time()
-   * @model containment="true"
+   * @model
    * @generated
    */
   DateTime getTime();
 
   /**
-   * Sets the value of the '{@link org.w3.ns.prov.provN.WasDerivedFrom#getTime <em>Time</em>}' containment reference.
+   * Sets the value of the '{@link org.w3.ns.prov.provN.WasDerivedFrom#getTime <em>Time</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Time</em>' containment reference.
+   * @param value the new value of the '<em>Time</em>' reference.
    * @see #getTime()
    * @generated
    */
