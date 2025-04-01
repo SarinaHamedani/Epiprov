@@ -1,0 +1,41 @@
+Agent R
+Agent S
+
+UncertainElement icu_stay {
+    beliefs {
+        Belief S_icu_stay (0.2, 0.7, 0.1, 0.5),
+        Belief R_icu_stay (0.0, 1.0, 0.0, 0.5)
+    }
+    aleatoryCumulativeBF = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@323a870c (belief: 0.0, disbelief: 1.0, uncertainty: 0.0, baseRate: 0.5)
+    averageingBF = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@491ef938 (belief: 0.0, disbelief: 1.0, uncertainty: 0.0, baseRate: 0.5)
+    beliefConstraintFusion = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@63e6c111 (belief: 0.0, disbelief: 1.0, uncertainty: 0.0, baseRate: 0.5)
+    epistemicCumulativeBF = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@2c4bcc40 (belief: 0.0, disbelief: 1.0, uncertainty: 0.0, baseRate: 0.5)
+    weightedBF = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@4a2f2c22 (belief: 0.0, disbelief: 1.0, uncertainty: 0.0, baseRate: 0.5)
+}
+
+UncertainElement beta {
+    beliefs {
+        Belief S_beta (1.0, 0.0, 0.0, 0.5),
+        Belief R_beta (0.5, 0.4, 0.1, 0.5)
+    }
+    aleatoryCumulativeBF = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@74c6cb66 (belief: 1.0, disbelief: 0.0, uncertainty: 0.0, baseRate: 0.5)
+    averageingBF = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@21fd62a6 (belief: 1.0, disbelief: 0.0, uncertainty: 0.0, baseRate: 0.5)
+    beliefConstraintFusion = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@53a69315 (belief: 1.0, disbelief: 0.0, uncertainty: 0.0, baseRate: 0.5)
+    epistemicCumulativeBF = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@60dbfb7f (belief: 1.0, disbelief: 0.0, uncertainty: 0.0, baseRate: 0.5)
+    weightedBF = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@220481f9 (belief: 1.0, disbelief: 0.0, uncertainty: 0.0, baseRate: 0.5)
+}
+Agent Sarina
+Agent Betty
+Agent Abraham
+
+UncertainElement delta {
+    beliefs {
+        Belief Abraham_delta (0.64, 0.16, 0.2, 0.5),
+        Belief Betty_delta (0.8, 0.0, 0.2, 0.5)
+    }
+    aleatoryCumulativeBF = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@68a62f4d (belief: 0.711112, disbelief: 0.0, uncertainty: 0.288888, baseRate: 0.5)
+    averageingBF = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@f7f3777 (belief: 0.72, disbelief: 0.08, uncertainty: 0.2, baseRate: 0.5)
+    beliefConstraintFusion = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@304035e4 (belief: 0.917431, disbelief: 0.036697, uncertainty: 0.045872, baseRate: 0.5)
+    epistemicCumulativeBF = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@36cd715c (belief: 0.711112, disbelief: 0.0, uncertainty: 0.288888, baseRate: 0.5)
+    weightedBF = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@6fc8fc8f (belief: 0.72, disbelief: 0.08, uncertainty: 0.2, baseRate: 0.5)
+}

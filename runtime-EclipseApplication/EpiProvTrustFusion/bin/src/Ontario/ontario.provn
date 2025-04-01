@@ -15,7 +15,7 @@ entity(prov:kappa,[prov:value = "0.26", prov:description = "Mortality rate for I
 entity(prov:time_quarantine,[prov:value = "14", prov:description = "Duration of quarantine for exposed cases"])
 entity(prov:hosp_stay_preICU,[prov:value = "3", prov:description = "Average length of stay in hospital before ICU"])
 entity(prov:hosp_stay_postICU,[prov:value = "21", prov:description = "Average length of stay in hospital after ICU"])
-entity(prov:icu_stay,[prov:value = "21", prov:description = "Average length of stay in ICU"])
+entity(prov:icu_stay,[prov:value = "1", prov:description = "Average length of stay in ICU"])
 entity(prov:latent_period,[prov:value = "2.5", prov:description = "Duration of latent period"])
 entity(prov:presymptomatic_period,[prov:value = "1", prov:description = "Duration of presymptomatic infectious period"])
 entity(prov:infectious_period_mild,[prov:value = "6", prov:description = "Duration of infectious period, mild to moderate"])

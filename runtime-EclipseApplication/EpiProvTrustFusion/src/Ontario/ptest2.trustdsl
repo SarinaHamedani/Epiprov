@@ -1,0 +1,16 @@
+Agent Sarina
+Agent Betty
+Agent Abraham
+
+UncertainElement delta {
+    beliefs {
+        Belief Abraham_delta (Abraham, (0.64, 0.16, 0.2, 0.5))
+    
+        , Belief Betty_delta (Betty, (0.8, 0.0, 0.2, 0.5))
+}
+}
+UncertainElement infectious_period_mild {
+    beliefs {
+        Belief Sarina_infectious_period_mild (Sarina, (0.6, 0.2, 0.2, 0.5))
+    }
+}

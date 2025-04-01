@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: FuseOpinions
+Bundle-SymbolicName: org.plugin.geodes.fuseOpinions;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Export-Package: .
+Bundle-Activator: org.plugin.geodes.fuseopinions.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources;bundle-version="3.22.0",
+ org.eclipse.emf.common;bundle-version="2.41.0",
+ org.eclipse.emf.ecore;bundle-version="2.38.0",
+ org.xtext.geodes.trustdsl;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-23
+Automatic-Module-Name: org.plugin.geodes.fuseOpinions
+Bundle-ActivationPolicy: lazy

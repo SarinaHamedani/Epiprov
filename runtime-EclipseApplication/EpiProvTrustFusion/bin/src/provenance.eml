@@ -13,27 +13,54 @@ into t : Target!Document {
         }
     }
     
-    //    for (namespace in l.compartmentalModel.namespaces) {
-//        if (not t.compartmentalModel.namespaces.exists(n | n.compartmentalModel == namespace.name)) {
-//            t.compartmentalModel.namespaces.add(namespace);
-//        }
-//    }
-//    for (namespace in r.compartmentalModel.namespaces) {
-//        if (not t.compartmentalModel.namespaces.exists(n | n.compartmentalModel == namespace.name)) {
-//            t.name.namespaces.add(namespace);
-//        }
-//    }
+    // Create combined model entity:
+    var combinedEntity = new Target!Entity();
+    combinedEntity.name = "provbook:combined_model";
+    combinedEntity.attributes.add(new Target!Attribute("prov:type", "\"prov:Entity\""));
+    combinedEntity.attributes.add(new Target!Attribute("prov:label", "\"Combined Model\""));
+    t.compartmentalModel.statements.add(combinedEntity);
     
-    // Add additional lines for valid .provn output according to the grammar
-    t.compartmentalModel.statements.add("entity(provbook:combined_model, [prov:type = \"prov:Entity\", prov:label = \"Combined Model\"])");
-    t.compartmentalModel.statements.add("activity(provbook:Merge)");
-    t.compartmentalModel.statements.add("agent(provbook:GEODES_Epimodel)");
-    t.compartmentalModel.statements.add("wasGeneratedBy(provbook:combined_model, provbook:Merge, -)");
-    t.compartmentalModel.statements.add("wasAssociatedWith(provbook:Merge, provbook:GEODES_Epimodel, -)");
+    // Create merge activity:
+    var mergeActivity = new Target!Activity();
+    mergeActivity.name = "provbook:Merge";
+    t.compartmentalModel.statements.add(mergeActivity);
     
-    for (fragment in fragment_names) {
-        t.compartmentalModel.statements.add("used(provbook:Merge, provbook:" + fragment + ", -)");
-    }
+    // Create GEODES_Epimodel agent:
+    var geodesAgent = new Target!Agent();
+    geodesAgent.name = "provbook:GEODES_Epimodel";
+    t.compartmentalModel.statements.add(geodesAgent);
+    
+    // Create wasGeneratedBy relation:
+    var genBy = new Target!WasGeneratedBy();
+    genBy.entity = combinedEntity;
+    genBy.activity = mergeActivity;
+    // Set time to null instead of a string literal
+    genBy.time = null;
+    t.compartmentalModel.statements.add(genBy);
+    
+    // Create wasAssociatedWith relation:
+    var assocWith = new Target!WasAssociatedWith();
+    assocWith.activity = mergeActivity;
+    assocWith.agent = geodesAgent;
+    t.compartmentalModel.statements.add(assocWith);
+    
+    // Use the left document's name to create a used relation:
+    var usedLeft = new Target!Used();
+    usedLeft.activity = mergeActivity;
+    var leftEntity = new Target!Entity();
+    leftEntity.name = "provbook:" + l.compartmentalModel.name;
+    usedLeft.entity = leftEntity;
+    usedLeft.time = null;
+    t.compartmentalModel.statements.add(usedLeft);
+    
+    // Use the right document's name to create a used relation:
+    var usedRight = new Target!Used();
+    usedRight.activity = mergeActivity;
+    var rightEntity = new Target!Entity();
+    rightEntity.name = "provbook:" + r.compartmentalModel.name;
+    usedRight.entity = rightEntity;
+    usedRight.time = null;
+    t.compartmentalModel.statements.add(usedRight);
     
     var resource = t.eResource;
     resource.getContents().clear();
@@ -41,8 +68,6 @@ into t : Target!Document {
     System.out.println("Post-processing complete: resource contents updated.");
     System.out.println("Merged Document with " + t.compartmentalModel.namespaces.size() + " namespaces and " + t.compartmentalModel.statements.size() + " statements.");
 }
-
-
 
 // Merge Namespaces ensuring unique namespaces
 rule MergeNamespaces
@@ -52,6 +77,8 @@ into t : Target!Namespace {
     t.name = l.name;
     t.uri = l.uri;
 }
+
+
 
 // Merge Entities ensuring attributes are combined
 //rule MergeEntities

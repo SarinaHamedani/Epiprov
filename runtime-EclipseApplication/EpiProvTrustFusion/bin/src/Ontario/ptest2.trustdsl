@@ -1,0 +1,7 @@
+Agent Abraham
+
+UncertainElement delta {
+    beliefs {
+        Belief Abraham_delta (Abraham, (0.64, 0.16, 0.2, 0.5))
+    }
+}

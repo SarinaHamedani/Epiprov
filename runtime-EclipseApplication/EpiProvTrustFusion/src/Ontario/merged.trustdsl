@@ -1,0 +1,10 @@
+Agent R Agent S UncertainElementFusion icu_stay { beliefs { Belief S_icu_stay (S, (0.2, 0.7, 0.1, 0.5))
+    
+        , Belief R_icu_stay (R, (0.0, 1.0, 0.0, 0.5))
+} aleatoryCumulativeBF = ( 0.0 , 1.0 , 0.0 , 0.5 ) averageingBF = ( 0.0 , 1.0 , 0.0 , 0.5 ) beliefConstraintFusion = ( 0.0 , 1.0 , 0.0 , 0.5 ) epistemicCumulativeBF = ( 0.0 , 1.0 , 0.0 , 0.5 ) weightedBF = ( 0.0 , 1.0 , 0.0 , 0.5 ) } UncertainElementFusion beta { beliefs { Belief S_beta (S, (1.0, 0.0, 0.0, 0.5))
+    
+        , Belief R_beta (R, (0.5, 0.4, 0.1, 0.5))
+} aleatoryCumulativeBF = ( 1.0 , 0.0 , 0.0 , 0.5 ) averageingBF = ( 1.0 , 0.0 , 0.0 , 0.5 ) beliefConstraintFusion = ( 1.0 , 0.0 , 0.0 , 0.5 ) epistemicCumulativeBF = ( 1.0 , 0.0 , 0.0 , 0.5 ) weightedBF = ( 1.0 , 0.0 , 0.0 , 0.5 ) } Agent Sarina Agent Betty Agent Abraham UncertainElementFusion delta { beliefs { Belief Abraham_delta (Abraham, (0.64, 0.16, 0.2, 0.5))
+    
+        , Belief Betty_delta (Betty, (0.8, 0.0, 0.2, 0.5))
+} aleatoryCumulativeBF = ( 0.711112 , 0.0 , 0.288888 , 0.5 ) averageingBF = ( 0.72 , 0.08 , 0.2 , 0.5 ) beliefConstraintFusion = ( 0.917431 , 0.036697 , 0.045872 , 0.5 ) epistemicCumulativeBF = ( 0.711112 , 0.0 , 0.288888 , 0.5 ) weightedBF = ( 0.72 , 0.08 , 0.2 , 0.5 ) }

@@ -3,127 +3,127 @@ Agent Expert2
 
 UncertainElement beta {
     beliefs {
-        Belief Expert1_beta (Expert1, (0.22, 0.39, 0.39, 2.3)),
-        Belief Expert2_beta (Expert2, (0.01, 0.75, 0.24, 2.3))
+        Belief Expert1_beta (Expert1, (0.07, 0.87, 0.06, 2.3)),
+        Belief Expert2_beta (Expert2, (0.63, 0.34, 0.03, 2.3))
     }
 }
 
 UncertainElement sigma {
     beliefs {
-        Belief Expert1_sigma (Expert1, (0.75, 0.08, 0.17, 0.4)),
-        Belief Expert2_sigma (Expert2, (0.97, 0.03, 0.0, 0.4))
+        Belief Expert1_sigma (Expert1, (0.63, 0.27, 0.1, 0.4)),
+        Belief Expert2_sigma (Expert2, (0.68, 0.24, 0.08, 0.4))
     }
 }
 
 UncertainElement gamma_mild {
     beliefs {
-        Belief Expert1_gamma_mild (Expert1, (0.88, 0.03, 0.09, 0.167)),
-        Belief Expert2_gamma_mild (Expert2, (0.61, 0.15, 0.24, 0.167))
+        Belief Expert1_gamma_mild (Expert1, (0.67, 0.27, 0.06, 0.167)),
+        Belief Expert2_gamma_mild (Expert2, (0.85, 0.11, 0.04, 0.167))
     }
 }
 
 UncertainElement gamma_severe {
     beliefs {
-        Belief Expert1_gamma_severe (Expert1, (0.05, 0.7, 0.25, 0.167)),
-        Belief Expert2_gamma_severe (Expert2, (0.9, 0.06, 0.04, 0.167))
+        Belief Expert1_gamma_severe (Expert1, (0.09, 0.2, 0.71, 0.167)),
+        Belief Expert2_gamma_severe (Expert2, (0.67, 0.15, 0.18, 0.167))
     }
 }
 
 UncertainElement delta {
     beliefs {
-        Belief Expert1_delta (Expert1, (0.82, 0.05, 0.13, 0.1)),
-        Belief Expert2_delta (Expert2, (0.05, 0.52, 0.43, 0.1))
+        Belief Expert1_delta (Expert1, (0.63, 0.3, 0.07, 0.1)),
+        Belief Expert2_delta (Expert2, (0.09, 0.21, 0.7, 0.1))
     }
 }
 
 UncertainElement theta {
     beliefs {
-        Belief Expert1_theta (Expert1, (0.82, 0.04, 0.14, 0.2)),
-        Belief Expert2_theta (Expert2, (0.9, 0.09, 0.01, 0.2))
+        Belief Expert1_theta (Expert1, (0.66, 0.05, 0.29, 0.2)),
+        Belief Expert2_theta (Expert2, (0.18, 0.32, 0.5, 0.2))
     }
 }
 
 UncertainElement rho {
     beliefs {
-        Belief Expert1_rho (Expert1, (0.46, 0.02, 0.52, 0.7)),
-        Belief Expert2_rho (Expert2, (0.98, 0.0, 0.02, 0.7))
+        Belief Expert1_rho (Expert1, (1.0, 0.0, 0.0, 0.7)),
+        Belief Expert2_rho (Expert2, (0.56, 0.39, 0.05, 0.7))
     }
 }
 
 UncertainElement kappa {
     beliefs {
-        Belief Expert1_kappa (Expert1, (0.95, 0.04, 0.01, 0.26)),
-        Belief Expert2_kappa (Expert2, (0.81, 0.05, 0.14, 0.26))
+        Belief Expert1_kappa (Expert1, (0.27, 0.25, 0.48, 0.26)),
+        Belief Expert2_kappa (Expert2, (0.87, 0.04, 0.09, 0.26))
     }
 }
 
 UncertainElement time_quarantine {
     beliefs {
-        Belief Expert1_time_quarantine (Expert1, (0.37, 0.09, 0.54, 14.0)),
-        Belief Expert2_time_quarantine (Expert2, (0.92, 0.03, 0.05, 14.0))
+        Belief Expert1_time_quarantine (Expert1, (0.0, 0.69, 0.31, 14.0)),
+        Belief Expert2_time_quarantine (Expert2, (0.71, 0.27, 0.02, 14.0))
     }
 }
 
 UncertainElement hosp_stay_preICU {
     beliefs {
-        Belief Expert1_hosp_stay_preICU (Expert1, (0.6, 0.03, 0.37, 3.0)),
-        Belief Expert2_hosp_stay_preICU (Expert2, (0.41, 0.58, 0.01, 3.0))
+        Belief Expert1_hosp_stay_preICU (Expert1, (0.62, 0.1, 0.28, 3.0)),
+        Belief Expert2_hosp_stay_preICU (Expert2, (0.12, 0.48, 0.4, 3.0))
     }
 }
 
 UncertainElement hosp_stay_postICU {
     beliefs {
-        Belief Expert1_hosp_stay_postICU (Expert1, (0.04, 0.73, 0.23, 21.0)),
-        Belief Expert2_hosp_stay_postICU (Expert2, (0.06, 0.47, 0.47, 21.0))
+        Belief Expert1_hosp_stay_postICU (Expert1, (0.05, 0.55, 0.4, 21.0)),
+        Belief Expert2_hosp_stay_postICU (Expert2, (0.41, 0.3, 0.29, 21.0))
     }
 }
 
 UncertainElement icu_stay {
     beliefs {
-        Belief Expert1_icu_stay (Expert1, (0.92, 0.02, 0.06, 21.0)),
-        Belief Expert2_icu_stay (Expert2, (0.92, 0.03, 0.05, 21.0))
+        Belief Expert1_icu_stay (Expert1, (0.57, 0.27, 0.16, 21.0)),
+        Belief Expert2_icu_stay (Expert2, (0.19, 0.36, 0.45, 21.0))
     }
 }
 
 UncertainElement latent_period {
     beliefs {
-        Belief Expert1_latent_period (Expert1, (0.93, 0.01, 0.06, 2.5)),
-        Belief Expert2_latent_period (Expert2, (0.17, 0.2, 0.63, 2.5))
+        Belief Expert1_latent_period (Expert1, (0.57, 0.2, 0.23, 2.5)),
+        Belief Expert2_latent_period (Expert2, (0.03, 0.38, 0.59, 2.5))
     }
 }
 
 UncertainElement presymptomatic_period {
     beliefs {
-        Belief Expert1_presymptomatic_period (Expert1, (0.55, 0.1, 0.35, 1.0)),
-        Belief Expert2_presymptomatic_period (Expert2, (0.16, 0.79, 0.05, 1.0))
+        Belief Expert1_presymptomatic_period (Expert1, (0.35, 0.58, 0.07, 1.0)),
+        Belief Expert2_presymptomatic_period (Expert2, (0.56, 0.28, 0.16, 1.0))
     }
 }
 
 UncertainElement infectious_period_mild {
     beliefs {
-        Belief Expert1_infectious_period_mild (Expert1, (0.25, 0.45, 0.3, 6.0)),
-        Belief Expert2_infectious_period_mild (Expert2, (0.88, 0.1, 0.02, 6.0))
+        Belief Expert1_infectious_period_mild (Expert1, (0.68, 0.24, 0.08, 6.0)),
+        Belief Expert2_infectious_period_mild (Expert2, (0.97, 0.01, 0.02, 6.0))
     }
 }
 
 UncertainElement infectious_period_severe {
     beliefs {
-        Belief Expert1_infectious_period_severe (Expert1, (0.09, 0.74, 0.17, 6.0)),
-        Belief Expert2_infectious_period_severe (Expert2, (0.13, 0.83, 0.04, 6.0))
+        Belief Expert1_infectious_period_severe (Expert1, (0.87, 0.05, 0.08, 6.0)),
+        Belief Expert2_infectious_period_severe (Expert2, (0.1, 0.48, 0.42, 6.0))
     }
 }
 
 UncertainElement quarantine_efficiency {
     beliefs {
-        Belief Expert1_quarantine_efficiency (Expert1, (0.13, 0.46, 0.41, 0.6)),
-        Belief Expert2_quarantine_efficiency (Expert2, (0.95, 0.04, 0.01, 0.6))
+        Belief Expert1_quarantine_efficiency (Expert1, (0.25, 0.28, 0.47, 0.6)),
+        Belief Expert2_quarantine_efficiency (Expert2, (0.56, 0.27, 0.17, 0.6))
     }
 }
 
 UncertainElement population_size {
     beliefs {
-        Belief Expert1_population_size (Expert1, (0.78, 0.08, 0.14, 14000.0)),
-        Belief Expert2_population_size (Expert2, (0.43, 0.47, 0.1, 14000.0))
+        Belief Expert1_population_size (Expert1, (0.63, 0.16, 0.21, 14000.0)),
+        Belief Expert2_population_size (Expert2, (0.41, 0.13, 0.46, 14000.0))
     }
 }
 

@@ -178,6 +178,18 @@ UncertainElementFusion infectious_period_mild_Fusion {
     weightedBF = (0.755, 0.089, 0.155, 6.0)
 }
 
+UncertainElementFusion infectious_period_severe_Fusion {
+    beliefs {
+        Belief Expert1_infectious_period_severe (Expert1, (0.18, 0.39, 0.43, 6.0)),
+        Belief Expert2_infectious_period_severe (Expert2, (0.22, 0.25, 0.53, 6.0))
+    }
+    aleatoryCumulativeBF = (0.26, 0.429, 0.311, 6.0)
+    averageingBF = (0.198, 0.327, 0.475, 6.0)
+    beliefConstraintFusion = (0.264, 0.474, 0.262, 6.0)
+    epistemicCumulativeBF = (0.0, 0.645, 0.355, 6.0)
+    weightedBF = (0.196, 0.334, 0.47, 6.0)
+}
+
 UncertainElementFusion quarantine_efficiency_Fusion {
     beliefs {
         Belief Expert1_quarantine_efficiency (Expert1, (0.32, 0.02, 0.66, 0.6)),

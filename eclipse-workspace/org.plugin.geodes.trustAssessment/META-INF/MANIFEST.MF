@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: TrustAssessment
+Bundle-SymbolicName: org.plugin.geodes.trustAssessment;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.plugin.geodes.trustassessment.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-23
+Automatic-Module-Name: org.plugin.geodes.trustAssessment
+Bundle-ActivationPolicy: lazy
