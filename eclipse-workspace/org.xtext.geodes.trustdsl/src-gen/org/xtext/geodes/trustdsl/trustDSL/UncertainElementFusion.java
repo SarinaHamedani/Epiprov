@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.xtext.geodes.trustdsl.trustDSL.UncertainElementFusion#getAleatoryCumulativeBF <em>Aleatory Cumulative BF</em>}</li>
  *   <li>{@link org.xtext.geodes.trustdsl.trustDSL.UncertainElementFusion#getAverageingBF <em>Averageing BF</em>}</li>
  *   <li>{@link org.xtext.geodes.trustdsl.trustDSL.UncertainElementFusion#getBeliefConstraintFusion <em>Belief Constraint Fusion</em>}</li>
+ *   <li>{@link org.xtext.geodes.trustdsl.trustDSL.UncertainElementFusion#getConsensusCompromiseBF <em>Consensus Compromise BF</em>}</li>
  *   <li>{@link org.xtext.geodes.trustdsl.trustDSL.UncertainElementFusion#getEpistemicCumulativeBF <em>Epistemic Cumulative BF</em>}</li>
  *   <li>{@link org.xtext.geodes.trustdsl.trustDSL.UncertainElementFusion#getWeightedBF <em>Weighted BF</em>}</li>
  * </ul>
@@ -105,6 +106,28 @@ public interface UncertainElementFusion extends Element
    * @generated
    */
   void setBeliefConstraintFusion(SBoolean value);
+
+  /**
+   * Returns the value of the '<em><b>Consensus Compromise BF</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Consensus Compromise BF</em>' containment reference.
+   * @see #setConsensusCompromiseBF(SBoolean)
+   * @see org.xtext.geodes.trustdsl.trustDSL.TrustDSLPackage#getUncertainElementFusion_ConsensusCompromiseBF()
+   * @model containment="true"
+   * @generated
+   */
+  SBoolean getConsensusCompromiseBF();
+
+  /**
+   * Sets the value of the '{@link org.xtext.geodes.trustdsl.trustDSL.UncertainElementFusion#getConsensusCompromiseBF <em>Consensus Compromise BF</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Consensus Compromise BF</em>' containment reference.
+   * @see #getConsensusCompromiseBF()
+   * @generated
+   */
+  void setConsensusCompromiseBF(SBoolean value);
 
   /**
    * Returns the value of the '<em><b>Epistemic Cumulative BF</b></em>' containment reference.

@@ -1,7 +1,7 @@
 '('=18
 ')'=19
 ','=16
-'.'=27
+'.'=28
 '='=22
 'Agent'=11
 'Belief'=17
@@ -11,8 +11,9 @@
 'averageingBF'=23
 'beliefConstraintFusion'=24
 'beliefs'=14
-'epistemicCumulativeBF'=25
-'weightedBF'=26
+'consensusCompromiseBF'=25
+'epistemicCumulativeBF'=26
+'weightedBF'=27
 '{'=13
 '}'=15
 RULE_ANY_OTHER=10
@@ -39,3 +40,4 @@ T__24=24
 T__25=25
 T__26=26
 T__27=27
+T__28=28

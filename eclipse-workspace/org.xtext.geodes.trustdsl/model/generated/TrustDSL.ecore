@@ -34,6 +34,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="beliefConstraintFusion"
         eType="#//SBoolean" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="consensusCompromiseBF"
+        eType="#//SBoolean" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="epistemicCumulativeBF"
         eType="#//SBoolean" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="weightedBF" eType="#//SBoolean"

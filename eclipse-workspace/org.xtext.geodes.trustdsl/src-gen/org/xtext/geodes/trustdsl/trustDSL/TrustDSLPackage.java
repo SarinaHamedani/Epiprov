@@ -335,13 +335,22 @@ public interface TrustDSLPackage extends EPackage
   int UNCERTAIN_ELEMENT_FUSION__BELIEF_CONSTRAINT_FUSION = ELEMENT_FEATURE_COUNT + 3;
 
   /**
+   * The feature id for the '<em><b>Consensus Compromise BF</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNCERTAIN_ELEMENT_FUSION__CONSENSUS_COMPROMISE_BF = ELEMENT_FEATURE_COUNT + 4;
+
+  /**
    * The feature id for the '<em><b>Epistemic Cumulative BF</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNCERTAIN_ELEMENT_FUSION__EPISTEMIC_CUMULATIVE_BF = ELEMENT_FEATURE_COUNT + 4;
+  int UNCERTAIN_ELEMENT_FUSION__EPISTEMIC_CUMULATIVE_BF = ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Weighted BF</b></em>' containment reference.
@@ -350,7 +359,7 @@ public interface TrustDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UNCERTAIN_ELEMENT_FUSION__WEIGHTED_BF = ELEMENT_FEATURE_COUNT + 5;
+  int UNCERTAIN_ELEMENT_FUSION__WEIGHTED_BF = ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The number of structural features of the '<em>Uncertain Element Fusion</em>' class.
@@ -359,7 +368,7 @@ public interface TrustDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UNCERTAIN_ELEMENT_FUSION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 6;
+  int UNCERTAIN_ELEMENT_FUSION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 7;
 
 
   /**
@@ -574,6 +583,17 @@ public interface TrustDSLPackage extends EPackage
    * @generated
    */
   EReference getUncertainElementFusion_BeliefConstraintFusion();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.geodes.trustdsl.trustDSL.UncertainElementFusion#getConsensusCompromiseBF <em>Consensus Compromise BF</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Consensus Compromise BF</em>'.
+   * @see org.xtext.geodes.trustdsl.trustDSL.UncertainElementFusion#getConsensusCompromiseBF()
+   * @see #getUncertainElementFusion()
+   * @generated
+   */
+  EReference getUncertainElementFusion_ConsensusCompromiseBF();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.geodes.trustdsl.trustDSL.UncertainElementFusion#getEpistemicCumulativeBF <em>Epistemic Cumulative BF</em>}'.
@@ -793,6 +813,14 @@ public interface TrustDSLPackage extends EPackage
      * @generated
      */
     EReference UNCERTAIN_ELEMENT_FUSION__BELIEF_CONSTRAINT_FUSION = eINSTANCE.getUncertainElementFusion_BeliefConstraintFusion();
+
+    /**
+     * The meta object literal for the '<em><b>Consensus Compromise BF</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UNCERTAIN_ELEMENT_FUSION__CONSENSUS_COMPROMISE_BF = eINSTANCE.getUncertainElementFusion_ConsensusCompromiseBF();
 
     /**
      * The meta object literal for the '<em><b>Epistemic Cumulative BF</b></em>' containment reference feature.

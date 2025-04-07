@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ClusterProvn
+Bundle-SymbolicName: org.plugin.geodes.clusterProvn;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Export-Package: org.plugin.geodes.clusterprovn.handlers
+Bundle-Activator: org.plugin.geodes.clusterprovn.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources;bundle-version="3.22.0",
+ org.w3.ns.prov;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-23
+Automatic-Module-Name: org.plugin.geodes.clusterProvn
+Bundle-ActivationPolicy: lazy

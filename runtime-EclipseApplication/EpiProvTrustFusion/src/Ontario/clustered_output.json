@@ -1,0 +1,7 @@
+{
+  "Unknown": ["quarantine_efficiency", "population_size", "gamma_severe", "time_quarantine", "delta", "rho", "gamma_mild"],
+  "Shenzhen_Data": ["latent_period", "presymptomatic_period", "infectious_period_mild", "infectious_period_severe"],
+  "Wuhan_Study": ["beta"],
+  "Zhongnan_Hospital_Patient_Data": ["sigma", "hosp_stay_preICU"],
+  "Jin_Yin_Tan_Data": ["icu_stay", "hosp_stay_postICU", "kappa"]
+}

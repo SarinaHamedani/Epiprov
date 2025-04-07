@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalTrustDSLParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Agent'", "'UncertainElement'", "'{'", "'beliefs'", "','", "'}'", "'Belief'", "'('", "')'", "'UncertainElementFusion'", "'aleatoryCumulativeBF'", "'='", "'averageingBF'", "'beliefConstraintFusion'", "'epistemicCumulativeBF'", "'weightedBF'", "'.'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Agent'", "'UncertainElement'", "'{'", "'beliefs'", "','", "'}'", "'Belief'", "'('", "')'", "'UncertainElementFusion'", "'aleatoryCumulativeBF'", "'='", "'averageingBF'", "'beliefConstraintFusion'", "'consensusCompromiseBF'", "'epistemicCumulativeBF'", "'weightedBF'", "'.'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -40,6 +40,7 @@ public class InternalTrustDSLParser extends AbstractInternalAntlrParser {
     public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
     public static final int T__27=27;
+    public static final int T__28=28;
     public static final int RULE_INT=5;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
@@ -1165,7 +1166,7 @@ public class InternalTrustDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUncertainElementFusion"
-    // InternalTrustDSL.g:507:1: ruleUncertainElementFusion returns [EObject current=null] : (otherlv_0= 'UncertainElementFusion' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beliefs' otherlv_4= '{' ( (lv_beliefs_5_0= ruleBelief ) ) (otherlv_6= ',' ( (lv_beliefs_7_0= ruleBelief ) ) )* otherlv_8= '}' otherlv_9= 'aleatoryCumulativeBF' otherlv_10= '=' ( (lv_aleatoryCumulativeBF_11_0= ruleSBoolean ) ) otherlv_12= 'averageingBF' otherlv_13= '=' ( (lv_averageingBF_14_0= ruleSBoolean ) ) otherlv_15= 'beliefConstraintFusion' otherlv_16= '=' ( (lv_beliefConstraintFusion_17_0= ruleSBoolean ) ) otherlv_18= 'epistemicCumulativeBF' otherlv_19= '=' ( (lv_epistemicCumulativeBF_20_0= ruleSBoolean ) ) otherlv_21= 'weightedBF' otherlv_22= '=' ( (lv_weightedBF_23_0= ruleSBoolean ) ) otherlv_24= '}' ) ;
+    // InternalTrustDSL.g:507:1: ruleUncertainElementFusion returns [EObject current=null] : (otherlv_0= 'UncertainElementFusion' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beliefs' otherlv_4= '{' ( (lv_beliefs_5_0= ruleBelief ) ) (otherlv_6= ',' ( (lv_beliefs_7_0= ruleBelief ) ) )* otherlv_8= '}' otherlv_9= 'aleatoryCumulativeBF' otherlv_10= '=' ( (lv_aleatoryCumulativeBF_11_0= ruleSBoolean ) ) otherlv_12= 'averageingBF' otherlv_13= '=' ( (lv_averageingBF_14_0= ruleSBoolean ) ) otherlv_15= 'beliefConstraintFusion' otherlv_16= '=' ( (lv_beliefConstraintFusion_17_0= ruleSBoolean ) ) otherlv_18= 'consensusCompromiseBF' ( (lv_consensusCompromiseBF_19_0= ruleSBoolean ) ) otherlv_20= 'epistemicCumulativeBF' otherlv_21= '=' ( (lv_epistemicCumulativeBF_22_0= ruleSBoolean ) ) otherlv_23= 'weightedBF' otherlv_24= '=' ( (lv_weightedBF_25_0= ruleSBoolean ) ) otherlv_26= '}' ) ;
     public final EObject ruleUncertainElementFusion() throws RecognitionException {
         EObject current = null;
 
@@ -1183,10 +1184,11 @@ public class InternalTrustDSLParser extends AbstractInternalAntlrParser {
         Token otherlv_15=null;
         Token otherlv_16=null;
         Token otherlv_18=null;
-        Token otherlv_19=null;
+        Token otherlv_20=null;
         Token otherlv_21=null;
-        Token otherlv_22=null;
+        Token otherlv_23=null;
         Token otherlv_24=null;
+        Token otherlv_26=null;
         EObject lv_beliefs_5_0 = null;
 
         EObject lv_beliefs_7_0 = null;
@@ -1197,20 +1199,22 @@ public class InternalTrustDSLParser extends AbstractInternalAntlrParser {
 
         EObject lv_beliefConstraintFusion_17_0 = null;
 
-        EObject lv_epistemicCumulativeBF_20_0 = null;
+        EObject lv_consensusCompromiseBF_19_0 = null;
 
-        EObject lv_weightedBF_23_0 = null;
+        EObject lv_epistemicCumulativeBF_22_0 = null;
+
+        EObject lv_weightedBF_25_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalTrustDSL.g:513:2: ( (otherlv_0= 'UncertainElementFusion' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beliefs' otherlv_4= '{' ( (lv_beliefs_5_0= ruleBelief ) ) (otherlv_6= ',' ( (lv_beliefs_7_0= ruleBelief ) ) )* otherlv_8= '}' otherlv_9= 'aleatoryCumulativeBF' otherlv_10= '=' ( (lv_aleatoryCumulativeBF_11_0= ruleSBoolean ) ) otherlv_12= 'averageingBF' otherlv_13= '=' ( (lv_averageingBF_14_0= ruleSBoolean ) ) otherlv_15= 'beliefConstraintFusion' otherlv_16= '=' ( (lv_beliefConstraintFusion_17_0= ruleSBoolean ) ) otherlv_18= 'epistemicCumulativeBF' otherlv_19= '=' ( (lv_epistemicCumulativeBF_20_0= ruleSBoolean ) ) otherlv_21= 'weightedBF' otherlv_22= '=' ( (lv_weightedBF_23_0= ruleSBoolean ) ) otherlv_24= '}' ) )
-            // InternalTrustDSL.g:514:2: (otherlv_0= 'UncertainElementFusion' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beliefs' otherlv_4= '{' ( (lv_beliefs_5_0= ruleBelief ) ) (otherlv_6= ',' ( (lv_beliefs_7_0= ruleBelief ) ) )* otherlv_8= '}' otherlv_9= 'aleatoryCumulativeBF' otherlv_10= '=' ( (lv_aleatoryCumulativeBF_11_0= ruleSBoolean ) ) otherlv_12= 'averageingBF' otherlv_13= '=' ( (lv_averageingBF_14_0= ruleSBoolean ) ) otherlv_15= 'beliefConstraintFusion' otherlv_16= '=' ( (lv_beliefConstraintFusion_17_0= ruleSBoolean ) ) otherlv_18= 'epistemicCumulativeBF' otherlv_19= '=' ( (lv_epistemicCumulativeBF_20_0= ruleSBoolean ) ) otherlv_21= 'weightedBF' otherlv_22= '=' ( (lv_weightedBF_23_0= ruleSBoolean ) ) otherlv_24= '}' )
+            // InternalTrustDSL.g:513:2: ( (otherlv_0= 'UncertainElementFusion' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beliefs' otherlv_4= '{' ( (lv_beliefs_5_0= ruleBelief ) ) (otherlv_6= ',' ( (lv_beliefs_7_0= ruleBelief ) ) )* otherlv_8= '}' otherlv_9= 'aleatoryCumulativeBF' otherlv_10= '=' ( (lv_aleatoryCumulativeBF_11_0= ruleSBoolean ) ) otherlv_12= 'averageingBF' otherlv_13= '=' ( (lv_averageingBF_14_0= ruleSBoolean ) ) otherlv_15= 'beliefConstraintFusion' otherlv_16= '=' ( (lv_beliefConstraintFusion_17_0= ruleSBoolean ) ) otherlv_18= 'consensusCompromiseBF' ( (lv_consensusCompromiseBF_19_0= ruleSBoolean ) ) otherlv_20= 'epistemicCumulativeBF' otherlv_21= '=' ( (lv_epistemicCumulativeBF_22_0= ruleSBoolean ) ) otherlv_23= 'weightedBF' otherlv_24= '=' ( (lv_weightedBF_25_0= ruleSBoolean ) ) otherlv_26= '}' ) )
+            // InternalTrustDSL.g:514:2: (otherlv_0= 'UncertainElementFusion' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beliefs' otherlv_4= '{' ( (lv_beliefs_5_0= ruleBelief ) ) (otherlv_6= ',' ( (lv_beliefs_7_0= ruleBelief ) ) )* otherlv_8= '}' otherlv_9= 'aleatoryCumulativeBF' otherlv_10= '=' ( (lv_aleatoryCumulativeBF_11_0= ruleSBoolean ) ) otherlv_12= 'averageingBF' otherlv_13= '=' ( (lv_averageingBF_14_0= ruleSBoolean ) ) otherlv_15= 'beliefConstraintFusion' otherlv_16= '=' ( (lv_beliefConstraintFusion_17_0= ruleSBoolean ) ) otherlv_18= 'consensusCompromiseBF' ( (lv_consensusCompromiseBF_19_0= ruleSBoolean ) ) otherlv_20= 'epistemicCumulativeBF' otherlv_21= '=' ( (lv_epistemicCumulativeBF_22_0= ruleSBoolean ) ) otherlv_23= 'weightedBF' otherlv_24= '=' ( (lv_weightedBF_25_0= ruleSBoolean ) ) otherlv_26= '}' )
             {
-            // InternalTrustDSL.g:514:2: (otherlv_0= 'UncertainElementFusion' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beliefs' otherlv_4= '{' ( (lv_beliefs_5_0= ruleBelief ) ) (otherlv_6= ',' ( (lv_beliefs_7_0= ruleBelief ) ) )* otherlv_8= '}' otherlv_9= 'aleatoryCumulativeBF' otherlv_10= '=' ( (lv_aleatoryCumulativeBF_11_0= ruleSBoolean ) ) otherlv_12= 'averageingBF' otherlv_13= '=' ( (lv_averageingBF_14_0= ruleSBoolean ) ) otherlv_15= 'beliefConstraintFusion' otherlv_16= '=' ( (lv_beliefConstraintFusion_17_0= ruleSBoolean ) ) otherlv_18= 'epistemicCumulativeBF' otherlv_19= '=' ( (lv_epistemicCumulativeBF_20_0= ruleSBoolean ) ) otherlv_21= 'weightedBF' otherlv_22= '=' ( (lv_weightedBF_23_0= ruleSBoolean ) ) otherlv_24= '}' )
-            // InternalTrustDSL.g:515:3: otherlv_0= 'UncertainElementFusion' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beliefs' otherlv_4= '{' ( (lv_beliefs_5_0= ruleBelief ) ) (otherlv_6= ',' ( (lv_beliefs_7_0= ruleBelief ) ) )* otherlv_8= '}' otherlv_9= 'aleatoryCumulativeBF' otherlv_10= '=' ( (lv_aleatoryCumulativeBF_11_0= ruleSBoolean ) ) otherlv_12= 'averageingBF' otherlv_13= '=' ( (lv_averageingBF_14_0= ruleSBoolean ) ) otherlv_15= 'beliefConstraintFusion' otherlv_16= '=' ( (lv_beliefConstraintFusion_17_0= ruleSBoolean ) ) otherlv_18= 'epistemicCumulativeBF' otherlv_19= '=' ( (lv_epistemicCumulativeBF_20_0= ruleSBoolean ) ) otherlv_21= 'weightedBF' otherlv_22= '=' ( (lv_weightedBF_23_0= ruleSBoolean ) ) otherlv_24= '}'
+            // InternalTrustDSL.g:514:2: (otherlv_0= 'UncertainElementFusion' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beliefs' otherlv_4= '{' ( (lv_beliefs_5_0= ruleBelief ) ) (otherlv_6= ',' ( (lv_beliefs_7_0= ruleBelief ) ) )* otherlv_8= '}' otherlv_9= 'aleatoryCumulativeBF' otherlv_10= '=' ( (lv_aleatoryCumulativeBF_11_0= ruleSBoolean ) ) otherlv_12= 'averageingBF' otherlv_13= '=' ( (lv_averageingBF_14_0= ruleSBoolean ) ) otherlv_15= 'beliefConstraintFusion' otherlv_16= '=' ( (lv_beliefConstraintFusion_17_0= ruleSBoolean ) ) otherlv_18= 'consensusCompromiseBF' ( (lv_consensusCompromiseBF_19_0= ruleSBoolean ) ) otherlv_20= 'epistemicCumulativeBF' otherlv_21= '=' ( (lv_epistemicCumulativeBF_22_0= ruleSBoolean ) ) otherlv_23= 'weightedBF' otherlv_24= '=' ( (lv_weightedBF_25_0= ruleSBoolean ) ) otherlv_26= '}' )
+            // InternalTrustDSL.g:515:3: otherlv_0= 'UncertainElementFusion' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beliefs' otherlv_4= '{' ( (lv_beliefs_5_0= ruleBelief ) ) (otherlv_6= ',' ( (lv_beliefs_7_0= ruleBelief ) ) )* otherlv_8= '}' otherlv_9= 'aleatoryCumulativeBF' otherlv_10= '=' ( (lv_aleatoryCumulativeBF_11_0= ruleSBoolean ) ) otherlv_12= 'averageingBF' otherlv_13= '=' ( (lv_averageingBF_14_0= ruleSBoolean ) ) otherlv_15= 'beliefConstraintFusion' otherlv_16= '=' ( (lv_beliefConstraintFusion_17_0= ruleSBoolean ) ) otherlv_18= 'consensusCompromiseBF' ( (lv_consensusCompromiseBF_19_0= ruleSBoolean ) ) otherlv_20= 'epistemicCumulativeBF' otherlv_21= '=' ( (lv_epistemicCumulativeBF_22_0= ruleSBoolean ) ) otherlv_23= 'weightedBF' otherlv_24= '=' ( (lv_weightedBF_25_0= ruleSBoolean ) ) otherlv_26= '}'
             {
             otherlv_0=(Token)match(input,20,FOLLOW_4); 
 
@@ -1465,25 +1469,60 @@ public class InternalTrustDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_18=(Token)match(input,25,FOLLOW_15); 
+            otherlv_18=(Token)match(input,25,FOLLOW_10); 
 
-            			newLeafNode(otherlv_18, grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFKeyword_17());
+            			newLeafNode(otherlv_18, grammarAccess.getUncertainElementFusionAccess().getConsensusCompromiseBFKeyword_17());
             		
-            otherlv_19=(Token)match(input,22,FOLLOW_10); 
-
-            			newLeafNode(otherlv_19, grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_18());
-            		
-            // InternalTrustDSL.g:686:3: ( (lv_epistemicCumulativeBF_20_0= ruleSBoolean ) )
-            // InternalTrustDSL.g:687:4: (lv_epistemicCumulativeBF_20_0= ruleSBoolean )
+            // InternalTrustDSL.g:682:3: ( (lv_consensusCompromiseBF_19_0= ruleSBoolean ) )
+            // InternalTrustDSL.g:683:4: (lv_consensusCompromiseBF_19_0= ruleSBoolean )
             {
-            // InternalTrustDSL.g:687:4: (lv_epistemicCumulativeBF_20_0= ruleSBoolean )
-            // InternalTrustDSL.g:688:5: lv_epistemicCumulativeBF_20_0= ruleSBoolean
+            // InternalTrustDSL.g:683:4: (lv_consensusCompromiseBF_19_0= ruleSBoolean )
+            // InternalTrustDSL.g:684:5: lv_consensusCompromiseBF_19_0= ruleSBoolean
             {
 
-            					newCompositeNode(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFSBooleanParserRuleCall_19_0());
+            					newCompositeNode(grammarAccess.getUncertainElementFusionAccess().getConsensusCompromiseBFSBooleanParserRuleCall_18_0());
             				
             pushFollow(FOLLOW_19);
-            lv_epistemicCumulativeBF_20_0=ruleSBoolean();
+            lv_consensusCompromiseBF_19_0=ruleSBoolean();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getUncertainElementFusionRule());
+            					}
+            					set(
+            						current,
+            						"consensusCompromiseBF",
+            						lv_consensusCompromiseBF_19_0,
+            						"org.xtext.geodes.trustdsl.TrustDSL.SBoolean");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_20=(Token)match(input,26,FOLLOW_15); 
+
+            			newLeafNode(otherlv_20, grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFKeyword_19());
+            		
+            otherlv_21=(Token)match(input,22,FOLLOW_10); 
+
+            			newLeafNode(otherlv_21, grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_20());
+            		
+            // InternalTrustDSL.g:709:3: ( (lv_epistemicCumulativeBF_22_0= ruleSBoolean ) )
+            // InternalTrustDSL.g:710:4: (lv_epistemicCumulativeBF_22_0= ruleSBoolean )
+            {
+            // InternalTrustDSL.g:710:4: (lv_epistemicCumulativeBF_22_0= ruleSBoolean )
+            // InternalTrustDSL.g:711:5: lv_epistemicCumulativeBF_22_0= ruleSBoolean
+            {
+
+            					newCompositeNode(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFSBooleanParserRuleCall_21_0());
+            				
+            pushFollow(FOLLOW_20);
+            lv_epistemicCumulativeBF_22_0=ruleSBoolean();
 
             state._fsp--;
 
@@ -1494,7 +1533,7 @@ public class InternalTrustDSLParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"epistemicCumulativeBF",
-            						lv_epistemicCumulativeBF_20_0,
+            						lv_epistemicCumulativeBF_22_0,
             						"org.xtext.geodes.trustdsl.TrustDSL.SBoolean");
             					afterParserOrEnumRuleCall();
             				
@@ -1504,25 +1543,25 @@ public class InternalTrustDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_21=(Token)match(input,26,FOLLOW_15); 
+            otherlv_23=(Token)match(input,27,FOLLOW_15); 
 
-            			newLeafNode(otherlv_21, grammarAccess.getUncertainElementFusionAccess().getWeightedBFKeyword_20());
+            			newLeafNode(otherlv_23, grammarAccess.getUncertainElementFusionAccess().getWeightedBFKeyword_22());
             		
-            otherlv_22=(Token)match(input,22,FOLLOW_10); 
+            otherlv_24=(Token)match(input,22,FOLLOW_10); 
 
-            			newLeafNode(otherlv_22, grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_21());
+            			newLeafNode(otherlv_24, grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_23());
             		
-            // InternalTrustDSL.g:713:3: ( (lv_weightedBF_23_0= ruleSBoolean ) )
-            // InternalTrustDSL.g:714:4: (lv_weightedBF_23_0= ruleSBoolean )
+            // InternalTrustDSL.g:736:3: ( (lv_weightedBF_25_0= ruleSBoolean ) )
+            // InternalTrustDSL.g:737:4: (lv_weightedBF_25_0= ruleSBoolean )
             {
-            // InternalTrustDSL.g:714:4: (lv_weightedBF_23_0= ruleSBoolean )
-            // InternalTrustDSL.g:715:5: lv_weightedBF_23_0= ruleSBoolean
+            // InternalTrustDSL.g:737:4: (lv_weightedBF_25_0= ruleSBoolean )
+            // InternalTrustDSL.g:738:5: lv_weightedBF_25_0= ruleSBoolean
             {
 
-            					newCompositeNode(grammarAccess.getUncertainElementFusionAccess().getWeightedBFSBooleanParserRuleCall_22_0());
+            					newCompositeNode(grammarAccess.getUncertainElementFusionAccess().getWeightedBFSBooleanParserRuleCall_24_0());
             				
             pushFollow(FOLLOW_9);
-            lv_weightedBF_23_0=ruleSBoolean();
+            lv_weightedBF_25_0=ruleSBoolean();
 
             state._fsp--;
 
@@ -1533,7 +1572,7 @@ public class InternalTrustDSLParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"weightedBF",
-            						lv_weightedBF_23_0,
+            						lv_weightedBF_25_0,
             						"org.xtext.geodes.trustdsl.TrustDSL.SBoolean");
             					afterParserOrEnumRuleCall();
             				
@@ -1543,9 +1582,9 @@ public class InternalTrustDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_24=(Token)match(input,16,FOLLOW_2); 
+            otherlv_26=(Token)match(input,16,FOLLOW_2); 
 
-            			newLeafNode(otherlv_24, grammarAccess.getUncertainElementFusionAccess().getRightCurlyBracketKeyword_23());
+            			newLeafNode(otherlv_26, grammarAccess.getUncertainElementFusionAccess().getRightCurlyBracketKeyword_25());
             		
 
             }
@@ -1570,7 +1609,7 @@ public class InternalTrustDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleREAL"
-    // InternalTrustDSL.g:740:1: entryRuleREAL returns [String current=null] : iv_ruleREAL= ruleREAL EOF ;
+    // InternalTrustDSL.g:763:1: entryRuleREAL returns [String current=null] : iv_ruleREAL= ruleREAL EOF ;
     public final String entryRuleREAL() throws RecognitionException {
         String current = null;
 
@@ -1578,8 +1617,8 @@ public class InternalTrustDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTrustDSL.g:740:44: (iv_ruleREAL= ruleREAL EOF )
-            // InternalTrustDSL.g:741:2: iv_ruleREAL= ruleREAL EOF
+            // InternalTrustDSL.g:763:44: (iv_ruleREAL= ruleREAL EOF )
+            // InternalTrustDSL.g:764:2: iv_ruleREAL= ruleREAL EOF
             {
              newCompositeNode(grammarAccess.getREALRule()); 
             pushFollow(FOLLOW_1);
@@ -1606,7 +1645,7 @@ public class InternalTrustDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleREAL"
-    // InternalTrustDSL.g:747:1: ruleREAL returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT ) ;
+    // InternalTrustDSL.g:770:1: ruleREAL returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleREAL() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1618,20 +1657,20 @@ public class InternalTrustDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTrustDSL.g:753:2: ( (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT ) )
-            // InternalTrustDSL.g:754:2: (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT )
+            // InternalTrustDSL.g:776:2: ( (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT ) )
+            // InternalTrustDSL.g:777:2: (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT )
             {
-            // InternalTrustDSL.g:754:2: (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT )
-            // InternalTrustDSL.g:755:3: this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT
+            // InternalTrustDSL.g:777:2: (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT )
+            // InternalTrustDSL.g:778:3: this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT
             {
-            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_20); 
+            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_21); 
 
             			current.merge(this_INT_0);
             		
 
             			newLeafNode(this_INT_0, grammarAccess.getREALAccess().getINTTerminalRuleCall_0());
             		
-            kw=(Token)match(input,27,FOLLOW_13); 
+            kw=(Token)match(input,28,FOLLOW_13); 
 
             			current.merge(kw);
             			newLeafNode(kw, grammarAccess.getREALAccess().getFullStopKeyword_1());
@@ -1689,5 +1728,6 @@ public class InternalTrustDSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000010000000L});
 
 }

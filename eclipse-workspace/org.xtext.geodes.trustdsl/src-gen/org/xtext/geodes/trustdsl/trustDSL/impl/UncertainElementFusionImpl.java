@@ -35,6 +35,7 @@ import org.xtext.geodes.trustdsl.trustDSL.UncertainElementFusion;
  *   <li>{@link org.xtext.geodes.trustdsl.trustDSL.impl.UncertainElementFusionImpl#getAleatoryCumulativeBF <em>Aleatory Cumulative BF</em>}</li>
  *   <li>{@link org.xtext.geodes.trustdsl.trustDSL.impl.UncertainElementFusionImpl#getAverageingBF <em>Averageing BF</em>}</li>
  *   <li>{@link org.xtext.geodes.trustdsl.trustDSL.impl.UncertainElementFusionImpl#getBeliefConstraintFusion <em>Belief Constraint Fusion</em>}</li>
+ *   <li>{@link org.xtext.geodes.trustdsl.trustDSL.impl.UncertainElementFusionImpl#getConsensusCompromiseBF <em>Consensus Compromise BF</em>}</li>
  *   <li>{@link org.xtext.geodes.trustdsl.trustDSL.impl.UncertainElementFusionImpl#getEpistemicCumulativeBF <em>Epistemic Cumulative BF</em>}</li>
  *   <li>{@link org.xtext.geodes.trustdsl.trustDSL.impl.UncertainElementFusionImpl#getWeightedBF <em>Weighted BF</em>}</li>
  * </ul>
@@ -82,6 +83,16 @@ public class UncertainElementFusionImpl extends ElementImpl implements Uncertain
    * @ordered
    */
   protected SBoolean beliefConstraintFusion;
+
+  /**
+   * The cached value of the '{@link #getConsensusCompromiseBF() <em>Consensus Compromise BF</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getConsensusCompromiseBF()
+   * @generated
+   * @ordered
+   */
+  protected SBoolean consensusCompromiseBF;
 
   /**
    * The cached value of the '{@link #getEpistemicCumulativeBF() <em>Epistemic Cumulative BF</em>}' containment reference.
@@ -295,6 +306,56 @@ public class UncertainElementFusionImpl extends ElementImpl implements Uncertain
    * @generated
    */
   @Override
+  public SBoolean getConsensusCompromiseBF()
+  {
+    return consensusCompromiseBF;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetConsensusCompromiseBF(SBoolean newConsensusCompromiseBF, NotificationChain msgs)
+  {
+    SBoolean oldConsensusCompromiseBF = consensusCompromiseBF;
+    consensusCompromiseBF = newConsensusCompromiseBF;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TrustDSLPackage.UNCERTAIN_ELEMENT_FUSION__CONSENSUS_COMPROMISE_BF, oldConsensusCompromiseBF, newConsensusCompromiseBF);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setConsensusCompromiseBF(SBoolean newConsensusCompromiseBF)
+  {
+    if (newConsensusCompromiseBF != consensusCompromiseBF)
+    {
+      NotificationChain msgs = null;
+      if (consensusCompromiseBF != null)
+        msgs = ((InternalEObject)consensusCompromiseBF).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TrustDSLPackage.UNCERTAIN_ELEMENT_FUSION__CONSENSUS_COMPROMISE_BF, null, msgs);
+      if (newConsensusCompromiseBF != null)
+        msgs = ((InternalEObject)newConsensusCompromiseBF).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TrustDSLPackage.UNCERTAIN_ELEMENT_FUSION__CONSENSUS_COMPROMISE_BF, null, msgs);
+      msgs = basicSetConsensusCompromiseBF(newConsensusCompromiseBF, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TrustDSLPackage.UNCERTAIN_ELEMENT_FUSION__CONSENSUS_COMPROMISE_BF, newConsensusCompromiseBF, newConsensusCompromiseBF));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public SBoolean getEpistemicCumulativeBF()
   {
     return epistemicCumulativeBF;
@@ -407,6 +468,8 @@ public class UncertainElementFusionImpl extends ElementImpl implements Uncertain
         return basicSetAverageingBF(null, msgs);
       case TrustDSLPackage.UNCERTAIN_ELEMENT_FUSION__BELIEF_CONSTRAINT_FUSION:
         return basicSetBeliefConstraintFusion(null, msgs);
+      case TrustDSLPackage.UNCERTAIN_ELEMENT_FUSION__CONSENSUS_COMPROMISE_BF:
+        return basicSetConsensusCompromiseBF(null, msgs);
       case TrustDSLPackage.UNCERTAIN_ELEMENT_FUSION__EPISTEMIC_CUMULATIVE_BF:
         return basicSetEpistemicCumulativeBF(null, msgs);
       case TrustDSLPackage.UNCERTAIN_ELEMENT_FUSION__WEIGHTED_BF:
@@ -433,6 +496,8 @@ public class UncertainElementFusionImpl extends ElementImpl implements Uncertain
         return getAverageingBF();
       case TrustDSLPackage.UNCERTAIN_ELEMENT_FUSION__BELIEF_CONSTRAINT_FUSION:
         return getBeliefConstraintFusion();
+      case TrustDSLPackage.UNCERTAIN_ELEMENT_FUSION__CONSENSUS_COMPROMISE_BF:
+        return getConsensusCompromiseBF();
       case TrustDSLPackage.UNCERTAIN_ELEMENT_FUSION__EPISTEMIC_CUMULATIVE_BF:
         return getEpistemicCumulativeBF();
       case TrustDSLPackage.UNCERTAIN_ELEMENT_FUSION__WEIGHTED_BF:
@@ -464,6 +529,9 @@ public class UncertainElementFusionImpl extends ElementImpl implements Uncertain
         return;
       case TrustDSLPackage.UNCERTAIN_ELEMENT_FUSION__BELIEF_CONSTRAINT_FUSION:
         setBeliefConstraintFusion((SBoolean)newValue);
+        return;
+      case TrustDSLPackage.UNCERTAIN_ELEMENT_FUSION__CONSENSUS_COMPROMISE_BF:
+        setConsensusCompromiseBF((SBoolean)newValue);
         return;
       case TrustDSLPackage.UNCERTAIN_ELEMENT_FUSION__EPISTEMIC_CUMULATIVE_BF:
         setEpistemicCumulativeBF((SBoolean)newValue);
@@ -497,6 +565,9 @@ public class UncertainElementFusionImpl extends ElementImpl implements Uncertain
       case TrustDSLPackage.UNCERTAIN_ELEMENT_FUSION__BELIEF_CONSTRAINT_FUSION:
         setBeliefConstraintFusion((SBoolean)null);
         return;
+      case TrustDSLPackage.UNCERTAIN_ELEMENT_FUSION__CONSENSUS_COMPROMISE_BF:
+        setConsensusCompromiseBF((SBoolean)null);
+        return;
       case TrustDSLPackage.UNCERTAIN_ELEMENT_FUSION__EPISTEMIC_CUMULATIVE_BF:
         setEpistemicCumulativeBF((SBoolean)null);
         return;
@@ -525,6 +596,8 @@ public class UncertainElementFusionImpl extends ElementImpl implements Uncertain
         return averageingBF != null;
       case TrustDSLPackage.UNCERTAIN_ELEMENT_FUSION__BELIEF_CONSTRAINT_FUSION:
         return beliefConstraintFusion != null;
+      case TrustDSLPackage.UNCERTAIN_ELEMENT_FUSION__CONSENSUS_COMPROMISE_BF:
+        return consensusCompromiseBF != null;
       case TrustDSLPackage.UNCERTAIN_ELEMENT_FUSION__EPISTEMIC_CUMULATIVE_BF:
         return epistemicCumulativeBF != null;
       case TrustDSLPackage.UNCERTAIN_ELEMENT_FUSION__WEIGHTED_BF:

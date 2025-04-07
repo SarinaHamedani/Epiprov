@@ -33,7 +33,7 @@ UncertainElementFusion:
         'aleatoryCumulativeBF' '=' aleatoryCumulativeBF=SBoolean
         'averageingBF' '=' averageingBF=SBoolean
         'beliefConstraintFusion' '=' beliefConstraintFusion=SBoolean
-//        'consensusCompromiseBF' consensusCompromiseBF=SBoolean
+        'consensusCompromiseBF' consensusCompromiseBF=SBoolean
         'epistemicCumulativeBF' '=' epistemicCumulativeBF=SBoolean
         'weightedBF' '=' weightedBF=SBoolean
     '}';

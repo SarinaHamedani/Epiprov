@@ -1542,9 +1542,9 @@ rule__UncertainElementFusion__Group__17__Impl
 	}
 :
 (
-	{ before(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFKeyword_17()); }
-	'epistemicCumulativeBF'
-	{ after(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFKeyword_17()); }
+	{ before(grammarAccess.getUncertainElementFusionAccess().getConsensusCompromiseBFKeyword_17()); }
+	'consensusCompromiseBF'
+	{ after(grammarAccess.getUncertainElementFusionAccess().getConsensusCompromiseBFKeyword_17()); }
 )
 ;
 finally {
@@ -1569,9 +1569,9 @@ rule__UncertainElementFusion__Group__18__Impl
 	}
 :
 (
-	{ before(grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_18()); }
-	'='
-	{ after(grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_18()); }
+	{ before(grammarAccess.getUncertainElementFusionAccess().getConsensusCompromiseBFAssignment_18()); }
+	(rule__UncertainElementFusion__ConsensusCompromiseBFAssignment_18)
+	{ after(grammarAccess.getUncertainElementFusionAccess().getConsensusCompromiseBFAssignment_18()); }
 )
 ;
 finally {
@@ -1596,9 +1596,9 @@ rule__UncertainElementFusion__Group__19__Impl
 	}
 :
 (
-	{ before(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFAssignment_19()); }
-	(rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_19)
-	{ after(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFAssignment_19()); }
+	{ before(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFKeyword_19()); }
+	'epistemicCumulativeBF'
+	{ after(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFKeyword_19()); }
 )
 ;
 finally {
@@ -1623,9 +1623,9 @@ rule__UncertainElementFusion__Group__20__Impl
 	}
 :
 (
-	{ before(grammarAccess.getUncertainElementFusionAccess().getWeightedBFKeyword_20()); }
-	'weightedBF'
-	{ after(grammarAccess.getUncertainElementFusionAccess().getWeightedBFKeyword_20()); }
+	{ before(grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_20()); }
+	'='
+	{ after(grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_20()); }
 )
 ;
 finally {
@@ -1650,9 +1650,9 @@ rule__UncertainElementFusion__Group__21__Impl
 	}
 :
 (
-	{ before(grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_21()); }
-	'='
-	{ after(grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_21()); }
+	{ before(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFAssignment_21()); }
+	(rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_21)
+	{ after(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFAssignment_21()); }
 )
 ;
 finally {
@@ -1677,9 +1677,9 @@ rule__UncertainElementFusion__Group__22__Impl
 	}
 :
 (
-	{ before(grammarAccess.getUncertainElementFusionAccess().getWeightedBFAssignment_22()); }
-	(rule__UncertainElementFusion__WeightedBFAssignment_22)
-	{ after(grammarAccess.getUncertainElementFusionAccess().getWeightedBFAssignment_22()); }
+	{ before(grammarAccess.getUncertainElementFusionAccess().getWeightedBFKeyword_22()); }
+	'weightedBF'
+	{ after(grammarAccess.getUncertainElementFusionAccess().getWeightedBFKeyword_22()); }
 )
 ;
 finally {
@@ -1692,6 +1692,7 @@ rule__UncertainElementFusion__Group__23
 	}
 :
 	rule__UncertainElementFusion__Group__23__Impl
+	rule__UncertainElementFusion__Group__24
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -1703,9 +1704,62 @@ rule__UncertainElementFusion__Group__23__Impl
 	}
 :
 (
-	{ before(grammarAccess.getUncertainElementFusionAccess().getRightCurlyBracketKeyword_23()); }
+	{ before(grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_23()); }
+	'='
+	{ after(grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_23()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__UncertainElementFusion__Group__24
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__UncertainElementFusion__Group__24__Impl
+	rule__UncertainElementFusion__Group__25
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__UncertainElementFusion__Group__24__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getUncertainElementFusionAccess().getWeightedBFAssignment_24()); }
+	(rule__UncertainElementFusion__WeightedBFAssignment_24)
+	{ after(grammarAccess.getUncertainElementFusionAccess().getWeightedBFAssignment_24()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__UncertainElementFusion__Group__25
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__UncertainElementFusion__Group__25__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__UncertainElementFusion__Group__25__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getUncertainElementFusionAccess().getRightCurlyBracketKeyword_25()); }
 	'}'
-	{ after(grammarAccess.getUncertainElementFusionAccess().getRightCurlyBracketKeyword_23()); }
+	{ after(grammarAccess.getUncertainElementFusionAccess().getRightCurlyBracketKeyword_25()); }
 )
 ;
 finally {
@@ -2122,30 +2176,45 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_19
+rule__UncertainElementFusion__ConsensusCompromiseBFAssignment_18
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFSBooleanParserRuleCall_19_0()); }
+		{ before(grammarAccess.getUncertainElementFusionAccess().getConsensusCompromiseBFSBooleanParserRuleCall_18_0()); }
 		ruleSBoolean
-		{ after(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFSBooleanParserRuleCall_19_0()); }
+		{ after(grammarAccess.getUncertainElementFusionAccess().getConsensusCompromiseBFSBooleanParserRuleCall_18_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__UncertainElementFusion__WeightedBFAssignment_22
+rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_21
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getUncertainElementFusionAccess().getWeightedBFSBooleanParserRuleCall_22_0()); }
+		{ before(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFSBooleanParserRuleCall_21_0()); }
 		ruleSBoolean
-		{ after(grammarAccess.getUncertainElementFusionAccess().getWeightedBFSBooleanParserRuleCall_22_0()); }
+		{ after(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFSBooleanParserRuleCall_21_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__UncertainElementFusion__WeightedBFAssignment_24
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getUncertainElementFusionAccess().getWeightedBFSBooleanParserRuleCall_24_0()); }
+		ruleSBoolean
+		{ after(grammarAccess.getUncertainElementFusionAccess().getWeightedBFSBooleanParserRuleCall_24_0()); }
 	)
 ;
 finally {

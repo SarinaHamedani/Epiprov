@@ -58,8 +58,9 @@ public class TrustDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getUncertainElementFusionAccess().getAleatoryCumulativeBFAssignment_10(), "rule__UncertainElementFusion__AleatoryCumulativeBFAssignment_10");
 			builder.put(grammarAccess.getUncertainElementFusionAccess().getAverageingBFAssignment_13(), "rule__UncertainElementFusion__AverageingBFAssignment_13");
 			builder.put(grammarAccess.getUncertainElementFusionAccess().getBeliefConstraintFusionAssignment_16(), "rule__UncertainElementFusion__BeliefConstraintFusionAssignment_16");
-			builder.put(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFAssignment_19(), "rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_19");
-			builder.put(grammarAccess.getUncertainElementFusionAccess().getWeightedBFAssignment_22(), "rule__UncertainElementFusion__WeightedBFAssignment_22");
+			builder.put(grammarAccess.getUncertainElementFusionAccess().getConsensusCompromiseBFAssignment_18(), "rule__UncertainElementFusion__ConsensusCompromiseBFAssignment_18");
+			builder.put(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFAssignment_21(), "rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_21");
+			builder.put(grammarAccess.getUncertainElementFusionAccess().getWeightedBFAssignment_24(), "rule__UncertainElementFusion__WeightedBFAssignment_24");
 		}
 	}
 	

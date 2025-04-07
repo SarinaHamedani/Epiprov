@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalTrustDSLParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Agent'", "'UncertainElement'", "'{'", "'beliefs'", "'}'", "','", "'Belief'", "'('", "')'", "'UncertainElementFusion'", "'aleatoryCumulativeBF'", "'='", "'averageingBF'", "'beliefConstraintFusion'", "'epistemicCumulativeBF'", "'weightedBF'", "'.'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Agent'", "'UncertainElement'", "'{'", "'beliefs'", "'}'", "','", "'Belief'", "'('", "')'", "'UncertainElementFusion'", "'aleatoryCumulativeBF'", "'='", "'averageingBF'", "'beliefConstraintFusion'", "'consensusCompromiseBF'", "'epistemicCumulativeBF'", "'weightedBF'", "'.'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -41,6 +41,7 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
     public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
     public static final int T__27=27;
+    public static final int T__28=28;
     public static final int RULE_INT=4;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
@@ -4501,7 +4502,7 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
             // InternalTrustDSL.g:1531:1: ( rule__UncertainElementFusion__Group__17__Impl rule__UncertainElementFusion__Group__18 )
             // InternalTrustDSL.g:1532:2: rule__UncertainElementFusion__Group__17__Impl rule__UncertainElementFusion__Group__18
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_11);
             rule__UncertainElementFusion__Group__17__Impl();
 
             state._fsp--;
@@ -4530,21 +4531,21 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UncertainElementFusion__Group__17__Impl"
-    // InternalTrustDSL.g:1539:1: rule__UncertainElementFusion__Group__17__Impl : ( 'epistemicCumulativeBF' ) ;
+    // InternalTrustDSL.g:1539:1: rule__UncertainElementFusion__Group__17__Impl : ( 'consensusCompromiseBF' ) ;
     public final void rule__UncertainElementFusion__Group__17__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1543:1: ( ( 'epistemicCumulativeBF' ) )
-            // InternalTrustDSL.g:1544:1: ( 'epistemicCumulativeBF' )
+            // InternalTrustDSL.g:1543:1: ( ( 'consensusCompromiseBF' ) )
+            // InternalTrustDSL.g:1544:1: ( 'consensusCompromiseBF' )
             {
-            // InternalTrustDSL.g:1544:1: ( 'epistemicCumulativeBF' )
-            // InternalTrustDSL.g:1545:2: 'epistemicCumulativeBF'
+            // InternalTrustDSL.g:1544:1: ( 'consensusCompromiseBF' )
+            // InternalTrustDSL.g:1545:2: 'consensusCompromiseBF'
             {
-             before(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFKeyword_17()); 
+             before(grammarAccess.getUncertainElementFusionAccess().getConsensusCompromiseBFKeyword_17()); 
             match(input,25,FOLLOW_2); 
-             after(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFKeyword_17()); 
+             after(grammarAccess.getUncertainElementFusionAccess().getConsensusCompromiseBFKeyword_17()); 
 
             }
 
@@ -4576,7 +4577,7 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
             // InternalTrustDSL.g:1558:1: ( rule__UncertainElementFusion__Group__18__Impl rule__UncertainElementFusion__Group__19 )
             // InternalTrustDSL.g:1559:2: rule__UncertainElementFusion__Group__18__Impl rule__UncertainElementFusion__Group__19
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_20);
             rule__UncertainElementFusion__Group__18__Impl();
 
             state._fsp--;
@@ -4605,21 +4606,31 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UncertainElementFusion__Group__18__Impl"
-    // InternalTrustDSL.g:1566:1: rule__UncertainElementFusion__Group__18__Impl : ( '=' ) ;
+    // InternalTrustDSL.g:1566:1: rule__UncertainElementFusion__Group__18__Impl : ( ( rule__UncertainElementFusion__ConsensusCompromiseBFAssignment_18 ) ) ;
     public final void rule__UncertainElementFusion__Group__18__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1570:1: ( ( '=' ) )
-            // InternalTrustDSL.g:1571:1: ( '=' )
+            // InternalTrustDSL.g:1570:1: ( ( ( rule__UncertainElementFusion__ConsensusCompromiseBFAssignment_18 ) ) )
+            // InternalTrustDSL.g:1571:1: ( ( rule__UncertainElementFusion__ConsensusCompromiseBFAssignment_18 ) )
             {
-            // InternalTrustDSL.g:1571:1: ( '=' )
-            // InternalTrustDSL.g:1572:2: '='
+            // InternalTrustDSL.g:1571:1: ( ( rule__UncertainElementFusion__ConsensusCompromiseBFAssignment_18 ) )
+            // InternalTrustDSL.g:1572:2: ( rule__UncertainElementFusion__ConsensusCompromiseBFAssignment_18 )
             {
-             before(grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_18()); 
-            match(input,22,FOLLOW_2); 
-             after(grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_18()); 
+             before(grammarAccess.getUncertainElementFusionAccess().getConsensusCompromiseBFAssignment_18()); 
+            // InternalTrustDSL.g:1573:2: ( rule__UncertainElementFusion__ConsensusCompromiseBFAssignment_18 )
+            // InternalTrustDSL.g:1573:3: rule__UncertainElementFusion__ConsensusCompromiseBFAssignment_18
+            {
+            pushFollow(FOLLOW_2);
+            rule__UncertainElementFusion__ConsensusCompromiseBFAssignment_18();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getUncertainElementFusionAccess().getConsensusCompromiseBFAssignment_18()); 
 
             }
 
@@ -4651,7 +4662,7 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
             // InternalTrustDSL.g:1585:1: ( rule__UncertainElementFusion__Group__19__Impl rule__UncertainElementFusion__Group__20 )
             // InternalTrustDSL.g:1586:2: rule__UncertainElementFusion__Group__19__Impl rule__UncertainElementFusion__Group__20
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_16);
             rule__UncertainElementFusion__Group__19__Impl();
 
             state._fsp--;
@@ -4680,31 +4691,21 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UncertainElementFusion__Group__19__Impl"
-    // InternalTrustDSL.g:1593:1: rule__UncertainElementFusion__Group__19__Impl : ( ( rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_19 ) ) ;
+    // InternalTrustDSL.g:1593:1: rule__UncertainElementFusion__Group__19__Impl : ( 'epistemicCumulativeBF' ) ;
     public final void rule__UncertainElementFusion__Group__19__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1597:1: ( ( ( rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_19 ) ) )
-            // InternalTrustDSL.g:1598:1: ( ( rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_19 ) )
+            // InternalTrustDSL.g:1597:1: ( ( 'epistemicCumulativeBF' ) )
+            // InternalTrustDSL.g:1598:1: ( 'epistemicCumulativeBF' )
             {
-            // InternalTrustDSL.g:1598:1: ( ( rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_19 ) )
-            // InternalTrustDSL.g:1599:2: ( rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_19 )
+            // InternalTrustDSL.g:1598:1: ( 'epistemicCumulativeBF' )
+            // InternalTrustDSL.g:1599:2: 'epistemicCumulativeBF'
             {
-             before(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFAssignment_19()); 
-            // InternalTrustDSL.g:1600:2: ( rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_19 )
-            // InternalTrustDSL.g:1600:3: rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_19
-            {
-            pushFollow(FOLLOW_2);
-            rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_19();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFAssignment_19()); 
+             before(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFKeyword_19()); 
+            match(input,26,FOLLOW_2); 
+             after(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFKeyword_19()); 
 
             }
 
@@ -4736,7 +4737,7 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
             // InternalTrustDSL.g:1612:1: ( rule__UncertainElementFusion__Group__20__Impl rule__UncertainElementFusion__Group__21 )
             // InternalTrustDSL.g:1613:2: rule__UncertainElementFusion__Group__20__Impl rule__UncertainElementFusion__Group__21
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_11);
             rule__UncertainElementFusion__Group__20__Impl();
 
             state._fsp--;
@@ -4765,21 +4766,21 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UncertainElementFusion__Group__20__Impl"
-    // InternalTrustDSL.g:1620:1: rule__UncertainElementFusion__Group__20__Impl : ( 'weightedBF' ) ;
+    // InternalTrustDSL.g:1620:1: rule__UncertainElementFusion__Group__20__Impl : ( '=' ) ;
     public final void rule__UncertainElementFusion__Group__20__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1624:1: ( ( 'weightedBF' ) )
-            // InternalTrustDSL.g:1625:1: ( 'weightedBF' )
+            // InternalTrustDSL.g:1624:1: ( ( '=' ) )
+            // InternalTrustDSL.g:1625:1: ( '=' )
             {
-            // InternalTrustDSL.g:1625:1: ( 'weightedBF' )
-            // InternalTrustDSL.g:1626:2: 'weightedBF'
+            // InternalTrustDSL.g:1625:1: ( '=' )
+            // InternalTrustDSL.g:1626:2: '='
             {
-             before(grammarAccess.getUncertainElementFusionAccess().getWeightedBFKeyword_20()); 
-            match(input,26,FOLLOW_2); 
-             after(grammarAccess.getUncertainElementFusionAccess().getWeightedBFKeyword_20()); 
+             before(grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_20()); 
+            match(input,22,FOLLOW_2); 
+             after(grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_20()); 
 
             }
 
@@ -4811,7 +4812,7 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
             // InternalTrustDSL.g:1639:1: ( rule__UncertainElementFusion__Group__21__Impl rule__UncertainElementFusion__Group__22 )
             // InternalTrustDSL.g:1640:2: rule__UncertainElementFusion__Group__21__Impl rule__UncertainElementFusion__Group__22
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_21);
             rule__UncertainElementFusion__Group__21__Impl();
 
             state._fsp--;
@@ -4840,21 +4841,31 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UncertainElementFusion__Group__21__Impl"
-    // InternalTrustDSL.g:1647:1: rule__UncertainElementFusion__Group__21__Impl : ( '=' ) ;
+    // InternalTrustDSL.g:1647:1: rule__UncertainElementFusion__Group__21__Impl : ( ( rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_21 ) ) ;
     public final void rule__UncertainElementFusion__Group__21__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1651:1: ( ( '=' ) )
-            // InternalTrustDSL.g:1652:1: ( '=' )
+            // InternalTrustDSL.g:1651:1: ( ( ( rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_21 ) ) )
+            // InternalTrustDSL.g:1652:1: ( ( rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_21 ) )
             {
-            // InternalTrustDSL.g:1652:1: ( '=' )
-            // InternalTrustDSL.g:1653:2: '='
+            // InternalTrustDSL.g:1652:1: ( ( rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_21 ) )
+            // InternalTrustDSL.g:1653:2: ( rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_21 )
             {
-             before(grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_21()); 
-            match(input,22,FOLLOW_2); 
-             after(grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_21()); 
+             before(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFAssignment_21()); 
+            // InternalTrustDSL.g:1654:2: ( rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_21 )
+            // InternalTrustDSL.g:1654:3: rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_21
+            {
+            pushFollow(FOLLOW_2);
+            rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_21();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFAssignment_21()); 
 
             }
 
@@ -4886,7 +4897,7 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
             // InternalTrustDSL.g:1666:1: ( rule__UncertainElementFusion__Group__22__Impl rule__UncertainElementFusion__Group__23 )
             // InternalTrustDSL.g:1667:2: rule__UncertainElementFusion__Group__22__Impl rule__UncertainElementFusion__Group__23
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_16);
             rule__UncertainElementFusion__Group__22__Impl();
 
             state._fsp--;
@@ -4915,31 +4926,21 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UncertainElementFusion__Group__22__Impl"
-    // InternalTrustDSL.g:1674:1: rule__UncertainElementFusion__Group__22__Impl : ( ( rule__UncertainElementFusion__WeightedBFAssignment_22 ) ) ;
+    // InternalTrustDSL.g:1674:1: rule__UncertainElementFusion__Group__22__Impl : ( 'weightedBF' ) ;
     public final void rule__UncertainElementFusion__Group__22__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1678:1: ( ( ( rule__UncertainElementFusion__WeightedBFAssignment_22 ) ) )
-            // InternalTrustDSL.g:1679:1: ( ( rule__UncertainElementFusion__WeightedBFAssignment_22 ) )
+            // InternalTrustDSL.g:1678:1: ( ( 'weightedBF' ) )
+            // InternalTrustDSL.g:1679:1: ( 'weightedBF' )
             {
-            // InternalTrustDSL.g:1679:1: ( ( rule__UncertainElementFusion__WeightedBFAssignment_22 ) )
-            // InternalTrustDSL.g:1680:2: ( rule__UncertainElementFusion__WeightedBFAssignment_22 )
+            // InternalTrustDSL.g:1679:1: ( 'weightedBF' )
+            // InternalTrustDSL.g:1680:2: 'weightedBF'
             {
-             before(grammarAccess.getUncertainElementFusionAccess().getWeightedBFAssignment_22()); 
-            // InternalTrustDSL.g:1681:2: ( rule__UncertainElementFusion__WeightedBFAssignment_22 )
-            // InternalTrustDSL.g:1681:3: rule__UncertainElementFusion__WeightedBFAssignment_22
-            {
-            pushFollow(FOLLOW_2);
-            rule__UncertainElementFusion__WeightedBFAssignment_22();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getUncertainElementFusionAccess().getWeightedBFAssignment_22()); 
+             before(grammarAccess.getUncertainElementFusionAccess().getWeightedBFKeyword_22()); 
+            match(input,27,FOLLOW_2); 
+             after(grammarAccess.getUncertainElementFusionAccess().getWeightedBFKeyword_22()); 
 
             }
 
@@ -4962,17 +4963,22 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UncertainElementFusion__Group__23"
-    // InternalTrustDSL.g:1689:1: rule__UncertainElementFusion__Group__23 : rule__UncertainElementFusion__Group__23__Impl ;
+    // InternalTrustDSL.g:1689:1: rule__UncertainElementFusion__Group__23 : rule__UncertainElementFusion__Group__23__Impl rule__UncertainElementFusion__Group__24 ;
     public final void rule__UncertainElementFusion__Group__23() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1693:1: ( rule__UncertainElementFusion__Group__23__Impl )
-            // InternalTrustDSL.g:1694:2: rule__UncertainElementFusion__Group__23__Impl
+            // InternalTrustDSL.g:1693:1: ( rule__UncertainElementFusion__Group__23__Impl rule__UncertainElementFusion__Group__24 )
+            // InternalTrustDSL.g:1694:2: rule__UncertainElementFusion__Group__23__Impl rule__UncertainElementFusion__Group__24
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_11);
             rule__UncertainElementFusion__Group__23__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__UncertainElementFusion__Group__24();
 
             state._fsp--;
 
@@ -4995,21 +5001,21 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UncertainElementFusion__Group__23__Impl"
-    // InternalTrustDSL.g:1700:1: rule__UncertainElementFusion__Group__23__Impl : ( '}' ) ;
+    // InternalTrustDSL.g:1701:1: rule__UncertainElementFusion__Group__23__Impl : ( '=' ) ;
     public final void rule__UncertainElementFusion__Group__23__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1704:1: ( ( '}' ) )
-            // InternalTrustDSL.g:1705:1: ( '}' )
+            // InternalTrustDSL.g:1705:1: ( ( '=' ) )
+            // InternalTrustDSL.g:1706:1: ( '=' )
             {
-            // InternalTrustDSL.g:1705:1: ( '}' )
-            // InternalTrustDSL.g:1706:2: '}'
+            // InternalTrustDSL.g:1706:1: ( '=' )
+            // InternalTrustDSL.g:1707:2: '='
             {
-             before(grammarAccess.getUncertainElementFusionAccess().getRightCurlyBracketKeyword_23()); 
-            match(input,15,FOLLOW_2); 
-             after(grammarAccess.getUncertainElementFusionAccess().getRightCurlyBracketKeyword_23()); 
+             before(grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_23()); 
+            match(input,22,FOLLOW_2); 
+             after(grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_23()); 
 
             }
 
@@ -5031,15 +5037,170 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__UncertainElementFusion__Group__23__Impl"
 
 
+    // $ANTLR start "rule__UncertainElementFusion__Group__24"
+    // InternalTrustDSL.g:1716:1: rule__UncertainElementFusion__Group__24 : rule__UncertainElementFusion__Group__24__Impl rule__UncertainElementFusion__Group__25 ;
+    public final void rule__UncertainElementFusion__Group__24() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalTrustDSL.g:1720:1: ( rule__UncertainElementFusion__Group__24__Impl rule__UncertainElementFusion__Group__25 )
+            // InternalTrustDSL.g:1721:2: rule__UncertainElementFusion__Group__24__Impl rule__UncertainElementFusion__Group__25
+            {
+            pushFollow(FOLLOW_10);
+            rule__UncertainElementFusion__Group__24__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__UncertainElementFusion__Group__25();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__UncertainElementFusion__Group__24"
+
+
+    // $ANTLR start "rule__UncertainElementFusion__Group__24__Impl"
+    // InternalTrustDSL.g:1728:1: rule__UncertainElementFusion__Group__24__Impl : ( ( rule__UncertainElementFusion__WeightedBFAssignment_24 ) ) ;
+    public final void rule__UncertainElementFusion__Group__24__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalTrustDSL.g:1732:1: ( ( ( rule__UncertainElementFusion__WeightedBFAssignment_24 ) ) )
+            // InternalTrustDSL.g:1733:1: ( ( rule__UncertainElementFusion__WeightedBFAssignment_24 ) )
+            {
+            // InternalTrustDSL.g:1733:1: ( ( rule__UncertainElementFusion__WeightedBFAssignment_24 ) )
+            // InternalTrustDSL.g:1734:2: ( rule__UncertainElementFusion__WeightedBFAssignment_24 )
+            {
+             before(grammarAccess.getUncertainElementFusionAccess().getWeightedBFAssignment_24()); 
+            // InternalTrustDSL.g:1735:2: ( rule__UncertainElementFusion__WeightedBFAssignment_24 )
+            // InternalTrustDSL.g:1735:3: rule__UncertainElementFusion__WeightedBFAssignment_24
+            {
+            pushFollow(FOLLOW_2);
+            rule__UncertainElementFusion__WeightedBFAssignment_24();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getUncertainElementFusionAccess().getWeightedBFAssignment_24()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__UncertainElementFusion__Group__24__Impl"
+
+
+    // $ANTLR start "rule__UncertainElementFusion__Group__25"
+    // InternalTrustDSL.g:1743:1: rule__UncertainElementFusion__Group__25 : rule__UncertainElementFusion__Group__25__Impl ;
+    public final void rule__UncertainElementFusion__Group__25() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalTrustDSL.g:1747:1: ( rule__UncertainElementFusion__Group__25__Impl )
+            // InternalTrustDSL.g:1748:2: rule__UncertainElementFusion__Group__25__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__UncertainElementFusion__Group__25__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__UncertainElementFusion__Group__25"
+
+
+    // $ANTLR start "rule__UncertainElementFusion__Group__25__Impl"
+    // InternalTrustDSL.g:1754:1: rule__UncertainElementFusion__Group__25__Impl : ( '}' ) ;
+    public final void rule__UncertainElementFusion__Group__25__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalTrustDSL.g:1758:1: ( ( '}' ) )
+            // InternalTrustDSL.g:1759:1: ( '}' )
+            {
+            // InternalTrustDSL.g:1759:1: ( '}' )
+            // InternalTrustDSL.g:1760:2: '}'
+            {
+             before(grammarAccess.getUncertainElementFusionAccess().getRightCurlyBracketKeyword_25()); 
+            match(input,15,FOLLOW_2); 
+             after(grammarAccess.getUncertainElementFusionAccess().getRightCurlyBracketKeyword_25()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__UncertainElementFusion__Group__25__Impl"
+
+
     // $ANTLR start "rule__UncertainElementFusion__Group_6__0"
-    // InternalTrustDSL.g:1716:1: rule__UncertainElementFusion__Group_6__0 : rule__UncertainElementFusion__Group_6__0__Impl rule__UncertainElementFusion__Group_6__1 ;
+    // InternalTrustDSL.g:1770:1: rule__UncertainElementFusion__Group_6__0 : rule__UncertainElementFusion__Group_6__0__Impl rule__UncertainElementFusion__Group_6__1 ;
     public final void rule__UncertainElementFusion__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1720:1: ( rule__UncertainElementFusion__Group_6__0__Impl rule__UncertainElementFusion__Group_6__1 )
-            // InternalTrustDSL.g:1721:2: rule__UncertainElementFusion__Group_6__0__Impl rule__UncertainElementFusion__Group_6__1
+            // InternalTrustDSL.g:1774:1: ( rule__UncertainElementFusion__Group_6__0__Impl rule__UncertainElementFusion__Group_6__1 )
+            // InternalTrustDSL.g:1775:2: rule__UncertainElementFusion__Group_6__0__Impl rule__UncertainElementFusion__Group_6__1
             {
             pushFollow(FOLLOW_7);
             rule__UncertainElementFusion__Group_6__0__Impl();
@@ -5070,17 +5231,17 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UncertainElementFusion__Group_6__0__Impl"
-    // InternalTrustDSL.g:1728:1: rule__UncertainElementFusion__Group_6__0__Impl : ( ',' ) ;
+    // InternalTrustDSL.g:1782:1: rule__UncertainElementFusion__Group_6__0__Impl : ( ',' ) ;
     public final void rule__UncertainElementFusion__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1732:1: ( ( ',' ) )
-            // InternalTrustDSL.g:1733:1: ( ',' )
+            // InternalTrustDSL.g:1786:1: ( ( ',' ) )
+            // InternalTrustDSL.g:1787:1: ( ',' )
             {
-            // InternalTrustDSL.g:1733:1: ( ',' )
-            // InternalTrustDSL.g:1734:2: ','
+            // InternalTrustDSL.g:1787:1: ( ',' )
+            // InternalTrustDSL.g:1788:2: ','
             {
              before(grammarAccess.getUncertainElementFusionAccess().getCommaKeyword_6_0()); 
             match(input,16,FOLLOW_2); 
@@ -5107,14 +5268,14 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UncertainElementFusion__Group_6__1"
-    // InternalTrustDSL.g:1743:1: rule__UncertainElementFusion__Group_6__1 : rule__UncertainElementFusion__Group_6__1__Impl ;
+    // InternalTrustDSL.g:1797:1: rule__UncertainElementFusion__Group_6__1 : rule__UncertainElementFusion__Group_6__1__Impl ;
     public final void rule__UncertainElementFusion__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1747:1: ( rule__UncertainElementFusion__Group_6__1__Impl )
-            // InternalTrustDSL.g:1748:2: rule__UncertainElementFusion__Group_6__1__Impl
+            // InternalTrustDSL.g:1801:1: ( rule__UncertainElementFusion__Group_6__1__Impl )
+            // InternalTrustDSL.g:1802:2: rule__UncertainElementFusion__Group_6__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__UncertainElementFusion__Group_6__1__Impl();
@@ -5140,21 +5301,21 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UncertainElementFusion__Group_6__1__Impl"
-    // InternalTrustDSL.g:1754:1: rule__UncertainElementFusion__Group_6__1__Impl : ( ( rule__UncertainElementFusion__BeliefsAssignment_6_1 ) ) ;
+    // InternalTrustDSL.g:1808:1: rule__UncertainElementFusion__Group_6__1__Impl : ( ( rule__UncertainElementFusion__BeliefsAssignment_6_1 ) ) ;
     public final void rule__UncertainElementFusion__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1758:1: ( ( ( rule__UncertainElementFusion__BeliefsAssignment_6_1 ) ) )
-            // InternalTrustDSL.g:1759:1: ( ( rule__UncertainElementFusion__BeliefsAssignment_6_1 ) )
+            // InternalTrustDSL.g:1812:1: ( ( ( rule__UncertainElementFusion__BeliefsAssignment_6_1 ) ) )
+            // InternalTrustDSL.g:1813:1: ( ( rule__UncertainElementFusion__BeliefsAssignment_6_1 ) )
             {
-            // InternalTrustDSL.g:1759:1: ( ( rule__UncertainElementFusion__BeliefsAssignment_6_1 ) )
-            // InternalTrustDSL.g:1760:2: ( rule__UncertainElementFusion__BeliefsAssignment_6_1 )
+            // InternalTrustDSL.g:1813:1: ( ( rule__UncertainElementFusion__BeliefsAssignment_6_1 ) )
+            // InternalTrustDSL.g:1814:2: ( rule__UncertainElementFusion__BeliefsAssignment_6_1 )
             {
              before(grammarAccess.getUncertainElementFusionAccess().getBeliefsAssignment_6_1()); 
-            // InternalTrustDSL.g:1761:2: ( rule__UncertainElementFusion__BeliefsAssignment_6_1 )
-            // InternalTrustDSL.g:1761:3: rule__UncertainElementFusion__BeliefsAssignment_6_1
+            // InternalTrustDSL.g:1815:2: ( rule__UncertainElementFusion__BeliefsAssignment_6_1 )
+            // InternalTrustDSL.g:1815:3: rule__UncertainElementFusion__BeliefsAssignment_6_1
             {
             pushFollow(FOLLOW_2);
             rule__UncertainElementFusion__BeliefsAssignment_6_1();
@@ -5187,16 +5348,16 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__REAL__Group__0"
-    // InternalTrustDSL.g:1770:1: rule__REAL__Group__0 : rule__REAL__Group__0__Impl rule__REAL__Group__1 ;
+    // InternalTrustDSL.g:1824:1: rule__REAL__Group__0 : rule__REAL__Group__0__Impl rule__REAL__Group__1 ;
     public final void rule__REAL__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1774:1: ( rule__REAL__Group__0__Impl rule__REAL__Group__1 )
-            // InternalTrustDSL.g:1775:2: rule__REAL__Group__0__Impl rule__REAL__Group__1
+            // InternalTrustDSL.g:1828:1: ( rule__REAL__Group__0__Impl rule__REAL__Group__1 )
+            // InternalTrustDSL.g:1829:2: rule__REAL__Group__0__Impl rule__REAL__Group__1
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_22);
             rule__REAL__Group__0__Impl();
 
             state._fsp--;
@@ -5225,17 +5386,17 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__REAL__Group__0__Impl"
-    // InternalTrustDSL.g:1782:1: rule__REAL__Group__0__Impl : ( RULE_INT ) ;
+    // InternalTrustDSL.g:1836:1: rule__REAL__Group__0__Impl : ( RULE_INT ) ;
     public final void rule__REAL__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1786:1: ( ( RULE_INT ) )
-            // InternalTrustDSL.g:1787:1: ( RULE_INT )
+            // InternalTrustDSL.g:1840:1: ( ( RULE_INT ) )
+            // InternalTrustDSL.g:1841:1: ( RULE_INT )
             {
-            // InternalTrustDSL.g:1787:1: ( RULE_INT )
-            // InternalTrustDSL.g:1788:2: RULE_INT
+            // InternalTrustDSL.g:1841:1: ( RULE_INT )
+            // InternalTrustDSL.g:1842:2: RULE_INT
             {
              before(grammarAccess.getREALAccess().getINTTerminalRuleCall_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -5262,14 +5423,14 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__REAL__Group__1"
-    // InternalTrustDSL.g:1797:1: rule__REAL__Group__1 : rule__REAL__Group__1__Impl rule__REAL__Group__2 ;
+    // InternalTrustDSL.g:1851:1: rule__REAL__Group__1 : rule__REAL__Group__1__Impl rule__REAL__Group__2 ;
     public final void rule__REAL__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1801:1: ( rule__REAL__Group__1__Impl rule__REAL__Group__2 )
-            // InternalTrustDSL.g:1802:2: rule__REAL__Group__1__Impl rule__REAL__Group__2
+            // InternalTrustDSL.g:1855:1: ( rule__REAL__Group__1__Impl rule__REAL__Group__2 )
+            // InternalTrustDSL.g:1856:2: rule__REAL__Group__1__Impl rule__REAL__Group__2
             {
             pushFollow(FOLLOW_14);
             rule__REAL__Group__1__Impl();
@@ -5300,20 +5461,20 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__REAL__Group__1__Impl"
-    // InternalTrustDSL.g:1809:1: rule__REAL__Group__1__Impl : ( '.' ) ;
+    // InternalTrustDSL.g:1863:1: rule__REAL__Group__1__Impl : ( '.' ) ;
     public final void rule__REAL__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1813:1: ( ( '.' ) )
-            // InternalTrustDSL.g:1814:1: ( '.' )
+            // InternalTrustDSL.g:1867:1: ( ( '.' ) )
+            // InternalTrustDSL.g:1868:1: ( '.' )
             {
-            // InternalTrustDSL.g:1814:1: ( '.' )
-            // InternalTrustDSL.g:1815:2: '.'
+            // InternalTrustDSL.g:1868:1: ( '.' )
+            // InternalTrustDSL.g:1869:2: '.'
             {
              before(grammarAccess.getREALAccess().getFullStopKeyword_1()); 
-            match(input,27,FOLLOW_2); 
+            match(input,28,FOLLOW_2); 
              after(grammarAccess.getREALAccess().getFullStopKeyword_1()); 
 
             }
@@ -5337,14 +5498,14 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__REAL__Group__2"
-    // InternalTrustDSL.g:1824:1: rule__REAL__Group__2 : rule__REAL__Group__2__Impl ;
+    // InternalTrustDSL.g:1878:1: rule__REAL__Group__2 : rule__REAL__Group__2__Impl ;
     public final void rule__REAL__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1828:1: ( rule__REAL__Group__2__Impl )
-            // InternalTrustDSL.g:1829:2: rule__REAL__Group__2__Impl
+            // InternalTrustDSL.g:1882:1: ( rule__REAL__Group__2__Impl )
+            // InternalTrustDSL.g:1883:2: rule__REAL__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__REAL__Group__2__Impl();
@@ -5370,17 +5531,17 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__REAL__Group__2__Impl"
-    // InternalTrustDSL.g:1835:1: rule__REAL__Group__2__Impl : ( RULE_INT ) ;
+    // InternalTrustDSL.g:1889:1: rule__REAL__Group__2__Impl : ( RULE_INT ) ;
     public final void rule__REAL__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1839:1: ( ( RULE_INT ) )
-            // InternalTrustDSL.g:1840:1: ( RULE_INT )
+            // InternalTrustDSL.g:1893:1: ( ( RULE_INT ) )
+            // InternalTrustDSL.g:1894:1: ( RULE_INT )
             {
-            // InternalTrustDSL.g:1840:1: ( RULE_INT )
-            // InternalTrustDSL.g:1841:2: RULE_INT
+            // InternalTrustDSL.g:1894:1: ( RULE_INT )
+            // InternalTrustDSL.g:1895:2: RULE_INT
             {
              before(grammarAccess.getREALAccess().getINTTerminalRuleCall_2()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -5407,17 +5568,17 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TrustModel__ElementsAssignment"
-    // InternalTrustDSL.g:1851:1: rule__TrustModel__ElementsAssignment : ( ruleElement ) ;
+    // InternalTrustDSL.g:1905:1: rule__TrustModel__ElementsAssignment : ( ruleElement ) ;
     public final void rule__TrustModel__ElementsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1855:1: ( ( ruleElement ) )
-            // InternalTrustDSL.g:1856:2: ( ruleElement )
+            // InternalTrustDSL.g:1909:1: ( ( ruleElement ) )
+            // InternalTrustDSL.g:1910:2: ( ruleElement )
             {
-            // InternalTrustDSL.g:1856:2: ( ruleElement )
-            // InternalTrustDSL.g:1857:3: ruleElement
+            // InternalTrustDSL.g:1910:2: ( ruleElement )
+            // InternalTrustDSL.g:1911:3: ruleElement
             {
              before(grammarAccess.getTrustModelAccess().getElementsElementParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -5448,17 +5609,17 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Agent__NameAssignment_1"
-    // InternalTrustDSL.g:1866:1: rule__Agent__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalTrustDSL.g:1920:1: rule__Agent__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Agent__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1870:1: ( ( RULE_ID ) )
-            // InternalTrustDSL.g:1871:2: ( RULE_ID )
+            // InternalTrustDSL.g:1924:1: ( ( RULE_ID ) )
+            // InternalTrustDSL.g:1925:2: ( RULE_ID )
             {
-            // InternalTrustDSL.g:1871:2: ( RULE_ID )
-            // InternalTrustDSL.g:1872:3: RULE_ID
+            // InternalTrustDSL.g:1925:2: ( RULE_ID )
+            // InternalTrustDSL.g:1926:3: RULE_ID
             {
              before(grammarAccess.getAgentAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5485,17 +5646,17 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UncertainElement__NameAssignment_1"
-    // InternalTrustDSL.g:1881:1: rule__UncertainElement__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalTrustDSL.g:1935:1: rule__UncertainElement__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__UncertainElement__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1885:1: ( ( RULE_ID ) )
-            // InternalTrustDSL.g:1886:2: ( RULE_ID )
+            // InternalTrustDSL.g:1939:1: ( ( RULE_ID ) )
+            // InternalTrustDSL.g:1940:2: ( RULE_ID )
             {
-            // InternalTrustDSL.g:1886:2: ( RULE_ID )
-            // InternalTrustDSL.g:1887:3: RULE_ID
+            // InternalTrustDSL.g:1940:2: ( RULE_ID )
+            // InternalTrustDSL.g:1941:3: RULE_ID
             {
              before(grammarAccess.getUncertainElementAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5522,17 +5683,17 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UncertainElement__BeliefsAssignment_5"
-    // InternalTrustDSL.g:1896:1: rule__UncertainElement__BeliefsAssignment_5 : ( ruleBelief ) ;
+    // InternalTrustDSL.g:1950:1: rule__UncertainElement__BeliefsAssignment_5 : ( ruleBelief ) ;
     public final void rule__UncertainElement__BeliefsAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1900:1: ( ( ruleBelief ) )
-            // InternalTrustDSL.g:1901:2: ( ruleBelief )
+            // InternalTrustDSL.g:1954:1: ( ( ruleBelief ) )
+            // InternalTrustDSL.g:1955:2: ( ruleBelief )
             {
-            // InternalTrustDSL.g:1901:2: ( ruleBelief )
-            // InternalTrustDSL.g:1902:3: ruleBelief
+            // InternalTrustDSL.g:1955:2: ( ruleBelief )
+            // InternalTrustDSL.g:1956:3: ruleBelief
             {
              before(grammarAccess.getUncertainElementAccess().getBeliefsBeliefParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -5563,17 +5724,17 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UncertainElement__BeliefsAssignment_6_1"
-    // InternalTrustDSL.g:1911:1: rule__UncertainElement__BeliefsAssignment_6_1 : ( ruleBelief ) ;
+    // InternalTrustDSL.g:1965:1: rule__UncertainElement__BeliefsAssignment_6_1 : ( ruleBelief ) ;
     public final void rule__UncertainElement__BeliefsAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1915:1: ( ( ruleBelief ) )
-            // InternalTrustDSL.g:1916:2: ( ruleBelief )
+            // InternalTrustDSL.g:1969:1: ( ( ruleBelief ) )
+            // InternalTrustDSL.g:1970:2: ( ruleBelief )
             {
-            // InternalTrustDSL.g:1916:2: ( ruleBelief )
-            // InternalTrustDSL.g:1917:3: ruleBelief
+            // InternalTrustDSL.g:1970:2: ( ruleBelief )
+            // InternalTrustDSL.g:1971:3: ruleBelief
             {
              before(grammarAccess.getUncertainElementAccess().getBeliefsBeliefParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5604,17 +5765,17 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Belief__NameAssignment_1"
-    // InternalTrustDSL.g:1926:1: rule__Belief__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalTrustDSL.g:1980:1: rule__Belief__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Belief__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1930:1: ( ( RULE_ID ) )
-            // InternalTrustDSL.g:1931:2: ( RULE_ID )
+            // InternalTrustDSL.g:1984:1: ( ( RULE_ID ) )
+            // InternalTrustDSL.g:1985:2: ( RULE_ID )
             {
-            // InternalTrustDSL.g:1931:2: ( RULE_ID )
-            // InternalTrustDSL.g:1932:3: RULE_ID
+            // InternalTrustDSL.g:1985:2: ( RULE_ID )
+            // InternalTrustDSL.g:1986:3: RULE_ID
             {
              before(grammarAccess.getBeliefAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5641,21 +5802,21 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Belief__AgentAssignment_3"
-    // InternalTrustDSL.g:1941:1: rule__Belief__AgentAssignment_3 : ( ( RULE_ID ) ) ;
+    // InternalTrustDSL.g:1995:1: rule__Belief__AgentAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__Belief__AgentAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1945:1: ( ( ( RULE_ID ) ) )
-            // InternalTrustDSL.g:1946:2: ( ( RULE_ID ) )
+            // InternalTrustDSL.g:1999:1: ( ( ( RULE_ID ) ) )
+            // InternalTrustDSL.g:2000:2: ( ( RULE_ID ) )
             {
-            // InternalTrustDSL.g:1946:2: ( ( RULE_ID ) )
-            // InternalTrustDSL.g:1947:3: ( RULE_ID )
+            // InternalTrustDSL.g:2000:2: ( ( RULE_ID ) )
+            // InternalTrustDSL.g:2001:3: ( RULE_ID )
             {
              before(grammarAccess.getBeliefAccess().getAgentAgentCrossReference_3_0()); 
-            // InternalTrustDSL.g:1948:3: ( RULE_ID )
-            // InternalTrustDSL.g:1949:4: RULE_ID
+            // InternalTrustDSL.g:2002:3: ( RULE_ID )
+            // InternalTrustDSL.g:2003:4: RULE_ID
             {
              before(grammarAccess.getBeliefAccess().getAgentAgentIDTerminalRuleCall_3_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5686,17 +5847,17 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Belief__OpinionAssignment_5"
-    // InternalTrustDSL.g:1960:1: rule__Belief__OpinionAssignment_5 : ( ruleSBoolean ) ;
+    // InternalTrustDSL.g:2014:1: rule__Belief__OpinionAssignment_5 : ( ruleSBoolean ) ;
     public final void rule__Belief__OpinionAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1964:1: ( ( ruleSBoolean ) )
-            // InternalTrustDSL.g:1965:2: ( ruleSBoolean )
+            // InternalTrustDSL.g:2018:1: ( ( ruleSBoolean ) )
+            // InternalTrustDSL.g:2019:2: ( ruleSBoolean )
             {
-            // InternalTrustDSL.g:1965:2: ( ruleSBoolean )
-            // InternalTrustDSL.g:1966:3: ruleSBoolean
+            // InternalTrustDSL.g:2019:2: ( ruleSBoolean )
+            // InternalTrustDSL.g:2020:3: ruleSBoolean
             {
              before(grammarAccess.getBeliefAccess().getOpinionSBooleanParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -5727,17 +5888,17 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SBoolean__BeliefAssignment_1"
-    // InternalTrustDSL.g:1975:1: rule__SBoolean__BeliefAssignment_1 : ( ruleREAL ) ;
+    // InternalTrustDSL.g:2029:1: rule__SBoolean__BeliefAssignment_1 : ( ruleREAL ) ;
     public final void rule__SBoolean__BeliefAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1979:1: ( ( ruleREAL ) )
-            // InternalTrustDSL.g:1980:2: ( ruleREAL )
+            // InternalTrustDSL.g:2033:1: ( ( ruleREAL ) )
+            // InternalTrustDSL.g:2034:2: ( ruleREAL )
             {
-            // InternalTrustDSL.g:1980:2: ( ruleREAL )
-            // InternalTrustDSL.g:1981:3: ruleREAL
+            // InternalTrustDSL.g:2034:2: ( ruleREAL )
+            // InternalTrustDSL.g:2035:3: ruleREAL
             {
              before(grammarAccess.getSBooleanAccess().getBeliefREALParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5768,17 +5929,17 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SBoolean__DisbeliefAssignment_3"
-    // InternalTrustDSL.g:1990:1: rule__SBoolean__DisbeliefAssignment_3 : ( ruleREAL ) ;
+    // InternalTrustDSL.g:2044:1: rule__SBoolean__DisbeliefAssignment_3 : ( ruleREAL ) ;
     public final void rule__SBoolean__DisbeliefAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:1994:1: ( ( ruleREAL ) )
-            // InternalTrustDSL.g:1995:2: ( ruleREAL )
+            // InternalTrustDSL.g:2048:1: ( ( ruleREAL ) )
+            // InternalTrustDSL.g:2049:2: ( ruleREAL )
             {
-            // InternalTrustDSL.g:1995:2: ( ruleREAL )
-            // InternalTrustDSL.g:1996:3: ruleREAL
+            // InternalTrustDSL.g:2049:2: ( ruleREAL )
+            // InternalTrustDSL.g:2050:3: ruleREAL
             {
              before(grammarAccess.getSBooleanAccess().getDisbeliefREALParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -5809,17 +5970,17 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SBoolean__UncertaintyAssignment_5"
-    // InternalTrustDSL.g:2005:1: rule__SBoolean__UncertaintyAssignment_5 : ( ruleREAL ) ;
+    // InternalTrustDSL.g:2059:1: rule__SBoolean__UncertaintyAssignment_5 : ( ruleREAL ) ;
     public final void rule__SBoolean__UncertaintyAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:2009:1: ( ( ruleREAL ) )
-            // InternalTrustDSL.g:2010:2: ( ruleREAL )
+            // InternalTrustDSL.g:2063:1: ( ( ruleREAL ) )
+            // InternalTrustDSL.g:2064:2: ( ruleREAL )
             {
-            // InternalTrustDSL.g:2010:2: ( ruleREAL )
-            // InternalTrustDSL.g:2011:3: ruleREAL
+            // InternalTrustDSL.g:2064:2: ( ruleREAL )
+            // InternalTrustDSL.g:2065:3: ruleREAL
             {
              before(grammarAccess.getSBooleanAccess().getUncertaintyREALParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -5850,17 +6011,17 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SBoolean__BaseRateAssignment_7"
-    // InternalTrustDSL.g:2020:1: rule__SBoolean__BaseRateAssignment_7 : ( ruleREAL ) ;
+    // InternalTrustDSL.g:2074:1: rule__SBoolean__BaseRateAssignment_7 : ( ruleREAL ) ;
     public final void rule__SBoolean__BaseRateAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:2024:1: ( ( ruleREAL ) )
-            // InternalTrustDSL.g:2025:2: ( ruleREAL )
+            // InternalTrustDSL.g:2078:1: ( ( ruleREAL ) )
+            // InternalTrustDSL.g:2079:2: ( ruleREAL )
             {
-            // InternalTrustDSL.g:2025:2: ( ruleREAL )
-            // InternalTrustDSL.g:2026:3: ruleREAL
+            // InternalTrustDSL.g:2079:2: ( ruleREAL )
+            // InternalTrustDSL.g:2080:3: ruleREAL
             {
              before(grammarAccess.getSBooleanAccess().getBaseRateREALParserRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
@@ -5891,17 +6052,17 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UncertainElementFusion__NameAssignment_1"
-    // InternalTrustDSL.g:2035:1: rule__UncertainElementFusion__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalTrustDSL.g:2089:1: rule__UncertainElementFusion__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__UncertainElementFusion__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:2039:1: ( ( RULE_ID ) )
-            // InternalTrustDSL.g:2040:2: ( RULE_ID )
+            // InternalTrustDSL.g:2093:1: ( ( RULE_ID ) )
+            // InternalTrustDSL.g:2094:2: ( RULE_ID )
             {
-            // InternalTrustDSL.g:2040:2: ( RULE_ID )
-            // InternalTrustDSL.g:2041:3: RULE_ID
+            // InternalTrustDSL.g:2094:2: ( RULE_ID )
+            // InternalTrustDSL.g:2095:3: RULE_ID
             {
              before(grammarAccess.getUncertainElementFusionAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5928,17 +6089,17 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UncertainElementFusion__BeliefsAssignment_5"
-    // InternalTrustDSL.g:2050:1: rule__UncertainElementFusion__BeliefsAssignment_5 : ( ruleBelief ) ;
+    // InternalTrustDSL.g:2104:1: rule__UncertainElementFusion__BeliefsAssignment_5 : ( ruleBelief ) ;
     public final void rule__UncertainElementFusion__BeliefsAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:2054:1: ( ( ruleBelief ) )
-            // InternalTrustDSL.g:2055:2: ( ruleBelief )
+            // InternalTrustDSL.g:2108:1: ( ( ruleBelief ) )
+            // InternalTrustDSL.g:2109:2: ( ruleBelief )
             {
-            // InternalTrustDSL.g:2055:2: ( ruleBelief )
-            // InternalTrustDSL.g:2056:3: ruleBelief
+            // InternalTrustDSL.g:2109:2: ( ruleBelief )
+            // InternalTrustDSL.g:2110:3: ruleBelief
             {
              before(grammarAccess.getUncertainElementFusionAccess().getBeliefsBeliefParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -5969,17 +6130,17 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UncertainElementFusion__BeliefsAssignment_6_1"
-    // InternalTrustDSL.g:2065:1: rule__UncertainElementFusion__BeliefsAssignment_6_1 : ( ruleBelief ) ;
+    // InternalTrustDSL.g:2119:1: rule__UncertainElementFusion__BeliefsAssignment_6_1 : ( ruleBelief ) ;
     public final void rule__UncertainElementFusion__BeliefsAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:2069:1: ( ( ruleBelief ) )
-            // InternalTrustDSL.g:2070:2: ( ruleBelief )
+            // InternalTrustDSL.g:2123:1: ( ( ruleBelief ) )
+            // InternalTrustDSL.g:2124:2: ( ruleBelief )
             {
-            // InternalTrustDSL.g:2070:2: ( ruleBelief )
-            // InternalTrustDSL.g:2071:3: ruleBelief
+            // InternalTrustDSL.g:2124:2: ( ruleBelief )
+            // InternalTrustDSL.g:2125:3: ruleBelief
             {
              before(grammarAccess.getUncertainElementFusionAccess().getBeliefsBeliefParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
@@ -6010,17 +6171,17 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UncertainElementFusion__AleatoryCumulativeBFAssignment_10"
-    // InternalTrustDSL.g:2080:1: rule__UncertainElementFusion__AleatoryCumulativeBFAssignment_10 : ( ruleSBoolean ) ;
+    // InternalTrustDSL.g:2134:1: rule__UncertainElementFusion__AleatoryCumulativeBFAssignment_10 : ( ruleSBoolean ) ;
     public final void rule__UncertainElementFusion__AleatoryCumulativeBFAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:2084:1: ( ( ruleSBoolean ) )
-            // InternalTrustDSL.g:2085:2: ( ruleSBoolean )
+            // InternalTrustDSL.g:2138:1: ( ( ruleSBoolean ) )
+            // InternalTrustDSL.g:2139:2: ( ruleSBoolean )
             {
-            // InternalTrustDSL.g:2085:2: ( ruleSBoolean )
-            // InternalTrustDSL.g:2086:3: ruleSBoolean
+            // InternalTrustDSL.g:2139:2: ( ruleSBoolean )
+            // InternalTrustDSL.g:2140:3: ruleSBoolean
             {
              before(grammarAccess.getUncertainElementFusionAccess().getAleatoryCumulativeBFSBooleanParserRuleCall_10_0()); 
             pushFollow(FOLLOW_2);
@@ -6051,17 +6212,17 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UncertainElementFusion__AverageingBFAssignment_13"
-    // InternalTrustDSL.g:2095:1: rule__UncertainElementFusion__AverageingBFAssignment_13 : ( ruleSBoolean ) ;
+    // InternalTrustDSL.g:2149:1: rule__UncertainElementFusion__AverageingBFAssignment_13 : ( ruleSBoolean ) ;
     public final void rule__UncertainElementFusion__AverageingBFAssignment_13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:2099:1: ( ( ruleSBoolean ) )
-            // InternalTrustDSL.g:2100:2: ( ruleSBoolean )
+            // InternalTrustDSL.g:2153:1: ( ( ruleSBoolean ) )
+            // InternalTrustDSL.g:2154:2: ( ruleSBoolean )
             {
-            // InternalTrustDSL.g:2100:2: ( ruleSBoolean )
-            // InternalTrustDSL.g:2101:3: ruleSBoolean
+            // InternalTrustDSL.g:2154:2: ( ruleSBoolean )
+            // InternalTrustDSL.g:2155:3: ruleSBoolean
             {
              before(grammarAccess.getUncertainElementFusionAccess().getAverageingBFSBooleanParserRuleCall_13_0()); 
             pushFollow(FOLLOW_2);
@@ -6092,17 +6253,17 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UncertainElementFusion__BeliefConstraintFusionAssignment_16"
-    // InternalTrustDSL.g:2110:1: rule__UncertainElementFusion__BeliefConstraintFusionAssignment_16 : ( ruleSBoolean ) ;
+    // InternalTrustDSL.g:2164:1: rule__UncertainElementFusion__BeliefConstraintFusionAssignment_16 : ( ruleSBoolean ) ;
     public final void rule__UncertainElementFusion__BeliefConstraintFusionAssignment_16() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:2114:1: ( ( ruleSBoolean ) )
-            // InternalTrustDSL.g:2115:2: ( ruleSBoolean )
+            // InternalTrustDSL.g:2168:1: ( ( ruleSBoolean ) )
+            // InternalTrustDSL.g:2169:2: ( ruleSBoolean )
             {
-            // InternalTrustDSL.g:2115:2: ( ruleSBoolean )
-            // InternalTrustDSL.g:2116:3: ruleSBoolean
+            // InternalTrustDSL.g:2169:2: ( ruleSBoolean )
+            // InternalTrustDSL.g:2170:3: ruleSBoolean
             {
              before(grammarAccess.getUncertainElementFusionAccess().getBeliefConstraintFusionSBooleanParserRuleCall_16_0()); 
             pushFollow(FOLLOW_2);
@@ -6132,26 +6293,26 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__UncertainElementFusion__BeliefConstraintFusionAssignment_16"
 
 
-    // $ANTLR start "rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_19"
-    // InternalTrustDSL.g:2125:1: rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_19 : ( ruleSBoolean ) ;
-    public final void rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_19() throws RecognitionException {
+    // $ANTLR start "rule__UncertainElementFusion__ConsensusCompromiseBFAssignment_18"
+    // InternalTrustDSL.g:2179:1: rule__UncertainElementFusion__ConsensusCompromiseBFAssignment_18 : ( ruleSBoolean ) ;
+    public final void rule__UncertainElementFusion__ConsensusCompromiseBFAssignment_18() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:2129:1: ( ( ruleSBoolean ) )
-            // InternalTrustDSL.g:2130:2: ( ruleSBoolean )
+            // InternalTrustDSL.g:2183:1: ( ( ruleSBoolean ) )
+            // InternalTrustDSL.g:2184:2: ( ruleSBoolean )
             {
-            // InternalTrustDSL.g:2130:2: ( ruleSBoolean )
-            // InternalTrustDSL.g:2131:3: ruleSBoolean
+            // InternalTrustDSL.g:2184:2: ( ruleSBoolean )
+            // InternalTrustDSL.g:2185:3: ruleSBoolean
             {
-             before(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFSBooleanParserRuleCall_19_0()); 
+             before(grammarAccess.getUncertainElementFusionAccess().getConsensusCompromiseBFSBooleanParserRuleCall_18_0()); 
             pushFollow(FOLLOW_2);
             ruleSBoolean();
 
             state._fsp--;
 
-             after(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFSBooleanParserRuleCall_19_0()); 
+             after(grammarAccess.getUncertainElementFusionAccess().getConsensusCompromiseBFSBooleanParserRuleCall_18_0()); 
 
             }
 
@@ -6170,29 +6331,29 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_19"
+    // $ANTLR end "rule__UncertainElementFusion__ConsensusCompromiseBFAssignment_18"
 
 
-    // $ANTLR start "rule__UncertainElementFusion__WeightedBFAssignment_22"
-    // InternalTrustDSL.g:2140:1: rule__UncertainElementFusion__WeightedBFAssignment_22 : ( ruleSBoolean ) ;
-    public final void rule__UncertainElementFusion__WeightedBFAssignment_22() throws RecognitionException {
+    // $ANTLR start "rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_21"
+    // InternalTrustDSL.g:2194:1: rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_21 : ( ruleSBoolean ) ;
+    public final void rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_21() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTrustDSL.g:2144:1: ( ( ruleSBoolean ) )
-            // InternalTrustDSL.g:2145:2: ( ruleSBoolean )
+            // InternalTrustDSL.g:2198:1: ( ( ruleSBoolean ) )
+            // InternalTrustDSL.g:2199:2: ( ruleSBoolean )
             {
-            // InternalTrustDSL.g:2145:2: ( ruleSBoolean )
-            // InternalTrustDSL.g:2146:3: ruleSBoolean
+            // InternalTrustDSL.g:2199:2: ( ruleSBoolean )
+            // InternalTrustDSL.g:2200:3: ruleSBoolean
             {
-             before(grammarAccess.getUncertainElementFusionAccess().getWeightedBFSBooleanParserRuleCall_22_0()); 
+             before(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFSBooleanParserRuleCall_21_0()); 
             pushFollow(FOLLOW_2);
             ruleSBoolean();
 
             state._fsp--;
 
-             after(grammarAccess.getUncertainElementFusionAccess().getWeightedBFSBooleanParserRuleCall_22_0()); 
+             after(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFSBooleanParserRuleCall_21_0()); 
 
             }
 
@@ -6211,7 +6372,48 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__UncertainElementFusion__WeightedBFAssignment_22"
+    // $ANTLR end "rule__UncertainElementFusion__EpistemicCumulativeBFAssignment_21"
+
+
+    // $ANTLR start "rule__UncertainElementFusion__WeightedBFAssignment_24"
+    // InternalTrustDSL.g:2209:1: rule__UncertainElementFusion__WeightedBFAssignment_24 : ( ruleSBoolean ) ;
+    public final void rule__UncertainElementFusion__WeightedBFAssignment_24() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalTrustDSL.g:2213:1: ( ( ruleSBoolean ) )
+            // InternalTrustDSL.g:2214:2: ( ruleSBoolean )
+            {
+            // InternalTrustDSL.g:2214:2: ( ruleSBoolean )
+            // InternalTrustDSL.g:2215:3: ruleSBoolean
+            {
+             before(grammarAccess.getUncertainElementFusionAccess().getWeightedBFSBooleanParserRuleCall_24_0()); 
+            pushFollow(FOLLOW_2);
+            ruleSBoolean();
+
+            state._fsp--;
+
+             after(grammarAccess.getUncertainElementFusionAccess().getWeightedBFSBooleanParserRuleCall_24_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__UncertainElementFusion__WeightedBFAssignment_24"
 
     // Delegated rules
 
@@ -6239,5 +6441,6 @@ public class InternalTrustDSLParser extends AbstractInternalContentAssistParser 
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000010000000L});
 
 }

@@ -365,7 +365,7 @@ public class TrustDSLPackageImpl extends EPackageImpl implements TrustDSLPackage
    * @generated
    */
   @Override
-  public EReference getUncertainElementFusion_EpistemicCumulativeBF()
+  public EReference getUncertainElementFusion_ConsensusCompromiseBF()
   {
     return (EReference)uncertainElementFusionEClass.getEStructuralFeatures().get(4);
   }
@@ -376,9 +376,20 @@ public class TrustDSLPackageImpl extends EPackageImpl implements TrustDSLPackage
    * @generated
    */
   @Override
-  public EReference getUncertainElementFusion_WeightedBF()
+  public EReference getUncertainElementFusion_EpistemicCumulativeBF()
   {
     return (EReference)uncertainElementFusionEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getUncertainElementFusion_WeightedBF()
+  {
+    return (EReference)uncertainElementFusionEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -438,6 +449,7 @@ public class TrustDSLPackageImpl extends EPackageImpl implements TrustDSLPackage
     createEReference(uncertainElementFusionEClass, UNCERTAIN_ELEMENT_FUSION__ALEATORY_CUMULATIVE_BF);
     createEReference(uncertainElementFusionEClass, UNCERTAIN_ELEMENT_FUSION__AVERAGEING_BF);
     createEReference(uncertainElementFusionEClass, UNCERTAIN_ELEMENT_FUSION__BELIEF_CONSTRAINT_FUSION);
+    createEReference(uncertainElementFusionEClass, UNCERTAIN_ELEMENT_FUSION__CONSENSUS_COMPROMISE_BF);
     createEReference(uncertainElementFusionEClass, UNCERTAIN_ELEMENT_FUSION__EPISTEMIC_CUMULATIVE_BF);
     createEReference(uncertainElementFusionEClass, UNCERTAIN_ELEMENT_FUSION__WEIGHTED_BF);
   }
@@ -503,6 +515,7 @@ public class TrustDSLPackageImpl extends EPackageImpl implements TrustDSLPackage
     initEReference(getUncertainElementFusion_AleatoryCumulativeBF(), this.getSBoolean(), null, "aleatoryCumulativeBF", null, 0, 1, UncertainElementFusion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUncertainElementFusion_AverageingBF(), this.getSBoolean(), null, "averageingBF", null, 0, 1, UncertainElementFusion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUncertainElementFusion_BeliefConstraintFusion(), this.getSBoolean(), null, "beliefConstraintFusion", null, 0, 1, UncertainElementFusion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUncertainElementFusion_ConsensusCompromiseBF(), this.getSBoolean(), null, "consensusCompromiseBF", null, 0, 1, UncertainElementFusion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUncertainElementFusion_EpistemicCumulativeBF(), this.getSBoolean(), null, "epistemicCumulativeBF", null, 0, 1, UncertainElementFusion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUncertainElementFusion_WeightedBF(), this.getSBoolean(), null, "weightedBF", null, 0, 1, UncertainElementFusion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

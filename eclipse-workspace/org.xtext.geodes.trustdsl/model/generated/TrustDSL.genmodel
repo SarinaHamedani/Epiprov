@@ -31,6 +31,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TrustDSL.ecore#//UncertainElementFusion/aleatoryCumulativeBF"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TrustDSL.ecore#//UncertainElementFusion/averageingBF"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TrustDSL.ecore#//UncertainElementFusion/beliefConstraintFusion"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TrustDSL.ecore#//UncertainElementFusion/consensusCompromiseBF"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TrustDSL.ecore#//UncertainElementFusion/epistemicCumulativeBF"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TrustDSL.ecore#//UncertainElementFusion/weightedBF"/>
     </genClasses>

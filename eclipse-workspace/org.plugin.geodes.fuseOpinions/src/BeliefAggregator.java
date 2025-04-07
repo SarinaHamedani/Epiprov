@@ -80,12 +80,14 @@ public class BeliefAggregator extends AbstractHandler {
                 	SBooleanFusion aleatoryCumulativeBF1 = SBooleanFusion.cumulativeBeliefFusion(opinions);
                 	SBooleanFusion averageingBF1 = SBooleanFusion.averageBeliefFusion(opinions);
                 	SBooleanFusion beliefConstraintFusion1 = SBooleanFusion.beliefConstraintFusion(opinions);
+                	SBooleanFusion consensusCompromiseBF1 = SBooleanFusion.consensusAndCompromiseFusion(opinions);
                 	SBooleanFusion epistemicCumulativeBF1 = SBooleanFusion.epistemicCumulativeBeliefFusion(opinions);
                 	SBooleanFusion weightedBF1 = SBooleanFusion.weightedBeliefFusion(opinions);
 
                     SBoolean aleatoryCumulativeBF = this.toSBoolean(aleatoryCumulativeBF1);
                     SBoolean averageingBF = this.toSBoolean(averageingBF1);
                     SBoolean beliefConstraintFusion = this.toSBoolean(beliefConstraintFusion1);
+                    SBoolean consensusCompromiseBF = this.toSBoolean(consensusCompromiseBF1);
                     SBoolean epistemicCumulativeBF = this.toSBoolean(epistemicCumulativeBF1);
                     SBoolean weightedBF = this.toSBoolean(weightedBF1);
                     // Create a new UncertainElementFusion instance and copy data from the original UncertainElement.
@@ -95,6 +97,7 @@ public class BeliefAggregator extends AbstractHandler {
                     uef.setAleatoryCumulativeBF(aleatoryCumulativeBF);
                     uef.setAverageingBF(averageingBF);
                     uef.setBeliefConstraintFusion(beliefConstraintFusion);
+                    uef.setConsensusCompromiseBF(consensusCompromiseBF);
                     uef.setEpistemicCumulativeBF(epistemicCumulativeBF);
                     uef.setWeightedBF(weightedBF);
                     
@@ -126,13 +129,10 @@ public class BeliefAggregator extends AbstractHandler {
     }
     
     public SBoolean toSBoolean(SBooleanFusion bf) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
-        // Create a new instance of the concrete implementation of SBoolean
     	Constructor<SBooleanImpl> cons = SBooleanImpl.class.getDeclaredConstructor();
-        // Set it accessible so that we can invoke it.
         cons.setAccessible(true);
-        // Create a new instance of SBooleanImpl.
-        SBoolean sBoolean = cons.newInstance();        
-        // Set the properties from SBooleanFusion to the SBooleanImpl instance
+        SBoolean sBoolean = cons.newInstance(); 
+        
         sBoolean.setBelief(bf.b);
         sBoolean.setDisbelief(bf.d);
         sBoolean.setUncertainty(bf.u);
@@ -147,7 +147,6 @@ public class BeliefAggregator extends AbstractHandler {
      * with the same base name and a ".formatted.trustdsl" extension.
      */
     private void writeFormattedModel(TrustModel model, IFile originalFile) throws IOException {
-        // Get the OS path of the original file.
         String originalPath = originalFile.getLocation().toOSString();
         String formattedPath;
         int dotIndex = originalPath.lastIndexOf(".");
@@ -157,7 +156,6 @@ public class BeliefAggregator extends AbstractHandler {
             formattedPath = originalPath + ".formatted.trustdsl";
         }
         
-        // Build the formatted content.
         StringBuilder sb = new StringBuilder();
         for (Element elem : model.getElements()) {
             if (elem instanceof Agent) {
@@ -171,9 +169,7 @@ public class BeliefAggregator extends AbstractHandler {
                 List<Belief> beliefs = uef.getBeliefs();
                 for (int i = 0; i < beliefs.size(); i++) {
                     Belief b = beliefs.get(i);
-                    // Assuming b.getOpinion() returns an SBoolean instance.
                     SBoolean opinion = (SBoolean) b.getOpinion();
-                    // Format the opinion as (belief, disbelief, uncertainty, baseRate)
                     String opinionStr = String.format("(%s, %s, %s, %s)",
                             opinion.getBelief(),
                             opinion.getDisbelief(),
@@ -189,13 +185,13 @@ public class BeliefAggregator extends AbstractHandler {
                 sb.append("    aleatoryCumulativeBF = ").append(uef.getAleatoryCumulativeBF()).append(System.lineSeparator());
                 sb.append("    averageingBF = ").append(uef.getAverageingBF()).append(System.lineSeparator());
                 sb.append("    beliefConstraintFusion = ").append(uef.getBeliefConstraintFusion()).append(System.lineSeparator());
+                sb.append("    consensusCompromiseBF = ").append(uef.getConsensusCompromiseBF()).append(System.lineSeparator());
                 sb.append("    epistemicCumulativeBF = ").append(uef.getEpistemicCumulativeBF()).append(System.lineSeparator());
                 sb.append("    weightedBF = ").append(uef.getWeightedBF()).append(System.lineSeparator());
                 sb.append("}").append(System.lineSeparator());
             }
         }
         
-        // Write the formatted content to the file using Files.write.
         Files.write(Paths.get(formattedPath), sb.toString().getBytes(StandardCharsets.UTF_8),
                 StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
         System.out.println("Formatted model written to file: " + formattedPath);

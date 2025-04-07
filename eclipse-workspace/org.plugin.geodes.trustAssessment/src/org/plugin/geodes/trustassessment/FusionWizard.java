@@ -89,20 +89,24 @@ public class FusionWizard extends Wizard {
                 String beliefName = agentName + "_" + param;
                 String beliefDeclaration = "Belief " + beliefName + " (" + agentName + ", (" 
                         + opinion[0] + ", " + opinion[1] + ", " + opinion[2] + ", " + opinion[3] + "))";
+
                 Pattern uePattern = Pattern.compile("UncertainElement\\s+" + Pattern.quote(param) + "\\s*\\{", Pattern.DOTALL);
                 Matcher ueMatcher = uePattern.matcher(trustdslContent);
+
                 if (ueMatcher.find()) {
                     int ueStart = ueMatcher.start();
                     int beliefsIndex = trustdslContent.indexOf("beliefs {", ueStart);
                     if (beliefsIndex != -1) {
-                        int blockEndIndex = trustdslContent.indexOf("}", beliefsIndex);
+                        int blockEndIndex = trustdslContent.indexOf("    }", beliefsIndex);
                         if (blockEndIndex != -1) {
                             String beliefsBlock = trustdslContent.substring(beliefsIndex, blockEndIndex);
                             String insertion;
                             if (beliefsBlock.contains("Belief")) {
-                                insertion = "\n        , " + beliefDeclaration + "\n";
+                                // Add belief with a comma after it
+                                insertion = "        ,\n" + "        " + beliefDeclaration + "\n";
                             } else {
-                                insertion = "\n        " + beliefDeclaration + "\n";
+                                // First belief (no comma)
+                                insertion = "        " + beliefDeclaration + "\n";
                             }
                             trustdslContent = trustdslContent.substring(0, blockEndIndex)
                                     + insertion
@@ -110,6 +114,7 @@ public class FusionWizard extends Wizard {
                         }
                     }
                 } else {
+                    // Create a new UncertainElement block if not found
                     String newBlock = "\nUncertainElement " + param + " {\n" +
                             "    beliefs {\n" +
                             "        " + beliefDeclaration + "\n" +
@@ -118,7 +123,6 @@ public class FusionWizard extends Wizard {
                     trustdslContent += newBlock;
                 }
             }
-
 
             Files.write(Paths.get(trustdslFilePath), trustdslContent.getBytes("UTF-8"), StandardOpenOption.WRITE);
         } catch (IOException e) {

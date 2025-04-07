@@ -14,6 +14,7 @@
             id="org.plugin.geodes.fuseOpinions.commands.sampleCommand">
       </command>
    </extension>
+   
    <extension
          point="org.eclipse.ui.handlers">
       <handler
@@ -21,6 +22,7 @@
             commandId="org.plugin.geodes.fuseOpinions.commands.sampleCommand">
       </handler>
    </extension>
+   
    <extension
          point="org.eclipse.ui.bindings">
       <key
@@ -30,26 +32,28 @@
             sequence="M1+6">
       </key>
    </extension>
+   
    <extension point="org.eclipse.ui.menus">
-	  <menuContribution 
-	  		allPopups="false"
-	  		locationURI="popup:org.eclipse.ui.navigator.ProjectExplorer#PopupMenu?after=additions">
-	    <command
-	      commandId="org.plugin.geodes.fuseOpinions.commands.aggregateOpinionsCommand"
-	      label="Aggregate Opinions"
-	      style="push">
-	      <visibleWhen>
-	        <with variable="selection">
-	          <iterate ifEmpty="false">
-	            <adapt type="org.eclipse.core.resources.IFile">
-	              <test property="org.eclipse.core.resources.extension" value="trustdsl"/>
-	            </adapt>
-	          </iterate>
-	        </with>
-	      </visibleWhen>
-	    </command>
-	  </menuContribution>
-	</extension>
+      <menuContribution 
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.navigator.ProjectExplorer#PopupMenu?after=additions">
+         <command
+            commandId="org.plugin.geodes.fuseOpinions.commands.aggregateOpinionsCommand"
+            label="Aggregate Opinions"
+            style="push"
+            icon="icons/balance.png">
+            <visibleWhen>
+               <with variable="selection">
+                  <iterate ifEmpty="false">
+                     <adapt type="org.eclipse.core.resources.IFile">
+                        <test property="org.eclipse.core.resources.extension" value="trustdsl"/>
+                     </adapt>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
    
    <extension
          point="org.eclipse.ui.commands">

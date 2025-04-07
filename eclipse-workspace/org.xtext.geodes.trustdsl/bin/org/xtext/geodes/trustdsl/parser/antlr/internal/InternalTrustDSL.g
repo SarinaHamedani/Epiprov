@@ -675,20 +675,43 @@ ruleUncertainElementFusion returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_18='epistemicCumulativeBF'
+		otherlv_18='consensusCompromiseBF'
 		{
-			newLeafNode(otherlv_18, grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFKeyword_17());
-		}
-		otherlv_19='='
-		{
-			newLeafNode(otherlv_19, grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_18());
+			newLeafNode(otherlv_18, grammarAccess.getUncertainElementFusionAccess().getConsensusCompromiseBFKeyword_17());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFSBooleanParserRuleCall_19_0());
+					newCompositeNode(grammarAccess.getUncertainElementFusionAccess().getConsensusCompromiseBFSBooleanParserRuleCall_18_0());
 				}
-				lv_epistemicCumulativeBF_20_0=ruleSBoolean
+				lv_consensusCompromiseBF_19_0=ruleSBoolean
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getUncertainElementFusionRule());
+					}
+					set(
+						$current,
+						"consensusCompromiseBF",
+						lv_consensusCompromiseBF_19_0,
+						"org.xtext.geodes.trustdsl.TrustDSL.SBoolean");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_20='epistemicCumulativeBF'
+		{
+			newLeafNode(otherlv_20, grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFKeyword_19());
+		}
+		otherlv_21='='
+		{
+			newLeafNode(otherlv_21, grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_20());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getUncertainElementFusionAccess().getEpistemicCumulativeBFSBooleanParserRuleCall_21_0());
+				}
+				lv_epistemicCumulativeBF_22_0=ruleSBoolean
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getUncertainElementFusionRule());
@@ -696,26 +719,26 @@ ruleUncertainElementFusion returns [EObject current=null]
 					set(
 						$current,
 						"epistemicCumulativeBF",
-						lv_epistemicCumulativeBF_20_0,
+						lv_epistemicCumulativeBF_22_0,
 						"org.xtext.geodes.trustdsl.TrustDSL.SBoolean");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_21='weightedBF'
+		otherlv_23='weightedBF'
 		{
-			newLeafNode(otherlv_21, grammarAccess.getUncertainElementFusionAccess().getWeightedBFKeyword_20());
+			newLeafNode(otherlv_23, grammarAccess.getUncertainElementFusionAccess().getWeightedBFKeyword_22());
 		}
-		otherlv_22='='
+		otherlv_24='='
 		{
-			newLeafNode(otherlv_22, grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_21());
+			newLeafNode(otherlv_24, grammarAccess.getUncertainElementFusionAccess().getEqualsSignKeyword_23());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getUncertainElementFusionAccess().getWeightedBFSBooleanParserRuleCall_22_0());
+					newCompositeNode(grammarAccess.getUncertainElementFusionAccess().getWeightedBFSBooleanParserRuleCall_24_0());
 				}
-				lv_weightedBF_23_0=ruleSBoolean
+				lv_weightedBF_25_0=ruleSBoolean
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getUncertainElementFusionRule());
@@ -723,15 +746,15 @@ ruleUncertainElementFusion returns [EObject current=null]
 					set(
 						$current,
 						"weightedBF",
-						lv_weightedBF_23_0,
+						lv_weightedBF_25_0,
 						"org.xtext.geodes.trustdsl.TrustDSL.SBoolean");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_24='}'
+		otherlv_26='}'
 		{
-			newLeafNode(otherlv_24, grammarAccess.getUncertainElementFusionAccess().getRightCurlyBracketKeyword_23());
+			newLeafNode(otherlv_26, grammarAccess.getUncertainElementFusionAccess().getRightCurlyBracketKeyword_25());
 		}
 	)
 ;

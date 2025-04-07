@@ -165,6 +165,7 @@ public class TrustDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *         aleatoryCumulativeBF=SBoolean 
 	 *         averageingBF=SBoolean 
 	 *         beliefConstraintFusion=SBoolean 
+	 *         consensusCompromiseBF=SBoolean 
 	 *         epistemicCumulativeBF=SBoolean 
 	 *         weightedBF=SBoolean
 	 *     )

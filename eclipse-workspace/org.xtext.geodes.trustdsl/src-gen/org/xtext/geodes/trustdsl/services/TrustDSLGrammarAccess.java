@@ -309,15 +309,18 @@ public class TrustDSLGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Keyword cEqualsSignKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		private final Assignment cBeliefConstraintFusionAssignment_16 = (Assignment)cGroup.eContents().get(16);
 		private final RuleCall cBeliefConstraintFusionSBooleanParserRuleCall_16_0 = (RuleCall)cBeliefConstraintFusionAssignment_16.eContents().get(0);
-		private final Keyword cEpistemicCumulativeBFKeyword_17 = (Keyword)cGroup.eContents().get(17);
-		private final Keyword cEqualsSignKeyword_18 = (Keyword)cGroup.eContents().get(18);
-		private final Assignment cEpistemicCumulativeBFAssignment_19 = (Assignment)cGroup.eContents().get(19);
-		private final RuleCall cEpistemicCumulativeBFSBooleanParserRuleCall_19_0 = (RuleCall)cEpistemicCumulativeBFAssignment_19.eContents().get(0);
-		private final Keyword cWeightedBFKeyword_20 = (Keyword)cGroup.eContents().get(20);
-		private final Keyword cEqualsSignKeyword_21 = (Keyword)cGroup.eContents().get(21);
-		private final Assignment cWeightedBFAssignment_22 = (Assignment)cGroup.eContents().get(22);
-		private final RuleCall cWeightedBFSBooleanParserRuleCall_22_0 = (RuleCall)cWeightedBFAssignment_22.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_23 = (Keyword)cGroup.eContents().get(23);
+		private final Keyword cConsensusCompromiseBFKeyword_17 = (Keyword)cGroup.eContents().get(17);
+		private final Assignment cConsensusCompromiseBFAssignment_18 = (Assignment)cGroup.eContents().get(18);
+		private final RuleCall cConsensusCompromiseBFSBooleanParserRuleCall_18_0 = (RuleCall)cConsensusCompromiseBFAssignment_18.eContents().get(0);
+		private final Keyword cEpistemicCumulativeBFKeyword_19 = (Keyword)cGroup.eContents().get(19);
+		private final Keyword cEqualsSignKeyword_20 = (Keyword)cGroup.eContents().get(20);
+		private final Assignment cEpistemicCumulativeBFAssignment_21 = (Assignment)cGroup.eContents().get(21);
+		private final RuleCall cEpistemicCumulativeBFSBooleanParserRuleCall_21_0 = (RuleCall)cEpistemicCumulativeBFAssignment_21.eContents().get(0);
+		private final Keyword cWeightedBFKeyword_22 = (Keyword)cGroup.eContents().get(22);
+		private final Keyword cEqualsSignKeyword_23 = (Keyword)cGroup.eContents().get(23);
+		private final Assignment cWeightedBFAssignment_24 = (Assignment)cGroup.eContents().get(24);
+		private final RuleCall cWeightedBFSBooleanParserRuleCall_24_0 = (RuleCall)cWeightedBFAssignment_24.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_25 = (Keyword)cGroup.eContents().get(25);
 		
 		//UncertainElementFusion:
 		//    'UncertainElementFusion' name=ID
@@ -326,22 +329,22 @@ public class TrustDSLGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//        'aleatoryCumulativeBF' '=' aleatoryCumulativeBF=SBoolean
 		//        'averageingBF' '=' averageingBF=SBoolean
 		//        'beliefConstraintFusion' '=' beliefConstraintFusion=SBoolean
-		////        'consensusCompromiseBF' consensusCompromiseBF=SBoolean
+		//        'consensusCompromiseBF' consensusCompromiseBF=SBoolean
 		//        'epistemicCumulativeBF' '=' epistemicCumulativeBF=SBoolean
 		//        'weightedBF' '=' weightedBF=SBoolean
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//    'UncertainElementFusion' name=ID
-		//    '{'
-		//        'beliefs' '{' beliefs+=Belief (',' beliefs+=Belief)* '}'
-		//        'aleatoryCumulativeBF' '=' aleatoryCumulativeBF=SBoolean
-		//        'averageingBF' '=' averageingBF=SBoolean
-		//        'beliefConstraintFusion' '=' beliefConstraintFusion=SBoolean
-		////        'consensusCompromiseBF' consensusCompromiseBF=SBoolean
-		//        'epistemicCumulativeBF' '=' epistemicCumulativeBF=SBoolean
-		//        'weightedBF' '=' weightedBF=SBoolean
-		//    '}'
+		//'UncertainElementFusion' name=ID
+		//'{'
+		//    'beliefs' '{' beliefs+=Belief (',' beliefs+=Belief)* '}'
+		//    'aleatoryCumulativeBF' '=' aleatoryCumulativeBF=SBoolean
+		//    'averageingBF' '=' averageingBF=SBoolean
+		//    'beliefConstraintFusion' '=' beliefConstraintFusion=SBoolean
+		//    'consensusCompromiseBF' consensusCompromiseBF=SBoolean
+		//    'epistemicCumulativeBF' '=' epistemicCumulativeBF=SBoolean
+		//    'weightedBF' '=' weightedBF=SBoolean
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'UncertainElementFusion'
@@ -419,33 +422,41 @@ public class TrustDSLGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//SBoolean
 		public RuleCall getBeliefConstraintFusionSBooleanParserRuleCall_16_0() { return cBeliefConstraintFusionSBooleanParserRuleCall_16_0; }
 		
-		////        'consensusCompromiseBF' consensusCompromiseBF=SBoolean
-		//        'epistemicCumulativeBF'
-		public Keyword getEpistemicCumulativeBFKeyword_17() { return cEpistemicCumulativeBFKeyword_17; }
+		//'consensusCompromiseBF'
+		public Keyword getConsensusCompromiseBFKeyword_17() { return cConsensusCompromiseBFKeyword_17; }
+		
+		//consensusCompromiseBF=SBoolean
+		public Assignment getConsensusCompromiseBFAssignment_18() { return cConsensusCompromiseBFAssignment_18; }
+		
+		//SBoolean
+		public RuleCall getConsensusCompromiseBFSBooleanParserRuleCall_18_0() { return cConsensusCompromiseBFSBooleanParserRuleCall_18_0; }
+		
+		//'epistemicCumulativeBF'
+		public Keyword getEpistemicCumulativeBFKeyword_19() { return cEpistemicCumulativeBFKeyword_19; }
 		
 		//'='
-		public Keyword getEqualsSignKeyword_18() { return cEqualsSignKeyword_18; }
+		public Keyword getEqualsSignKeyword_20() { return cEqualsSignKeyword_20; }
 		
 		//epistemicCumulativeBF=SBoolean
-		public Assignment getEpistemicCumulativeBFAssignment_19() { return cEpistemicCumulativeBFAssignment_19; }
+		public Assignment getEpistemicCumulativeBFAssignment_21() { return cEpistemicCumulativeBFAssignment_21; }
 		
 		//SBoolean
-		public RuleCall getEpistemicCumulativeBFSBooleanParserRuleCall_19_0() { return cEpistemicCumulativeBFSBooleanParserRuleCall_19_0; }
+		public RuleCall getEpistemicCumulativeBFSBooleanParserRuleCall_21_0() { return cEpistemicCumulativeBFSBooleanParserRuleCall_21_0; }
 		
 		//'weightedBF'
-		public Keyword getWeightedBFKeyword_20() { return cWeightedBFKeyword_20; }
+		public Keyword getWeightedBFKeyword_22() { return cWeightedBFKeyword_22; }
 		
 		//'='
-		public Keyword getEqualsSignKeyword_21() { return cEqualsSignKeyword_21; }
+		public Keyword getEqualsSignKeyword_23() { return cEqualsSignKeyword_23; }
 		
 		//weightedBF=SBoolean
-		public Assignment getWeightedBFAssignment_22() { return cWeightedBFAssignment_22; }
+		public Assignment getWeightedBFAssignment_24() { return cWeightedBFAssignment_24; }
 		
 		//SBoolean
-		public RuleCall getWeightedBFSBooleanParserRuleCall_22_0() { return cWeightedBFSBooleanParserRuleCall_22_0; }
+		public RuleCall getWeightedBFSBooleanParserRuleCall_24_0() { return cWeightedBFSBooleanParserRuleCall_24_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_23() { return cRightCurlyBracketKeyword_23; }
+		public Keyword getRightCurlyBracketKeyword_25() { return cRightCurlyBracketKeyword_25; }
 	}
 	public class REALElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.geodes.trustdsl.TrustDSL.REAL");
@@ -598,7 +609,7 @@ public class TrustDSLGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//        'aleatoryCumulativeBF' '=' aleatoryCumulativeBF=SBoolean
 	//        'averageingBF' '=' averageingBF=SBoolean
 	//        'beliefConstraintFusion' '=' beliefConstraintFusion=SBoolean
-	////        'consensusCompromiseBF' consensusCompromiseBF=SBoolean
+	//        'consensusCompromiseBF' consensusCompromiseBF=SBoolean
 	//        'epistemicCumulativeBF' '=' epistemicCumulativeBF=SBoolean
 	//        'weightedBF' '=' weightedBF=SBoolean
 	//    '}';
