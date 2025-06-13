@@ -1,0 +1,28 @@
+Agent Julia
+Agent Bart
+
+UncertainElement beta_ii {
+    beliefs {
+        Belief Bart_beta_ii (0.6368715083798884, 0.2569832402234637, 0.10614525139664804, 0.5),
+        Belief Julia_beta_ii (0.137, 0.75, 0.113, 0.5)
+    }
+    aleatoryCumulativeBF = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@3bc14409 (belief: 0.0, disbelief: 0.106876, uncertainty: 0.893124, baseRate: 0.5)
+    averageingBF = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@213ce8e2 (belief: 0.394754, disbelief: 0.495781, uncertainty: 0.109465, baseRate: 0.5)
+    beliefConstraintFusion = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@5e4c6dd5 (belief: 0.356694, disbelief: 0.618684, uncertainty: 0.024622, baseRate: 0.5)
+    consensusCompromiseBF = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@686315d9 (belief: 0.231448, disbelief: 0.344484, uncertainty: 0.424068, baseRate: 0.5)
+    epistemicCumulativeBF = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@5bb9b328 (belief: 0.0, disbelief: 0.106876, uncertainty: 0.893124, baseRate: 0.5)
+    weightedBF = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@6910f913 (belief: 0.395715, disbelief: 0.494833, uncertainty: 0.109452, baseRate: 0.5)
+}
+
+UncertainElement gamma_p {
+    beliefs {
+        Belief Julia_gamma_p (0.718, 0.125, 0.157, 0.5),
+        Belief Bart_gamma_p (0.0, 0.0, 1.0, 0.5)
+    }
+    aleatoryCumulativeBF = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@2ecf57c9 (belief: 0.593, disbelief: 0.0, uncertainty: 0.407, baseRate: 0.5)
+    averageingBF = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@6098bc8d (belief: 0.62057, disbelief: 0.108038, uncertainty: 0.271392, baseRate: 0.5)
+    beliefConstraintFusion = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@6502198d (belief: 0.718, disbelief: 0.125, uncertainty: 0.157, baseRate: 0.5)
+    consensusCompromiseBF = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@6a419f5f (belief: 0.718, disbelief: 0.125, uncertainty: 0.157, baseRate: 0.5)
+    epistemicCumulativeBF = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@3e64ecc1 (belief: 0.593, disbelief: 0.0, uncertainty: 0.407, baseRate: 0.5)
+    weightedBF = org.xtext.geodes.trustdsl.trustDSL.impl.SBooleanImpl@1b3d5354 (belief: 0.718, disbelief: 0.125, uncertainty: 0.157, baseRate: 0.5)
+}

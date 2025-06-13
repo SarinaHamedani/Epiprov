@@ -269,12 +269,12 @@ public class FusionWizard extends Wizard {
     class ParameterAssignmentPage extends WizardPage {
         private Table table;
         private Map<String, double[]> parameterOpinions = new HashMap<>();
+        private boolean useGuidedMode = false;
 
         protected ParameterAssignmentPage(String pageName) {
             super(pageName);
             setTitle("Assign Beliefs to Parameters");
-            setDescription("For each parameter, assign a tuple (belief, disbelief, uncertainty, a-priori, scanned value). " +
-                    "Note: belief + disbelief + uncertainty must equal 1.");
+            setDescription("Select mode and assign (b, d, u, a) values for each parameter.");
         }
 
         @Override
@@ -282,8 +282,20 @@ public class FusionWizard extends Wizard {
             Composite container = new Composite(parent, SWT.NONE);
             container.setLayout(new GridLayout(2, false));
 
+            Label modeLabel = new Label(container, SWT.NONE);
+            modeLabel.setText("Opinion Assignment Mode:");
+            Combo modeCombo = new Combo(container, SWT.DROP_DOWN | SWT.READ_ONLY);
+            modeCombo.setItems(new String[] {"Manual", "Guided"});
+            modeCombo.select(0);
+            modeCombo.addSelectionListener(new SelectionAdapter() {
+                @Override
+                public void widgetSelected(SelectionEvent e) {
+                    useGuidedMode = modeCombo.getText().equals("Guided");
+                }
+            });
+
             Label instructions = new Label(container, SWT.WRAP);
-            instructions.setText("Select a parameter (from the previous page) and click 'Add Assignment' to set its opinion.");
+            instructions.setText("Select a parameter and assign opinions using your selected mode.");
             instructions.setLayoutData(new GridData(SWT.FILL, SWT.TOP, true, false, 2, 1));
 
             table = new Table(container, SWT.BORDER | SWT.FULL_SELECTION);
@@ -295,30 +307,28 @@ public class FusionWizard extends Wizard {
             colParam.setText("Parameter");
             colParam.setWidth(150);
             TableColumn colOpinion = new TableColumn(table, SWT.NONE);
-            colOpinion.setText("Opinion (belief, disbelief, uncertainty, a-priori, scanned)");
+            colOpinion.setText("Opinion (b, d, u, a, scanned)");
             colOpinion.setWidth(350);
 
             Button addButton = new Button(container, SWT.PUSH);
             addButton.setText("Add Assignment");
             addButton.addListener(SWT.Selection, event -> {
-                // Pass the parameter list and the a-priori mapping from the ProvnFileSelectionPage.
-                ParameterAssignmentDialog dialog = new ParameterAssignmentDialog(getShell(), getParameterList(), provnPage.getParameterAPrioriMap());
+                String[] parameters = getParameterList().toArray(new String[0]);
+                GuidedOpinionDialog dialog = new GuidedOpinionDialog(getShell(), parameters, provnPage.getParameterAPrioriMap(), useGuidedMode);
                 if (dialog.open() == Dialog.OK) {
                     String param = dialog.getSelectedParameter();
                     double[] values = dialog.getOpinionValues();
                     if (values != null) {
                         double sum = values[0] + values[1] + values[2];
                         if (Math.abs(sum - 1.0) > 0.0001) {
-                            MessageDialog.openError(getShell(), "Validation Error", 
-                                    "For parameter " + param + ", belief + disbelief + uncertainty must equal 1.");
+                            MessageDialog.openError(getShell(), "Validation Error", "b + d + u must equal 1");
                         } else if (parameterOpinions.containsKey(param)) {
-                            MessageDialog.openError(getShell(), "Validation Error", 
-                                    "Opinion for parameter " + param + " has already been assigned.");
+                            MessageDialog.openError(getShell(), "Already Assigned", "Opinion for parameter already exists.");
                         } else {
                             parameterOpinions.put(param, values);
                             TableItem item = new TableItem(table, SWT.NONE);
-                            item.setText(new String[] { param, 
-                                    String.format("(%.3f, %.3f, %.3f, %.3f, %.3f)", values[0], values[1], values[2], values[3], values[4]) });
+                            item.setText(new String[] { param,
+                                String.format("(%.3f, %.3f, %.3f, %.3f, %.3f)", values[0], values[1], values[2], values[3], values[4]) });
                         }
                     }
                 }
@@ -328,9 +338,7 @@ public class FusionWizard extends Wizard {
         }
 
         private List<String> getParameterList() {
-            if (provnPage != null) {
-                return provnPage.getParameterList();
-            }
+            if (provnPage != null) return provnPage.getParameterList();
             return Collections.emptyList();
         }
 
@@ -338,7 +346,152 @@ public class FusionWizard extends Wizard {
             return parameterOpinions;
         }
     }
+    
+    class GuidedOpinionDialog extends Dialog {
+        private Combo parameterCombo;
+        private Text[] questionFields;
+        private Text aPrioriText, scannedValueText;
+        private String selectedParameter;
+        private double[] opinionValues;
+        private List<String> parameterList;
+        private Map<String, Double> parameterAPrioriMap;
+        private boolean guidedMode;
 
+        protected GuidedOpinionDialog(Shell parentShell, String[] parameterList, Map<String, Double> parameterAPrioriMap, boolean guidedMode) {
+            super(parentShell);
+            this.parameterList = List.of(parameterList);
+            this.parameterAPrioriMap = parameterAPrioriMap;
+            this.guidedMode = guidedMode;
+        }
+
+        @Override
+        protected Control createDialogArea(Composite parent) {
+            Composite container = (Composite) super.createDialogArea(parent);
+            container.setLayout(new GridLayout(2, false));
+
+            Label paramLabel = new Label(container, SWT.NONE);
+            paramLabel.setText("Parameter:");
+            parameterCombo = new Combo(container, SWT.DROP_DOWN | SWT.READ_ONLY);
+            parameterCombo.setItems(parameterList.toArray(new String[0]));
+            parameterCombo.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+            parameterCombo.addSelectionListener(new SelectionAdapter() {
+                @Override
+                public void widgetSelected(SelectionEvent e) {
+                    String selected = parameterCombo.getText();
+                    scannedValueText.setText(String.valueOf(parameterAPrioriMap.getOrDefault(selected, 0.0)));
+                    aPrioriText.setText("0.5");
+                }
+            });
+
+            if (guidedMode) {
+                String[] questions = new String[] {
+                    "How much evidence supports this parameter value? (0-1):",
+                    "Do other sources or experts agree with this value? (0-1):",
+                    "How reliable is the data used to derive this parameter? (0-1):",
+                    "How direct is the derivation method? (0-1):",
+                    "How confident are you in your domain knowledge for evaluating this parameter? (0-1):",
+                    "How credible is the agent/source? (0-1):"
+                };
+                questionFields = new Text[questions.length];
+                for (int i = 0; i < questions.length; i++) {
+                    new Label(container, SWT.NONE).setText(questions[i]);
+                    questionFields[i] = new Text(container, SWT.BORDER);
+                    questionFields[i].setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+                }
+            } else {
+                new Label(container, SWT.NONE).setText("Belief:");
+                questionFields = new Text[3];
+                questionFields[0] = new Text(container, SWT.BORDER);
+                new Label(container, SWT.NONE).setText("Disbelief:");
+                questionFields[1] = new Text(container, SWT.BORDER);
+                new Label(container, SWT.NONE).setText("Uncertainty:");
+                questionFields[2] = new Text(container, SWT.BORDER);
+            }
+
+            new Label(container, SWT.NONE).setText("A-priori:");
+            aPrioriText = new Text(container, SWT.BORDER);
+            aPrioriText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+
+            new Label(container, SWT.NONE).setText("Scanned Value:");
+            scannedValueText = new Text(container, SWT.BORDER);
+            scannedValueText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+            scannedValueText.setEditable(false);
+
+            return container;
+        }
+
+        @Override
+        protected void okPressed() {
+            selectedParameter = parameterCombo.getText();
+            try {
+                double aPriori = Double.parseDouble(aPrioriText.getText());
+                double scanned = Double.parseDouble(scannedValueText.getText());
+                double b, d, u;
+
+                if (guidedMode) {
+                    double q1 = Double.parseDouble(questionFields[0].getText()); // Evidence Strength
+                    double q2 = Double.parseDouble(questionFields[1].getText()); // Evidence Consistency
+                    double q3 = Double.parseDouble(questionFields[2].getText()); // Data Quality
+                    double q4 = Double.parseDouble(questionFields[3].getText()); // Method Directness
+                    double q5 = Double.parseDouble(questionFields[4].getText()); // Domain Familiarity
+                    double q6 = Double.parseDouble(questionFields[5].getText()); // Source Credibility
+
+                    double rawB = 0.3 * q1 + 0.2 * q3 + 0.2 * q4 + 0.2 * q6;
+                    double rawD = 0.3 * (1 - q2) + 0.2 * (1 - q6);
+                    double rawU = 0.25 * (1 - q5) + 0.15 * (1 - q1);
+                    double sum = rawB + rawD + rawU;
+
+                    // Normalize
+                    b = rawB / sum;
+                    d = rawD / sum;
+                    u = rawU / sum;
+
+                    b = roundTo3(b);
+                    d = roundTo3(d);
+                    u = roundTo3(u);
+
+                    // Adjust last value to ensure sum = 1
+                    double correction = 1.0 - (b + d + u);
+                    if (Math.abs(correction) >= 0.001) {
+                        u = roundTo3(u + correction); 
+                    }
+
+                } else {
+                    b = Double.parseDouble(questionFields[0].getText());
+                    d = Double.parseDouble(questionFields[1].getText());
+                    u = Double.parseDouble(questionFields[2].getText());
+
+                    b = roundTo3(b);
+                    d = roundTo3(d);
+                    u = roundTo3(u);
+
+                    double correction = 1.0 - (b + d + u);
+                    if (Math.abs(correction) >= 0.001) {
+                        u = roundTo3(u + correction);  // Adjust uncertainty
+                    }
+                }
+
+                opinionValues = new double[]{b, d, u, aPriori, scanned};
+            } catch (NumberFormatException e) {
+                MessageDialog.openError(getShell(), "Input Error", "Please enter valid numeric inputs.");
+                return;
+            }
+            super.okPressed();
+        }
+
+        private double roundTo3(double value) {
+            return new java.math.BigDecimal(value).setScale(3, java.math.RoundingMode.HALF_UP).doubleValue();
+        }
+
+
+        public String getSelectedParameter() {
+            return selectedParameter;
+        }
+
+        public double[] getOpinionValues() {
+            return opinionValues;
+        }
+    }
     // --- Parameter Assignment Dialog ---
     class ParameterAssignmentDialog extends Dialog {
         private Combo parameterCombo;
