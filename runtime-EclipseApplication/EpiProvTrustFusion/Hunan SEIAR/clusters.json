@@ -1,0 +1,4 @@
+{
+	"curve_fitting": ["beta_ii", "beta_ij", "beta_ji", "beta_jj"],
+	"data_analysis": ["omega"]
+}

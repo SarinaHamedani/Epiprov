@@ -6989,3 +6989,63 @@ org.eclipse.core.runtime.OperationCanceledException
 		at org.eclipse.jdt.internal.ui.util.SelectionUtil.logException(SelectionUtil.java:150)
 		at org.eclipse.jdt.internal.ui.text.java.hover.AbstractJavaEditorTextHover.getJavaElementsAt(AbstractJavaEditorTextHover.java:124)
 		... 10 more
+
+!ENTRY de.yatta.platform.marketplace.licensing.client 2 0 2025-04-27 21:20:35.227
+!MESSAGE Could not receive a valid response for solution feature de.yatta.feature.corediagrams from the license server.
+!STACK 0
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.implRead(Socket.java:1116)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1103)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1462)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1068)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at de.yatta.eclipse.launcher.communication.utils.HttpRequestContext$RequestTemplateExecutor.doReceiveResponse(HttpRequestContext.java:689)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.apache.http.client.fluent.Request.internalExecute(Request.java:173)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:262)
+	at de.yatta.eclipse.launcher.communication.utils.RequestTemplate.execute(RequestTemplate.java:201)
+	at de.yatta.platform.marketplace.licensing.client.LicensingClient$1.run(LicensingClient.java:503)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-05-25 21:55:50.098 -----------------------------------------------
+eclipse.buildId=4.34.0.20241128-0756
+java.version=23.0.2
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.modeling.product -keyring /Users/sarina/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.modeling.product -keyring /Users/sarina/.eclipse_keyring
+
+!ENTRY org.eclipse.lemminx.uber-jar 4 0 2025-05-25 21:55:54.102
+!MESSAGE bundle org.eclipse.lemminx.uber-jar:0.29.0 (1302) Component descriptor entry 'OSGI-INF/*.xml' not found
+
+!ENTRY org.eclipse.debug.core 4 125 2025-05-25 21:56:14.840
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.ensureOpen(BufferedInputStream.java:206)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:411)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1575)

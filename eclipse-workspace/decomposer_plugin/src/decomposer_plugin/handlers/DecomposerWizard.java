@@ -109,150 +109,168 @@ class DecomposerWizard extends Wizard {
      * It also looks for a wasAttributedTo relation to pull in an associated agent.
      */
     public static List<String> findEntityDefinition(String entityName, List<String> provnLines) {
-        List<String> entityDefinitions = new ArrayList<>();
-        String associatedAgent = null;
-        
-        // Pattern for an entity definition, e.g. entity(prov:XYZ,...
-        Pattern entityPattern = Pattern.compile("\\bentity\\([^:]+:" + Pattern.quote(entityName));
-        // Pattern for wasAttributedTo: e.g. wasAttributedTo(prov:XYZ, prov:SomeAgent)
-        Pattern wasAttributedToPattern = Pattern.compile("\\bwasAttributedTo\\([^:]+:" + Pattern.quote(entityName) + ",\\s*([^,\\)]+)");
-        
-        for (String line : provnLines) {
-            Matcher m = entityPattern.matcher(line);
-            if (m.find()) {
-                entityDefinitions.add(line);
-            } else {
-                Matcher attrMatcher = wasAttributedToPattern.matcher(line);
-                if (attrMatcher.find()) {
-                    entityDefinitions.add(line);
-                    associatedAgent = stripNamespace(attrMatcher.group(1));
-                }
-            }
-        }
-        
-        if (associatedAgent != null) {
-            Pattern agentPattern = Pattern.compile("\\bagent\\([^:]+:" + Pattern.quote(associatedAgent));
-            for (String line : provnLines) {
-                Matcher agentMatcher = agentPattern.matcher(line);
-                if (agentMatcher.find()) {
-                    entityDefinitions.add(line);
-                    break;
-                }
-            }
-        }
-        
-        return entityDefinitions;
-    }
+	    List<String> entityDefinitions = new ArrayList<>();
+	    String associatedAgent = null;
+	    Set<String> associatedActivities = new HashSet<>();
+	
+	    // Pattern for entity definition
+	    Pattern entityPattern = Pattern.compile("\\bentity\\([^:]+:" + Pattern.quote(entityName));
+	    
+	    // Pattern for wasAttributedTo(entity, agent)
+	    Pattern wasAttributedToPattern = Pattern.compile("\\bwasAttributedTo\\([^:]+:" + Pattern.quote(entityName) + ",\\s*([^,\\)]+)");
+	
+	    // Pattern for wasGeneratedBy(entity, activity)
+	    Pattern wasGeneratedByPattern = Pattern.compile("\\bwasGeneratedBy\\([^:]+:" + Pattern.quote(entityName) + ",\\s*([^,\\)]+)");
+	
+	    // Pattern for used(activity, entity)
+	    Pattern usedPattern = Pattern.compile("\\bused\\([^:]+:([^,\\)]+),\\s*[^:]+:" + Pattern.quote(entityName) + "\\)");
+	
+	    for (String line : provnLines) {
+	        Matcher m = entityPattern.matcher(line);
+	        if (m.find()) {
+	            entityDefinitions.add(line);
+	            continue;
+	        }
+	
+	        Matcher attrMatcher = wasAttributedToPattern.matcher(line);
+	        if (attrMatcher.find()) {
+	            entityDefinitions.add(line);
+	            associatedAgent = stripNamespace(attrMatcher.group(1));
+	            continue;
+	        }
+	
+	        Matcher genMatcher = wasGeneratedByPattern.matcher(line);
+	        if (genMatcher.find()) {
+	            entityDefinitions.add(line);
+	            associatedActivities.add(stripNamespace(genMatcher.group(1)));
+	        }
+	
+	        Matcher usedMatcher = usedPattern.matcher(line);
+	        if (usedMatcher.find()) {
+	            entityDefinitions.add(line);
+	            associatedActivities.add(stripNamespace(usedMatcher.group(1)));
+	        }
+	    }
+	
+	    // Add agent definition if found
+	    if (associatedAgent != null) {
+	        Pattern agentPattern = Pattern.compile("\\bagent\\([^:]+:" + Pattern.quote(associatedAgent));
+	        for (String line : provnLines) {
+	            Matcher agentMatcher = agentPattern.matcher(line);
+	            if (agentMatcher.find()) {
+	                entityDefinitions.add(line);
+	                break;
+	            }
+	        }
+	    }
+	
+	    // Add all associated activity definitions
+	    for (String activity : associatedActivities) {
+	        Pattern activityPattern = Pattern.compile("\\bactivity\\([^:]+:" + Pattern.quote(activity));
+	        for (String line : provnLines) {
+	            Matcher activityMatcher = activityPattern.matcher(line);
+	            if (activityMatcher.find()) {
+	                entityDefinitions.add(line);
+	                break;
+	            }
+	        }
+	    }
+	
+	    return entityDefinitions;
+	}
+
     
     /**
      * Recursively extracts all lines from the PROVN file that are related to any of the given entity names.
      * It processes derivations, attributions, specializations, hadMember relationships, and more.
      */
-    public static List<String> extractRelatedLinesProvn(List<String> provnLines, Set<String> entityNames) {
-        List<String> relatedLines = new ArrayList<>();
-        Queue<String> queue = new LinkedList<>(entityNames);
-        Set<String> seen = new HashSet<>();
-        
-        while (!queue.isEmpty()) {
-            String currentEntity = stripNamespace(queue.poll());
-            
-            if (seen.contains(currentEntity)) {
-                continue;
-            }
-            seen.add(currentEntity);
-            
-            for (String line : provnLines) {
-                // If the line contains the current entity as a whole word.
-                if (line.matches(".*\\b" + Pattern.quote(currentEntity) + "\\b.*")) {
-                    if (!relatedLines.contains(line)) {
-                        relatedLines.add(line);
-                    }
-                    
-                    // Look for a wasDerivedFrom relation:
-                    Pattern derivedPattern = Pattern.compile("wasDerivedFrom\\([^:]+:([^,\\)]+),\\s*[^:]+:([^,\\)]+)\\)");
-                    Matcher derivedMatcher = derivedPattern.matcher(line);
-                    if (derivedMatcher.find()) {
-                        String entity1 = stripNamespace(derivedMatcher.group(1));
-                        String entity2 = stripNamespace(derivedMatcher.group(2));
-                        if (!seen.contains(entity2)) {
-                            queue.add(entity2);
-                        }
-                    }
-                    
-                    // Look for a wasAttributedTo relation:
-                    Pattern attributedPattern = Pattern.compile("wasAttributedTo\\([^:]+:([^,\\)]+),\\s*[^:]+:([^,\\)]+)\\)");
-                    Matcher attributedMatcher = attributedPattern.matcher(line);
-                    if (attributedMatcher.find()) {
-                        String entity1 = stripNamespace(attributedMatcher.group(1));
-                        String entity2 = stripNamespace(attributedMatcher.group(2));
-                        if (!seen.contains(entity2)) {
-                            queue.add(entity2);
-                        }
-                    }
-                    
-                    // Look for a specializationOf relation:
-                    Pattern specializationPattern = Pattern.compile("specializationOf\\([^,]+,\\s*[^:]+:([^,\\)]+)\\)");
-                    Matcher specializationMatcher = specializationPattern.matcher(line);
-                    if (specializationMatcher.find()) {
-                        String entity = stripNamespace(specializationMatcher.group(1));
-                        if (!seen.contains(entity)) {
-                            queue.add(entity);
-                        }
-                    }
-                    
-                    // Look for hadMember relations:
-                    Pattern hadMemberPattern = Pattern.compile("\\bhadMember\\([^:]+:([^,\\)]+)");
-                    Matcher hadMemberMatcher = hadMemberPattern.matcher(line);
-                    while (hadMemberMatcher.find()) {
-                        String member = stripNamespace(hadMemberMatcher.group(1));
-                        // Retrieve the entity definition for the member and add those lines.
-                        List<String> entityDefs = findEntityDefinition(member, provnLines);
-                        for (String defLine : entityDefs) {
-                            if (!relatedLines.contains(defLine)) {
-                                relatedLines.add(defLine);
-                            }
-                        }
-                    }
-                    
-                    // Find all references to entity, agent, activity, and specializationOf in this line.
-                    List<String> matches = new ArrayList<>();
-                    Pattern entityRefPattern = Pattern.compile("\\bentity\\([^:]+:([^,\\[\\)]+)");
-                    Matcher entityRefMatcher = entityRefPattern.matcher(line);
-                    while (entityRefMatcher.find()) {
-                        matches.add(entityRefMatcher.group(1));
-                    }
-                    
-                    Pattern agentRefPattern = Pattern.compile("\\bagent\\(([^,\\)]+)");
-                    Matcher agentRefMatcher = agentRefPattern.matcher(line);
-                    while (agentRefMatcher.find()) {
-                        matches.add(agentRefMatcher.group(1));
-                    }
-                    
-                    Pattern activityRefPattern = Pattern.compile("\\bactivity\\(([^,\\)]+)");
-                    Matcher activityRefMatcher = activityRefPattern.matcher(line);
-                    while (activityRefMatcher.find()) {
-                        matches.add(activityRefMatcher.group(1));
-                    }
-                    
-                    Pattern specializationRefPattern = Pattern.compile("\\bspecializationOf\\(([^,\\)]+)");
-                    Matcher specializationRefMatcher = specializationRefPattern.matcher(line);
-                    while (specializationRefMatcher.find()) {
-                        matches.add(specializationRefMatcher.group(1));
-                    }
-                    
-                    for (String match : matches) {
-                        String strippedEntity = stripNamespace(match);
-                        if (!seen.contains(strippedEntity)) {
-                            queue.add(strippedEntity);
-                        }
-                    }
-                }
-            }
-        }
-        
-        return relatedLines;
+    public static List<String> extractRelatedLinesProvn(List<String> provnLines, Set<String> clusterParameters, Set<String> allKnownParameters) {
+	    List<String> relatedLines = new ArrayList<>();
+	    Queue<String> queue = new LinkedList<>(clusterParameters);
+	    Set<String> seen = new HashSet<>();
+	
+	    while (!queue.isEmpty()) {
+	        String currentEntity = stripNamespace(queue.poll());
+	
+	        if (seen.contains(currentEntity)) {
+	            continue;
+	        }
+	        seen.add(currentEntity);
+	
+	        for (String line : provnLines) {
+	            if (!line.matches(".*\\b" + Pattern.quote(currentEntity) + "\\b.*")) continue;
+	
+	            // Extract all QualifiedName references in the line
+	            Set<String> referenced = new HashSet<>();
+	            Matcher m;
+	
+	            m = Pattern.compile("\\b(?:entity|activity|agent)\\([^:]+:([^,\\)\\]]+)").matcher(line);
+	            while (m.find()) referenced.add(stripNamespace(m.group(1)));
+	
+	            m = Pattern.compile("wasDerivedFrom\\([^:]+:([^,\\)]+),\\s*[^:]+:([^,\\)]+)").matcher(line);
+	            while (m.find()) {
+	                referenced.add(stripNamespace(m.group(1)));
+	                referenced.add(stripNamespace(m.group(2)));
+	            }
+	
+	            m = Pattern.compile("wasGeneratedBy\\([^:]+:([^,\\)]+),\\s*[^:]+:([^,\\)]+)").matcher(line);
+	            while (m.find()) {
+	                referenced.add(stripNamespace(m.group(1)));
+	                referenced.add(stripNamespace(m.group(2)));
+	            }
+	
+	            m = Pattern.compile("wasAttributedTo\\([^:]+:([^,\\)]+),\\s*[^:]+:([^,\\)]+)").matcher(line);
+	            while (m.find()) {
+	                referenced.add(stripNamespace(m.group(1)));
+	                referenced.add(stripNamespace(m.group(2)));
+	            }
+	
+	            m = Pattern.compile("specializationOf\\([^:]+:([^,\\)]+),?\\s*[^:]*:?(.*)?\\)").matcher(line);
+	            while (m.find()) {
+	                referenced.add(stripNamespace(m.group(1)));
+	                referenced.add(stripNamespace(m.group(2)));
+	            }
+	
+	            m = Pattern.compile("hadMember\\([^:]+:([^,\\)]+)").matcher(line);
+	            while (m.find()) referenced.add(stripNamespace(m.group(1)));
+	
+	            boolean referencesOtherParam = referenced.stream()
+	                .anyMatch(ref -> allKnownParameters.contains(ref) && !clusterParameters.contains(ref));
+	
+	            if (referencesOtherParam) {
+	                continue; // skip this line entirely
+	            }
+	
+	            if (!relatedLines.contains(line)) {
+	                relatedLines.add(line);
+	            }
+	
+	            for (String ref : referenced) {
+	                if (!seen.contains(ref)) {
+	                    queue.add(ref);
+	                }
+	            }
+	
+	            // For hadMember: also include the entity definition
+	            Matcher hadMemberMatcher = Pattern.compile("hadMember\\([^:]+:([^,\\)]+)").matcher(line);
+	            while (hadMemberMatcher.find()) {
+	                String member = stripNamespace(hadMemberMatcher.group(1));
+	                List<String> memberDefs = findEntityDefinition(member, provnLines);
+	                for (String def : memberDefs) {
+	                    if (!relatedLines.contains(def)) {
+	                        relatedLines.add(def);
+	                    }
+	                }
+	                if (!seen.contains(member)) {
+	                    queue.add(member);
+	                }
+	            }
+	        }
+	    }
+	
+	    return relatedLines;
     }
-    
+
     /**
      * Splits the given PROVN file into clusters.
      * Each cluster is determined by a mapping (read from a JSON file) from cluster names to lists of entity names.
@@ -265,12 +283,18 @@ class DecomposerWizard extends Wizard {
         // Read clusters as a Map<String, List<String>>
         Map<String, List<String>> clusters = objectMapper.readValue(new File(clusterFile), Map.class);
         
+        Set<String> allKnownParameters = new HashSet<>();
+        for (List<String> params : clusters.values()) {
+            allKnownParameters.addAll(params);
+        }
+
+        
         // Process each cluster.
         for (Map.Entry<String, List<String>> entry : clusters.entrySet()) {
             String clusterName = entry.getKey();
             Set<String> entityNames = new HashSet<>(entry.getValue());
             
-            List<String> clusterLines = extractRelatedLinesProvn(provnLines, entityNames);
+            List<String> clusterLines = extractRelatedLinesProvn(provnLines, entityNames, allKnownParameters);
             if (!clusterLines.isEmpty()) {
                 StringBuilder clusterContent = new StringBuilder();
                 clusterContent.append("document\n\n")

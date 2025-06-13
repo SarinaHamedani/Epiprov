@@ -1,0 +1,176 @@
+digraph "PROV" { size="16,12"; rankdir="BT"; 
+"http://example.org/DemographicLifeExpectencyCalculation" [fillcolor="#9FB1FC",color="#0000FF",shape="polygon",sides="4",style="filled",label="DemographicLifeExpectencyCalculation",URL="http://example.org/DemographicLifeExpectencyCalculation"]
+"http://example.org/carcionePaper" [fillcolor="#FFFC87",color="#808080",style="filled",label="carcionePaper",URL="http://example.org/carcionePaper"]
+"-attrs0" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">title:</TD>
+	    <TD align="left">A Simulation of a COVID-19 Epidemic Based on a Deterministic SEIR Model</TD>
+	</TR>
+	<TR>
+	    <TD align="left">identifier:</TD>
+	    <TD align="left">https://doi.org/10.3389/fpubh.2020.00230</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs0" -> "http://example.org/carcionePaper" [color="gray",style="dashed",arrowhead="none"]
+"http://example.org/chowell2003" [fillcolor="#FFFC87",color="#808080",style="filled",label="chowell2003",URL="http://example.org/chowell2003"]
+"-attrs1" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">title:</TD>
+	    <TD align="left">SARS outbreak control</TD>
+	</TR>
+	<TR>
+	    <TD align="left">creator:</TD>
+	    <TD align="left">Chowell et al.</TD>
+	</TR>
+	<TR>
+	    <TD align="left">date:</TD>
+	    <TD align="left">2003</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs1" -> "http://example.org/chowell2003" [color="gray",style="dashed",arrowhead="none"]
+"http://example.org/read2020" [fillcolor="#FFFC87",color="#808080",style="filled",label="read2020",URL="http://example.org/read2020"]
+"-attrs2" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">title:</TD>
+	    <TD align="left">Early estimation of COVID-19 parameters</TD>
+	</TR>
+	<TR>
+	    <TD align="left">creator:</TD>
+	    <TD align="left">Read et al.</TD>
+	</TR>
+	<TR>
+	    <TD align="left">date:</TD>
+	    <TD align="left">2020</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs2" -> "http://example.org/read2020" [color="gray",style="dashed",arrowhead="none"]
+"http://example.org/lauer2020" [fillcolor="#FFFC87",color="#808080",style="filled",label="lauer2020",URL="http://example.org/lauer2020"]
+"-attrs3" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">title:</TD>
+	    <TD align="left">Incubation period of COVID-19</TD>
+	</TR>
+	<TR>
+	    <TD align="left">creator:</TD>
+	    <TD align="left">Lauer et al.</TD>
+	</TR>
+	<TR>
+	    <TD align="left">date:</TD>
+	    <TD align="left">2020</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs3" -> "http://example.org/lauer2020" [color="gray",style="dashed",arrowhead="none"]
+"http://example.org/ferguson2020" [fillcolor="#FFFC87",color="#808080",style="filled",label="ferguson2020",URL="http://example.org/ferguson2020"]
+"-attrs4" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">title:</TD>
+	    <TD align="left">Imperial College COVID-19 Report</TD>
+	</TR>
+	<TR>
+	    <TD align="left">creator:</TD>
+	    <TD align="left">Ferguson et al.</TD>
+	</TR>
+	<TR>
+	    <TD align="left">date:</TD>
+	    <TD align="left">2020</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs4" -> "http://example.org/ferguson2020" [color="gray",style="dashed",arrowhead="none"]
+"http://example.org/beta" [fillcolor="#FFFC87",color="#808080",style="filled",label="beta",URL="http://example.org/beta"]
+"-attrs5" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">value:</TD>
+	    <TD align="left">0.75</TD>
+	</TR>
+	<TR>
+	    <TD align="left">description:</TD>
+	    <TD align="left">Transmission rate (per day)</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs5" -> "http://example.org/beta" [color="gray",style="dashed",arrowhead="none"]
+"http://example.org/epsilon" [fillcolor="#FFFC87",color="#808080",style="filled",label="epsilon",URL="http://example.org/epsilon"]
+"-attrs6" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">value:</TD>
+	    <TD align="left">0.333</TD>
+	</TR>
+	<TR>
+	    <TD align="left">description:</TD>
+	    <TD align="left">Rate from exposed to infectious (1/incubation period)</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs6" -> "http://example.org/epsilon" [color="gray",style="dashed",arrowhead="none"]
+"http://example.org/gamma" [fillcolor="#FFFC87",color="#808080",style="filled",label="gamma",URL="http://example.org/gamma"]
+"-attrs7" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">value:</TD>
+	    <TD align="left">0.125</TD>
+	</TR>
+	<TR>
+	    <TD align="left">description:</TD>
+	    <TD align="left">Recovery rate (1/infectious period)</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs7" -> "http://example.org/gamma" [color="gray",style="dashed",arrowhead="none"]
+"http://example.org/alpha" [fillcolor="#FFFC87",color="#808080",style="filled",label="alpha",URL="http://example.org/alpha"]
+"-attrs8" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">value:</TD>
+	    <TD align="left">0.006</TD>
+	</TR>
+	<TR>
+	    <TD align="left">description:</TD>
+	    <TD align="left">Fatality rate (per day)</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs8" -> "http://example.org/alpha" [color="gray",style="dashed",arrowhead="none"]
+"http://example.org/mu" [fillcolor="#FFFC87",color="#808080",style="filled",label="mu",URL="http://example.org/mu"]
+"-attrs9" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">value:</TD>
+	    <TD align="left">0.000033</TD>
+	</TR>
+	<TR>
+	    <TD align="left">description:</TD>
+	    <TD align="left">Natural death rate</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs9" -> "http://example.org/mu" [color="gray",style="dashed",arrowhead="none"]
+"http://example.org/lambda" [fillcolor="#FFFC87",color="#808080",style="filled",label="lambda",URL="http://example.org/lambda"]
+"-attrs10" [color="gray",shape="note",fontsize="10",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">value:</TD>
+	    <TD align="left">0.000033</TD>
+	</TR>
+	<TR>
+	    <TD align="left">description:</TD>
+	    <TD align="left">Natural death rate</TD>
+	</TR>
+    </TABLE>>
+]
+"-attrs10" -> "http://example.org/lambda" [color="gray",style="dashed",arrowhead="none"]
+"http://example.org/mu" -> "http://example.org/DemographicLifeExpectencyCalculation" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="gen"]
+"http://example.org/beta" -> "http://example.org/chowell2003" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://example.org/epsilon" -> "http://example.org/read2020" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://example.org/epsilon" -> "http://example.org/lauer2020" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://example.org/gamma" -> "http://example.org/chowell2003" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://example.org/gamma" -> "http://example.org/read2020" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://example.org/alpha" -> "http://example.org/ferguson2020" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://example.org/lambda" -> "http://example.org/chowell2003" [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
+"http://example.org/carcionePaper" -> "http://example.org/beta" []
+"http://example.org/carcionePaper" -> "http://example.org/epsilon" []
+"http://example.org/carcionePaper" -> "http://example.org/gamma" []
+"http://example.org/carcionePaper" -> "http://example.org/alpha" []
+"http://example.org/carcionePaper" -> "http://example.org/mu" []
+"http://example.org/carcionePaper" -> "http://example.org/lambda" []
+}
