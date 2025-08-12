@@ -64,7 +64,7 @@ public class WasGeneratedByImpl extends RelationImpl implements WasGeneratedBy
   protected Activity activity;
 
   /**
-   * The cached value of the '{@link #getTime() <em>Time</em>}' reference.
+   * The cached value of the '{@link #getTime() <em>Time</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTime()
@@ -202,16 +202,6 @@ public class WasGeneratedByImpl extends RelationImpl implements WasGeneratedBy
   @Override
   public DateTime getTime()
   {
-    if (time != null && time.eIsProxy())
-    {
-      InternalEObject oldTime = (InternalEObject)time;
-      time = (DateTime)eResolveProxy(oldTime);
-      if (time != oldTime)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProvNPackage.WAS_GENERATED_BY__TIME, oldTime, time));
-      }
-    }
     return time;
   }
 
@@ -220,9 +210,16 @@ public class WasGeneratedByImpl extends RelationImpl implements WasGeneratedBy
    * <!-- end-user-doc -->
    * @generated
    */
-  public DateTime basicGetTime()
+  public NotificationChain basicSetTime(DateTime newTime, NotificationChain msgs)
   {
-    return time;
+    DateTime oldTime = time;
+    time = newTime;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProvNPackage.WAS_GENERATED_BY__TIME, oldTime, newTime);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -233,10 +230,18 @@ public class WasGeneratedByImpl extends RelationImpl implements WasGeneratedBy
   @Override
   public void setTime(DateTime newTime)
   {
-    DateTime oldTime = time;
-    time = newTime;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ProvNPackage.WAS_GENERATED_BY__TIME, oldTime, time));
+    if (newTime != time)
+    {
+      NotificationChain msgs = null;
+      if (time != null)
+        msgs = ((InternalEObject)time).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ProvNPackage.WAS_GENERATED_BY__TIME, null, msgs);
+      if (newTime != null)
+        msgs = ((InternalEObject)newTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ProvNPackage.WAS_GENERATED_BY__TIME, null, msgs);
+      msgs = basicSetTime(newTime, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ProvNPackage.WAS_GENERATED_BY__TIME, newTime, newTime));
   }
 
   /**
@@ -264,6 +269,8 @@ public class WasGeneratedByImpl extends RelationImpl implements WasGeneratedBy
   {
     switch (featureID)
     {
+      case ProvNPackage.WAS_GENERATED_BY__TIME:
+        return basicSetTime(null, msgs);
       case ProvNPackage.WAS_GENERATED_BY__ATTRIBUTES:
         return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
     }
@@ -287,8 +294,7 @@ public class WasGeneratedByImpl extends RelationImpl implements WasGeneratedBy
         if (resolve) return getActivity();
         return basicGetActivity();
       case ProvNPackage.WAS_GENERATED_BY__TIME:
-        if (resolve) return getTime();
-        return basicGetTime();
+        return getTime();
       case ProvNPackage.WAS_GENERATED_BY__ATTRIBUTES:
         return getAttributes();
     }

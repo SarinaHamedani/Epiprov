@@ -1,5 +1,3 @@
-(import (rnrs) (emodl cmslib))
-
 (start-model "Unknown")
 
 (param delta 0.1)  ; Rate of hospitalization for severe cases [ref 21]

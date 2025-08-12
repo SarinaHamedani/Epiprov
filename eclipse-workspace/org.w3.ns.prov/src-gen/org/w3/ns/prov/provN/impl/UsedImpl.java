@@ -64,7 +64,7 @@ public class UsedImpl extends RelationImpl implements Used
   protected Entity entity;
 
   /**
-   * The cached value of the '{@link #getTime() <em>Time</em>}' reference.
+   * The cached value of the '{@link #getTime() <em>Time</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTime()
@@ -202,16 +202,6 @@ public class UsedImpl extends RelationImpl implements Used
   @Override
   public DateTime getTime()
   {
-    if (time != null && time.eIsProxy())
-    {
-      InternalEObject oldTime = (InternalEObject)time;
-      time = (DateTime)eResolveProxy(oldTime);
-      if (time != oldTime)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProvNPackage.USED__TIME, oldTime, time));
-      }
-    }
     return time;
   }
 
@@ -220,9 +210,16 @@ public class UsedImpl extends RelationImpl implements Used
    * <!-- end-user-doc -->
    * @generated
    */
-  public DateTime basicGetTime()
+  public NotificationChain basicSetTime(DateTime newTime, NotificationChain msgs)
   {
-    return time;
+    DateTime oldTime = time;
+    time = newTime;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProvNPackage.USED__TIME, oldTime, newTime);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -233,10 +230,18 @@ public class UsedImpl extends RelationImpl implements Used
   @Override
   public void setTime(DateTime newTime)
   {
-    DateTime oldTime = time;
-    time = newTime;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ProvNPackage.USED__TIME, oldTime, time));
+    if (newTime != time)
+    {
+      NotificationChain msgs = null;
+      if (time != null)
+        msgs = ((InternalEObject)time).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ProvNPackage.USED__TIME, null, msgs);
+      if (newTime != null)
+        msgs = ((InternalEObject)newTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ProvNPackage.USED__TIME, null, msgs);
+      msgs = basicSetTime(newTime, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ProvNPackage.USED__TIME, newTime, newTime));
   }
 
   /**
@@ -264,6 +269,8 @@ public class UsedImpl extends RelationImpl implements Used
   {
     switch (featureID)
     {
+      case ProvNPackage.USED__TIME:
+        return basicSetTime(null, msgs);
       case ProvNPackage.USED__ATTRIBUTES:
         return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
     }
@@ -287,8 +294,7 @@ public class UsedImpl extends RelationImpl implements Used
         if (resolve) return getEntity();
         return basicGetEntity();
       case ProvNPackage.USED__TIME:
-        if (resolve) return getTime();
-        return basicGetTime();
+        return getTime();
       case ProvNPackage.USED__ATTRIBUTES:
         return getAttributes();
     }

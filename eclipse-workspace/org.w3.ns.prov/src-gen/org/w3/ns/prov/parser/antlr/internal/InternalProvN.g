@@ -825,13 +825,19 @@ ruleWasDerivedFrom returns [EObject current=null]
 			(
 				(
 					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getWasDerivedFromRule());
-						}
+						newCompositeNode(grammarAccess.getWasDerivedFromAccess().getTimeDateTimeParserRuleCall_5_1_0());
 					}
-					otherlv_6='-'
+					lv_time_6_0=ruleDateTime
 					{
-						newLeafNode(otherlv_6, grammarAccess.getWasDerivedFromAccess().getTimeDateTimeCrossReference_5_1_0());
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getWasDerivedFromRule());
+						}
+						set(
+							$current,
+							"time",
+							lv_time_6_0,
+							"org.w3.ns.prov.ProvN.DateTime");
+						afterParserOrEnumRuleCall();
 					}
 				)
 			)
@@ -969,13 +975,19 @@ ruleWasGeneratedBy returns [EObject current=null]
 			(
 				(
 					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getWasGeneratedByRule());
-						}
+						newCompositeNode(grammarAccess.getWasGeneratedByAccess().getTimeDateTimeParserRuleCall_5_1_0());
 					}
-					otherlv_6='-'
+					lv_time_6_0=ruleDateTime
 					{
-						newLeafNode(otherlv_6, grammarAccess.getWasGeneratedByAccess().getTimeDateTimeCrossReference_5_1_0());
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getWasGeneratedByRule());
+						}
+						set(
+							$current,
+							"time",
+							lv_time_6_0,
+							"org.w3.ns.prov.ProvN.DateTime");
+						afterParserOrEnumRuleCall();
 					}
 				)
 			)
@@ -1113,13 +1125,19 @@ ruleUsed returns [EObject current=null]
 			(
 				(
 					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getUsedRule());
-						}
+						newCompositeNode(grammarAccess.getUsedAccess().getTimeDateTimeParserRuleCall_5_1_0());
 					}
-					otherlv_6='-'
+					lv_time_6_0=ruleDateTime
 					{
-						newLeafNode(otherlv_6, grammarAccess.getUsedAccess().getTimeDateTimeCrossReference_5_1_0());
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getUsedRule());
+						}
+						set(
+							$current,
+							"time",
+							lv_time_6_0,
+							"org.w3.ns.prov.ProvN.DateTime");
+						afterParserOrEnumRuleCall();
 					}
 				)
 			)
@@ -1643,136 +1661,153 @@ ruleDateTime returns [EObject current=null]
 	(
 		(
 			(
-				lv_year_0_0=RULE_INT
-				{
-					newLeafNode(lv_year_0_0, grammarAccess.getDateTimeAccess().getYearINTTerminalRuleCall_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDateTimeRule());
+				(
+					lv_year_0_0=RULE_INT
+					{
+						newLeafNode(lv_year_0_0, grammarAccess.getDateTimeAccess().getYearINTTerminalRuleCall_0_0_0());
 					}
-					setWithLastConsumed(
-						$current,
-						"year",
-						lv_year_0_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDateTimeRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"year",
+							lv_year_0_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
 			)
+			otherlv_1='-'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getDateTimeAccess().getHyphenMinusKeyword_0_1());
+			}
+			(
+				(
+					lv_month_2_0=RULE_INT
+					{
+						newLeafNode(lv_month_2_0, grammarAccess.getDateTimeAccess().getMonthINTTerminalRuleCall_0_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDateTimeRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"month",
+							lv_month_2_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+			otherlv_3='-'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getDateTimeAccess().getHyphenMinusKeyword_0_3());
+			}
+			(
+				(
+					lv_day_4_0=RULE_INT
+					{
+						newLeafNode(lv_day_4_0, grammarAccess.getDateTimeAccess().getDayINTTerminalRuleCall_0_4_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDateTimeRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"day",
+							lv_day_4_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+			otherlv_5='T'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getDateTimeAccess().getTKeyword_0_5());
+			}
+			(
+				(
+					lv_hour_6_0=RULE_INT
+					{
+						newLeafNode(lv_hour_6_0, grammarAccess.getDateTimeAccess().getHourINTTerminalRuleCall_0_6_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDateTimeRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"hour",
+							lv_hour_6_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+			otherlv_7=':'
+			{
+				newLeafNode(otherlv_7, grammarAccess.getDateTimeAccess().getColonKeyword_0_7());
+			}
+			(
+				(
+					lv_minute_8_0=RULE_INT
+					{
+						newLeafNode(lv_minute_8_0, grammarAccess.getDateTimeAccess().getMinuteINTTerminalRuleCall_0_8_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDateTimeRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"minute",
+							lv_minute_8_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+			otherlv_9=':'
+			{
+				newLeafNode(otherlv_9, grammarAccess.getDateTimeAccess().getColonKeyword_0_9());
+			}
+			(
+				(
+					lv_second_10_0=RULE_INT
+					{
+						newLeafNode(lv_second_10_0, grammarAccess.getDateTimeAccess().getSecondINTTerminalRuleCall_0_10_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDateTimeRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"second",
+							lv_second_10_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+			otherlv_11='Z'
+			{
+				newLeafNode(otherlv_11, grammarAccess.getDateTimeAccess().getZKeyword_0_11());
+			}
 		)
-		otherlv_1='-'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getDateTimeAccess().getHyphenMinusKeyword_1());
-		}
+		    |
 		(
 			(
-				lv_month_2_0=RULE_INT
+				lv_dash_12_0='-'
 				{
-					newLeafNode(lv_month_2_0, grammarAccess.getDateTimeAccess().getMonthINTTerminalRuleCall_2_0());
+					newLeafNode(lv_dash_12_0, grammarAccess.getDateTimeAccess().getDashHyphenMinusKeyword_1_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getDateTimeRule());
 					}
-					setWithLastConsumed(
-						$current,
-						"month",
-						lv_month_2_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+					setWithLastConsumed($current, "dash", lv_dash_12_0, "-");
 				}
 			)
 		)
-		otherlv_3='-'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getDateTimeAccess().getHyphenMinusKeyword_3());
-		}
-		(
-			(
-				lv_day_4_0=RULE_INT
-				{
-					newLeafNode(lv_day_4_0, grammarAccess.getDateTimeAccess().getDayINTTerminalRuleCall_4_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDateTimeRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"day",
-						lv_day_4_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		otherlv_5='T'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getDateTimeAccess().getTKeyword_5());
-		}
-		(
-			(
-				lv_hour_6_0=RULE_INT
-				{
-					newLeafNode(lv_hour_6_0, grammarAccess.getDateTimeAccess().getHourINTTerminalRuleCall_6_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDateTimeRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"hour",
-						lv_hour_6_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		otherlv_7=':'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getDateTimeAccess().getColonKeyword_7());
-		}
-		(
-			(
-				lv_minute_8_0=RULE_INT
-				{
-					newLeafNode(lv_minute_8_0, grammarAccess.getDateTimeAccess().getMinuteINTTerminalRuleCall_8_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDateTimeRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"minute",
-						lv_minute_8_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		otherlv_9=':'
-		{
-			newLeafNode(otherlv_9, grammarAccess.getDateTimeAccess().getColonKeyword_9());
-		}
-		(
-			(
-				lv_second_10_0=RULE_INT
-				{
-					newLeafNode(lv_second_10_0, grammarAccess.getDateTimeAccess().getSecondINTTerminalRuleCall_10_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDateTimeRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"second",
-						lv_second_10_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		otherlv_11='Z'
-		{
-			newLeafNode(otherlv_11, grammarAccess.getDateTimeAccess().getZKeyword_11());
-		}
 	)
 ;
 

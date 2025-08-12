@@ -8,11 +8,6 @@
 (species A_i 0)
 (species R_i 0)
 
-(species S_j 1000)
-(species E_j 0)
-(species I_j 0)
-(species A_j 0)
-(species R_j 0)
 
 (param beta_ii 0.000000001) ; transmission within group i
 (param beta_ji 0.000000001) ; transmission from group j to i

@@ -9,4 +9,5 @@ entity(prov:Ontario_Model_Study,[prov:type = 'prov:Collection', prov:value = "",
 wasAttributedTo(prov:Ontario_Model_Study, prov:Ontario_Model_Authors)
 agent(prov:Ontario_Model_Authors, [prov:label = "Tuite, A. R., Fisman, D. N., & Greer, A. L."])
 
+
 endDocument

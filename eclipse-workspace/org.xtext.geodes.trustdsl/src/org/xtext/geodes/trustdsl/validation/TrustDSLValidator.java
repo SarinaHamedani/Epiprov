@@ -3,6 +3,16 @@
  */
 package org.xtext.geodes.trustdsl.validation;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.xtext.util.Pair;
+import org.eclipse.xtext.util.Tuples;
+import org.eclipse.xtext.validation.Check;
+import org.xtext.geodes.trustdsl.trustDSL.SBoolean;
+import org.xtext.geodes.trustdsl.trustDSL.TrustDSLPackage;
+import org.xtext.geodes.trustdsl.trustDSL.UncertainElementFusion;
 
 /**
  * This class contains custom validation rules. 
@@ -21,5 +31,47 @@ public class TrustDSLValidator extends AbstractTrustDSLValidator {
 //					INVALID_NAME);
 //		}
 //	}
-	
+
+    @Check
+    public void checkProjectionValue(UncertainElementFusion fusion) {
+    	SBoolean ACBF = fusion.getAleatoryCumulativeBF();
+    	SBoolean BCF = fusion.getBeliefConstraintFusion();
+    	SBoolean ABF = fusion.getAverageingBF();
+    	SBoolean CCBF = fusion.getConsensusCompromiseBF();
+    	SBoolean ECBF = fusion.getEpistemicCumulativeBF();
+    	
+
+    	double threshold = 0.6;
+
+        // Map of fusion operator labels to their corresponding boolean values
+    	Map<String, Pair<SBoolean, EStructuralFeature>> fusionOperators = new LinkedHashMap<>();
+    	fusionOperators.put("AleatoryCumulativeBF", 
+    	    Tuples.create(ACBF, TrustDSLPackage.Literals.UNCERTAIN_ELEMENT_FUSION__ALEATORY_CUMULATIVE_BF));
+    	fusionOperators.put("AveragingBF", 
+    	    Tuples.create(ABF, TrustDSLPackage.Literals.UNCERTAIN_ELEMENT_FUSION__AVERAGEING_BF));
+    	fusionOperators.put("BeliefConstraintFusion", 
+    	    Tuples.create(BCF, TrustDSLPackage.Literals.UNCERTAIN_ELEMENT_FUSION__BELIEF_CONSTRAINT_FUSION));
+    	fusionOperators.put("ConsensusCompromiseBF", 
+    	    Tuples.create(CCBF, TrustDSLPackage.Literals.UNCERTAIN_ELEMENT_FUSION__CONSENSUS_COMPROMISE_BF));
+    	fusionOperators.put("EpistemicCumulativeBF", 
+    	    Tuples.create(ECBF, TrustDSLPackage.Literals.UNCERTAIN_ELEMENT_FUSION__EPISTEMIC_CUMULATIVE_BF));
+
+
+    	for (Map.Entry<String, Pair<SBoolean, EStructuralFeature>> entry : fusionOperators.entrySet()) {
+    	    SBoolean opinion = entry.getValue().getFirst();
+    	    EStructuralFeature feature = entry.getValue().getSecond();
+    	    if (opinion != null) {
+    	        double projection = opinion.getBelief() + opinion.getBaseRate() * opinion.getUncertainty();
+    	        if (projection < threshold) {
+    	            String msg = String.format(
+    	                "Fusion projection for operator '%s' is too low (pₓ = %.3f < %.2f). Consider revising the input values.",
+    	                entry.getKey(), projection, threshold
+    	            );
+    	            warning(msg, fusion, feature); // precise marker
+    	        }
+    	    }
+    	}
+
+    }
+
 }

@@ -27,6 +27,7 @@ import org.w3.ns.prov.provN.ProvNPackage;
  *   <li>{@link org.w3.ns.prov.provN.impl.DateTimeImpl#getHour <em>Hour</em>}</li>
  *   <li>{@link org.w3.ns.prov.provN.impl.DateTimeImpl#getMinute <em>Minute</em>}</li>
  *   <li>{@link org.w3.ns.prov.provN.impl.DateTimeImpl#getSecond <em>Second</em>}</li>
+ *   <li>{@link org.w3.ns.prov.provN.impl.DateTimeImpl#getDash <em>Dash</em>}</li>
  * </ul>
  *
  * @generated
@@ -152,6 +153,26 @@ public class DateTimeImpl extends MinimalEObjectImpl.Container implements DateTi
    * @ordered
    */
   protected int second = SECOND_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDash() <em>Dash</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDash()
+   * @generated
+   * @ordered
+   */
+  protected static final String DASH_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDash() <em>Dash</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDash()
+   * @generated
+   * @ordered
+   */
+  protected String dash = DASH_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -330,6 +351,31 @@ public class DateTimeImpl extends MinimalEObjectImpl.Container implements DateTi
    * @generated
    */
   @Override
+  public String getDash()
+  {
+    return dash;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDash(String newDash)
+  {
+    String oldDash = dash;
+    dash = newDash;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ProvNPackage.DATE_TIME__DASH, oldDash, dash));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -346,6 +392,8 @@ public class DateTimeImpl extends MinimalEObjectImpl.Container implements DateTi
         return getMinute();
       case ProvNPackage.DATE_TIME__SECOND:
         return getSecond();
+      case ProvNPackage.DATE_TIME__DASH:
+        return getDash();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -377,6 +425,9 @@ public class DateTimeImpl extends MinimalEObjectImpl.Container implements DateTi
         return;
       case ProvNPackage.DATE_TIME__SECOND:
         setSecond((Integer)newValue);
+        return;
+      case ProvNPackage.DATE_TIME__DASH:
+        setDash((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -410,6 +461,9 @@ public class DateTimeImpl extends MinimalEObjectImpl.Container implements DateTi
       case ProvNPackage.DATE_TIME__SECOND:
         setSecond(SECOND_EDEFAULT);
         return;
+      case ProvNPackage.DATE_TIME__DASH:
+        setDash(DASH_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -436,6 +490,8 @@ public class DateTimeImpl extends MinimalEObjectImpl.Container implements DateTi
         return minute != MINUTE_EDEFAULT;
       case ProvNPackage.DATE_TIME__SECOND:
         return second != SECOND_EDEFAULT;
+      case ProvNPackage.DATE_TIME__DASH:
+        return DASH_EDEFAULT == null ? dash != null : !DASH_EDEFAULT.equals(dash);
     }
     return super.eIsSet(featureID);
   }
@@ -463,6 +519,8 @@ public class DateTimeImpl extends MinimalEObjectImpl.Container implements DateTi
     result.append(minute);
     result.append(", second: ");
     result.append(second);
+    result.append(", dash: ");
+    result.append(dash);
     result.append(')');
     return result.toString();
   }

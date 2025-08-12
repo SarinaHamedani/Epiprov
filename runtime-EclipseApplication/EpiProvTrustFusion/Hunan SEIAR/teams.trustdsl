@@ -1,4 +1,3 @@
-
 Agent Rick
 Agent Lucy
 Agent Elena_Garcia 
@@ -8,14 +7,14 @@ UncertainElementFusion beta_ii {
 		Belief Elena_Garcia_beta_ii (Elena_Garcia , (0.5, 0.5, 0.0, 0.5))
         , Belief Lucy_beta_ii (Lucy , (0.25, 0.6, 0.15, 0.5))
     } 
-    aleatoryCumulativeBF = ( 0.0 , 0.0 , 1.0 , 0.5 ) 
+    aleatoryCumulativeBF = ( 0.0 , 0.0 , 1.0 , 0.5 )  
     averageingBF = ( 0.5 , 0.5 , 0.0 , 0.5 ) 
     beliefConstraintFusion = ( 0.347826 , 0.652174 , 0.0 , 0.5 ) 
     consensusCompromiseBF ( 0.25 , 0.5 , 0.25 , 0.5 ) 
     epistemicCumulativeBF = ( 0.0 , 0.0 , 1.0 , 0.5 ) 
     weightedBF = ( 0.5 , 0.5 , 0.0 , 0.5 ) 
 } 
-UncertainElementFusion beta_ij { 
+UncertainElementFusion beta_ij {
 	beliefs { 
 		Belief Elena_Garcia_beta_ij (Elena_Garcia , (0.7, 0.2, 0.1, 0.5))
         , Belief Lucy_beta_ij (Lucy , (1.0, 0.0, 0.0, 0.5))

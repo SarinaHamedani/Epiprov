@@ -461,8 +461,7 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Assignment cTimeAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final CrossReference cTimeDateTimeCrossReference_5_1_0 = (CrossReference)cTimeAssignment_5_1.eContents().get(0);
-		private final Keyword cTimeDateTimeHyphenMinusKeyword_5_1_0_1 = (Keyword)cTimeDateTimeCrossReference_5_1_0.eContents().get(1);
+		private final RuleCall cTimeDateTimeParserRuleCall_5_1_0 = (RuleCall)cTimeAssignment_5_1.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
@@ -476,10 +475,10 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//WasDerivedFrom:
-		//    'wasDerivedFrom' '(' generatedEntity=[Entity|QualifiedName] ',' usedEntity=[Entity|QualifiedName] (',' time=[DateTime|'-'])? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
+		//    'wasDerivedFrom' '(' generatedEntity=[Entity|QualifiedName] ',' usedEntity=[Entity|QualifiedName] (',' time=DateTime)? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'wasDerivedFrom' '(' generatedEntity=[Entity|QualifiedName] ',' usedEntity=[Entity|QualifiedName] (',' time=[DateTime|'-'])? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')'
+		//'wasDerivedFrom' '(' generatedEntity=[Entity|QualifiedName] ',' usedEntity=[Entity|QualifiedName] (',' time=DateTime)? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'wasDerivedFrom'
@@ -509,20 +508,17 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//QualifiedName
 		public RuleCall getUsedEntityEntityQualifiedNameParserRuleCall_4_0_1() { return cUsedEntityEntityQualifiedNameParserRuleCall_4_0_1; }
 		
-		//(',' time=[DateTime|'-'])?
+		//(',' time=DateTime)?
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//','
 		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
 		
-		//time=[DateTime|'-']
+		//time=DateTime
 		public Assignment getTimeAssignment_5_1() { return cTimeAssignment_5_1; }
 		
-		//[DateTime|'-']
-		public CrossReference getTimeDateTimeCrossReference_5_1_0() { return cTimeDateTimeCrossReference_5_1_0; }
-		
-		//'-'
-		public Keyword getTimeDateTimeHyphenMinusKeyword_5_1_0_1() { return cTimeDateTimeHyphenMinusKeyword_5_1_0_1; }
+		//DateTime
+		public RuleCall getTimeDateTimeParserRuleCall_5_1_0() { return cTimeDateTimeParserRuleCall_5_1_0; }
 		
 		//(',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')?
 		public Group getGroup_6() { return cGroup_6; }
@@ -572,8 +568,7 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Assignment cTimeAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final CrossReference cTimeDateTimeCrossReference_5_1_0 = (CrossReference)cTimeAssignment_5_1.eContents().get(0);
-		private final Keyword cTimeDateTimeHyphenMinusKeyword_5_1_0_1 = (Keyword)cTimeDateTimeCrossReference_5_1_0.eContents().get(1);
+		private final RuleCall cTimeDateTimeParserRuleCall_5_1_0 = (RuleCall)cTimeAssignment_5_1.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
@@ -587,10 +582,10 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//WasGeneratedBy:
-		//    'wasGeneratedBy' '(' entity=[Entity|QualifiedName] ',' activity=[Activity|QualifiedName] (',' time=[DateTime|'-'])? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
+		//    'wasGeneratedBy' '(' entity=[Entity|QualifiedName] ',' activity=[Activity|QualifiedName] (',' time=DateTime)? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'wasGeneratedBy' '(' entity=[Entity|QualifiedName] ',' activity=[Activity|QualifiedName] (',' time=[DateTime|'-'])? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')'
+		//'wasGeneratedBy' '(' entity=[Entity|QualifiedName] ',' activity=[Activity|QualifiedName] (',' time=DateTime)? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'wasGeneratedBy'
@@ -620,20 +615,17 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//QualifiedName
 		public RuleCall getActivityActivityQualifiedNameParserRuleCall_4_0_1() { return cActivityActivityQualifiedNameParserRuleCall_4_0_1; }
 		
-		//(',' time=[DateTime|'-'])?
+		//(',' time=DateTime)?
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//','
 		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
 		
-		//time=[DateTime|'-']
+		//time=DateTime
 		public Assignment getTimeAssignment_5_1() { return cTimeAssignment_5_1; }
 		
-		//[DateTime|'-']
-		public CrossReference getTimeDateTimeCrossReference_5_1_0() { return cTimeDateTimeCrossReference_5_1_0; }
-		
-		//'-'
-		public Keyword getTimeDateTimeHyphenMinusKeyword_5_1_0_1() { return cTimeDateTimeHyphenMinusKeyword_5_1_0_1; }
+		//DateTime
+		public RuleCall getTimeDateTimeParserRuleCall_5_1_0() { return cTimeDateTimeParserRuleCall_5_1_0; }
 		
 		//(',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')?
 		public Group getGroup_6() { return cGroup_6; }
@@ -683,8 +675,7 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Assignment cTimeAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final CrossReference cTimeDateTimeCrossReference_5_1_0 = (CrossReference)cTimeAssignment_5_1.eContents().get(0);
-		private final Keyword cTimeDateTimeHyphenMinusKeyword_5_1_0_1 = (Keyword)cTimeDateTimeCrossReference_5_1_0.eContents().get(1);
+		private final RuleCall cTimeDateTimeParserRuleCall_5_1_0 = (RuleCall)cTimeAssignment_5_1.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
@@ -698,10 +689,10 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Used:
-		//    'used' '(' activity=[Activity|QualifiedName] ',' entity=[Entity|QualifiedName] (',' time=[DateTime|'-'])? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
+		//    'used' '(' activity=[Activity|QualifiedName] ',' entity=[Entity|QualifiedName] (',' time=DateTime)? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'used' '(' activity=[Activity|QualifiedName] ',' entity=[Entity|QualifiedName] (',' time=[DateTime|'-'])? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')'
+		//'used' '(' activity=[Activity|QualifiedName] ',' entity=[Entity|QualifiedName] (',' time=DateTime)? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'used'
@@ -731,20 +722,17 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//QualifiedName
 		public RuleCall getEntityEntityQualifiedNameParserRuleCall_4_0_1() { return cEntityEntityQualifiedNameParserRuleCall_4_0_1; }
 		
-		//(',' time=[DateTime|'-'])?
+		//(',' time=DateTime)?
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//','
 		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
 		
-		//time=[DateTime|'-']
+		//time=DateTime
 		public Assignment getTimeAssignment_5_1() { return cTimeAssignment_5_1; }
 		
-		//[DateTime|'-']
-		public CrossReference getTimeDateTimeCrossReference_5_1_0() { return cTimeDateTimeCrossReference_5_1_0; }
-		
-		//'-'
-		public Keyword getTimeDateTimeHyphenMinusKeyword_5_1_0_1() { return cTimeDateTimeHyphenMinusKeyword_5_1_0_1; }
+		//DateTime
+		public RuleCall getTimeDateTimeParserRuleCall_5_1_0() { return cTimeDateTimeParserRuleCall_5_1_0; }
 		
 		//(',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')?
 		public Group getGroup_6() { return cGroup_6; }
@@ -1092,86 +1080,100 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	public class DateTimeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.w3.ns.prov.ProvN.DateTime");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cYearAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cYearINTTerminalRuleCall_0_0 = (RuleCall)cYearAssignment_0.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cMonthAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cMonthINTTerminalRuleCall_2_0 = (RuleCall)cMonthAssignment_2.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cDayAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cDayINTTerminalRuleCall_4_0 = (RuleCall)cDayAssignment_4.eContents().get(0);
-		private final Keyword cTKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cHourAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cHourINTTerminalRuleCall_6_0 = (RuleCall)cHourAssignment_6.eContents().get(0);
-		private final Keyword cColonKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cMinuteAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cMinuteINTTerminalRuleCall_8_0 = (RuleCall)cMinuteAssignment_8.eContents().get(0);
-		private final Keyword cColonKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Assignment cSecondAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cSecondINTTerminalRuleCall_10_0 = (RuleCall)cSecondAssignment_10.eContents().get(0);
-		private final Keyword cZKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Assignment cYearAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final RuleCall cYearINTTerminalRuleCall_0_0_0 = (RuleCall)cYearAssignment_0_0.eContents().get(0);
+		private final Keyword cHyphenMinusKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cMonthAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cMonthINTTerminalRuleCall_0_2_0 = (RuleCall)cMonthAssignment_0_2.eContents().get(0);
+		private final Keyword cHyphenMinusKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
+		private final Assignment cDayAssignment_0_4 = (Assignment)cGroup_0.eContents().get(4);
+		private final RuleCall cDayINTTerminalRuleCall_0_4_0 = (RuleCall)cDayAssignment_0_4.eContents().get(0);
+		private final Keyword cTKeyword_0_5 = (Keyword)cGroup_0.eContents().get(5);
+		private final Assignment cHourAssignment_0_6 = (Assignment)cGroup_0.eContents().get(6);
+		private final RuleCall cHourINTTerminalRuleCall_0_6_0 = (RuleCall)cHourAssignment_0_6.eContents().get(0);
+		private final Keyword cColonKeyword_0_7 = (Keyword)cGroup_0.eContents().get(7);
+		private final Assignment cMinuteAssignment_0_8 = (Assignment)cGroup_0.eContents().get(8);
+		private final RuleCall cMinuteINTTerminalRuleCall_0_8_0 = (RuleCall)cMinuteAssignment_0_8.eContents().get(0);
+		private final Keyword cColonKeyword_0_9 = (Keyword)cGroup_0.eContents().get(9);
+		private final Assignment cSecondAssignment_0_10 = (Assignment)cGroup_0.eContents().get(10);
+		private final RuleCall cSecondINTTerminalRuleCall_0_10_0 = (RuleCall)cSecondAssignment_0_10.eContents().get(0);
+		private final Keyword cZKeyword_0_11 = (Keyword)cGroup_0.eContents().get(11);
+		private final Assignment cDashAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final Keyword cDashHyphenMinusKeyword_1_0 = (Keyword)cDashAssignment_1.eContents().get(0);
 		
 		//DateTime:
-		//    year=INT '-' month=INT '-' day=INT 'T' hour=INT ':' minute=INT ':' second=INT 'Z';
+		//    (year=INT '-' month=INT '-' day=INT 'T' hour=INT ':' minute=INT ':' second=INT 'Z')
+		//    | dash='-';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//year=INT '-' month=INT '-' day=INT 'T' hour=INT ':' minute=INT ':' second=INT 'Z'
-		public Group getGroup() { return cGroup; }
+		//(year=INT '-' month=INT '-' day=INT 'T' hour=INT ':' minute=INT ':' second=INT 'Z')
+		//| dash='-'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//(year=INT '-' month=INT '-' day=INT 'T' hour=INT ':' minute=INT ':' second=INT 'Z')
+		public Group getGroup_0() { return cGroup_0; }
 		
 		//year=INT
-		public Assignment getYearAssignment_0() { return cYearAssignment_0; }
+		public Assignment getYearAssignment_0_0() { return cYearAssignment_0_0; }
 		
 		//INT
-		public RuleCall getYearINTTerminalRuleCall_0_0() { return cYearINTTerminalRuleCall_0_0; }
+		public RuleCall getYearINTTerminalRuleCall_0_0_0() { return cYearINTTerminalRuleCall_0_0_0; }
 		
 		//'-'
-		public Keyword getHyphenMinusKeyword_1() { return cHyphenMinusKeyword_1; }
+		public Keyword getHyphenMinusKeyword_0_1() { return cHyphenMinusKeyword_0_1; }
 		
 		//month=INT
-		public Assignment getMonthAssignment_2() { return cMonthAssignment_2; }
+		public Assignment getMonthAssignment_0_2() { return cMonthAssignment_0_2; }
 		
 		//INT
-		public RuleCall getMonthINTTerminalRuleCall_2_0() { return cMonthINTTerminalRuleCall_2_0; }
+		public RuleCall getMonthINTTerminalRuleCall_0_2_0() { return cMonthINTTerminalRuleCall_0_2_0; }
 		
 		//'-'
-		public Keyword getHyphenMinusKeyword_3() { return cHyphenMinusKeyword_3; }
+		public Keyword getHyphenMinusKeyword_0_3() { return cHyphenMinusKeyword_0_3; }
 		
 		//day=INT
-		public Assignment getDayAssignment_4() { return cDayAssignment_4; }
+		public Assignment getDayAssignment_0_4() { return cDayAssignment_0_4; }
 		
 		//INT
-		public RuleCall getDayINTTerminalRuleCall_4_0() { return cDayINTTerminalRuleCall_4_0; }
+		public RuleCall getDayINTTerminalRuleCall_0_4_0() { return cDayINTTerminalRuleCall_0_4_0; }
 		
 		//'T'
-		public Keyword getTKeyword_5() { return cTKeyword_5; }
+		public Keyword getTKeyword_0_5() { return cTKeyword_0_5; }
 		
 		//hour=INT
-		public Assignment getHourAssignment_6() { return cHourAssignment_6; }
+		public Assignment getHourAssignment_0_6() { return cHourAssignment_0_6; }
 		
 		//INT
-		public RuleCall getHourINTTerminalRuleCall_6_0() { return cHourINTTerminalRuleCall_6_0; }
+		public RuleCall getHourINTTerminalRuleCall_0_6_0() { return cHourINTTerminalRuleCall_0_6_0; }
 		
 		//':'
-		public Keyword getColonKeyword_7() { return cColonKeyword_7; }
+		public Keyword getColonKeyword_0_7() { return cColonKeyword_0_7; }
 		
 		//minute=INT
-		public Assignment getMinuteAssignment_8() { return cMinuteAssignment_8; }
+		public Assignment getMinuteAssignment_0_8() { return cMinuteAssignment_0_8; }
 		
 		//INT
-		public RuleCall getMinuteINTTerminalRuleCall_8_0() { return cMinuteINTTerminalRuleCall_8_0; }
+		public RuleCall getMinuteINTTerminalRuleCall_0_8_0() { return cMinuteINTTerminalRuleCall_0_8_0; }
 		
 		//':'
-		public Keyword getColonKeyword_9() { return cColonKeyword_9; }
+		public Keyword getColonKeyword_0_9() { return cColonKeyword_0_9; }
 		
 		//second=INT
-		public Assignment getSecondAssignment_10() { return cSecondAssignment_10; }
+		public Assignment getSecondAssignment_0_10() { return cSecondAssignment_0_10; }
 		
 		//INT
-		public RuleCall getSecondINTTerminalRuleCall_10_0() { return cSecondINTTerminalRuleCall_10_0; }
+		public RuleCall getSecondINTTerminalRuleCall_0_10_0() { return cSecondINTTerminalRuleCall_0_10_0; }
 		
 		//'Z'
-		public Keyword getZKeyword_11() { return cZKeyword_11; }
+		public Keyword getZKeyword_0_11() { return cZKeyword_0_11; }
+		
+		//dash='-'
+		public Assignment getDashAssignment_1() { return cDashAssignment_1; }
+		
+		//'-'
+		public Keyword getDashHyphenMinusKeyword_1_0() { return cDashHyphenMinusKeyword_1_0; }
 	}
 	
 	
@@ -1336,7 +1338,7 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//WasDerivedFrom:
-	//    'wasDerivedFrom' '(' generatedEntity=[Entity|QualifiedName] ',' usedEntity=[Entity|QualifiedName] (',' time=[DateTime|'-'])? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
+	//    'wasDerivedFrom' '(' generatedEntity=[Entity|QualifiedName] ',' usedEntity=[Entity|QualifiedName] (',' time=DateTime)? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
 	public WasDerivedFromElements getWasDerivedFromAccess() {
 		return pWasDerivedFrom;
 	}
@@ -1346,7 +1348,7 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//WasGeneratedBy:
-	//    'wasGeneratedBy' '(' entity=[Entity|QualifiedName] ',' activity=[Activity|QualifiedName] (',' time=[DateTime|'-'])? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
+	//    'wasGeneratedBy' '(' entity=[Entity|QualifiedName] ',' activity=[Activity|QualifiedName] (',' time=DateTime)? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
 	public WasGeneratedByElements getWasGeneratedByAccess() {
 		return pWasGeneratedBy;
 	}
@@ -1356,7 +1358,7 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//Used:
-	//    'used' '(' activity=[Activity|QualifiedName] ',' entity=[Entity|QualifiedName] (',' time=[DateTime|'-'])? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
+	//    'used' '(' activity=[Activity|QualifiedName] ',' entity=[Entity|QualifiedName] (',' time=DateTime)? (',' '[' attributes+=Attribute (',' attributes+=Attribute)* ']')? ')';
 	public UsedElements getUsedAccess() {
 		return pUsed;
 	}
@@ -1416,7 +1418,8 @@ public class ProvNGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//DateTime:
-	//    year=INT '-' month=INT '-' day=INT 'T' hour=INT ':' minute=INT ':' second=INT 'Z';
+	//    (year=INT '-' month=INT '-' day=INT 'T' hour=INT ':' minute=INT ':' second=INT 'Z')
+	//    | dash='-';
 	public DateTimeElements getDateTimeAccess() {
 		return pDateTime;
 	}

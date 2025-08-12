@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="ca.umontreal.patina.feature.all"
+      label="All"
+      version="1.0.0.qualifier">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <plugin
+         id="decomposer_plugin"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.plugin.geodes.trustAssessment"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.xtext.geodes.trustdsl"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.xtext.geodes.trustdsl.ide"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.xtext.geodes.trustdsl.ui"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.plugin.geodes.clusterProvn"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.w3.ns.prov"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.w3.ns.prov.ide"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.w3.ns.prov.ui"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.idm.cms.emodl"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.idm.cms.emodl.ide"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.idm.cms.emodl.ui"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.plugin.geodes.fuseOpinions"
+         version="0.0.0"/>
+
+</feature>

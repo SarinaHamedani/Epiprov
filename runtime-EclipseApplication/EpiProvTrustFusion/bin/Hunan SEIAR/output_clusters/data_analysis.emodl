@@ -1,7 +1,0 @@
-(import (rnrs) (emodl cmslib))
-
-(start-model "data_analysis")
-
-
-
-(end-model)

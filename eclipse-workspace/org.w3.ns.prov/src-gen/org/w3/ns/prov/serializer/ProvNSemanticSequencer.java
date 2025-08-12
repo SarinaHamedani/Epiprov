@@ -152,38 +152,20 @@ public class ProvNSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *
 	 * Constraint:
 	 *     (
-	 *         year=INT 
-	 *         month=INT 
-	 *         day=INT 
-	 *         hour=INT 
-	 *         minute=INT 
-	 *         second=INT
+	 *         (
+	 *             year=INT 
+	 *             month=INT 
+	 *             day=INT 
+	 *             hour=INT 
+	 *             minute=INT 
+	 *             second=INT
+	 *         ) | 
+	 *         dash='-'
 	 *     )
 	 * </pre>
 	 */
 	protected void sequence_DateTime(ISerializationContext context, DateTime semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ProvNPackage.Literals.DATE_TIME__YEAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProvNPackage.Literals.DATE_TIME__YEAR));
-			if (transientValues.isValueTransient(semanticObject, ProvNPackage.Literals.DATE_TIME__MONTH) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProvNPackage.Literals.DATE_TIME__MONTH));
-			if (transientValues.isValueTransient(semanticObject, ProvNPackage.Literals.DATE_TIME__DAY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProvNPackage.Literals.DATE_TIME__DAY));
-			if (transientValues.isValueTransient(semanticObject, ProvNPackage.Literals.DATE_TIME__HOUR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProvNPackage.Literals.DATE_TIME__HOUR));
-			if (transientValues.isValueTransient(semanticObject, ProvNPackage.Literals.DATE_TIME__MINUTE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProvNPackage.Literals.DATE_TIME__MINUTE));
-			if (transientValues.isValueTransient(semanticObject, ProvNPackage.Literals.DATE_TIME__SECOND) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProvNPackage.Literals.DATE_TIME__SECOND));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDateTimeAccess().getYearINTTerminalRuleCall_0_0(), semanticObject.getYear());
-		feeder.accept(grammarAccess.getDateTimeAccess().getMonthINTTerminalRuleCall_2_0(), semanticObject.getMonth());
-		feeder.accept(grammarAccess.getDateTimeAccess().getDayINTTerminalRuleCall_4_0(), semanticObject.getDay());
-		feeder.accept(grammarAccess.getDateTimeAccess().getHourINTTerminalRuleCall_6_0(), semanticObject.getHour());
-		feeder.accept(grammarAccess.getDateTimeAccess().getMinuteINTTerminalRuleCall_8_0(), semanticObject.getMinute());
-		feeder.accept(grammarAccess.getDateTimeAccess().getSecondINTTerminalRuleCall_10_0(), semanticObject.getSecond());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -292,7 +274,7 @@ public class ProvNSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Used returns Used
 	 *
 	 * Constraint:
-	 *     (activity=[Activity|QualifiedName] entity=[Entity|QualifiedName] time=[DateTime|'-']? (attributes+=Attribute attributes+=Attribute*)?)
+	 *     (activity=[Activity|QualifiedName] entity=[Entity|QualifiedName] time=DateTime? (attributes+=Attribute attributes+=Attribute*)?)
 	 * </pre>
 	 */
 	protected void sequence_Used(ISerializationContext context, Used semanticObject) {
@@ -340,7 +322,7 @@ public class ProvNSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     WasDerivedFrom returns WasDerivedFrom
 	 *
 	 * Constraint:
-	 *     (generatedEntity=[Entity|QualifiedName] usedEntity=[Entity|QualifiedName] time=[DateTime|'-']? (attributes+=Attribute attributes+=Attribute*)?)
+	 *     (generatedEntity=[Entity|QualifiedName] usedEntity=[Entity|QualifiedName] time=DateTime? (attributes+=Attribute attributes+=Attribute*)?)
 	 * </pre>
 	 */
 	protected void sequence_WasDerivedFrom(ISerializationContext context, WasDerivedFrom semanticObject) {
@@ -356,7 +338,7 @@ public class ProvNSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     WasGeneratedBy returns WasGeneratedBy
 	 *
 	 * Constraint:
-	 *     (entity=[Entity|QualifiedName] activity=[Activity|QualifiedName] time=[DateTime|'-']? (attributes+=Attribute attributes+=Attribute*)?)
+	 *     (entity=[Entity|QualifiedName] activity=[Activity|QualifiedName] time=DateTime? (attributes+=Attribute attributes+=Attribute*)?)
 	 * </pre>
 	 */
 	protected void sequence_WasGeneratedBy(ISerializationContext context, WasGeneratedBy semanticObject) {

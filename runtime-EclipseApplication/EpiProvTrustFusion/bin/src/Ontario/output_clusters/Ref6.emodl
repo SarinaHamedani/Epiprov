@@ -1,9 +1,0 @@
-(import (rnrs) (emodl cmslib))
-
-(start-model "Ref6")
-
-(param beta 2.3)   ; Basic reproduction number (R0) [ref 6]
-(reaction infection (S) (E) (* (* beta S) (/ (+ I_presymptomatic (+ I_presymptomatic_isolated (+ I_mild (+ I_severe (+ I_mild_quarantined I_severe_quarantined))))) population_size)))
-
-
-(end-model)

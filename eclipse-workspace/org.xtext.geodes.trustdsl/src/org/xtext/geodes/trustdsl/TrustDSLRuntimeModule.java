@@ -3,9 +3,15 @@
  */
 package org.xtext.geodes.trustdsl;
 
+import org.eclipse.xtext.service.SingletonBinding;
+import org.xtext.geodes.trustdsl.validation.TrustDSLValidator;
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 public class TrustDSLRuntimeModule extends AbstractTrustDSLRuntimeModule {
+	@SingletonBinding(eager=true)
+	public Class<? extends TrustDSLValidator> bindTrustDSLValidator() {
+	    return TrustDSLValidator.class;
+	}
 }

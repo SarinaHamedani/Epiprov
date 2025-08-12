@@ -3,6 +3,8 @@
  */
 package org.xtext.geodes.trustdsl.ui;
 
+import org.eclipse.core.resources.IResourceChangeEvent;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
@@ -12,5 +14,6 @@ public class TrustDSLUiModule extends AbstractTrustDSLUiModule {
 
 	public TrustDSLUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
+		ResourcesPlugin.getWorkspace().addResourceChangeListener(new TrustDSLChangeListener(), IResourceChangeEvent.POST_CHANGE);
 	}
 }

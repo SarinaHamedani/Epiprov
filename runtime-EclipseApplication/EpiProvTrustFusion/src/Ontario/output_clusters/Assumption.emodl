@@ -1,5 +1,3 @@
-(import (rnrs) (emodl cmslib))
-
 (start-model "Assumption")
 
 (param rho 0.7)  ; Proportion of cases detected and isolated [assumption]

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.w3.ns.prov.provN.DateTime#getHour <em>Hour</em>}</li>
  *   <li>{@link org.w3.ns.prov.provN.DateTime#getMinute <em>Minute</em>}</li>
  *   <li>{@link org.w3.ns.prov.provN.DateTime#getSecond <em>Second</em>}</li>
+ *   <li>{@link org.w3.ns.prov.provN.DateTime#getDash <em>Dash</em>}</li>
  * </ul>
  *
  * @see org.w3.ns.prov.provN.ProvNPackage#getDateTime()
@@ -159,5 +160,27 @@ public interface DateTime extends EObject
    * @generated
    */
   void setSecond(int value);
+
+  /**
+   * Returns the value of the '<em><b>Dash</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Dash</em>' attribute.
+   * @see #setDash(String)
+   * @see org.w3.ns.prov.provN.ProvNPackage#getDateTime_Dash()
+   * @model
+   * @generated
+   */
+  String getDash();
+
+  /**
+   * Sets the value of the '{@link org.w3.ns.prov.provN.DateTime#getDash <em>Dash</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Dash</em>' attribute.
+   * @see #getDash()
+   * @generated
+   */
+  void setDash(String value);
 
 } // DateTime

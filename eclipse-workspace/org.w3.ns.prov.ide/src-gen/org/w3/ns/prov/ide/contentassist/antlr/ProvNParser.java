@@ -33,6 +33,7 @@ public class ProvNParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, ProvNGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
 			builder.put(grammarAccess.getRelationAccess().getAlternatives(), "rule__Relation__Alternatives");
+			builder.put(grammarAccess.getDateTimeAccess().getAlternatives(), "rule__DateTime__Alternatives");
 			builder.put(grammarAccess.getDocumentAccess().getGroup(), "rule__Document__Group__0");
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 			builder.put(grammarAccess.getNamespaceAccess().getGroup(), "rule__Namespace__Group__0");
@@ -70,7 +71,7 @@ public class ProvNParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAttributeAccess().getGroup(), "rule__Attribute__Group__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup_0(), "rule__QualifiedName__Group_0__0");
-			builder.put(grammarAccess.getDateTimeAccess().getGroup(), "rule__DateTime__Group__0");
+			builder.put(grammarAccess.getDateTimeAccess().getGroup_0(), "rule__DateTime__Group_0__0");
 			builder.put(grammarAccess.getDocumentAccess().getCompartmentalModelAssignment_1(), "rule__Document__CompartmentalModelAssignment_1");
 			builder.put(grammarAccess.getModelAccess().getNamespacesAssignment_1(), "rule__Model__NamespacesAssignment_1");
 			builder.put(grammarAccess.getModelAccess().getStatementsAssignment_2(), "rule__Model__StatementsAssignment_2");
@@ -115,12 +116,13 @@ public class ProvNParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getHadMemberAccess().getMemberAssignment_4(), "rule__HadMember__MemberAssignment_4");
 			builder.put(grammarAccess.getAttributeAccess().getLabelAssignment_0(), "rule__Attribute__LabelAssignment_0");
 			builder.put(grammarAccess.getAttributeAccess().getValueAssignment_2(), "rule__Attribute__ValueAssignment_2");
-			builder.put(grammarAccess.getDateTimeAccess().getYearAssignment_0(), "rule__DateTime__YearAssignment_0");
-			builder.put(grammarAccess.getDateTimeAccess().getMonthAssignment_2(), "rule__DateTime__MonthAssignment_2");
-			builder.put(grammarAccess.getDateTimeAccess().getDayAssignment_4(), "rule__DateTime__DayAssignment_4");
-			builder.put(grammarAccess.getDateTimeAccess().getHourAssignment_6(), "rule__DateTime__HourAssignment_6");
-			builder.put(grammarAccess.getDateTimeAccess().getMinuteAssignment_8(), "rule__DateTime__MinuteAssignment_8");
-			builder.put(grammarAccess.getDateTimeAccess().getSecondAssignment_10(), "rule__DateTime__SecondAssignment_10");
+			builder.put(grammarAccess.getDateTimeAccess().getYearAssignment_0_0(), "rule__DateTime__YearAssignment_0_0");
+			builder.put(grammarAccess.getDateTimeAccess().getMonthAssignment_0_2(), "rule__DateTime__MonthAssignment_0_2");
+			builder.put(grammarAccess.getDateTimeAccess().getDayAssignment_0_4(), "rule__DateTime__DayAssignment_0_4");
+			builder.put(grammarAccess.getDateTimeAccess().getHourAssignment_0_6(), "rule__DateTime__HourAssignment_0_6");
+			builder.put(grammarAccess.getDateTimeAccess().getMinuteAssignment_0_8(), "rule__DateTime__MinuteAssignment_0_8");
+			builder.put(grammarAccess.getDateTimeAccess().getSecondAssignment_0_10(), "rule__DateTime__SecondAssignment_0_10");
+			builder.put(grammarAccess.getDateTimeAccess().getDashAssignment_1(), "rule__DateTime__DashAssignment_1");
 		}
 	}
 	

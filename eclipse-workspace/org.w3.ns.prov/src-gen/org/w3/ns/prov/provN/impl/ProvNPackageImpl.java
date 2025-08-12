@@ -855,6 +855,17 @@ public class ProvNPackageImpl extends EPackageImpl implements ProvNPackage
    * @generated
    */
   @Override
+  public EAttribute getDateTime_Dash()
+  {
+    return (EAttribute)dateTimeEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public ProvNFactory getProvNFactory()
   {
     return (ProvNFactory)getEFactoryInstance();
@@ -953,6 +964,7 @@ public class ProvNPackageImpl extends EPackageImpl implements ProvNPackage
     createEAttribute(dateTimeEClass, DATE_TIME__HOUR);
     createEAttribute(dateTimeEClass, DATE_TIME__MINUTE);
     createEAttribute(dateTimeEClass, DATE_TIME__SECOND);
+    createEAttribute(dateTimeEClass, DATE_TIME__DASH);
   }
 
   /**
@@ -1028,19 +1040,19 @@ public class ProvNPackageImpl extends EPackageImpl implements ProvNPackage
     initEClass(wasDerivedFromEClass, WasDerivedFrom.class, "WasDerivedFrom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getWasDerivedFrom_GeneratedEntity(), this.getEntity(), null, "generatedEntity", null, 0, 1, WasDerivedFrom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWasDerivedFrom_UsedEntity(), this.getEntity(), null, "usedEntity", null, 0, 1, WasDerivedFrom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getWasDerivedFrom_Time(), this.getDateTime(), null, "time", null, 0, 1, WasDerivedFrom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWasDerivedFrom_Time(), this.getDateTime(), null, "time", null, 0, 1, WasDerivedFrom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWasDerivedFrom_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, WasDerivedFrom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(wasGeneratedByEClass, WasGeneratedBy.class, "WasGeneratedBy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getWasGeneratedBy_Entity(), this.getEntity(), null, "entity", null, 0, 1, WasGeneratedBy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWasGeneratedBy_Activity(), this.getActivity(), null, "activity", null, 0, 1, WasGeneratedBy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getWasGeneratedBy_Time(), this.getDateTime(), null, "time", null, 0, 1, WasGeneratedBy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWasGeneratedBy_Time(), this.getDateTime(), null, "time", null, 0, 1, WasGeneratedBy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWasGeneratedBy_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, WasGeneratedBy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(usedEClass, Used.class, "Used", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getUsed_Activity(), this.getActivity(), null, "activity", null, 0, 1, Used.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUsed_Entity(), this.getEntity(), null, "entity", null, 0, 1, Used.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getUsed_Time(), this.getDateTime(), null, "time", null, 0, 1, Used.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUsed_Time(), this.getDateTime(), null, "time", null, 0, 1, Used.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUsed_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Used.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(wasAssociatedWithEClass, WasAssociatedWith.class, "WasAssociatedWith", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1069,6 +1081,7 @@ public class ProvNPackageImpl extends EPackageImpl implements ProvNPackage
     initEAttribute(getDateTime_Hour(), ecorePackage.getEInt(), "hour", null, 0, 1, DateTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDateTime_Minute(), ecorePackage.getEInt(), "minute", null, 0, 1, DateTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDateTime_Second(), ecorePackage.getEInt(), "second", null, 0, 1, DateTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDateTime_Dash(), ecorePackage.getEString(), "dash", null, 0, 1, DateTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

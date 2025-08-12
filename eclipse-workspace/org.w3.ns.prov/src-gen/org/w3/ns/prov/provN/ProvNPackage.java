@@ -355,7 +355,7 @@ public interface ProvNPackage extends EPackage
   int WAS_DERIVED_FROM__USED_ENTITY = RELATION_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Time</b></em>' reference.
+   * The feature id for the '<em><b>Time</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -410,7 +410,7 @@ public interface ProvNPackage extends EPackage
   int WAS_GENERATED_BY__ACTIVITY = RELATION_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Time</b></em>' reference.
+   * The feature id for the '<em><b>Time</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -465,7 +465,7 @@ public interface ProvNPackage extends EPackage
   int USED__ENTITY = RELATION_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Time</b></em>' reference.
+   * The feature id for the '<em><b>Time</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -731,13 +731,22 @@ public interface ProvNPackage extends EPackage
   int DATE_TIME__SECOND = 5;
 
   /**
+   * The feature id for the '<em><b>Dash</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATE_TIME__DASH = 6;
+
+  /**
    * The number of structural features of the '<em>Date Time</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DATE_TIME_FEATURE_COUNT = 6;
+  int DATE_TIME_FEATURE_COUNT = 7;
 
 
   /**
@@ -996,10 +1005,10 @@ public interface ProvNPackage extends EPackage
   EReference getWasDerivedFrom_UsedEntity();
 
   /**
-   * Returns the meta object for the reference '{@link org.w3.ns.prov.provN.WasDerivedFrom#getTime <em>Time</em>}'.
+   * Returns the meta object for the containment reference '{@link org.w3.ns.prov.provN.WasDerivedFrom#getTime <em>Time</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Time</em>'.
+   * @return the meta object for the containment reference '<em>Time</em>'.
    * @see org.w3.ns.prov.provN.WasDerivedFrom#getTime()
    * @see #getWasDerivedFrom()
    * @generated
@@ -1050,10 +1059,10 @@ public interface ProvNPackage extends EPackage
   EReference getWasGeneratedBy_Activity();
 
   /**
-   * Returns the meta object for the reference '{@link org.w3.ns.prov.provN.WasGeneratedBy#getTime <em>Time</em>}'.
+   * Returns the meta object for the containment reference '{@link org.w3.ns.prov.provN.WasGeneratedBy#getTime <em>Time</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Time</em>'.
+   * @return the meta object for the containment reference '<em>Time</em>'.
    * @see org.w3.ns.prov.provN.WasGeneratedBy#getTime()
    * @see #getWasGeneratedBy()
    * @generated
@@ -1104,10 +1113,10 @@ public interface ProvNPackage extends EPackage
   EReference getUsed_Entity();
 
   /**
-   * Returns the meta object for the reference '{@link org.w3.ns.prov.provN.Used#getTime <em>Time</em>}'.
+   * Returns the meta object for the containment reference '{@link org.w3.ns.prov.provN.Used#getTime <em>Time</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Time</em>'.
+   * @return the meta object for the containment reference '<em>Time</em>'.
    * @see org.w3.ns.prov.provN.Used#getTime()
    * @see #getUsed()
    * @generated
@@ -1363,6 +1372,17 @@ public interface ProvNPackage extends EPackage
   EAttribute getDateTime_Second();
 
   /**
+   * Returns the meta object for the attribute '{@link org.w3.ns.prov.provN.DateTime#getDash <em>Dash</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Dash</em>'.
+   * @see org.w3.ns.prov.provN.DateTime#getDash()
+   * @see #getDateTime()
+   * @generated
+   */
+  EAttribute getDateTime_Dash();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1596,7 +1616,7 @@ public interface ProvNPackage extends EPackage
     EReference WAS_DERIVED_FROM__USED_ENTITY = eINSTANCE.getWasDerivedFrom_UsedEntity();
 
     /**
-     * The meta object literal for the '<em><b>Time</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Time</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1638,7 +1658,7 @@ public interface ProvNPackage extends EPackage
     EReference WAS_GENERATED_BY__ACTIVITY = eINSTANCE.getWasGeneratedBy_Activity();
 
     /**
-     * The meta object literal for the '<em><b>Time</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Time</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1680,7 +1700,7 @@ public interface ProvNPackage extends EPackage
     EReference USED__ENTITY = eINSTANCE.getUsed_Entity();
 
     /**
-     * The meta object literal for the '<em><b>Time</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Time</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1880,6 +1900,14 @@ public interface ProvNPackage extends EPackage
      * @generated
      */
     EAttribute DATE_TIME__SECOND = eINSTANCE.getDateTime_Second();
+
+    /**
+     * The meta object literal for the '<em><b>Dash</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATE_TIME__DASH = eINSTANCE.getDateTime_Dash();
 
   }
 

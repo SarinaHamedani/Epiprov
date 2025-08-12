@@ -7,7 +7,7 @@ Bundle-Activator: decomposer_plugin.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.swt
-Bundle-RequiredExecutionEnvironment: JavaSE-23
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Automatic-Module-Name: decomposer.plugin
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,

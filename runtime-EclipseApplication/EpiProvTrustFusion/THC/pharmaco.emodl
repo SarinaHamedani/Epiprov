@@ -1,0 +1,64 @@
+(import (rnrs) (emodl cmslib))
+
+(start-model "THC_Oral_PK_Model")
+
+(species Ca   24.85)  ; Absorption (GI tract)
+(species C1   0)      ; THC in plasma
+(species C2   0)      ; THC in rapid tissue
+(species C3   0)      ; THC in slow tissue
+(species Ce1  0)      ; THC effect site
+
+(species C4   0)      ; THC-OH in plasma
+(species C5   0)      ; THC-OH in rapid tissue
+(species C6   0)      ; THC-OH in slow tissue
+(species Ce2  0)      ; THC-OH effect site
+
+(species C7   0)      ; THCCOOH (terminal metabolite)
+
+;; Parameters
+(param ka    0.02)
+(param k12   0.7438)
+(param k21   1.0000)
+(param k13   0.3718)
+(param k31   1.0000)
+(param k14   0.0380)
+(param k17   0.0001)
+(param k1e   0.0001)
+(param ke10  0.0025)
+
+(param k40   0.0150)
+(param k45   0.0062)
+(param k54   1.0000)
+(param k46   0.0034)
+(param k64   1.0000)
+(param k47   0.0015)
+(param k4e   0.0020)
+(param ke20  0.0030)
+
+;; Reactions - THC Absorption and Distribution
+(reaction absorption    (Ca)    (C1)    (* ka Ca))
+(reaction THC_to_C2     (C1)    (C2)    (* k12 C1))
+(reaction C2_to_THC     (C2)    (C1)    (* k21 C2))
+(reaction THC_to_C3     (C1)    (C3)    (* k13 C1))
+(reaction C3_to_THC     (C3)    (C1)    (* k31 C3))
+(reaction THC_to_OH     (C1)    (C4)    (* k14 C1))
+(reaction THC_to_COOH   (C1)    (C7)    (* k17 C1))
+(reaction THC_to_Eff    (C1)    (Ce1)   (* k1e C1))
+(reaction Eff_THC_clear (Ce1)   ()      (* ke10 Ce1))
+
+;; Reactions - THC-OH Distribution
+(reaction OH_to_C5      (C4)    (C5)    (* k45 C4))
+(reaction C5_to_OH      (C5)    (C4)    (* k54 C5))
+(reaction OH_to_C6      (C4)    (C6)    (* k46 C4))
+(reaction C6_to_OH      (C6)    (C4)    (* k64 C6))
+(reaction OH_to_Eff     (C4)    (Ce2)   (* k4e C4))
+(reaction Eff_OH_clear  (Ce2)   ()      (* ke20 Ce2))
+(reaction OH_to_COOH    (C4)    (C7)    (* k47 C4))
+(reaction OH_clear      (C4)    ()      (* k40 C4))
+
+;; Observable
+(observe Plasma_THC     C1)
+(observe Plasma_THCOH   C4)
+(observe THCCOOH        C7)
+
+(end-model)

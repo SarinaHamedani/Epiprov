@@ -1,0 +1,91 @@
+document
+prefix prov <http://www.prov.org/>
+prefix thc <http://example.org/thc_model/>
+
+entity(prov:THC_Model_Study, [prov:type = 'prov:Collection'])
+
+agent(prov:Mahahong_Saleewong, [prov:label = "Mahahong & Saleewong (2024)"])
+
+entity(prov:Study10, [prov:type = 'prov:Entity', prov:label = "Mahahong & Saleewong, THC Smoking Study (2023)"])
+wasAttributedTo(prov:Study10, prov:Mahahong_Saleewong)
+
+activity(prov:manual_assignment, [prov:type = 'prov:Activity', prov:label = "Assumption-Based Manual Assignment"])
+
+wasAttributedTo(prov:THC_Model_Study, prov:Mahahong_Saleewong)
+
+entity(prov:C0, [prov:type = 'prov:Entity', prov:value = "24.85"])
+hadMember(prov:THC_Model_Study, prov:C0)
+wasDerivedFrom(prov:C0, prov:Study10)
+
+entity(prov:ka, [prov:type = 'prov:Entity', prov:value = "0.02"])
+hadMember(prov:THC_Model_Study, prov:ka)
+wasGeneratedBy(prov:ka, prov:manual_assignment, -)
+
+entity(prov:k12, [prov:type = 'prov:Entity', prov:value = "0.7438"])
+hadMember(prov:THC_Model_Study, prov:k12)
+wasGeneratedBy(prov:k12, prov:manual_assignment, -)
+
+entity(prov:k21, [prov:type = 'prov:Entity', prov:value = "1.0000"])
+hadMember(prov:THC_Model_Study, prov:k21)
+wasDerivedFrom(prov:k21, prov:Study10)
+
+entity(prov:k13, [prov:type = 'prov:Entity', prov:value = "0.3718"])
+hadMember(prov:THC_Model_Study, prov:k13)
+wasDerivedFrom(prov:k13, prov:Study10)
+
+entity(prov:k31, [prov:type = 'prov:Entity', prov:value = "1.0000"])
+hadMember(prov:THC_Model_Study, prov:k31)
+wasDerivedFrom(prov:k31, prov:Study10)
+
+entity(prov:k14, [prov:type = 'prov:Entity', prov:value = "0.0380"])
+hadMember(prov:THC_Model_Study, prov:k14)
+wasDerivedFrom(prov:k14, prov:Study10)
+
+entity(prov:k17, [prov:type = 'prov:Entity', prov:value = "0.0001"])
+hadMember(prov:THC_Model_Study, prov:k17)
+wasGeneratedBy(prov:k17, prov:manual_assignment, -)
+
+entity(prov:k1e, [prov:type = 'prov:Entity', prov:value = "0.0001"])
+hadMember(prov:THC_Model_Study, prov:k1e)
+wasDerivedFrom(prov:k1e, prov:Study10)
+
+entity(prov:ke10, [prov:type = 'prov:Entity', prov:value = "0.0025"])
+hadMember(prov:THC_Model_Study, prov:ke10)
+wasGeneratedBy(prov:ke10, prov:manual_assignment, -)
+
+entity(prov:k40, [prov:type = 'prov:Entity', prov:value = "0.0150"])
+hadMember(prov:THC_Model_Study, prov:k40)
+wasGeneratedBy(prov:k40, prov:manual_assignment, -)
+
+entity(prov:k45, [prov:type = 'prov:Entity', prov:value = "0.0062"])
+hadMember(prov:THC_Model_Study, prov:k45)
+wasDerivedFrom(prov:k45, prov:Study10)
+
+entity(prov:k54, [prov:type = 'prov:Entity', prov:value = "1.0000"])
+hadMember(prov:THC_Model_Study, prov:k54)
+wasDerivedFrom(prov:k54, prov:Study10)
+
+entity(prov:k46, [prov:type = 'prov:Entity', prov:value = "0.0034"])
+hadMember(prov:THC_Model_Study, prov:k46)
+wasDerivedFrom(prov:k46, prov:Study10)
+
+entity(prov:k64, [prov:type = 'prov:Entity', prov:value = "1.0000"])
+hadMember(prov:THC_Model_Study, prov:k64)
+wasDerivedFrom(prov:k64, prov:Study10)
+
+entity(prov:k47, [prov:type = 'prov:Entity', prov:value = "0.0015"])
+hadMember(prov:THC_Model_Study, prov:k47)
+wasGeneratedBy(prov:k47, prov:manual_assignment, -)
+
+entity(prov:k4e, [prov:type = 'prov:Entity', prov:value = "0.0020"])
+hadMember(prov:THC_Model_Study, prov:k4e)
+wasGeneratedBy(prov:k4e, prov:manual_assignment, -)
+
+entity(prov:ke20, [prov:type = 'prov:Entity', prov:value = "0.0030"])
+hadMember(prov:THC_Model_Study, prov:ke20)
+wasGeneratedBy(prov:ke20, prov:manual_assignment, -)
+
+entity(prov:k70, [prov:type = 'prov:Entity', prov:value = "Not reported"])
+hadMember(prov:THC_Model_Study, prov:k70)
+
+endDocument
