@@ -13,11 +13,9 @@ into t : Target!TrustModel {
         }
     }
     
-    // If after merging the elements list is still empty, create a default element
     if (t.elements.isEmpty()) {
         var defaultElement = TrustDSLFactory.eINSTANCE.createUncertainElement();
         defaultElement.name = "Default_UncertainElement";
-        // (Optionally, initialize defaultElement with a default belief)
         t.elements.add(defaultElement);
         System.out.println("Added default element to TrustModel.");
     }
@@ -38,153 +36,13 @@ merge l : Left!UncertainElement
 with r : Right!UncertainElement
 into t : Target!UncertainElement {
 	System.out.println("Merged UncertainElements: " + l.name + " and " + r.name);
-	
-    // Assign a unique name for the fused element
+
     t.name = "Fusion_" + l.name + "_" + r.name;
-
-    // Merge beliefs by combining unique ones from both sources
-//    t.beliefs.addAll(l.beliefs);
-//    
-//    for (belief in r.beliefs.collect(b | b)) {
-//        if (not t.beliefs.exists(b | b.name == belief.name)) {
-//            t.beliefs.add(belief);
-//        }
-//    }
-      
-    // Call Java helper functions to compute fusion values
-//    t.aleatoryCumulativeBF = calculateAleatoryCumulative(l, r);
-//    t.averageingBF = JavaHelper.calculateAveragingBF(l, r);
-//    t.beliefConstraintFusion = JavaHelper.calculateBeliefConstraintFusion(l, r);
-//    t.epistemicCumulativeBF = JavaHelper.calculateEpistemicCumulative(l, r);
-//    t.weightedBF = JavaHelper.calculateWeightedBF(l, r);
-
 	var resource = t.eResource;
-//	System.out.println("Resource: " + resource.getContents() + " _ " + t);
-//	resource.getContents().clear();
-//	resource.getContents().add(t);
 
     System.out.println("Merged UncertainElements: " + l.name + " and " + r.name);
 }
 
-
-//operation computeAleatoryCumulativeBF(opinions : Sequence(SBoolean)) : String {
-//    if (opinions == null or opinions.isEmpty() or opinions.exists(o | o == null)) {
-//        throw 'aCBF: Cannot average null opinions';
-//    }
-//    if (opinions.size == 1) {
-//        return opinions.first.toString();
-//    }
-//    var resultBelief : Real = 0.0;
-//    var resultDisbelief : Real = 0.0;
-//    var resultUncertainty : Real = 0.0;
-//    var resultAtomicity : Real = -1.0;
-//    
-//    var dogmatic = Sequence{};
-//    var first : Boolean = true;
-//    for (o in opinions) {
-//        if (first) {
-//            resultAtomicity = o.baseRate;
-//            first = false;
-//        }
-//        if (o.uncertainty == 0.0) {
-//            dogmatic.add(o);
-//        }
-//    }
-//    
-//    if (dogmatic.isEmpty()) {
-//        var productOfUncertainties = opinions.collect(o | o.uncertainty).reduce(acc, u | acc * u );
-//        var numerator : Real = 0.0;
-//        var beliefAccumulator : Real = 0.0;
-//        var disbeliefAccumulator : Real = 0.0;
-//        for (o in opinions) {
-//            var productWithoutO = productOfUncertainties / o.uncertainty;
-//            beliefAccumulator = beliefAccumulator + productWithoutO * o.belief;
-//            disbeliefAccumulator = disbeliefAccumulator + productWithoutO * o.disbelief;
-//            numerator = numerator + productWithoutO;
-//        }
-//        numerator = numerator - ((opinions.size - 1) * productOfUncertainties);
-//        resultBelief = beliefAccumulator / numerator;
-//        resultDisbelief = disbeliefAccumulator / numerator;
-//        resultUncertainty = productOfUncertainties / numerator;
-//    }
-//    
-//    else {
-//        var totalWeight = dogmatic.collect(o | getRelativeWeight(o)).reduce(acc, v | acc + v );
-//        resultBelief = dogmatic.collect(o | getRelativeWeight(o) / totalWeight * o.belief)
-//                               .reduce(acc, v | acc + v );
-//        resultDisbelief = dogmatic.collect(o | getRelativeWeight(o) / totalWeight * o.disbelief)
-//                                  .reduce(acc, v | acc + v );
-//        resultUncertainty = 0.0;
-//    }
-//    
-//    return '(' + round(resultBelief) + ', ' + round(resultDisbelief) + ', ' + 
-//           round(resultUncertainty) + ', ' + round(resultAtomicity) + ')';
-//}
-//
-//// Computes the Averaging Belief Fusion (ABF)
-//operation computeAveragingBF(opinions : Sequence(SBoolean)) : String {
-//    if (opinions == null or opinions.isEmpty() or opinions.exists(o | o == null)) {
-//        throw 'AVF: Cannot average null opinions';
-//    }
-//    var b : Real = 0.0;
-//    var u : Real = 0.0;
-//    var a : Real = 0.0;
-//    var PU : Real = 1.0;
-//    var count : Integer = 0;
-//    
-//    PU = opinions.collect(o | o.uncertainty)
-//                 .reduce(acc, v | acc * v);
-//    if (PU != 0.0) {
-//        for (o in opinions) {
-//            u = u + (PU / o.uncertainty);
-//            b = b + o.belief * (PU / o.uncertainty);
-//            a = a + o.baseRate;
-//        }
-//        var oBelief = b / u;
-//        var oAtomicity = a / opinions.size;
-//        var oUncertainty = opinions.size * PU / u;
-//        var oDisbelief = 1.0 - oBelief - oUncertainty;
-//        return '(' + round(oBelief) + ', ' + round(oDisbelief) + ', ' + 
-//               round(oUncertainty) + ', ' + round(oAtomicity) + ')';
-//    } else {
-//        for (o in opinions.select(o | o.uncertainty == 0.0)) {
-//            b = b + o.belief;
-//            a = a + o.baseRate;
-//            count = count + 1;
-//        }
-//        var oBelief = b / count;
-//        var oAtomicity = a / count;
-//        var oUncertainty = 0.0;
-//        var oDisbelief = 1.0 - oBelief - oUncertainty;
-//        return '(' + round(oBelief) + ', ' + round(oDisbelief) + ', ' + 
-//               round(oUncertainty) + ', ' + round(oAtomicity) + ')';
-//    }
-//}
-//
-//
-//
-//operation getRelativeWeight(s : SBoolean) : Real {
-//    return isDogmatic(s) ? 1.0 : 0.0;
-//}
-//
-//operation isDogmatic(s : SBoolean) : Boolean {
-//    return s.uncertainty == 0.0;
-//}
-//
-//operation projection(s : SBoolean) : Real {
-//    return adjust(s.belief + s.baseRate * s.uncertainty);
-//}
-//
-//operation adjust(value : Real) : Real {
-//    return Math.round(value * 1000000.0) / 1000000.0;
-//}
-//
-//operation certainty(s : SBoolean) : Real {
-//    if (isNaN(s.uncertainty)) {
-//        return NaN;
-//    }
-//    return 1.0 - s.uncertainty;
-//}
 //// Merge individual beliefs based on agents and opinions
 rule MergeBeliefs
 merge l : Left!Belief

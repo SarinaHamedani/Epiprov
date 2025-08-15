@@ -31,19 +31,17 @@
       </key>
    </extension>
    <extension point="org.eclipse.ui.menus">
-      <menuContribution
-            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
-         <toolbar
-               id="org.plugin.geodes.trustAssessment.toolbars.sampleToolbar">
-            <command
-                  id="org.plugin.geodes.trustAssessment.toolbars.sampleCommand"
-                  commandId="org.plugin.geodes.trustAssessment.commands.sampleCommand"
-                  icon="icons/logo.png"
-                  tooltip="Assess Trust Wizard">
-            </command>
-         </toolbar>
-      </menuContribution>
+	  <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+	    <toolbar id="org.plugin.geodes.patina.toolbar" label="PATINA">
+	      <command
+	          commandId="org.plugin.geodes.trustAssessment.commands.sampleCommand"
+	          icon="icons/logo.png"
+	          tooltip="Assess Trust Wizard"
+	          style="push"/>
+	    </toolbar>
+	  </menuContribution>
    </extension>
+
    <extension
          point="org.eclipse.ui.newWizards">
       <wizard

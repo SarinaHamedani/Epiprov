@@ -30,20 +30,15 @@
             sequence="M1+6">
       </key>
    </extension>
-   <extension
-         point="org.eclipse.ui.menus">
-      <menuContribution
-            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
-         <toolbar
-               id="decomposer_plugin.toolbars.sampleToolbar">
-            <command
-                  id="decomposer_plugin.toolbars.sampleCommand"
-                  commandId="decomposer_plugin.commands.sampleCommand"
-                  icon="icons/geodes_logo.png"
-                  tooltip="Launch Decomposer Wizard">
-            </command>
-         </toolbar>
-      </menuContribution>
+   <extension point="org.eclipse.ui.menus">
+	   <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+		  <toolbar id="org.plugin.geodes.patina.toolbar">
+		    <command
+		        commandId="decomposer_plugin.commands.sampleCommand"
+		        icon="icons/geodes_logo.png"
+		        tooltip="Launch Decomposer Wizard"
+		        style="push"/>
+		  </toolbar>
+	   </menuContribution>
    </extension>
-
 </plugin>

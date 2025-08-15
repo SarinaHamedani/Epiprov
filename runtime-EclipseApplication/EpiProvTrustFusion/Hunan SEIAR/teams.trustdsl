@@ -7,7 +7,7 @@ UncertainElementFusion beta_ii {
 		Belief Elena_Garcia_beta_ii (Elena_Garcia , (0.5, 0.5, 0.0, 0.5))
         , Belief Lucy_beta_ii (Lucy , (0.25, 0.6, 0.15, 0.5))
     } 
-    aleatoryCumulativeBF = ( 0.0 , 0.0 , 1.0 , 0.5 )  
+    aleatoryCumulativeBF = ( 0.0 , 0.0 , 1.0 , 0.5 ) 
     averageingBF = ( 0.5 , 0.5 , 0.0 , 0.5 ) 
     beliefConstraintFusion = ( 0.347826 , 0.652174 , 0.0 , 0.5 ) 
     consensusCompromiseBF ( 0.25 , 0.5 , 0.25 , 0.5 ) 
