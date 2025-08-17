@@ -1,6 +1,0 @@
-{
-    "solver": "SSA",
-    "duration": 730,
-    "runs": 100,
-    "samples": 250
-}
