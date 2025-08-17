@@ -5,9 +5,9 @@
 .recommenders/
 .remoteMetaStore/
 # Comment these three if you want Eclipse project configs tracked:
-.project
-.classpath
-.settings/
+# .project
+# .classpath
+# .settings/
 
 ############################
 # Build outputs (Java/Maven/Gradle/Tycho)

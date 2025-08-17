@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete 5 resources" deleteContents="true" description="Delete 5 resources" element1="/org.xtext.geodes.belieffusion" element2="/org.xtext.geodes.belieffusion.ide" element3="/org.xtext.geodes.belieffusion.tests" element4="/org.xtext.geodes.belieffusion.ui" element5="/org.xtext.geodes.belieffusion.ui.tests" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="5" stamp="1739931007575"/>
-</session>
