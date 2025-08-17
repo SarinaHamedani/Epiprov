@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: "PATINA / Epiprov: Eclipse plugins and DSLs for model decomposition, trust evaluation, and composition"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: Hamedani
+    given-names: Sarina
+repository-code: "https://github.com/SarinaHamedani/Epiprov"
+version: "1.0.0"
+date-released: "2025-08-16"
+license: "MIT"
+keywords: [Eclipse, Xtext, EMF, Epsilon, subjective logic, provenance, model decomposition]
+preferred-citation:
+  type: software
+  title: "PATINA / Epiprov"
+  authors:
+    - family-names: Hamedani
+      given-names: Sarina
+  year: 2025
+  version: "1.0.0"
+  url: "https://github.com/SarinaHamedani/Epiprov"
