@@ -1,20 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="ca.umontreal.patina.feature.all"
-      label="All"
+      label="Patina Features"
       version="1.0.0.qualifier">
 
-   <description url="http://www.example.com/description">
-      [Enter Feature Description here.]
-   </description>
+   <description url="https://github.com/SarinaHamedani/Epiprov">
+	<![CDATA[
+	PATINA / Epiprov is a set of Eclipse plugins (Xtext/EMF/Epsilon) for:
+	- detecting clusters and decomposing models (ProvN/Emodl),
+	- trust evaluation (TrustDSL) with opinion aggregation,
+	- name-based comparison and merging with Epsilon (ECL/EML),
+	- automatic warnings for low trust projections.
+	
+	After installation, two actions appear in the main toolbar and context-menu entries
+	are added for *.provn and *.trustdsl files. See the GitHub page for documentation
+	and installation instructions.
+	]]>
+	</description>
+	
+	<copyright url="https://github.com/SarinaHamedani/Epiprov">
+	<![CDATA[
+	Copyright (c) 2025 Sarina Hamedani.
+	All rights reserved. Distributed under the license listed below.
+	]]>
+	</copyright>
+	
+	<license url="https://opensource.org/licenses/MIT">
+	<![CDATA[
+	MIT License
+	
+	Copyright (c) 2025 Sarina Hamedani
+	
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+	
+	The above copyright notice and this permission notice shall be included in
+	all copies or substantial portions of the Software.
+	
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+	THE SOFTWARE.
+	]]>
+	</license>
 
-   <copyright url="http://www.example.com/copyright">
-      [Enter Copyright Description here.]
-   </copyright>
-
-   <license url="http://www.example.com/license">
-      [Enter License Description here.]
-   </license>
 
    <plugin
          id="decomposer_plugin"
