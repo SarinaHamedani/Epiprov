@@ -62,5 +62,6 @@ PATINA is distributed as an **Eclipse p2 update site (ZIP)**. Install it into yo
 ---
 
 ## License / Citation
+This project is licensed under the terms of the [MIT License](LICENSE).
 
-*Add your license text and citation instructions here.*
+See [CITATION.cff](CITATION.cff) for citation information.
