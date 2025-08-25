@@ -1,16 +1,16 @@
-Agent Julia
-Agent Bart
-
-UncertainElement beta_ii {
-    beliefs {
-        Belief Bart_beta_ii (Bart, (0.6368715083798884, 0.2569832402234637, 0.10614525139664804, 0.5)),
-        Belief Julia_beta_ii (Julia, (0.137, 0.75, 0.113, 0.5))
-    }
-}
-
-UncertainElement gamma_p {
-    beliefs {
-        Belief Julia_gamma_p (Julia, (0.718, 0.125, 0.157, 0.5)),
-        Belief Bart_gamma_p (Bart, (0.0, 0.0, 1.0, 0.5))
-    }
+Agent Ada
+Agent Bohr
+Agent Curie UncertainElementFusion mu { 
+	beliefs 
+	{ 
+		Belief Ada_mu (Ada, (0.5, 0.4, 0.1, 0.5)), 
+		Belief Bohr_mu (Bohr, (0.1, 0.75, 0.15, 0.5)),
+		 Belief Curie_mu (Curie, (0.1, 0.2, 0.7, 0.5))
+    } 
+    aleatoryCumulativeBF = ( 0.0 , 0.215976 , 0.784024 , 0.5 ) 
+    averageingBF = ( 0.321053 , 0.513158 , 0.165789 , 0.5 ) 
+    beliefConstraintFusion = ( 0.212828 , 0.766764 , 0.020408 , 0.5 ) 
+    consensusCompromiseBF ( 0.38531 , 0.60419 , 0.0105 , 0.5 ) 
+    epistemicCumulativeBF = ( 0.0 , 0.215976 , 0.784024 , 0.5 ) 
+    weightedBF = ( 0.338486 , 0.52571 , 0.135804 , 0.5 ) 
 }

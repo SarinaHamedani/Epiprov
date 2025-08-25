@@ -1,70 +1,45 @@
+
 Agent Rick
 Agent Lucy
-Agent Elena_Garcia 
-
-UncertainElementFusion beta_ii { 
-	beliefs { 
-		Belief Elena_Garcia_beta_ii (Elena_Garcia , (0.5, 0.5, 0.0, 0.5))
-        , Belief Lucy_beta_ii (Lucy , (0.25, 0.6, 0.15, 0.5))
-    } 
-    aleatoryCumulativeBF = ( 0.0 , 0.0 , 1.0 , 0.5 ) 
-    averageingBF = ( 0.5 , 0.5 , 0.0 , 0.5 ) 
-    beliefConstraintFusion = ( 0.347826 , 0.652174 , 0.0 , 0.5 ) 
-    consensusCompromiseBF ( 0.25 , 0.5 , 0.25 , 0.5 ) 
-    epistemicCumulativeBF = ( 0.0 , 0.0 , 1.0 , 0.5 ) 
-    weightedBF = ( 0.5 , 0.5 , 0.0 , 0.5 ) 
-} 
-UncertainElementFusion beta_ij {
-	beliefs { 
-		Belief Elena_Garcia_beta_ij (Elena_Garcia , (0.7, 0.2, 0.1, 0.5))
-        , Belief Lucy_beta_ij (Lucy , (1.0, 0.0, 0.0, 0.5))
-    } 
-    aleatoryCumulativeBF = ( 1.0 , 0.0 , 0.0 , 0.5 ) 
-    averageingBF = ( 1.0 , 0.0 , 0.0 , 0.5 ) 
-    beliefConstraintFusion = ( 1.0 , 0.0 , 0.0 , 0.5 ) 
-    consensusCompromiseBF ( 0.7 , 0.0 , 0.3 , 0.5 ) 
-    epistemicCumulativeBF = ( 1.0 , 0.0 , 0.0 , 0.5 ) 
-    weightedBF = ( 1.0 , 0.0 , 0.0 , 0.5 ) 
-} 
-UncertainElementFusion beta_ji { 
-	beliefs { 
-		Belief Elena_Garcia_beta_ji (Elena_Garcia , (0.97, 0.0, 0.03, 0.5))
-        , Belief Rick_beta_ji (Rick , (0.8, 0.0, 0.2, 0.5))
-    } 
-    aleatoryCumulativeBF = ( 0.973214 , 0.0 , 0.026786 , 0.5 ) 
-    averageingBF = ( 0.947826 , 0.0 , 0.052174 , 0.5 ) 
-    beliefConstraintFusion = ( 0.994 , 0.0 , 0.006 , 0.5 ) 
-    consensusCompromiseBF ( 0.994 , 0.0 , 0.006 , 0.5 ) 
-    epistemicCumulativeBF = ( 0.973214 , 0.0 , 0.026786 , 0.5 ) 
-    weightedBF = ( 0.951284 , 0.0 , 0.048716 , 0.5 ) 
-} 
-UncertainElementFusion beta_jj { 
-	beliefs { 
-		Belief Elena_Garcia_beta_jj (Elena_Garcia , (0.1, 0.8, 0.1, 0.5))
-        , Belief Rick_beta_jj (Rick , (0.0, 0.0, 1.0, 0.5))
-    } 
-    aleatoryCumulativeBF = ( 0.0 , 0.7 , 0.3 , 0.5 ) 
-    averageingBF = ( 0.090909 , 0.727273 , 0.181818 , 0.5 ) 
-    beliefConstraintFusion = ( 0.1 , 0.8 , 0.1 , 0.5 ) 
-    consensusCompromiseBF ( 0.1 , 0.8 , 0.1 , 0.5 ) 
-    epistemicCumulativeBF = ( 0.0 , 0.7 , 0.3 , 0.5 ) 
-    weightedBF = ( 0.1 , 0.8 , 0.1 , 0.5 ) 
+Agent Elena_Garcia UncertainElement beta_ii {
+    beliefs {
+        Belief Elena_Garcia_beta_ii (Elena_Garcia, (0.5, 0.5, 0.0, 0.75))
+        ,
+        Belief Lucy_beta_ii (Lucy, (0.25, 0.6, 0.15, 0.75))
+    }
+}
+UncertainElement beta_ij {
+    beliefs {
+        Belief Elena_Garcia_beta_ij (Elena_Garcia, (0.7, 0.2, 0.1, 0.75))
+        ,
+        Belief Lucy_beta_ij (Lucy, (1.0, 0.0, 0.0, 0.75))
+    }
+}
+UncertainElement beta_ji {
+    beliefs {
+        Belief Elena_Garcia_beta_ji (Elena_Garcia, (0.97, 0.0, 0.03, 0.75))
+        ,
+        Belief Rick_beta_ji (Rick, (0.8, 0.0, 0.2, 0.75))
+    }
+}
+UncertainElement beta_jj {
+    beliefs {
+        Belief Elena_Garcia_beta_jj (Elena_Garcia, (0.1, 0.8, 0.1, 0.75))
+        ,
+        Belief Rick_beta_jj (Rick, (0.0, 0.0, 1.0, 0.75))
+    }
 }
 Agent Francis
 Agent Dan
 Agent Mary
-Agent A_Martin 
-UncertainElementFusion omega { 
-	beliefs { 
-		Belief A_Martin_omega (A_Martin , (0.9, 0.1, 0.0, 0.5))
-        , Belief Mary_omega (Mary , (0.75, 0.0, 0.25, 0.5))
-        , Belief Dan_omega (Dan , (0.3, 0.2, 0.5, 0.5))
-        , Belief Francis_omega (Francis , (0.8, 0.1, 0.1, 0.5))
-    } 
-    aleatoryCumulativeBF = ( 0.8 , 0.0 , 0.2 , 0.5 ) 
-    averageingBF = ( 0.9 , 0.1 , 0.0 , 0.5 )
-	beliefConstraintFusion = ( 0.994628 , 0.005372 , 0.0 , 0.5 ) 
-	consensusCompromiseBF ( 0.3 , 0.0 , 0.7 , 0.5 ) 
-	epistemicCumulativeBF = ( 0.8 , 0.0 , 0.2 , 0.5 ) 
-	weightedBF = ( 0.9 , 0.1 , 0.0 , 0.5 )
+Agent A_Martin UncertainElement omega {
+    beliefs {
+        Belief A_Martin_omega (A_Martin, (0.9, 0.1, 0.0, 0.75))
+        ,
+        Belief Mary_omega (Mary, (0.75, 0.0, 0.25, 0.75))
+        ,
+        Belief Dan_omega (Dan, (0.3, 0.2, 0.5, 0.75))
+        ,
+        Belief Francis_omega (Francis, (0.8, 0.1, 0.1, 0.75))
+    }
 }

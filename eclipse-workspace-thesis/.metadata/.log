@@ -1,0 +1,132 @@
+
+!ENTRY org.eclipse.jdt.ui 4 0 2025-08-20 11:53:25.665
+!MESSAGE SWTException computing hover information in SBooleanFusion.java at offset 23303
+!STACK 0
+org.eclipse.swt.SWTException: i/o error (java.io.FileNotFoundException: /Users/sarina/Documents/Epiprov/eclipse-workspace-thesis/.metadata/.plugins/org.eclipse.jdt.ui/jdt-images/1.png (No such file or directory))
+	at org.eclipse.swt.SWT.error(SWT.java:4945)
+	at org.eclipse.swt.SWT.error(SWT.java:4860)
+	at org.eclipse.swt.graphics.ImageLoader.save(ImageLoader.java:288)
+	at org.eclipse.jdt.internal.ui.viewsupport.ImagesOnFileSystemRegistry.getImageURL(ImagesOnFileSystemRegistry.java:115)
+	at org.eclipse.jdt.internal.ui.viewsupport.ImagesOnFileSystemRegistry.getImageURL(ImagesOnFileSystemRegistry.java:91)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getImageURL(JavadocHover.java:977)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getImageAndLabel(JavadocHover.java:1138)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getInfoText(JavadocHover.java:878)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:789)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:712)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:704)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+	Suppressed: java.lang.Throwable: Source line 509 :
+-----
+            double sumDisbelief = dogmatic.stream().mapToDouble(o -> o.getRelativeWeight() / totalWeight * o.disbelief()).sum();
+            resultBelief = sumBelief;
+            resultDisbelief = sumDisbelief;
+            resultUncertainty = 0.0;
+            resultRelativeWeight = totalWeight;
+        }
+        SBooleanFusion result = new SBooleanFusion(resultBelief, resultDisbelief, resultUncertainty, resultAtomicity, resultRelativeWeight);
+        return result.uncertaintyMaximized();
+    }
+    
+    public static SBooleanFusion |weightedBeliefFusion(Collection<SBooleanFusion> opinions) {
+-----
+		at org.eclipse.jdt.internal.ui.util.SelectionUtil.logException(SelectionUtil.java:157)
+		at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:178)
+		... 3 more
+Caused by: java.io.FileNotFoundException: /Users/sarina/Documents/Epiprov/eclipse-workspace-thesis/.metadata/.plugins/org.eclipse.jdt.ui/jdt-images/1.png (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:118)
+	at org.eclipse.swt.graphics.ImageLoader.save(ImageLoader.java:285)
+	... 12 more
+
+!ENTRY org.eclipse.jdt.ui 4 0 2025-08-20 11:53:38.335
+!MESSAGE SWTException computing hover information in BeliefAggregator.java at offset 4279
+!STACK 0
+org.eclipse.swt.SWTException: i/o error (java.io.FileNotFoundException: /Users/sarina/Documents/Epiprov/eclipse-workspace-thesis/.metadata/.plugins/org.eclipse.jdt.ui/jdt-images/2.png (No such file or directory))
+	at org.eclipse.swt.SWT.error(SWT.java:4945)
+	at org.eclipse.swt.SWT.error(SWT.java:4860)
+	at org.eclipse.swt.graphics.ImageLoader.save(ImageLoader.java:288)
+	at org.eclipse.jdt.internal.ui.viewsupport.ImagesOnFileSystemRegistry.getImageURL(ImagesOnFileSystemRegistry.java:115)
+	at org.eclipse.jdt.internal.ui.viewsupport.ImagesOnFileSystemRegistry.getImageURL(ImagesOnFileSystemRegistry.java:91)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getImageURL(JavadocHover.java:977)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getImageAndLabel(JavadocHover.java:1138)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getInfoText(JavadocHover.java:878)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:789)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:712)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:704)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+	Suppressed: java.lang.Throwable: Source line 85 :
+-----
+                	    SBooleanFusion bf = new SBooleanFusion(opinion.getBelief(), opinion.getDisbelief(), opinion.getUncertainty(), opinion.getBaseRate());
+                	    opinions.add(bf);
+                	}
+
+                	// Calculate fusion results using fusion operator methods.
+                	SBooleanFusion aleatoryCumulativeBF1 = SBooleanFusion.cumulativeBeliefFusion(opinions);
+                	SBooleanFusion averageingBF1 = SBooleanFusion.averageBeliefFusion(opinions);
+                	SBooleanFusion beliefConstraintFusion1 = SBooleanFusion.beliefConstraintFusion(opinions);
+                	SBooleanFusion consensusCompromiseBF1 = SBooleanFusion.consensusAndCompromiseFusion(opinions);
+                	SBooleanFusion epistemicCumulativeBF1 = SBooleanFusion.epistemicCumulativeBeliefFusion(opinions);
+                	SBooleanFusion weightedBF1 = SBooleanFusion.|weightedBeliefFusion(opinions);
+-----
+		at org.eclipse.jdt.internal.ui.util.SelectionUtil.logException(SelectionUtil.java:157)
+		at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:178)
+		... 3 more
+Caused by: java.io.FileNotFoundException: /Users/sarina/Documents/Epiprov/eclipse-workspace-thesis/.metadata/.plugins/org.eclipse.jdt.ui/jdt-images/2.png (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:118)
+	at org.eclipse.swt.graphics.ImageLoader.save(ImageLoader.java:285)
+	... 12 more
+
+!ENTRY org.eclipse.jdt.ui 4 0 2025-08-20 11:54:23.728
+!MESSAGE SWTException computing hover information in BeliefAggregator.java at offset 3853
+!STACK 0
+org.eclipse.swt.SWTException: i/o error (java.io.FileNotFoundException: /Users/sarina/Documents/Epiprov/eclipse-workspace-thesis/.metadata/.plugins/org.eclipse.jdt.ui/jdt-images/3.png (No such file or directory))
+	at org.eclipse.swt.SWT.error(SWT.java:4945)
+	at org.eclipse.swt.SWT.error(SWT.java:4860)
+	at org.eclipse.swt.graphics.ImageLoader.save(ImageLoader.java:288)
+	at org.eclipse.jdt.internal.ui.viewsupport.ImagesOnFileSystemRegistry.getImageURL(ImagesOnFileSystemRegistry.java:115)
+	at org.eclipse.jdt.internal.ui.viewsupport.ImagesOnFileSystemRegistry.getImageURL(ImagesOnFileSystemRegistry.java:91)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getImageURL(JavadocHover.java:977)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getImageAndLabel(JavadocHover.java:1138)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getInfoText(JavadocHover.java:878)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:789)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:712)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:704)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+	Suppressed: java.lang.Throwable: Source line 81 :
+-----
+
+                	for (Belief b : beliefs) {
+                	    // Cast each opinion to SBooleanFusion
+                	    SBoolean opinion = b.getOpinion();
+                	    SBooleanFusion bf = new SBooleanFusion(opinion.getBelief(), opinion.getDisbelief(), opinion.getUncertainty(), opinion.getBaseRate());
+                	    opinions.add(bf);
+                	}
+
+                	// Calculate fusion results using fusion operator methods.
+                	SBooleanFusion aleatoryCumulativeBF1 = SBooleanFusion.cumulativeBeliefFusion(opinions);
+                	SBooleanFusion averageingBF1 = SBooleanFusion.|averageBeliefFusion(opinions);
+-----
+		at org.eclipse.jdt.internal.ui.util.SelectionUtil.logException(SelectionUtil.java:157)
+		at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:178)
+		... 3 more
+Caused by: java.io.FileNotFoundException: /Users/sarina/Documents/Epiprov/eclipse-workspace-thesis/.metadata/.plugins/org.eclipse.jdt.ui/jdt-images/3.png (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:118)
+	at org.eclipse.swt.graphics.ImageLoader.save(ImageLoader.java:285)
+	... 12 more
