@@ -33,6 +33,7 @@
 **/src-gen/
 **/xtend-gen/
 **/emf-gen/
+**/test-bin/
 **/model/generated/
 
 ############################
